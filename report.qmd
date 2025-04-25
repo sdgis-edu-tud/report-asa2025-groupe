@@ -8,7 +8,7 @@ author:
     affiliation: "MSc Landscape Architecture"
   - name: "Student 3"
     affiliation: "MSc Urbanism"
-  - name: "Student 4"
+  - name: "Teun van Dijk"
     affiliation: "MSc Urbanism"
   - name: "Student 5"
     affiliation: "MSc Landscape Architecture"
