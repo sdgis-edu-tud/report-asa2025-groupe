@@ -6,7 +6,7 @@ author:
     affiliation: "MSc Geomatics"
   - name: "Joost Bastiaansen"
     affiliation: "MSc Urbanism"
-  - name: "Student 3"
+  - name: "Aparnaa Chandrasekaran"
     affiliation: "MSc Urbanism"
   - name: "Teun van Dijk"
     affiliation: "MSc Urbanism"
