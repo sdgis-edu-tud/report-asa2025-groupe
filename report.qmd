@@ -14,9 +14,7 @@ author:
   - name: "Teun van Dijk"
     affiliation: "MSc Urbanism"
     role: "Presentation & design lead"
-  - name: "Student 5"
-    affiliation: "MSc Urbanism"
-    role: "Editor"
+
 format: html
 ---
 
@@ -26,10 +24,10 @@ format: html
 | Joost Bastiaansen    | MSc Urbanism    | Mapping specialist               |
 | Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                    |
 | Teun van Dijk        | MSc Urbanism    | Presentation & design lead       |
-| Adriano Mancini      | MSc Urbanism    | Editor                           |
 
 ::: callout
 ## This is a computational notebook
+hllo
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
