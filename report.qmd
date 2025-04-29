@@ -18,12 +18,12 @@ author:
 format: html
 ---
 
-| Name                 | Affiliation     | Role                             |
-|----------------------|------------------|----------------------------------|
-| Daan Schlosser       | MSc Geomatics   | Project coordinator & data-analyst |
-| Joost Bastiaansen    | MSc Urbanism    | Mapping specialist               |
-| Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                    |
-| Teun van Dijk        | MSc Urbanism    | Presentation & design lead       |
+| Name                   | Affiliation     | Role                               |
+|------------------------|-----------------|------------------------------------|
+| Daan Schlosser         | MSc Geomatics   | Project coordinator & data-analyst |
+| Joost Bastiaansen      | MSc Urbanism    | Mapping specialist                 |
+| Aparnaa Chandrasekaran | MSc Urbanism    | Research lead                      |
+| Teun van Dijk          | MSc Urbanism    | Presentation & design lead         |
 
 ::: callout
 ## This is a computational notebook
