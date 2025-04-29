@@ -26,7 +26,7 @@ format: html
 | Joost Bastiaansen    | MSc Urbanism    | Mapping specialist               |
 | Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                    |
 | Teun van Dijk        | MSc Urbanism    | Presentation & design lead       |
-| Student 5            | MSc Urbanism    | Editor                           |
+| Adriano Mancini      | MSc Urbanism    | Editor                           |
 
 ::: callout
 ## This is a computational notebook
