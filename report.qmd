@@ -4,16 +4,29 @@ subtitle: "Project report of Group E"
 author:
   - name: "Daan Schlosser"
     affiliation: "MSc Geomatics"
+    role: "Project coordinator & data-analyst"
   - name: "Joost Bastiaansen"
+    role: "Mapping specialist"
     affiliation: "MSc Urbanism"
   - name: "Aparnaa Chandrasekaran"
+    role: "Research lead"
     affiliation: "MSc Urbanism"
   - name: "Teun van Dijk"
     affiliation: "MSc Urbanism"
+    role: "Presentation & design lead"
   - name: "Student 5"
-    affiliation: "MSc Landscape Architecture"
+    affiliation: "MSc Urbanism"
+    role: "Editor"
 format: html
 ---
+
+| Name                 | Affiliation     | Role                             |
+|----------------------|------------------|----------------------------------|
+| Daan Schlosser       | MSc Geomatics   | Project coordinator & data-analyst |
+| Joost Bastiaansen    | MSc Urbanism    | Mapping specialist               |
+| Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                    |
+| Teun van Dijk        | MSc Urbanism    | Presentation & design lead       |
+| Student 5            | MSc Urbanism    | Editor                           |
 
 ::: callout
 ## This is a computational notebook
