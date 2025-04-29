@@ -1,22 +1,33 @@
 ---
 title: "Title of your report"
-subtitle: "Project report of Group #"
+subtitle: "Project report of Group E"
 author:
-  - name: "Student 1"
+  - name: "Daan Schlosser"
     affiliation: "MSc Geomatics"
-  - name: "Student 2"
-    affiliation: "MSc Landscape Architecture"
-  - name: "Student 3"
+    role: "Project coordinator & data-analyst"
+  - name: "Joost Bastiaansen"
+    role: "Mapping specialist"
     affiliation: "MSc Urbanism"
-  - name: "Student 4"
+  - name: "Aparnaa Chandrasekaran"
+    role: "Research lead"
     affiliation: "MSc Urbanism"
-  - name: "Student 5"
-    affiliation: "MSc Landscape Architecture"
+  - name: "Teun van Dijk"
+    affiliation: "MSc Urbanism"
+    role: "Presentation & design lead"
+
 format: html
 ---
 
+| Name                   | Affiliation     | Role                               |
+|------------------------|-----------------|------------------------------------|
+| Daan Schlosser         | MSc Geomatics   | Project coordinator & data-analyst |
+| Joost Bastiaansen      | MSc Urbanism    | Mapping specialist                 |
+| Aparnaa Chandrasekaran | MSc Urbanism    | Research lead                      |
+| Teun van Dijk          | MSc Urbanism    | Presentation & design lead         |
+
 ::: callout
 ## This is a computational notebook
+hllo
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
