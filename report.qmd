@@ -1,6 +1,6 @@
 ---
-title: "Title of your report"
-subtitle: "Project report of Group E"
+title: "Urban Stream Restoration in the City of Dresden"
+subtitle: "Researching the optimal locations to restore the urban streams in order to improve the biodiversity, climate adaptivity and quality of life in the city of Dresden"
 author:
   - name: "Daan Schlosser"
     affiliation: "MSc Geomatics"
@@ -25,10 +25,20 @@ format: html
 | Aparnaa Chandrasekaran | MSc Urbanism    | Research lead                      |
 | Teun van Dijk          | MSc Urbanism    | Presentation & design lead         |
 
-::: callout
-
+<br>
 
 ## Introduction
+
+### Site Selection
+This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
+
+![Step 1: A 500 by 500 metres grid covering Dresden](report_files\introduction\STEP1.png)
+
+
+![Step 2: Overlay with streams](report_files\introduction\STEP2.png)
+
+
+![Step 3: Remove any unecessary information](report_files\introduction\STEP3.png)
 
 ## Methods
 
