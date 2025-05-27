@@ -56,6 +56,10 @@ This project will focus on the city of Dresden. In order to provide an answer to
 ![Accessibility: Appearance](images\quality_of_life\Covered.jpeg)
 ![Accessibility: Appearance](images\quality_of_life\Covered_Grid.jpeg)
 
+#### Climate Adaptation
+![Flood Risk: Soil storage](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg)
+![Flood Risk: Soil storage](images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg)
+
 ### Typology construction
 
 ## Results
