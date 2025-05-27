@@ -59,6 +59,7 @@ This project will focus on the city of Dresden. In order to provide an answer to
 #### Climate Adaptation
 ![Flood Risk: Soil storage](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg)
 ![Flood Risk: Soil storage](images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg)
+![Flood Risk: Urban Heat Island Effect](images/climate_adaptation/2.1 UHI_ Analysis.jpg)
 
 ### Typology construction
 
