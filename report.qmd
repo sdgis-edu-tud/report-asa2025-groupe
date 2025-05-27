@@ -45,16 +45,16 @@ This project will focus on the city of Dresden. In order to provide an answer to
 ### MCDA
 
 #### Quality of Life
-![Physical Health: Vicinity to Urban Green Space](report_files\quality_of_life\VicinityToUrbanGreenSpace.jpeg)
-![Physical Health: Vicinity to Urban Green Space](report_files\quality_of_life\VicinityToUrbanGreenSpace_Grid.jpeg)
-![Mental Health: Vicinity to Stream](report_files\quality_of_life\VicinityToStream.jpeg)
-![Mental Health: Vicinity to Stream](report_files\quality_of_life\VicinityToStream_Grid.jpeg)
-![General Health: Facilities](report_files\quality_of_life\Facilities.jpeg)
-![General Health: Facilities](report_files\quality_of_life\Facilities_Grid.jpeg)
-![Accessibility: Local Integration](report_files\quality_of_life\LocalIntegration.jpeg)
-![Accessibility: Local Integration](report_files\quality_of_life\LocalIntegration_Grid.jpeg)
-![Accessibility: Appearance](report_files\quality_of_life\Covered.jpeg)
-![Accessibility: Appearance](report_files\quality_of_life\Covered_Grid.jpeg)
+![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace.jpeg)
+![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace_Grid.jpeg)
+![Mental Health: Vicinity to Stream](images\quality_of_life\VicinityToStream.jpeg)
+![Mental Health: Vicinity to Stream](images\quality_of_life\VicinityToStream_Grid.jpeg)
+![General Health: Facilities](images\quality_of_life\Facilities.jpeg)
+![General Health: Facilities](images\quality_of_life\Facilities_Grid.jpeg)
+![Accessibility: Local Integration](images\quality_of_life\LocalIntegration.jpeg)
+![Accessibility: Local Integration](images\quality_of_life\LocalIntegration_Grid.jpeg)
+![Accessibility: Appearance](images\quality_of_life\Covered.jpeg)
+![Accessibility: Appearance](images\quality_of_life\Covered_Grid.jpeg)
 
 ### Typology construction
 
