@@ -1,59 +1,60 @@
 ---
-title: "Title of your report"
-subtitle: "Project report of Group #"
+title: "Urban Stream Restoration in the City of Dresden"
+subtitle: "Researching the optimal locations to restore the urban streams in order to improve the biodiversity, climate adaptivity and quality of life in the city of Dresden"
 author:
-  - name: "Student 1"
+  - name: "Daan Schlosser"
     affiliation: "MSc Geomatics"
-  - name: "Student 2"
-    affiliation: "MSc Landscape Architecture"
-  - name: "Student 3"
+    role: "Project coordinator & data-analyst"
+  - name: "Joost Bastiaansen"
+    role: "Mapping specialist"
     affiliation: "MSc Urbanism"
-  - name: "Student 4"
+  - name: "Aparnaa Chandrasekaran"
+    role: "Research lead"
     affiliation: "MSc Urbanism"
-  - name: "Student 5"
-    affiliation: "MSc Landscape Architecture"
+  - name: "Teun van Dijk"
+    affiliation: "MSc Urbanism"
+    role: "Presentation & design lead"
+
 format: html
 ---
 
-::: callout
-## This is a computational notebook
+| Name                   | Affiliation     | Role                               |
+|------------------------|-----------------|------------------------------------|
+| Daan Schlosser         | MSc Geomatics   | Project coordinator & data-analyst |
+| Joost Bastiaansen      | MSc Urbanism    | Mapping specialist                 |
+| Aparnaa Chandrasekaran | MSc Urbanism    | Research lead                      |
+| Teun van Dijk          | MSc Urbanism    | Presentation & design lead         |
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this 
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
-
-You can delete this entire callout between and including the lines
-```
-::: callout
-```
-and
-
-```
-:::
-```
-and start the report from the Introduction section below.
-:::
+<br>
 
 ## Introduction
+
+### Site Selection
+This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
+
+![Step 1: A 500 by 500 metres grid covering Dresden](images\introduction\STEP1.png)
+
+
+![Step 2: Overlay with streams](images\introduction\STEP2.png)
+
+
+![Step 3: Remove any unecessary information](images\introduction\STEP3.png)
 
 ## Methods
 
 ### MCDA
+
+#### Quality of Life
+![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace.jpeg)
+![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace_Grid.jpeg)
+![Mental Health: Vicinity to Stream](images\quality_of_life\VicinityToStream.jpeg)
+![Mental Health: Vicinity to Stream](images\quality_of_life\VicinityToStream_Grid.jpeg)
+![General Health: Facilities](images\quality_of_life\Facilities.jpeg)
+![General Health: Facilities](images\quality_of_life\Facilities_Grid.jpeg)
+![Accessibility: Local Integration](images\quality_of_life\LocalIntegration.jpeg)
+![Accessibility: Local Integration](images\quality_of_life\LocalIntegration_Grid.jpeg)
+![Accessibility: Appearance](images\quality_of_life\Covered.jpeg)
+![Accessibility: Appearance](images\quality_of_life\Covered_Grid.jpeg)
 
 ### Typology construction
 
