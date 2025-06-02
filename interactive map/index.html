@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Environmental Data Map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4/2.7.5/proj4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        .controls {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+        
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .control-section {
+            margin-bottom: 25px;
+        }
+        
+        .control-section h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 16px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+        
+        .layer-group {
+            margin-bottom: 15px;
+        }
+        
+        .theme-header {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+            padding: 5px;
+            background: #f0f0f0;
+            border-radius: 3px;
+        }
+        
+        .layer-checkbox {
+            display: block;
+            margin: 5px 0;
+            padding: 3px 0;
+        }
+        
+        .layer-checkbox input {
+            margin-right: 8px;
+        }
+        
+        .layer-checkbox label {
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .opacity-control {
+            margin-top: 10px;
+        }
+        
+        .opacity-control label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .opacity-control input[type="range"] {
+            width: 100%;
+        }
+        
+        .chart-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 10001;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .chart-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chart-header h2 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .close-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .close-btn:hover {
+            background: #ff0000;
+        }
+        
+        .chart-content {
+            padding: 20px;
+        }
+        
+        #tileChart {
+            max-height: 400px;
+        }
+        
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .legend h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 15px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 10000;
+            display: none;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .error {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 16px;
+            color: #d73027;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .average-info {
+            background: #e8f5e8;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="control-section">
+                <h3>Layer Controls</h3>
+                
+                <div class="average-info">
+                    <strong>Note:</strong> When multiple layers are selected, tiles show the average value of all enabled layers.
+                </div>
+                
+                <div class="layer-group">
+                    <div class="theme-header">Biodiversity</div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-ndvi" data-layer="Norm_NDVI">
+                        <label for="layer-ndvi">NDVI</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-green-blue" data-layer="Green_blue_area_percentage">
+                        <label for="layer-green-blue">Green Blue Area %</label>
+                    </div>
+                </div>
+                
+                <div class="layer-group">
+                    <div class="theme-header">Quality of Life</div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-landscape" data-layer="Landscape_quality_from0-1">
+                        <label for="layer-landscape">Landscape Quality</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-recreation" data-layer="Norm_weighted_recr">
+                        <label for="layer-recreation">Recreation</label>
+                    </div>
+                </div>
+                
+                <div class="layer-group">
+                    <div class="theme-header">Climate Adaptation</div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-pm10" data-layer="Norm_Weigh_PM10_AreaPollution">
+                        <label for="layer-pm10">PM10 Pollution (Norm)</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-no2" data-layer="Norm_Weigh_NO2_AreaPollution">
+                        <label for="layer-no2">NO2 Pollution (Norm)</label>
+                    </div>
+                </div>
+                
+                <div class="opacity-control">
+                    <label for="opacity-slider">Layer Opacity:</label>
+                    <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="0.7">
+                    <span id="opacity-value">70%</span>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <h3>Theme Views</h3>
+                <button id="view-all" class="theme-btn">View All</button><br><br>
+                <button id="view-biodiversity" class="theme-btn">Biodiversity</button><br><br>
+                <button id="view-quality" class="theme-btn">Quality of Life</button><br><br>
+                <button id="view-climate" class="theme-btn">Climate Adaptation</button>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <div id="map">
+                <div class="loading" id="loading">Loading map data...</div>
+            </div>
+            <div class="legend">
+                <h4>Value Scale</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d73027;"></div>
+                    <span>Very Poor (0.0-0.2)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #fc8d59;"></div>
+                    <span>Poor (0.2-0.4)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #fee08b;"></div>
+                    <span>Moderate (0.4-0.6)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #91cf60;"></div>
+                    <span>Good (0.6-0.8)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4575b4;"></div>
+                    <span>Very Good (0.8-1.0)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="chart-popup" id="chart-popup">
+        <div class="chart-header">
+            <h2>Tile Analysis</h2>
+            <button class="close-btn" id="close-chart">&times;</button>
+        </div>
+        <div class="chart-content">
+            <canvas id="tileChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let geoJsonData = null;
+        let map = null;
+        let averageLayer = null; // Single layer that shows averaged values
+        let currentChart = null;
+        let enabledLayers = new Set(); // Track which layers are enabled
+
+        // Layer definitions
+        const layerDefinitions = {
+            'Norm_NDVI': { name: 'NDVI', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'Green_blue_area_percentage': { name: 'Green Blue Area %', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'Landscape_quality_from0-1': { name: 'Landscape Quality', theme: 'quality', normalize: value => value === null ? null : Math.max(0, Math.min(1, value)) },
+            'Norm_weighted_recr': { name: 'Recreation', theme: 'quality', normalize: value => value === null ? null : Math.max(0, Math.min(1, value)) },
+            'Norm_Weigh_PM10_AreaPollution': { name: 'PM10 Pollution', theme: 'climate', normalize: value => 1 - Math.max(0, Math.min(1, value || 0)) },
+            'Norm_Weigh_NO2_AreaPollution': { name: 'NO2 Pollution', theme: 'climate', normalize: value => 1 - Math.max(0, Math.min(1, value || 0)) }
+        };
+
+        // Color scale function
+        function getColor(value) {
+            if (value === null || value === undefined) return '#cccccc';
+            if (value < 0.2) return '#d73027';
+            if (value < 0.4) return '#fc8d59';
+            if (value < 0.6) return '#fee08b';
+            if (value < 0.8) return '#91cf60';
+            return '#4575b4';
+        }
+
+        // Get quality label
+        function getQualityLabel(value) {
+            if (value === null || value === undefined) return 'No Data';
+            if (value < 0.2) return 'Very Poor';
+            if (value < 0.4) return 'Poor';
+            if (value < 0.6) return 'Moderate';
+            if (value < 0.8) return 'Good';
+            return 'Very Good';
+        }
+
+        // Calculate average value for a tile across enabled layers
+        function calculateAverageValue(feature) {
+            if (enabledLayers.size === 0) return null;
+            
+            let sum = 0;
+            let count = 0;
+            
+            enabledLayers.forEach(layerKey => {
+                const layerDef = layerDefinitions[layerKey];
+                const rawValue = feature.properties[layerKey];
+                const normalizedValue = layerDef.normalize(rawValue);
+                
+                if (normalizedValue !== null && normalizedValue !== undefined) {
+                    sum += normalizedValue;
+                    count++;
+                }
+            });
+            
+            return count > 0 ? sum / count : null;
+        }
+
+        // Create or update the average layer
+        function updateAverageLayer() {
+            // Remove existing layer
+            if (averageLayer && map.hasLayer(averageLayer)) {
+                map.removeLayer(averageLayer);
+            }
+            
+            // If no layers enabled, don't show anything
+            if (enabledLayers.size === 0) {
+                averageLayer = null;
+                return;
+            }
+            
+            // Create new averaged layer
+            averageLayer = L.geoJSON(geoJsonData, {
+                style: function(feature) {
+                    const averageValue = calculateAverageValue(feature);
+                    return {
+                        fillColor: getColor(averageValue),
+                        weight: 1,
+                        opacity: 1,
+                        color: 'white',
+                        fillOpacity: parseFloat(document.getElementById('opacity-slider').value)
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    const averageValue = calculateAverageValue(feature);
+                    const displayValue = averageValue !== null ? averageValue.toFixed(3) : 'N/A';
+                    
+                    // Build popup content showing individual values and average
+                    let popupContent = `<strong>Tile: ${feature.properties.row_col_id}</strong><br>`;
+                    
+                    if (enabledLayers.size > 1) {
+                        popupContent += `<strong>Average: ${getQualityLabel(averageValue)} (${displayValue})</strong><br><br>`;
+                        popupContent += '<em>Individual layers:</em><br>';
+                        
+                        enabledLayers.forEach(layerKey => {
+                            const layerDef = layerDefinitions[layerKey];
+                            const rawValue = feature.properties[layerKey];
+                            const normalizedValue = layerDef.normalize(rawValue);
+                            const layerDisplayValue = normalizedValue !== null ? normalizedValue.toFixed(3) : 'N/A';
+                            popupContent += `${layerDef.name}: ${getQualityLabel(normalizedValue)} (${layerDisplayValue})<br>`;
+                        });
+                    } else {
+                        // Only one layer enabled, show just that layer's info
+                        const layerKey = Array.from(enabledLayers)[0];
+                        const layerDef = layerDefinitions[layerKey];
+                        popupContent += `${layerDef.name}: ${getQualityLabel(averageValue)} (${displayValue})<br>`;
+                    }
+                    
+                    popupContent += `<br><button onclick="showTileChart(${feature.properties.id})">View Detailed Chart</button>`;
+                    
+                    layer.bindPopup(popupContent);
+                    
+                    // Add click event for chart
+                    layer.on('click', function(e) {
+                        showTileChart(feature.properties.id);
+                    });
+                }
+            });
+            
+            // Add to map
+            map.addLayer(averageLayer);
+        }
+
+        // Load GeoJSON data from the uploaded file
+        async function loadGeoJsonData() {
+            try {
+                // Try to read the uploaded file first
+                if (window.fs && window.fs.readFile) {
+                    try {
+                        const fileContent = await window.fs.readFile('paste-2.txt', { encoding: 'utf8' });
+                        return JSON.parse(fileContent);
+                    } catch (fsError) {
+                        console.log('Could not read from uploaded file, trying fetch...');
+                    }
+                }
+                
+                // Fallback to fetch for local development
+                const response = await fetch('./tiles.geojson');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}. Make sure tiles.geojson is in the same directory and you're running this through a web server (not file:// protocol)`);
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading GeoJSON:', error);
+                return;
+            }
+        }
+
+        // Initialize map
+        function initializeMap() {
+            // Initialize map centered on Dresden area based on your coordinates
+            map = L.map('map').setView([51.07, 13.59], 12);
+            
+            // Add base layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+        }
+
+        // Initialize layers (fit bounds)
+        function initializeLayers() {
+            // Create a temporary layer just to get bounds
+            if (geoJsonData && geoJsonData.features.length > 0) {
+                const tempLayer = L.geoJSON(geoJsonData);
+                map.fitBounds(tempLayer.getBounds().pad(0.1));
+            }
+        }
+
+        // Layer control functions
+        function setupControls() {
+            document.querySelectorAll('.layer-checkbox input').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const layerKey = this.dataset.layer;
+                    
+                    if (this.checked) {
+                        enabledLayers.add(layerKey);
+                    } else {
+                        enabledLayers.delete(layerKey);
+                    }
+                    
+                    updateAverageLayer();
+                });
+            });
+
+            // Opacity control
+            const opacitySlider = document.getElementById('opacity-slider');
+            const opacityValue = document.getElementById('opacity-value');
+            
+            opacitySlider.addEventListener('input', function() {
+                const opacity = parseFloat(this.value);
+                opacityValue.textContent = Math.round(opacity * 100) + '%';
+                
+                // Update opacity of current average layer
+                if (averageLayer && map.hasLayer(averageLayer)) {
+                    averageLayer.setStyle({ fillOpacity: opacity });
+                }
+            });
+
+            // Theme view buttons
+            document.getElementById('view-all').addEventListener('click', function() {
+                // Enable all layers
+                enabledLayers.clear();
+                Object.keys(layerDefinitions).forEach(layerKey => {
+                    enabledLayers.add(layerKey);
+                    document.querySelector(`input[data-layer="${layerKey}"]`).checked = true;
+                });
+                updateAverageLayer();
+            });
+
+            document.getElementById('view-biodiversity').addEventListener('click', function() {
+                showTheme('biodiversity');
+            });
+
+            document.getElementById('view-quality').addEventListener('click', function() {
+                showTheme('quality');
+            });
+
+            document.getElementById('view-climate').addEventListener('click', function() {
+                showTheme('climate');
+            });
+
+            // Close chart popup
+            document.getElementById('close-chart').addEventListener('click', function() {
+                document.getElementById('popup-overlay').style.display = 'none';
+                document.getElementById('chart-popup').style.display = 'none';
+            });
+
+            document.getElementById('popup-overlay').addEventListener('click', function() {
+                document.getElementById('popup-overlay').style.display = 'none';
+                document.getElementById('chart-popup').style.display = 'none';
+            });
+        }
+
+        function showTheme(theme) {
+            // Clear all layers first
+            enabledLayers.clear();
+            document.querySelectorAll('.layer-checkbox input').forEach(cb => cb.checked = false);
+            
+            // Enable only layers from the specified theme
+            Object.keys(layerDefinitions).forEach(layerKey => {
+                if (layerDefinitions[layerKey].theme === theme) {
+                    enabledLayers.add(layerKey);
+                    document.querySelector(`input[data-layer="${layerKey}"]`).checked = true;
+                }
+            });
+            
+            updateAverageLayer();
+        }
+
+        // Chart functionality
+        function showTileChart(id) {
+            const feature = geoJsonData.features.find(f => f.properties.id === id);
+            if (!feature) return;
+
+            const data = [];
+            const labels = [];
+            const backgroundColors = [];
+            
+            // Show all layers in chart (not just enabled ones)
+            Object.keys(layerDefinitions).forEach(layerKey => {
+                const layerDef = layerDefinitions[layerKey];
+                const rawValue = feature.properties[layerKey];
+                const value = layerDef.normalize(rawValue);
+                
+                if (value !== null) {
+                    // Convert to -0.5 to +0.5 range so bars start from center
+                    const centeredValue = value - 0.5;
+                    data.push(centeredValue);
+                    
+                    // Add asterisk to enabled layers
+                    const layerName = enabledLayers.has(layerKey) ? `${layerDef.name} *` : layerDef.name;
+                    labels.push(layerName);
+                    backgroundColors.push(getColor(value));
+                }
+            });
+
+            // Add average if multiple layers enabled
+            if (enabledLayers.size > 1) {
+                const avgValue = calculateAverageValue(feature);
+                if (avgValue !== null) {
+                    const centeredAvgValue = avgValue - 0.5;
+                    data.push(centeredAvgValue);
+                    labels.push('AVERAGE');
+                    backgroundColors.push('#333333'); // Dark color for average
+                }
+            }
+
+            // Show popup
+            document.getElementById('popup-overlay').style.display = 'block';
+            document.getElementById('chart-popup').style.display = 'block';
+
+            // Destroy existing chart
+            if (currentChart) {
+                currentChart.destroy();
+            }
+
+            // Create new chart
+            const ctx = document.getElementById('tileChart').getContext('2d');
+            currentChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Quality Score (deviation from moderate)',
+                        data: data,
+                        backgroundColor: backgroundColors,
+                        borderColor: backgroundColors,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            min: -0.5,
+                            max: 0.5,
+                            grid: {
+                                drawOnChartArea: true,
+                                color: function(context) {
+                                    if (context.tick.value === 0) {
+                                        return '#000000'; // Bold line at center
+                                    }
+                                    return '#e0e0e0';
+                                }
+                            },
+                            ticks: {
+                                stepSize: 0.25,
+                                callback: function(value) {
+                                    // Convert back to 0-1 scale for labels
+                                    const originalValue = value + 0.5;
+                                    return getQualityLabel(originalValue);
+                                }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: `Tile ${feature.properties.row_col_id} - Environmental Indicators (* = enabled layers)`
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    // Convert back to original 0-1 value for tooltip
+                                    const originalValue = context.parsed.x + 0.5;
+                                    return `${context.label}: ${getQualityLabel(originalValue)} (${originalValue.toFixed(3)})`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Show error message
+        function showError(message) {
+            const loadingDiv = document.getElementById('loading');
+            loadingDiv.className = 'error';
+            loadingDiv.innerHTML = `
+                <div>
+                    <strong>Error loading data:</strong><br>
+                    ${message}<br><br>
+                    Please ensure 'tiles.geojson' is in the same directory as this HTML file.
+                </div>
+            `;
+        }
+
+        // Make showTileChart globally available
+        window.showTileChart = showTileChart;
+
+        // Style theme buttons
+        function styleButtons() {
+            const themeButtons = document.querySelectorAll('.theme-btn');
+            themeButtons.forEach(btn => {
+                btn.style.cssText = `
+                    background: #4CAF50;
+                    color: white;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    width: 100%;
+                    font-size: 14px;
+                `;
+                btn.addEventListener('mouseover', function() {
+                    this.style.background = '#45a049';
+                });
+                btn.addEventListener('mouseout', function() {
+                    this.style.background = '#4CAF50';
+                });
+            });
+        }
+
+        // Initialize everything
+        async function init() {
+            try {
+                // Initialize map first
+                initializeMap();
+                
+                // Load GeoJSON data
+                geoJsonData = await loadGeoJsonData();
+                
+                // Hide loading message
+                document.getElementById('loading').style.display = 'none';
+                
+                // Initialize layers and controls
+                initializeLayers();
+                setupControls();
+                styleButtons();
+                
+                console.log('Map initialized successfully with', geoJsonData.features.length, 'features');
+                
+            } catch (error) {
+                console.error('Initialization error:', error);
+                showError(error.message);
+            }
+        }
+
+        // Start initialization when page loads
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
