@@ -15,7 +15,11 @@ author:
     affiliation: "MSc Urbanism"
     role: "Presentation & design lead"
 
-format: html
+format:
+  html:
+    includes:
+      in-header: header.html
+editor: visual
 ---
 
 | Name                   | Affiliation     | Role                               |
@@ -71,7 +75,88 @@ This project will focus on the city of Dresden. In order to provide an answer to
 ![Infiltration: Sealing Class](images/climate_adaptation/6.2 Sealin_ MCDA Grid.jpg)
 ![MCDA Weightage](images/climate_adaptation/Climate Adaptation_ Saaty Matrix.jpg)
 
+### Map Dashboard
 
+```{r leaflet-map, echo=FALSE}
+library(leaflet)
+library(sf)
+
+tiles <- st_read("tiles.geojson", quiet = TRUE)
+tiles_wgs <- st_transform(tiles, 4326)
+
+# Create simple HTML popup with CSS bars
+make_popup <- function(pm10, no2) {
+  center <- 0.5  # moderate
+  # Calculate offset from center (-0.5 to +0.5)
+  pm10_offset <- pm10 - center
+  no2_offset <- no2 - center
+  
+  # Widths: absolute value scaled to 100%
+  pm10_width <- abs(pm10_offset) * 100
+  no2_width <- abs(no2_offset) * 100
+  
+  # Colors: green to red scale depending on direction
+  pm10_color <- ifelse(pm10_offset >= 0, "#2ca02c", "#d62728")  # green if good, red if poor
+  no2_color <- ifelse(no2_offset >= 0, "#2ca02c", "#d62728")
+  
+  html <- paste0(
+    "<div style='width:200px; font-family:sans-serif;'>",
+    "<strong>Pollution Scores</strong><br><br>",
+    
+    # Labels for categories
+    "<div style='display:flex; justify-content: space-between; font-size:10px; margin-bottom:4px;'>",
+    "<span>Very Poor</span><span>Poor</span><span>Moderate</span><span>Good</span><span>Very Good</span>",
+    "</div>",
+    
+    # PM10 bar container
+    "<div style='display:flex; align-items:center; margin-bottom:8px;'>",
+    "<span style='width:40px; font-size:12px;'>PM10</span>",
+    "<div style='position:relative; flex:1; height:20px; background:#ddd;'>",
+    # Center line
+    "<div style='position:absolute; left:50%; top:0; bottom:0; width:2px; background:#555;'></div>",
+    # Bar left or right from center
+    if(pm10_offset < 0) {
+      paste0("<div style='position:absolute; right:50%; width:", pm10_width, "%; height:100%; background:", pm10_color, ";'></div>")
+    } else {
+      paste0("<div style='position:absolute; left:50%; width:", pm10_width, "%; height:100%; background:", pm10_color, ";'></div>")
+    },
+    "</div>",
+    "</div>",
+    
+    # NO2 bar container
+    "<div style='display:flex; align-items:center;'>",
+    "<span style='width:40px; font-size:12px;'>NO2</span>",
+    "<div style='position:relative; flex:1; height:20px; background:#ddd;'>",
+    "<div style='position:absolute; left:50%; top:0; bottom:0; width:2px; background:#555;'></div>",
+    if(no2_offset < 0) {
+      paste0("<div style='position:absolute; right:50%; width:", no2_width, "%; height:100%; background:", no2_color, ";'></div>")
+    } else {
+      paste0("<div style='position:absolute; left:50%; width:", no2_width, "%; height:100%; background:", no2_color, ";'></div>")
+    },
+    "</div>",
+    "</div>",
+    "</div>"
+  )
+  return(html)
+}
+
+popups <- mapply(make_popup, 
+                 tiles_wgs$Norm_Weigh_PM10_AreaPollution, 
+                 tiles_wgs$Norm_Weigh_NO2_AreaPollution, 
+                 SIMPLIFY = FALSE)
+
+leaflet(tiles_wgs) %>%
+  addTiles() %>%
+  addPolygons(
+    fillColor = "blue", color = "black", weight = 1, fillOpacity = 0.5,
+    popup = popups,
+    highlightOptions = highlightOptions(weight = 3, color = "red", bringToFront = TRUE)
+  ) %>%
+  setView(lng = mean(st_coordinates(st_centroid(st_union(tiles_wgs)))[,1]),
+          lat = mean(st_coordinates(st_centroid(st_union(tiles_wgs)))[,2]),
+          zoom = 12)
+
+```
 
 ### Typology construction
 
