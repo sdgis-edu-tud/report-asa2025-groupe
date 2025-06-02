@@ -59,7 +59,19 @@ This project will focus on the city of Dresden. In order to provide an answer to
 #### Climate Adaptation
 ![Flood Risk: Soil storage](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg)
 ![Flood Risk: Soil storage](images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg)
-![Flood Risk: Urban Heat Island Effect](images/climate_adaptation/2.1 UHI_ Analysis.jpg)
+![Urban Heat Island Effect](images/climate_adaptation/2.1 UHI_ Analysis.jpg)
+![Urban Heat Island Effect](images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg)
+![Green Cover: Green spaces](images/climate_adaptation/3.1 Green cover_ Analysis.jpg)
+![Green Cover: Green spaces](images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg)
+![Green Cover: Urban trees](images/climate_adaptation/4.1 Urban trees_ Analysis.jpg)
+![Green Cover: Urban trees](images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg)
+![Infiltration: Seepage Properties](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg)
+![Infiltration: Seepage Properties](images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg)
+![Infiltration: Sealing Class](images/climate_adaptation/6.1 Sealin_ Analysis.jpg)
+![Infiltration: Sealing Class](images/climate_adaptation/6.2 Sealin_ MCDA Grid.jpg)
+![MCDA Weightage](images/climate_adaptation/Climate Adaptation_ Saaty Matrix.jpg)
+
+
 
 ### Typology construction
 
