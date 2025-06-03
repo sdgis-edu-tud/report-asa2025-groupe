@@ -334,8 +334,8 @@
             'Green_blue_area_percentage': { name: 'Green Blue Area %', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
             'Landscape_quality_from0-1': { name: 'Landscape Quality', theme: 'quality', normalize: value => value === null ? null : Math.max(0, Math.min(1, value)) },
             'Norm_weighted_recr': { name: 'Recreation', theme: 'quality', normalize: value => value === null ? null : Math.max(0, Math.min(1, value)) },
-            'Norm_Weigh_PM10_AreaPollution': { name: 'PM10 Pollution', theme: 'climate', normalize: value => 1 - Math.max(0, Math.min(1, value || 0)) },
-            'Norm_Weigh_NO2_AreaPollution': { name: 'NO2 Pollution', theme: 'climate', normalize: value => 1 - Math.max(0, Math.min(1, value || 0)) }
+            'Norm_Weigh_PM10_AreaPollution': { name: 'PM10 Pollution', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'Norm_Weigh_NO2_AreaPollution': { name: 'NO2 Pollution', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) }
         };
 
         // Color scale function
