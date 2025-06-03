@@ -33,6 +33,8 @@ editor: visual
 
 ## Introduction
 
+## Methods
+
 ### Site Selection
 This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
 
@@ -44,9 +46,12 @@ This project will focus on the city of Dresden. In order to provide an answer to
 
 ![Step 3: Remove any unecessary information](images\introduction\STEP3.png)
 
-## Methods
-
 ### MCDA
+
+
+### Typology construction
+
+## Results
 
 #### Quality of Life
 ![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace.jpeg)
@@ -157,10 +162,6 @@ leaflet(tiles_wgs) %>%
           zoom = 12)
 
 ```
-
-### Typology construction
-
-## Results
 
 ## Discussion
 
