@@ -22,7 +22,7 @@
         }
         
         .controls {
-            width: 300px;
+            width: 320px;
             background: white;
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
@@ -103,8 +103,8 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             z-index: 10001;
-            max-width: 800px;
-            width: 90%;
+            max-width: 900px;
+            width: 95%;
             max-height: 80vh;
             overflow-y: auto;
             display: none;
@@ -215,6 +215,22 @@
             font-size: 13px;
             color: #2e7d32;
         }
+
+        .theme-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .theme-btn:hover {
+            background: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -228,38 +244,74 @@
                 </div>
                 
                 <div class="layer-group">
-                    <div class="theme-header">Biodiversity</div>
+                    <div class="theme-header">Biodiversity (BIO)</div>
                     <div class="layer-checkbox">
-                        <input type="checkbox" id="layer-ndvi" data-layer="Norm_NDVI">
+                        <input type="checkbox" id="layer-landscape-quality" data-layer="BIO_LandscapeQuality">
+                        <label for="layer-landscape-quality">Landscape Quality</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-green-blue" data-layer="BIO_GreenBluePercentage">
+                        <label for="layer-green-blue">Green Blue Percentage</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-ndvi" data-layer="BIO_NDVI">
                         <label for="layer-ndvi">NDVI</label>
                     </div>
                     <div class="layer-checkbox">
-                        <input type="checkbox" id="layer-green-blue" data-layer="Green_blue_area_percentage">
-                        <label for="layer-green-blue">Green Blue Area %</label>
+                        <input type="checkbox" id="layer-pm10" data-layer="BIO_PM10">
+                        <label for="layer-pm10">PM10</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-no2" data-layer="BIO_NO2">
+                        <label for="layer-no2">NO2</label>
                     </div>
                 </div>
                 
                 <div class="layer-group">
-                    <div class="theme-header">Quality of Life</div>
+                    <div class="theme-header">Quality of Life (QOL)</div>
                     <div class="layer-checkbox">
-                        <input type="checkbox" id="layer-landscape" data-layer="Landscape_quality_from0-1">
-                        <label for="layer-landscape">Landscape Quality</label>
+                        <input type="checkbox" id="layer-urban-green" data-layer="QOL_VicinityToUrbanGreenSpaces">
+                        <label for="layer-urban-green">Vicinity to Urban Green</label>
                     </div>
                     <div class="layer-checkbox">
-                        <input type="checkbox" id="layer-recreation" data-layer="Norm_weighted_recr">
-                        <label for="layer-recreation">Recreation</label>
+                        <input type="checkbox" id="layer-streams" data-layer="QOL_VicinityToStreams">
+                        <label for="layer-streams">Vicinity to Streams</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-facilities" data-layer="QOL_Facilities">
+                        <label for="layer-facilities">Facilities</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-local-integration" data-layer="QOL_LocalIntegration">
+                        <label for="layer-local-integration">Local Integration</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-stream-distance" data-layer="QOL_CoveredStreamDistance">
+                        <label for="layer-stream-distance">Covered Stream Distance</label>
                     </div>
                 </div>
                 
                 <div class="layer-group">
-                    <div class="theme-header">Climate Adaptation</div>
+                    <div class="theme-header">Climate Adaptation (CLI)</div>
                     <div class="layer-checkbox">
-                        <input type="checkbox" id="layer-pm10" data-layer="Norm_Weigh_PM10_AreaPollution">
-                        <label for="layer-pm10">PM10 Pollution (Norm)</label>
+                        <input type="checkbox" id="layer-infiltration" data-layer="CLI_Infiltration">
+                        <label for="layer-infiltration">Infiltration</label>
                     </div>
                     <div class="layer-checkbox">
-                        <input type="checkbox" id="layer-no2" data-layer="Norm_Weigh_NO2_AreaPollution">
-                        <label for="layer-no2">NO2 Pollution (Norm)</label>
+                        <input type="checkbox" id="layer-soil-storage" data-layer="CLI_SoilStorage">
+                        <label for="layer-soil-storage">Soil Storage</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-urban-trees" data-layer="CLI_UrbanTrees">
+                        <label for="layer-urban-trees">Urban Trees</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-sealing-class" data-layer="CLI_SealingClass">
+                        <label for="layer-sealing-class">Sealing Class</label>
+                    </div>
+                    <div class="layer-checkbox">
+                        <input type="checkbox" id="layer-heat-island" data-layer="CLI_UrbanHeatIsland">
+                        <label for="layer-heat-island">Urban Heat Island</label>
                     </div>
                 </div>
                 
@@ -272,9 +324,9 @@
             
             <div class="control-section">
                 <h3>Theme Views</h3>
-                <button id="view-all" class="theme-btn">View All</button><br><br>
-                <button id="view-biodiversity" class="theme-btn">Biodiversity</button><br><br>
-                <button id="view-quality" class="theme-btn">Quality of Life</button><br><br>
+                <button id="view-all" class="theme-btn">View All</button>
+                <button id="view-biodiversity" class="theme-btn">Biodiversity</button>
+                <button id="view-quality" class="theme-btn">Quality of Life</button>
                 <button id="view-climate" class="theme-btn">Climate Adaptation</button>
             </div>
         </div>
@@ -328,14 +380,28 @@
         let currentChart = null;
         let enabledLayers = new Set(); // Track which layers are enabled
 
-        // Layer definitions
+        // Layer definitions - updated for new GeoJSON structure
         const layerDefinitions = {
-            'Norm_NDVI': { name: 'NDVI', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'Green_blue_area_percentage': { name: 'Green Blue Area %', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'Landscape_quality_from0-1': { name: 'Landscape Quality', theme: 'quality', normalize: value => value === null ? null : Math.max(0, Math.min(1, value)) },
-            'Norm_weighted_recr': { name: 'Recreation', theme: 'quality', normalize: value => value === null ? null : Math.max(0, Math.min(1, value)) },
-            'Norm_Weigh_PM10_AreaPollution': { name: 'PM10 Pollution', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'Norm_Weigh_NO2_AreaPollution': { name: 'NO2 Pollution', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) }
+            // Biodiversity layers
+            'BIO_LandscapeQuality': { name: 'Landscape Quality', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'BIO_GreenBluePercentage': { name: 'Green Blue Percentage', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'BIO_NDVI': { name: 'NDVI', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'BIO_PM10': { name: 'PM10', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'BIO_NO2': { name: 'NO2', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            
+            // Quality of Life layers
+            'QOL_VicinityToUrbanGreenSpaces': { name: 'Vicinity to Urban Green', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_VicinityToStreams': { name: 'Vicinity to Streams', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_Facilities': { name: 'Facilities', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_LocalIntegration': { name: 'Local Integration', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_CoveredStreamDistance': { name: 'Covered Stream Distance', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            
+            // Climate Adaptation layers
+            'CLI_Infiltration': { name: 'Infiltration', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_SoilStorage': { name: 'Soil Storage', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_UrbanTrees': { name: 'Urban Trees', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_SealingClass': { name: 'Sealing Class', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_UrbanHeatIsland': { name: 'Urban Heat Island', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) }
         };
 
         // Color scale function
@@ -409,7 +475,7 @@
                     const displayValue = averageValue !== null ? averageValue.toFixed(3) : 'N/A';
                     
                     // Build popup content showing individual values and average
-                    let popupContent = `<strong>Tile: ${feature.properties.row_col_id}</strong><br>`;
+                    let popupContent = `<strong>Tile ID: ${feature.properties.id}</strong><br>`;
                     
                     if (enabledLayers.size > 1) {
                         popupContent += `<strong>Average: ${getQualityLabel(averageValue)} (${displayValue})</strong><br><br>`;
@@ -444,13 +510,13 @@
             map.addLayer(averageLayer);
         }
 
-        // Load GeoJSON data from the uploaded file
+        // Load GeoJSON data
         async function loadGeoJsonData() {
             try {
-                // Try to read the uploaded file first
+                // Try to read the uploaded file first (assuming it might be uploaded)
                 if (window.fs && window.fs.readFile) {
                     try {
-                        const fileContent = await window.fs.readFile('paste-2.txt', { encoding: 'utf8' });
+                        const fileContent = await window.fs.readFile('Grid_BIO_CLI_QOL.geojson', { encoding: 'utf8' });
                         return JSON.parse(fileContent);
                     } catch (fsError) {
                         console.log('Could not read from uploaded file, trying fetch...');
@@ -458,22 +524,22 @@
                 }
                 
                 // Fallback to fetch for local development
-                const response = await fetch('./tiles.geojson');
+                const response = await fetch('./Grid_BIO_CLI_QOL.geojson');
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}. Make sure tiles.geojson is in the same directory and you're running this through a web server (not file:// protocol)`);
+                    throw new Error(`HTTP error! status: ${response.status}. Make sure Grid_BIO_CLI_QOL.geojson is in the same folder.`);
                 }
                 const data = await response.json();
                 return data;
             } catch (error) {
                 console.error('Error loading GeoJSON:', error);
-                return;
+                throw error;
             }
         }
 
         // Initialize map
         function initializeMap() {
-            // Initialize map centered on Dresden area based on your coordinates
-            map = L.map('map').setView([51.07, 13.59], 12);
+            // Initialize map centered on Dresden area
+            map = L.map('map').setView([51.0776, 13.7741], 12);
             
             // Add base layer
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -580,22 +646,28 @@
             const labels = [];
             const backgroundColors = [];
             
-            // Show all layers in chart (not just enabled ones)
-            Object.keys(layerDefinitions).forEach(layerKey => {
-                const layerDef = layerDefinitions[layerKey];
-                const rawValue = feature.properties[layerKey];
-                const value = layerDef.normalize(rawValue);
-                
-                if (value !== null) {
-                    // Convert to -0.5 to +0.5 range so bars start from center
-                    const centeredValue = value - 0.5;
-                    data.push(centeredValue);
-                    
-                    // Add asterisk to enabled layers
-                    const layerName = enabledLayers.has(layerKey) ? `${layerDef.name} *` : layerDef.name;
-                    labels.push(layerName);
-                    backgroundColors.push(getColor(value));
-                }
+            // Show all layers in chart (not just enabled ones), grouped by theme
+            const themes = ['biodiversity', 'quality', 'climate'];
+            
+            themes.forEach(theme => {
+                Object.keys(layerDefinitions).forEach(layerKey => {
+                    const layerDef = layerDefinitions[layerKey];
+                    if (layerDef.theme === theme) {
+                        const rawValue = feature.properties[layerKey];
+                        const value = layerDef.normalize(rawValue);
+                        
+                        if (value !== null) {
+                            // Convert to -0.5 to +0.5 range so bars start from center
+                            const centeredValue = value - 0.5;
+                            data.push(centeredValue);
+                            
+                            // Add asterisk to enabled layers
+                            const layerName = enabledLayers.has(layerKey) ? `${layerDef.name} *` : layerDef.name;
+                            labels.push(layerName);
+                            backgroundColors.push(getColor(value));
+                        }
+                    }
+                });
             });
 
             // Add average if multiple layers enabled
@@ -668,7 +740,7 @@
                         },
                         title: {
                             display: true,
-                            text: `Tile ${feature.properties.row_col_id} - Environmental Indicators (* = enabled layers)`
+                            text: `Tile ${feature.properties.id} - Environmental Indicators (* = enabled layers)`
                         },
                         tooltip: {
                             callbacks: {
@@ -692,7 +764,7 @@
                 <div>
                     <strong>Error loading data:</strong><br>
                     ${message}<br><br>
-                    Please ensure 'tiles.geojson' is in the same directory as this HTML file.
+                    Please ensure your geojson is in the same directory as this HTML file.
                 </div>
             `;
         }
