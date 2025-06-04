@@ -371,8 +371,8 @@
                 
                 <div class="opacity-control">
                     <label for="opacity-slider">Layer Opacity:</label>
-                    <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="0.7">
-                    <span id="opacity-value">70%</span>
+                    <input type="range" id="opacity-slider" min="0" max="1" step="0.05" value="1.0">
+                    <span id="opacity-value">100%</span>
                 </div>
             </div>
             
@@ -394,71 +394,69 @@
                 <div class="legend-section biodiversity">
                     <h5>Biodiversity</h5>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #c8e6c9;"></div>
+                        <div class="legend-color" style="background: #CFDEC7;"></div>
                         <span>Very Poor</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #a5d6a7;"></div>
+                        <div class="legend-color" style="background: #A3C094;"></div>
                         <span>Poor</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #81c784;"></div>
+                        <div class="legend-color" style="background: #76A261;"></div>
                         <span>Moderate</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #66bb6a;"></div>
+                        <div class="legend-color" style="background: #527141;"></div>
                         <span>Good</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #388e3c;"></div>
+                        <div class="legend-color" style="background: #415240;"></div>
                         <span>Very Good</span>
                     </div>
-                </div>
                 
                 <div class="legend-section quality">
                     <h5>Quality of Life</h5>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #e1bee7;"></div>
+                        <div class="legend-color" style="background: #d9c2df;"></div>
                         <span>Very Poor</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #ce93d8;"></div>
+                        <div class="legend-color" style="background: #bc9cc9;"></div>
                         <span>Poor</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #ba68c8;"></div>
+                        <div class="legend-color" style="background: #9b79ac;"></div>
                         <span>Moderate</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #ab47bc;"></div>
+                        <div class="legend-color" style="background: #8a669a;"></div>
                         <span>Good</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #7b1fa2;"></div>
+                        <div class="legend-color" style="background: #765586;"></div>
                         <span>Very Good</span>
                     </div>
-                </div>
                 
                 <div class="legend-section climate">
                     <h5>Climate Adaptation</h5>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #fff3e0;"></div>
+                        <div class="legend-color" style="background: #fcf6bc;"></div>
                         <span>Very Poor</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #ffe0b2;"></div>
+                        <div class="legend-color" style="background: #fcf39b;"></div>
                         <span>Poor</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #ffcc02;"></div>
+                        <div class="legend-color" style="background: #fde45e;"></div>
                         <span>Moderate</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #ffb300;"></div>
+                        <div class="legend-color" style="background: #fcd500;"></div>
                         <span>Good</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #f57c00;"></div>
+                        <div class="legend-color" style="background: #fbc010;"></div>
                         <span>Very Good</span>
                     </div>
                 </div>
@@ -512,33 +510,33 @@
         // Theme color scales
         const themeColors = {
             biodiversity: {
-                colors: ['#c8e6c9', '#a5d6a7', '#81c784', '#66bb6a', '#388e3c'],
+                colors: ['#CFDEC7', '#A3C094', '#76A261', '#527141', '#415240'],
                 rgb: [
-                    [200, 230, 201],  // Very Poor
-                    [165, 214, 167],  // Poor
-                    [129, 199, 132],  // Moderate
-                    [102, 187, 106],  // Good
-                    [56, 142, 60]     // Very Good
+                    [207, 222, 199],  // Very Poor
+                    [163, 192, 148],  // Poor
+                    [118, 162, 97],   // Moderate
+                    [82, 113, 65],    // Good
+                    [65, 82, 64]      // Very Good
                 ]
             },
             quality: {
-                colors: ['#e1bee7', '#ce93d8', '#ba68c8', '#ab47bc', '#7b1fa2'],
+                colors: ['#d9c2df', '#bc9cc9', '#9b79ac', '#8a669a', '#765586'],
                 rgb: [
-                    [225, 190, 231],  // Very Poor
-                    [206, 147, 216],  // Poor
-                    [186, 104, 200],  // Moderate
-                    [171, 71, 188],   // Good
-                    [123, 31, 162]    // Very Good
+                    [217, 194, 223],  // Very Poor
+                    [188, 156, 201],  // Poor
+                    [155, 121, 172],  // Moderate
+                    [138, 102, 154],  // Good
+                    [118, 85, 134]    // Very Good
                 ]
             },
             climate: {
-                colors: ['#fff3e0', '#ffe0b2', '#ffcc02', '#ffb300', '#f57c00'],
+                colors: ['#fcf6bc', '#fcf39b', '#fde45e', '#fcd500', '#fbc010'],
                 rgb: [
-                    [255, 243, 224],  // Very Poor
-                    [255, 224, 178],  // Poor
-                    [255, 204, 2],    // Moderate
-                    [255, 179, 0],    // Good
-                    [245, 124, 0]     // Very Good
+                    [252, 246, 188],  // Very Poor
+                    [252, 243, 155],  // Poor
+                    [253, 228, 94],   // Moderate
+                    [252, 213, 0],    // Good
+                    [251, 192, 16]    // Very Good
                 ]
             }
         };
