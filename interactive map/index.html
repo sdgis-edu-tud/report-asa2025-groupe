@@ -483,28 +483,28 @@
         let currentChart = null;
         let enabledLayers = new Set(); // Track which layers are enabled
 
-        // Layer definitions - updated for new GeoJSON structure
+        // Layer definitions with weights
         const layerDefinitions = {
-            // Biodiversity layers
-            'BIO_LandscapeQuality': { name: 'Landscape Quality', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'BIO_GreenBluePercentage': { name: 'Green Blue Percentage', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'BIO_NDVI': { name: 'NDVI', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'BIO_PM10': { name: 'PM10', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'BIO_NO2': { name: 'NO2', theme: 'biodiversity', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            // Biodiversity layers with weights
+            'BIO_LandscapeQuality': { name: 'Landscape Quality', theme: 'biodiversity', weight: 0.415/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'BIO_GreenBluePercentage': { name: 'Green Blue Percentage', theme: 'biodiversity', weight: 0.153/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'BIO_NDVI': { name: 'NDVI', theme: 'biodiversity', weight: 0.257/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'BIO_PM10': { name: 'PM10', theme: 'biodiversity', weight: 0.088/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'BIO_NO2': { name: 'NO2', theme: 'biodiversity', weight: 0.088/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
             
-            // Quality of Life layers
-            'QOL_VicinityToUrbanGreenSpaces': { name: 'Vicinity to Urban Green', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'QOL_VicinityToStreams': { name: 'Vicinity to Streams', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'QOL_Facilities': { name: 'Facilities', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'QOL_LocalIntegration': { name: 'Local Integration', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'QOL_CoveredStreamDistance': { name: 'Covered Stream Distance', theme: 'quality', normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            // Quality of Life layers (you can add weights here too if needed)
+            'QOL_VicinityToUrbanGreenSpaces': { name: 'Vicinity to Urban Green', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_VicinityToStreams': { name: 'Vicinity to Streams', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_Facilities': { name: 'Facilities', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_LocalIntegration': { name: 'Local Integration', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_CoveredStreamDistance': { name: 'Covered Stream Distance', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
             
-            // Climate Adaptation layers
-            'CLI_Infiltration': { name: 'Infiltration', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'CLI_SoilStorage': { name: 'Soil Storage', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'CLI_UrbanTrees': { name: 'Urban Trees', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'CLI_SealingClass': { name: 'Sealing Class', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'CLI_UrbanHeatIsland': { name: 'Urban Heat Island', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) }
+            // Climate Adaptation layers (you can add weights here too if needed)
+            'CLI_Infiltration': { name: 'Infiltration', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_SoilStorage': { name: 'Soil Storage', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_UrbanTrees': { name: 'Urban Trees', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_SealingClass': { name: 'Sealing Class', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_UrbanHeatIsland': { name: 'Urban Heat Island', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) }
         };
 
         // Theme color scales
@@ -575,16 +575,13 @@
             return colorScale.rgb[index];
         }
 
-        // Blend colors from multiple themes
+        // Blend colors from multiple themes using weights
         function blendColors(feature) {
             if (enabledLayers.size === 0) return '#cccccc';
             
-            // Group enabled layers by theme
-            const themeValues = {
-                biodiversity: [],
-                quality: [],
-                climate: []
-            };
+            // Calculate weighted values for each enabled layer
+            const layerContributions = [];
+            let totalWeight = 0;
             
             enabledLayers.forEach(layerKey => {
                 const layerDef = layerDefinitions[layerKey];
@@ -592,45 +589,57 @@
                 const normalizedValue = layerDef.normalize(rawValue);
                 
                 if (normalizedValue !== null && normalizedValue !== undefined) {
-                    themeValues[layerDef.theme].push(normalizedValue);
+                    layerContributions.push({
+                        theme: layerDef.theme,
+                        value: normalizedValue,
+                        weight: layerDef.weight
+                    });
+                    totalWeight += layerDef.weight;
                 }
             });
             
-            // Calculate average value for each theme
+            if (layerContributions.length === 0) return '#cccccc';
+            
+            // Group contributions by theme and calculate theme averages
+            const themeData = {};
+            layerContributions.forEach(contrib => {
+                if (!themeData[contrib.theme]) {
+                    themeData[contrib.theme] = { weightedSum: 0, totalWeight: 0 };
+                }
+                themeData[contrib.theme].weightedSum += contrib.value * contrib.weight;
+                themeData[contrib.theme].totalWeight += contrib.weight;
+            });
+            
+            // Calculate weighted average for each theme
             const themeAverages = {};
-            Object.keys(themeValues).forEach(theme => {
-                if (themeValues[theme].length > 0) {
-                    themeAverages[theme] = themeValues[theme].reduce((a, b) => a + b, 0) / themeValues[theme].length;
-                }
+            Object.keys(themeData).forEach(theme => {
+                themeAverages[theme] = themeData[theme].weightedSum / themeData[theme].totalWeight;
             });
             
-            // If only one theme has data, use that theme's color
+            // If only one theme, return that theme's color
             const activeThemes = Object.keys(themeAverages);
             if (activeThemes.length === 1) {
                 return getThemeColor(activeThemes[0], themeAverages[activeThemes[0]]);
             }
             
-            // If multiple themes, blend the colors
-            if (activeThemes.length > 1) {
-                let totalR = 0, totalG = 0, totalB = 0;
-                let count = 0;
-                
-                activeThemes.forEach(theme => {
-                    const rgb = getThemeRGB(theme, themeAverages[theme]);
-                    totalR += rgb[0];
-                    totalG += rgb[1];
-                    totalB += rgb[2];
-                    count++;
-                });
-                
-                const avgR = Math.round(totalR / count);
-                const avgG = Math.round(totalG / count);
-                const avgB = Math.round(totalB / count);
-                
-                return `rgb(${avgR}, ${avgG}, ${avgB})`;
-            }
+            // For multiple themes, blend colors proportionally by their total weights
+            let totalR = 0, totalG = 0, totalB = 0;
             
-            return '#cccccc';
+            activeThemes.forEach(theme => {
+                const themeWeight = themeData[theme].totalWeight;
+                const proportion = themeWeight / totalWeight;
+                const rgb = getThemeRGB(theme, themeAverages[theme]);
+                
+                totalR += rgb[0] * proportion;
+                totalG += rgb[1] * proportion;
+                totalB += rgb[2] * proportion;
+            });
+            
+            const avgR = Math.round(totalR);
+            const avgG = Math.round(totalG);
+            const avgB = Math.round(totalB);
+            
+            return `rgb(${avgR}, ${avgG}, ${avgB})`;
         }
 
         // Get quality label
@@ -647,8 +656,8 @@
         function calculateAverageValue(feature) {
             if (enabledLayers.size === 0) return null;
             
-            let sum = 0;
-            let count = 0;
+            let weightedSum = 0;
+            let totalWeight = 0;
             
             enabledLayers.forEach(layerKey => {
                 const layerDef = layerDefinitions[layerKey];
@@ -656,12 +665,12 @@
                 const normalizedValue = layerDef.normalize(rawValue);
                 
                 if (normalizedValue !== null && normalizedValue !== undefined) {
-                    sum += normalizedValue;
-                    count++;
+                    weightedSum += normalizedValue * layerDef.weight;
+                    totalWeight += layerDef.weight;
                 }
             });
             
-            return count > 0 ? sum / count : null;
+            return totalWeight > 0 ? weightedSum / totalWeight : null;
         }
 
         // Create or update the average layer
