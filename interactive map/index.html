@@ -60,8 +60,22 @@
             color: #555;
             margin-bottom: 8px;
             padding: 5px;
-            background: #f0f0f0;
             border-radius: 3px;
+        }
+        
+        .theme-header.biodiversity {
+            background: #e8f5e8;
+            color: #2d5016;
+        }
+        
+        .theme-header.quality {
+            background: #f3e8f5;
+            color: #4a1a5c;
+        }
+        
+        .theme-header.climate {
+            background: #fff8e1;
+            color: #6d4c00;
         }
         
         .layer-checkbox {
@@ -150,7 +164,7 @@
             position: absolute;
             bottom: 20px;
             right: 20px;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -162,16 +176,39 @@
             color: #333;
         }
         
+        .legend-section {
+            margin-bottom: 15px;
+        }
+        
+        .legend-section h5 {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        .legend-section.biodiversity h5 {
+            color: #2d5016;
+        }
+        
+        .legend-section.quality h5 {
+            color: #4a1a5c;
+        }
+        
+        .legend-section.climate h5 {
+            color: #6d4c00;
+        }
+        
         .legend-item {
             display: flex;
             align-items: center;
-            margin: 5px 0;
+            margin: 3px 0;
+            font-size: 12px;
         }
         
         .legend-color {
-            width: 20px;
-            height: 15px;
-            margin-right: 10px;
+            width: 18px;
+            height: 12px;
+            margin-right: 8px;
             border: 1px solid #ccc;
         }
         
@@ -217,7 +254,6 @@
         }
 
         .theme-btn {
-            background: #4CAF50;
             color: white;
             border: none;
             padding: 8px 16px;
@@ -228,8 +264,24 @@
             margin-bottom: 8px;
         }
 
+        .theme-btn.all {
+            background: #4CAF50;
+        }
+
+        .theme-btn.biodiversity {
+            background: #388e3c;
+        }
+
+        .theme-btn.quality {
+            background: #7b1fa2;
+        }
+
+        .theme-btn.climate {
+            background: #f57c00;
+        }
+
         .theme-btn:hover {
-            background: #45a049;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -240,11 +292,11 @@
                 <h3>Layer Controls</h3>
                 
                 <div class="average-info">
-                    <strong>Note:</strong> When multiple layers are selected, tiles show the average value of all enabled layers.
+                    <strong>Note:</strong> When multiple layers from different themes are selected, colors will blend. Single theme selections show pure theme colors.
                 </div>
                 
                 <div class="layer-group">
-                    <div class="theme-header">Biodiversity (BIO)</div>
+                    <div class="theme-header biodiversity">Biodiversity (BIO)</div>
                     <div class="layer-checkbox">
                         <input type="checkbox" id="layer-landscape-quality" data-layer="BIO_LandscapeQuality">
                         <label for="layer-landscape-quality">Landscape Quality</label>
@@ -268,7 +320,7 @@
                 </div>
                 
                 <div class="layer-group">
-                    <div class="theme-header">Quality of Life (QOL)</div>
+                    <div class="theme-header quality">Quality of Life (QOL)</div>
                     <div class="layer-checkbox">
                         <input type="checkbox" id="layer-urban-green" data-layer="QOL_VicinityToUrbanGreenSpaces">
                         <label for="layer-urban-green">Vicinity to Urban Green</label>
@@ -292,7 +344,7 @@
                 </div>
                 
                 <div class="layer-group">
-                    <div class="theme-header">Climate Adaptation (CLI)</div>
+                    <div class="theme-header climate">Climate Adaptation (CLI)</div>
                     <div class="layer-checkbox">
                         <input type="checkbox" id="layer-infiltration" data-layer="CLI_Infiltration">
                         <label for="layer-infiltration">Infiltration</label>
@@ -324,10 +376,10 @@
             
             <div class="control-section">
                 <h3>Theme Views</h3>
-                <button id="view-all" class="theme-btn">View All</button>
-                <button id="view-biodiversity" class="theme-btn">Biodiversity</button>
-                <button id="view-quality" class="theme-btn">Quality of Life</button>
-                <button id="view-climate" class="theme-btn">Climate Adaptation</button>
+                <button id="view-all" class="theme-btn all">View All</button>
+                <button id="view-biodiversity" class="theme-btn biodiversity">Biodiversity</button>
+                <button id="view-quality" class="theme-btn quality">Quality of Life</button>
+                <button id="view-climate" class="theme-btn climate">Climate Adaptation</button>
             </div>
         </div>
         
@@ -336,26 +388,77 @@
                 <div class="loading" id="loading">Loading map data...</div>
             </div>
             <div class="legend">
-                <h4>Value Scale</h4>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #d73027;"></div>
-                    <span>Very Poor (0.0-0.2)</span>
+                <h4>Color Scales</h4>
+                <div class="legend-section biodiversity">
+                    <h5>Biodiversity</h5>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #c8e6c9;"></div>
+                        <span>Very Poor</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #a5d6a7;"></div>
+                        <span>Poor</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #81c784;"></div>
+                        <span>Moderate</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #66bb6a;"></div>
+                        <span>Good</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #388e3c;"></div>
+                        <span>Very Good</span>
+                    </div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #fc8d59;"></div>
-                    <span>Poor (0.2-0.4)</span>
+                
+                <div class="legend-section quality">
+                    <h5>Quality of Life</h5>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e1bee7;"></div>
+                        <span>Very Poor</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ce93d8;"></div>
+                        <span>Poor</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ba68c8;"></div>
+                        <span>Moderate</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ab47bc;"></div>
+                        <span>Good</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #7b1fa2;"></div>
+                        <span>Very Good</span>
+                    </div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #fee08b;"></div>
-                    <span>Moderate (0.4-0.6)</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #91cf60;"></div>
-                    <span>Good (0.6-0.8)</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #4575b4;"></div>
-                    <span>Very Good (0.8-1.0)</span>
+                
+                <div class="legend-section climate">
+                    <h5>Climate Adaptation</h5>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #fff3e0;"></div>
+                        <span>Very Poor</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ffe0b2;"></div>
+                        <span>Poor</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ffcc02;"></div>
+                        <span>Moderate</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ffb300;"></div>
+                        <span>Good</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #f57c00;"></div>
+                        <span>Very Good</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -404,14 +507,130 @@
             'CLI_UrbanHeatIsland': { name: 'Urban Heat Island', theme: 'climate', normalize: value => Math.max(0, Math.min(1, value || 0)) }
         };
 
-        // Color scale function
-        function getColor(value) {
+        // Theme color scales
+        const themeColors = {
+            biodiversity: {
+                colors: ['#c8e6c9', '#a5d6a7', '#81c784', '#66bb6a', '#388e3c'],
+                rgb: [
+                    [200, 230, 201],  // Very Poor
+                    [165, 214, 167],  // Poor
+                    [129, 199, 132],  // Moderate
+                    [102, 187, 106],  // Good
+                    [56, 142, 60]     // Very Good
+                ]
+            },
+            quality: {
+                colors: ['#e1bee7', '#ce93d8', '#ba68c8', '#ab47bc', '#7b1fa2'],
+                rgb: [
+                    [225, 190, 231],  // Very Poor
+                    [206, 147, 216],  // Poor
+                    [186, 104, 200],  // Moderate
+                    [171, 71, 188],   // Good
+                    [123, 31, 162]    // Very Good
+                ]
+            },
+            climate: {
+                colors: ['#fff3e0', '#ffe0b2', '#ffcc02', '#ffb300', '#f57c00'],
+                rgb: [
+                    [255, 243, 224],  // Very Poor
+                    [255, 224, 178],  // Poor
+                    [255, 204, 2],    // Moderate
+                    [255, 179, 0],    // Good
+                    [245, 124, 0]     // Very Good
+                ]
+            }
+        };
+
+        // Get color for a specific theme and value
+        function getThemeColor(theme, value) {
             if (value === null || value === undefined) return '#cccccc';
-            if (value < 0.2) return '#d73027';
-            if (value < 0.4) return '#fc8d59';
-            if (value < 0.6) return '#fee08b';
-            if (value < 0.8) return '#91cf60';
-            return '#4575b4';
+            
+            const colorScale = themeColors[theme];
+            if (!colorScale) return '#cccccc';
+            
+            let index;
+            if (value < 0.2) index = 0;
+            else if (value < 0.4) index = 1;
+            else if (value < 0.6) index = 2;
+            else if (value < 0.8) index = 3;
+            else index = 4;
+            
+            return colorScale.colors[index];
+        }
+
+        // Get RGB color for blending
+        function getThemeRGB(theme, value) {
+            if (value === null || value === undefined) return [204, 204, 204];
+            
+            const colorScale = themeColors[theme];
+            if (!colorScale) return [204, 204, 204];
+            
+            let index;
+            if (value < 0.2) index = 0;
+            else if (value < 0.4) index = 1;
+            else if (value < 0.6) index = 2;
+            else if (value < 0.8) index = 3;
+            else index = 4;
+            
+            return colorScale.rgb[index];
+        }
+
+        // Blend colors from multiple themes
+        function blendColors(feature) {
+            if (enabledLayers.size === 0) return '#cccccc';
+            
+            // Group enabled layers by theme
+            const themeValues = {
+                biodiversity: [],
+                quality: [],
+                climate: []
+            };
+            
+            enabledLayers.forEach(layerKey => {
+                const layerDef = layerDefinitions[layerKey];
+                const rawValue = feature.properties[layerKey];
+                const normalizedValue = layerDef.normalize(rawValue);
+                
+                if (normalizedValue !== null && normalizedValue !== undefined) {
+                    themeValues[layerDef.theme].push(normalizedValue);
+                }
+            });
+            
+            // Calculate average value for each theme
+            const themeAverages = {};
+            Object.keys(themeValues).forEach(theme => {
+                if (themeValues[theme].length > 0) {
+                    themeAverages[theme] = themeValues[theme].reduce((a, b) => a + b, 0) / themeValues[theme].length;
+                }
+            });
+            
+            // If only one theme has data, use that theme's color
+            const activeThemes = Object.keys(themeAverages);
+            if (activeThemes.length === 1) {
+                return getThemeColor(activeThemes[0], themeAverages[activeThemes[0]]);
+            }
+            
+            // If multiple themes, blend the colors
+            if (activeThemes.length > 1) {
+                let totalR = 0, totalG = 0, totalB = 0;
+                let count = 0;
+                
+                activeThemes.forEach(theme => {
+                    const rgb = getThemeRGB(theme, themeAverages[theme]);
+                    totalR += rgb[0];
+                    totalG += rgb[1];
+                    totalB += rgb[2];
+                    count++;
+                });
+                
+                const avgR = Math.round(totalR / count);
+                const avgG = Math.round(totalG / count);
+                const avgB = Math.round(totalB / count);
+                
+                return `rgb(${avgR}, ${avgG}, ${avgB})`;
+            }
+            
+            return '#cccccc';
         }
 
         // Get quality label
@@ -461,9 +680,8 @@
             // Create new averaged layer
             averageLayer = L.geoJSON(geoJsonData, {
                 style: function(feature) {
-                    const averageValue = calculateAverageValue(feature);
                     return {
-                        fillColor: getColor(averageValue),
+                        fillColor: blendColors(feature),
                         weight: 1,
                         opacity: 1,
                         color: 'white',
@@ -512,34 +730,17 @@
 
         // Load GeoJSON data
         async function loadGeoJsonData() {
-            try {
-                // Try to read the uploaded file first (assuming it might be uploaded)
-                if (window.fs && window.fs.readFile) {
-                    try {
-                        const fileContent = await window.fs.readFile('Grid_BIO_CLI_QOL.geojson', { encoding: 'utf8' });
-                        return JSON.parse(fileContent);
-                    } catch (fsError) {
-                        console.log('Could not read from uploaded file, trying fetch...');
-                    }
-                }
-                
-                // Fallback to fetch for local development
-                const response = await fetch('./Grid_BIO_CLI_QOL.geojson');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}. Make sure Grid_BIO_CLI_QOL.geojson is in the same folder.`);
-                }
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.error('Error loading GeoJSON:', error);
-                throw error;
+            const response = await fetch('./Grid_BIO_CLI_QOL.geojson');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+            return await response.json();
         }
 
         // Initialize map
         function initializeMap() {
-            // Initialize map centered on Dresden area
-            map = L.map('map').setView([51.0776, 13.7741], 12);
+            // Initialize map centered on Dresden
+            map = L.map('map').setView([51.077629479, 13.77415727], 12);
             
             // Add base layer
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -797,27 +998,13 @@
 
         // Initialize everything
         async function init() {
-            try {
-                // Initialize map first
-                initializeMap();
-                
-                // Load GeoJSON data
-                geoJsonData = await loadGeoJsonData();
-                
-                // Hide loading message
-                document.getElementById('loading').style.display = 'none';
-                
-                // Initialize layers and controls
-                initializeLayers();
-                setupControls();
-                styleButtons();
-                
-                console.log('Map initialized successfully with', geoJsonData.features.length, 'features');
-                
-            } catch (error) {
-                console.error('Initialization error:', error);
-                showError(error.message);
-            }
+            initializeMap();
+            geoJsonData = await loadGeoJsonData();
+            document.getElementById('loading').style.display = 'none';
+            initializeLayers();
+            setupControls();
+            styleButtons();
+            console.log('Map initialized successfully with', geoJsonData.features.length, 'features');
         }
 
         // Start initialization when page loads
