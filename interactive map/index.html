@@ -157,7 +157,9 @@
         }
         
         #tileChart {
-            max-height: 400px;
+        width: 300px;      
+        height: 500px;     
+        max-height: none;
         }
         
         .legend {
@@ -737,16 +739,36 @@
             return await response.json();
         }
 
-        // Initialize map
+        // Initialise the map, and add some baselayers + options to change em.
         function initializeMap() {
-            // Initialize map centered on Dresden
             map = L.map('map').setView([51.077629479, 13.77415727], 12);
-            
-            // Add base layer
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
+
+            const apiKey = 'FoqnDjuBABFeZarLPrlv';
+
+            const baseLayers = {
+                "OSM Standard": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }),
+                "OSM Humanitarian": L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors, Humanitarian style'
+                }),
+                "MapTiler Basic": L.tileLayer(`https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=${apiKey}`, {
+                    attribution: '&copy; MapTiler'
+                }),
+                "Positron": L.tileLayer(`https://api.maptiler.com/maps/positron/{z}/{x}/{y}.png?key=${apiKey}`, {
+                    attribution: '&copy; MapTiler'
+                }),
+            };
+
+            // Add default base layer
+            baseLayers["Positron"].addTo(map);
+
+            // Add layer control
+            L.control.layers(baseLayers).addTo(map);
         }
+
+
+
 
         // Initialize layers (fit bounds)
         function initializeLayers() {
@@ -865,7 +887,7 @@
                             // Add asterisk to enabled layers
                             const layerName = enabledLayers.has(layerKey) ? `${layerDef.name} *` : layerDef.name;
                             labels.push(layerName);
-                            backgroundColors.push(getColor(value));
+                            backgroundColors.push(getThemeColor(theme, value));
                         }
                     }
                 });
@@ -877,7 +899,7 @@
                 if (avgValue !== null) {
                     const centeredAvgValue = avgValue - 0.5;
                     data.push(centeredAvgValue);
-                    labels.push('AVERAGE');
+                    labels.push('Average');
                     backgroundColors.push('#333333'); // Dark color for average
                 }
             }
