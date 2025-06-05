@@ -1063,21 +1063,26 @@
             const grid = document.getElementById('triangleGrid');
             if (!grid) return;
             
-            const gridSize = 8; // Smaller grid for compact legend
-            const cellSize = 11;
+            const gridSize = 12; // Smaller grid for compact legend
+            const cellSize = 12;
             const spacing = 13;
             
+            // Calculate actual triangle dimensions
             const triangleWidth = (gridSize - 1) * spacing;
             const triangleHeight = (gridSize - 1) * (spacing * 0.95);
             
-            const offsetX = (160 - triangleWidth) / 2 - 6;
-            const offsetY = (138 - triangleHeight) / 2;
+            // Center the triangle within the 160x138 container
+            const containerWidth = 160;
+            const containerHeight = 138;
+            const offsetX = (containerWidth - triangleWidth) / 2 + 15; // Add 15px to move right
+            const offsetY = (containerHeight - triangleHeight) / 2 + 15;
             
             for (let row = 0; row < gridSize; row++) {
                 for (let col = 0; col <= row; col++) {
                     const cell = document.createElement('div');
                     cell.className = 'triangle-cell';
                     
+                    // Position each cell relative to the centered triangle
                     const x = offsetX + (col * spacing) + ((gridSize - 1 - row) * spacing / 2);
                     const y = offsetY + (row * spacing * 0.95);
                     
