@@ -162,6 +162,32 @@
         max-height: none;
         }
         
+        .triangle-cell {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            border: 1px solid rgba(255,255,255,0.4);
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .triangle-cell:hover {
+            transform: scale(1.2);
+            border: 1px solid rgba(0,0,0,0.5);
+            z-index: 10;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .scale-segment {
+            flex: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .scale-segment:hover {
+            transform: scaleY(1.1);
+        }
+
         .legend {
             position: absolute;
             bottom: 20px;
@@ -171,6 +197,9 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             z-index: 1000;
+            width: 220px; /* Fixed width */
+            max-height: calc(100vh - 100px); /* Prevent scrollbar */
+            overflow: visible;
         }
         
         .legend h4 {
@@ -390,76 +419,51 @@
                 <div class="loading" id="loading">Loading map data...</div>
             </div>
             <div class="legend">
-                <h4>Color Scales</h4>
-                <div class="legend-section biodiversity">
-                    <h5>Biodiversity</h5>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #CFDEC7;"></div>
-                        <span>Very Poor</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #A3C094;"></div>
-                        <span>Poor</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #76A261;"></div>
-                        <span>Moderate</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #527141;"></div>
-                        <span>Good</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #415240;"></div>
-                        <span>Very Good</span>
-                    </div>
+                <h4 style="margin: 0 0 15px 0; color: #333; text-align: center; font-size: 14px;">Trivariate Legend</h4>
                 
-                <div class="legend-section quality">
-                    <h5>Quality of Life</h5>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #d9c2df;"></div>
-                        <span>Very Poor</span>
+                <div class="triangle-container" style="position: relative; width: 200px; height: 173px; margin: 0 auto 20px;">
+                    <div class="triangle-grid" id="triangleGrid" style="position: relative; width: 160px; height: 138px;"></div>
+                    <div class="corner-label biodiversity-label" style="position: absolute; top: -5px; left: 50%; transform: translateX(-50%); font-size: 10px; font-weight: bold; color: #2d5016; background: rgba(255,255,255,0.9); padding: 3px 6px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                        BIO
                     </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #bc9cc9;"></div>
-                        <span>Poor</span>
+                    <div class="corner-label quality-label" style="position: absolute; bottom: -8px; left: -8px; font-size: 10px; font-weight: bold; color: #4a2c54; background: rgba(255,255,255,0.9); padding: 3px 6px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                        QOL
                     </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #9b79ac;"></div>
-                        <span>Moderate</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #8a669a;"></div>
-                        <span>Good</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #765586;"></div>
-                        <span>Very Good</span>
-                    </div>
-                
-                <div class="legend-section climate">
-                    <h5>Climate Adaptation</h5>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #fcf6bc;"></div>
-                        <span>Very Poor</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #fcf39b;"></div>
-                        <span>Poor</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #fde45e;"></div>
-                        <span>Moderate</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #fcd500;"></div>
-                        <span>Good</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #fbc010;"></div>
-                        <span>Very Good</span>
+                    <div class="corner-label climate-label" style="position: absolute; bottom: -8px; right: -8px; font-size: 10px; font-weight: bold; color: #b8940a; background: rgba(255,255,255,0.9); padding: 3px 6px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                        CLI
                     </div>
                 </div>
+                
+                <div class="individual-scales" style="margin-top: 15px;">
+                    <div class="scale-item" style="margin-bottom: 12px;">
+                        <div class="scale-title" style="font-size: 11px; font-weight: bold; color: #2d5016; margin-bottom: 4px; text-align: center;">Biodiversity</div>
+                        <div class="scale-bar" id="biodiversityScale" style="display: flex; height: 12px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+                        <div class="scale-labels" style="display: flex; justify-content: space-between; margin-top: 3px; font-size: 9px; color: #666;">
+                            <span>Low</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scale-item" style="margin-bottom: 12px;">
+                        <div class="scale-title" style="font-size: 11px; font-weight: bold; color: #4a2c54; margin-bottom: 4px; text-align: center;">Quality of Life</div>
+                        <div class="scale-bar" id="qualityScale" style="display: flex; height: 12px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+                        <div class="scale-labels" style="display: flex; justify-content: space-between; margin-top: 3px; font-size: 9px; color: #666;">
+                            <span>Low</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scale-item">
+                        <div class="scale-title" style="font-size: 11px; font-weight: bold; color: #b8940a; margin-bottom: 4px; text-align: center;">Climate Adaptation</div>
+                        <div class="scale-bar" id="climateScale" style="display: flex; height: 12px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+                        <div class="scale-labels" style="display: flex; justify-content: space-between; margin-top: 3px; font-size: 9px; color: #666;">
+                            <span>Low</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tooltip" id="legend-tooltip" style="position: absolute; background: rgba(0,0,0,0.9); color: white; padding: 6px 8px; border-radius: 4px; font-size: 10px; pointer-events: none; z-index: 1001; opacity: 0; transition: opacity 0.2s ease; white-space: nowrap;"></div>
             </div>
         </div>
     </div>
@@ -999,6 +1003,155 @@
             `;
         }
 
+        const legendThemeColors = {
+            biodiversity: {
+                colors: ['#E8F0E1', '#BFD5AD', '#8FB07A', '#659152', '#3A5230'],
+                rgb: [
+                    [232, 240, 225], [191, 213, 173], [143, 176, 122], [101, 145, 82], [58, 82, 48]
+                ]
+            },
+            quality: {
+                colors: ['#EDE4EF', '#D4C7D9', '#BA9FC3', '#A075AD', '#79428C'],
+                rgb: [
+                    [237, 228, 239], [212, 199, 217], [186, 159, 195], [160, 117, 173], [121, 66, 140]
+                ]
+            },
+            climate: {
+                colors: ['#FEF9D6', '#FCF1B2', '#FCE88E', '#FDDF6A', '#FBD234'],
+                rgb: [
+                    [254, 249, 214], [252, 241, 178], [252, 232, 142], [253, 223, 106], [251, 210, 52]
+                ]
+            }
+        };
+
+        function mixColorsForLegend(bioValue, qualValue, climValue) {
+            // Use continuous values to interpolate between color stops
+            function interpolateColor(value, colorArray) {
+                value = Math.max(0, Math.min(1, value));
+                const scaledValue = value * (colorArray.length - 1);
+                const lowerIndex = Math.floor(scaledValue);
+                const upperIndex = Math.min(lowerIndex + 1, colorArray.length - 1);
+                const factor = scaledValue - lowerIndex;
+                
+                const lowerColor = colorArray[lowerIndex];
+                const upperColor = colorArray[upperIndex];
+                
+                return [
+                    Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * factor),
+                    Math.round(lowerColor[1] + (upperColor[1] - lowerColor[1]) * factor),
+                    Math.round(lowerColor[2] + (upperColor[2] - lowerColor[2]) * factor)
+                ];
+            }
+            
+            const bioRGB = interpolateColor(bioValue, legendThemeColors.biodiversity.rgb);
+            const qualRGB = interpolateColor(qualValue, legendThemeColors.quality.rgb);
+            const climRGB = interpolateColor(climValue, legendThemeColors.climate.rgb);
+            
+            const total = bioValue + qualValue + climValue + 0.1;
+            const bioWeight = bioValue / total;
+            const qualWeight = qualValue / total;
+            const climWeight = climValue / total;
+            
+            const r = Math.min(255, Math.round(bioRGB[0] * bioWeight + qualRGB[0] * qualWeight + climRGB[0] * climWeight));
+            const g = Math.min(255, Math.round(bioRGB[1] * bioWeight + qualRGB[1] * qualWeight + climRGB[1] * climWeight));
+            const b = Math.min(255, Math.round(bioRGB[2] * bioWeight + qualRGB[2] * qualWeight + climRGB[2] * climWeight));
+            
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function createTriangleGrid() {
+            const grid = document.getElementById('triangleGrid');
+            if (!grid) return;
+            
+            const gridSize = 8; // Smaller grid for compact legend
+            const cellSize = 11;
+            const spacing = 13;
+            
+            const triangleWidth = (gridSize - 1) * spacing;
+            const triangleHeight = (gridSize - 1) * (spacing * 0.95);
+            
+            const offsetX = (160 - triangleWidth) / 2 - 6;
+            const offsetY = (138 - triangleHeight) / 2;
+            
+            for (let row = 0; row < gridSize; row++) {
+                for (let col = 0; col <= row; col++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'triangle-cell';
+                    
+                    const x = offsetX + (col * spacing) + ((gridSize - 1 - row) * spacing / 2);
+                    const y = offsetY + (row * spacing * 0.95);
+                    
+                    cell.style.left = x + 'px';
+                    cell.style.top = y + 'px';
+                    
+                    const totalRows = gridSize - 1;
+                    const bioValue = 1 - (row / totalRows);
+                    const qualValue = row === 0 ? 0 : (1 - (col / row)) * (row / totalRows);
+                    const climValue = row === 0 ? 0 : (col / row) * (row / totalRows);
+                    
+                    cell.style.backgroundColor = mixColorsForLegend(bioValue, qualValue, climValue);
+                    
+                    cell.addEventListener('mouseenter', (e) => showLegendTooltip(e, bioValue, qualValue, climValue));
+                    cell.addEventListener('mouseleave', hideLegendTooltip);
+                    cell.addEventListener('mousemove', moveLegendTooltip);
+                    
+                    grid.appendChild(cell);
+                }
+            }
+        }
+
+        function showLegendTooltip(e, bio, qual, clim) {
+            const tooltip = document.getElementById('legend-tooltip');
+            if (!tooltip) return;
+            
+            const bioPercent = Math.round(bio * 100);
+            const qualPercent = Math.round(qual * 100);
+            const climPercent = Math.round(clim * 100);
+            
+            tooltip.innerHTML = `
+                <strong>Values:</strong><br>
+                Bio: ${bioPercent}%<br>
+                QOL: ${qualPercent}%<br>
+                CLI: ${climPercent}%
+            `;
+            tooltip.style.opacity = '1';
+            moveLegendTooltip(e);
+        }
+
+        function hideLegendTooltip() {
+            const tooltip = document.getElementById('legend-tooltip');
+            if (tooltip) tooltip.style.opacity = '0';
+        }
+
+        function moveLegendTooltip(e) {
+            const tooltip = document.getElementById('legend-tooltip');
+            if (!tooltip) return;
+            
+            const legendContainer = document.querySelector('.legend');
+            const rect = legendContainer.getBoundingClientRect();
+            
+            // Position relative to legend container
+            const x = e.clientX - rect.left + 10;
+            const y = e.clientY - rect.top - 10;
+            
+            tooltip.style.left = x + 'px';
+            tooltip.style.top = y + 'px';
+        }
+
+        function createIndividualScales() {
+            ['biodiversity', 'quality', 'climate'].forEach(theme => {
+                const scale = document.getElementById(theme + 'Scale');
+                if (scale) {
+                    legendThemeColors[theme].colors.forEach(color => {
+                        const segment = document.createElement('div');
+                        segment.className = 'scale-segment';
+                        segment.style.backgroundColor = color;
+                        scale.appendChild(segment);
+                    });
+                }
+            });
+        }
+
         // Make showTileChart globally available
         window.showTileChart = showTileChart;
 
@@ -1033,6 +1186,8 @@
             initializeLayers();
             setupControls();
             styleButtons();
+            createTriangleGrid();
+            createIndividualScales();
             console.log('Map initialized successfully with', geoJsonData.features.length, 'features');
         }
 
