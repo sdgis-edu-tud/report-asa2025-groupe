@@ -22,12 +22,12 @@ format:
 editor: visual
 ---
 
-| Name                   | Affiliation     | Role                               |
-|------------------------|-----------------|------------------------------------|
-| Daan Schlosser         | MSc Geomatics   | Project coordinator & data-analyst |
-| Joost Bastiaansen      | MSc Urbanism    | Mapping specialist                 |
-| Aparnaa Chandrasekaran | MSc Urbanism    | Research lead                      |
-| Teun van Dijk          | MSc Urbanism    | Presentation & design lead         |
+| Name                   | Affiliation   | Role                               |
+|----------------------|------------------|---------------------------------|
+| Daan Schlosser         | MSc Geomatics | Project coordinator & data-analyst |
+| Joost Bastiaansen      | MSc Urbanism  | Mapping specialist                 |
+| Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                      |
+| Teun van Dijk          | MSc Urbanism  | Presentation & design lead         |
 
 <br>
 
@@ -36,24 +36,23 @@ editor: visual
 ## Methods
 
 ### Site Selection
+
 This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
 
 ![Step 1: A 500 by 500 metres grid covering Dresden](images\introduction\STEP1.png)
 
-
 ![Step 2: Overlay with streams](images\introduction\STEP2.png)
-
 
 ![Step 3: Remove any unecessary information](images\introduction\STEP3.png)
 
 ### MCDA
 
-
 ### Typology construction
 
 ## Results
 
-#### Quality of Life
+### Quality of Life
+
 ![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace.jpeg)
 ![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace_Grid.jpeg)
 ![Mental Health: Vicinity to Stream](images\quality_of_life\VicinityToStream.jpeg)
@@ -64,106 +63,42 @@ This project will focus on the city of Dresden. In order to provide an answer to
 ![Accessibility: Local Integration](images\quality_of_life\LocalIntegration_Grid.jpeg)
 ![Accessibility: Appearance](images\quality_of_life\Covered.jpeg)
 ![Accessibility: Appearance](images\quality_of_life\Covered_Grid.jpeg)
+![Recreational suitability](images\quality_of_life\RecreationalSuitability.png)
+![Recreational suitability](images\quality_of_life\RecreationalSuitability_Gridded.png)
 
-#### Climate Adaptation
-![Flood Risk: Soil storage](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg)
-![Flood Risk: Soil storage](images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg)
-![Urban Heat Island Effect](images/climate_adaptation/2.1 UHI_ Analysis.jpg)
-![Urban Heat Island Effect](images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg)
-![Green Cover: Green spaces](images/climate_adaptation/3.1 Green cover_ Analysis.jpg)
-![Green Cover: Green spaces](images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg)
-![Green Cover: Urban trees](images/climate_adaptation/4.1 Urban trees_ Analysis.jpg)
-![Green Cover: Urban trees](images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg)
-![Infiltration: Seepage Properties](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg)
-![Infiltration: Seepage Properties](images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg)
-![Infiltration: Sealing Class](images/climate_adaptation/6.1 Sealin_ Analysis.jpg)
-![Infiltration: Sealing Class](images/climate_adaptation/6.2 Sealin_ MCDA Grid.jpg)
-![MCDA Weightage](images/climate_adaptation/Climate Adaptation_ Saaty Matrix.jpg)
+### Climate Adaptation
+
+![Flood Risk: Soil storage](images/climate_adaptation/1.1%20Flood%20risk_%20Analysis.jpg)
+![Flood Risk: Soil storage](images/climate_adaptation/1.2%20Flood%20risk_%20MCDA%20Grid.jpg)
+![Urban Heat Island Effect](images/climate_adaptation/2.1%20UHI_%20Analysis.jpg)
+![Urban Heat Island Effect](images/climate_adaptation/2.2%20UHI_%20MCDA%20Grid.jpg)
+![Green Cover: Green spaces](images/climate_adaptation/3.1%20Green%20cover_%20Analysis.jpg)
+![Green Cover: Green spaces](images/climate_adaptation/3.2%20Green%20cover_%20MCDA%20Grid.jpg)
+![Green Cover: Urban trees](images/climate_adaptation/4.1%20Urban%20trees_%20Analysis.jpg)
+![Green Cover: Urban trees](images/climate_adaptation/4.2%20Urban%20trees_%20MCDA%20Grid.jpg)
+![Infiltration: Seepage Properties](images/climate_adaptation/5.1%20Infiltration%20properties_%20Analysis.jpg)
+![Infiltration: Seepage Properties](images/climate_adaptation/5.2%20Infiltration%20properties_%20MCDA%20Grid.jpg)
+![Infiltration: Sealing Class](images/climate_adaptation/6.1%20Sealin_%20Analysis.jpg)
+![Infiltration: Sealing Class](images/climate_adaptation/6.2%20Sealin_%20MCDA%20Grid.jpg)
+![MCDA Weightage](images/climate_adaptation/Climate%20Adaptation_%20Saaty%20Matrix.jpg)
+
+### Biodiversity
+![PM10](images/biodiversity/PM10.png)
+![PM10 gridded](images/biodiversity/PM10_Gridded.png)
+![NO2](images/biodiversity/NO2.png)
+![NO2 gridded](images/biodiversity/NO2_Gridded.png)
+![NDVI](images/biodiversity/NDVI.png)
+![NDVI gridded](images/biodiversity/NDVI_Gridded.png)
+![Landscape quality](images/biodiversity/LandscapeQuality.png)
+![Landscape quality gridded](images/biodiversity/LandscapeQuality_Gridded.png)
+![Blue green percentage](images/biodiversity/BlueGreenPercentage.png)
+![Blue green percentage gridded](images/biodiversity/BlueGreenPercentage_Gridded.png)
+![Flood risk](images/biodiversity/FloodRisk.png)
+
 
 ### Map Dashboard
-
-```{r leaflet-map, echo=FALSE}
-library(leaflet)
-library(sf)
-
-tiles <- st_read("tiles.geojson", quiet = TRUE)
-tiles_wgs <- st_transform(tiles, 4326)
-
-# Create simple HTML popup with CSS bars
-make_popup <- function(pm10, no2) {
-  center <- 0.5  # moderate
-  # Calculate offset from center (-0.5 to +0.5)
-  pm10_offset <- pm10 - center
-  no2_offset <- no2 - center
-  
-  # Widths: absolute value scaled to 100%
-  pm10_width <- abs(pm10_offset) * 100
-  no2_width <- abs(no2_offset) * 100
-  
-  # Colors: green to red scale depending on direction
-  pm10_color <- ifelse(pm10_offset >= 0, "#2ca02c", "#d62728")  # green if good, red if poor
-  no2_color <- ifelse(no2_offset >= 0, "#2ca02c", "#d62728")
-  
-  html <- paste0(
-    "<div style='width:200px; font-family:sans-serif;'>",
-    "<strong>Pollution Scores</strong><br><br>",
-    
-    # Labels for categories
-    "<div style='display:flex; justify-content: space-between; font-size:10px; margin-bottom:4px;'>",
-    "<span>Very Poor</span><span>Poor</span><span>Moderate</span><span>Good</span><span>Very Good</span>",
-    "</div>",
-    
-    # PM10 bar container
-    "<div style='display:flex; align-items:center; margin-bottom:8px;'>",
-    "<span style='width:40px; font-size:12px;'>PM10</span>",
-    "<div style='position:relative; flex:1; height:20px; background:#ddd;'>",
-    # Center line
-    "<div style='position:absolute; left:50%; top:0; bottom:0; width:2px; background:#555;'></div>",
-    # Bar left or right from center
-    if(pm10_offset < 0) {
-      paste0("<div style='position:absolute; right:50%; width:", pm10_width, "%; height:100%; background:", pm10_color, ";'></div>")
-    } else {
-      paste0("<div style='position:absolute; left:50%; width:", pm10_width, "%; height:100%; background:", pm10_color, ";'></div>")
-    },
-    "</div>",
-    "</div>",
-    
-    # NO2 bar container
-    "<div style='display:flex; align-items:center;'>",
-    "<span style='width:40px; font-size:12px;'>NO2</span>",
-    "<div style='position:relative; flex:1; height:20px; background:#ddd;'>",
-    "<div style='position:absolute; left:50%; top:0; bottom:0; width:2px; background:#555;'></div>",
-    if(no2_offset < 0) {
-      paste0("<div style='position:absolute; right:50%; width:", no2_width, "%; height:100%; background:", no2_color, ";'></div>")
-    } else {
-      paste0("<div style='position:absolute; left:50%; width:", no2_width, "%; height:100%; background:", no2_color, ";'></div>")
-    },
-    "</div>",
-    "</div>",
-    "</div>"
-  )
-  return(html)
-}
-
-popups <- mapply(make_popup, 
-                 tiles_wgs$Norm_Weigh_PM10_AreaPollution, 
-                 tiles_wgs$Norm_Weigh_NO2_AreaPollution, 
-                 SIMPLIFY = FALSE)
-
-leaflet(tiles_wgs) %>%
-  addTiles() %>%
-  addPolygons(
-    fillColor = "blue", color = "black", weight = 1, fillOpacity = 0.5,
-    popup = popups,
-    highlightOptions = highlightOptions(weight = 3, color = "red", bringToFront = TRUE)
-  ) %>%
-  setView(lng = mean(st_coordinates(st_centroid(st_union(tiles_wgs)))[,1]),
-          lat = mean(st_coordinates(st_centroid(st_union(tiles_wgs)))[,2]),
-          zoom = 12)
-
-```
+Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to the directory with the index.html in it, it works. Just need to figure out how to get it directly into our qmd file, haven't looked into that yet.
 
 ## Discussion
 
 ## Conclusion
-
