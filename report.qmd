@@ -39,10 +39,6 @@ editor: visual
 
 This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
 
-![Step 1: A 500 by 500 metres grid covering Dresden](images\introduction\STEP1.png)
-![Step 2: Overlay with streams](images\introduction\STEP2.png)
-![Step 3: Remove any unecessary information](images\introduction\STEP3.png)
-
 ```{r}
 #| echo: false
 library(slickR)
