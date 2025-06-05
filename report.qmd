@@ -40,10 +40,32 @@ editor: visual
 This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
 
 ![Step 1: A 500 by 500 metres grid covering Dresden](images\introduction\STEP1.png)
-
 ![Step 2: Overlay with streams](images\introduction\STEP2.png)
-
 ![Step 3: Remove any unecessary information](images\introduction\STEP3.png)
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+intro_imgs <- list(
+  'Step 1: A 500 by 500 metres grid covering Dresden' = "images/introduction/STEP1.png",
+  'Step 2: Overlay with streams' = "images/introduction/STEP2.png",
+  'Step 3: Remove any unnecessary information' = "images/introduction/STEP3.png"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(intro_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = intro_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'intro')
+)
+```
 
 ### MCDA
 
@@ -53,47 +75,109 @@ This project will focus on the city of Dresden. In order to provide an answer to
 
 ### Quality of Life
 
-![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace.jpeg)
-![Physical Health: Vicinity to Urban Green Space](images\quality_of_life\VicinityToUrbanGreenSpace_Grid.jpeg)
-![Mental Health: Vicinity to Stream](images\quality_of_life\VicinityToStream.jpeg)
-![Mental Health: Vicinity to Stream](images\quality_of_life\VicinityToStream_Grid.jpeg)
-![General Health: Facilities](images\quality_of_life\Facilities.jpeg)
-![General Health: Facilities](images\quality_of_life\Facilities_Grid.jpeg)
-![Accessibility: Local Integration](images\quality_of_life\LocalIntegration.jpeg)
-![Accessibility: Local Integration](images\quality_of_life\LocalIntegration_Grid.jpeg)
-![Accessibility: Appearance](images\quality_of_life\Covered.jpeg)
-![Accessibility: Appearance](images\quality_of_life\Covered_Grid.jpeg)
-![Recreational suitability](images\quality_of_life\RecreationalSuitability.png)
-![Recreational suitability](images\quality_of_life\RecreationalSuitability_Gridded.png)
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+qol_imgs <- list(
+  "Physical Health: Vicinity to Urban Green Space" = "images/quality_of_life/VicinityToUrbanGreenSpace.jpeg",
+  "Physical Health: Vicinity to Urban Green Space (Gridded)" = "images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg",
+  "Mental Health: Vicinity to Stream" = "images/quality_of_life/VicinityToStream.jpeg",
+  "Mental Health: Vicinity to Stream (Gridded)" = "images/quality_of_life/VicinityToStream_Grid.jpeg",
+  "General Health: Facilities" = "images/quality_of_life/Facilities.jpeg",
+  "General Health: Facilities (Gridded)" = "images/quality_of_life/Facilities_Grid.jpeg",
+  "Accessibility: Local Integration" = "images/quality_of_life/LocalIntegration.jpeg",
+  "Accessibility: Local Integration (Gridded)" = "images/quality_of_life/LocalIntegration_Grid.jpeg",
+  "Accessibility: Appearance" = "images/quality_of_life/Covered.jpeg",
+  "Accessibility: Appearance (Gridded)" = "images/quality_of_life/Covered_Grid.jpeg",
+  "Recreational suitability" = "images/quality_of_life/RecreationalSuitability.png",
+  "Recreational suitability (Gridded)" = "images/quality_of_life/RecreationalSuitability_Gridded.png"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(qol_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = qol_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'intro')
+)
+```
+
 
 ### Climate Adaptation
 
-![Flood Risk: Soil storage](images/climate_adaptation/1.1%20Flood%20risk_%20Analysis.jpg)
-![Flood Risk: Soil storage](images/climate_adaptation/1.2%20Flood%20risk_%20MCDA%20Grid.jpg)
-![Urban Heat Island Effect](images/climate_adaptation/2.1%20UHI_%20Analysis.jpg)
-![Urban Heat Island Effect](images/climate_adaptation/2.2%20UHI_%20MCDA%20Grid.jpg)
-![Green Cover: Green spaces](images/climate_adaptation/3.1%20Green%20cover_%20Analysis.jpg)
-![Green Cover: Green spaces](images/climate_adaptation/3.2%20Green%20cover_%20MCDA%20Grid.jpg)
-![Green Cover: Urban trees](images/climate_adaptation/4.1%20Urban%20trees_%20Analysis.jpg)
-![Green Cover: Urban trees](images/climate_adaptation/4.2%20Urban%20trees_%20MCDA%20Grid.jpg)
-![Infiltration: Seepage Properties](images/climate_adaptation/5.1%20Infiltration%20properties_%20Analysis.jpg)
-![Infiltration: Seepage Properties](images/climate_adaptation/5.2%20Infiltration%20properties_%20MCDA%20Grid.jpg)
-![Infiltration: Sealing Class](images/climate_adaptation/6.1%20Sealin_%20Analysis.jpg)
-![Infiltration: Sealing Class](images/climate_adaptation/6.2%20Sealin_%20MCDA%20Grid.jpg)
-![MCDA Weightage](images/climate_adaptation/Climate%20Adaptation_%20Saaty%20Matrix.jpg)
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+climate_imgs <- list(
+  "Flood Risk: Soil storage" = "images/climate_adaptation/1.1 Flood risk_ Analysis.jpg",
+  "Flood Risk: MCDA Grid" = "images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg",
+  "Urban Heat Island Effect" = "images/climate_adaptation/2.1 UHI_ Analysis.jpg",
+  "Urban Heat Island Effect (MCDA Grid)" = "images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg",
+  "Green Cover: Green spaces" = "images/climate_adaptation/3.1 Green cover_ Analysis.jpg",
+  "Green Cover: Green spaces (MCDA Grid)" = "images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg",
+  "Green Cover: Urban trees" = "images/climate_adaptation/4.1 Urban trees_ Analysis.jpg",
+  "Green Cover: Urban trees (MCDA Grid)" = "images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg",
+  "Infiltration: Seepage Properties" = "images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg",
+  "Infiltration: Seepage Properties (MCDA Grid)" = "images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg",
+  "Infiltration: Sealing Class" = "images/climate_adaptation/6.1 Sealin_ Analysis.jpg",
+  "Infiltration: Sealing Class (MCDA Grid)" = "images/climate_adaptation/6.2 Sealin_ MCDA Grid.jpg",
+  "MCDA Weightage" = "images/climate_adaptation/Climate Adaptation_ Saaty Matrix.jpg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(climate_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = climate_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'intro')
+)
+```
 
 ### Biodiversity
-![PM10](images/biodiversity/PM10.png)
-![PM10 gridded](images/biodiversity/PM10_Gridded.png)
-![NO2](images/biodiversity/NO2.png)
-![NO2 gridded](images/biodiversity/NO2_Gridded.png)
-![NDVI](images/biodiversity/NDVI.png)
-![NDVI gridded](images/biodiversity/NDVI_Gridded.png)
-![Landscape quality](images/biodiversity/LandscapeQuality.png)
-![Landscape quality gridded](images/biodiversity/LandscapeQuality_Gridded.png)
-![Blue green percentage](images/biodiversity/BlueGreenPercentage.png)
-![Blue green percentage gridded](images/biodiversity/BlueGreenPercentage_Gridded.png)
-![Flood risk](images/biodiversity/FloodRisk.png)
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+biodiversity_imgs <- list(
+  "PM10" = "images/biodiversity/PM10.png",
+  "PM10 gridded" = "images/biodiversity/PM10_Gridded.png",
+  "NO2" = "images/biodiversity/NO2.png",
+  "NO2 gridded" = "images/biodiversity/NO2_Gridded.png",
+  "NDVI" = "images/biodiversity/NDVI.png",
+  "NDVI gridded" = "images/biodiversity/NDVI_Gridded.png",
+  "Landscape quality" = "images/biodiversity/LandscapeQuality.png",
+  "Landscape quality gridded" = "images/biodiversity/LandscapeQuality_Gridded.png",
+  "Blue green percentage" = "images/biodiversity/BlueGreenPercentage.png",
+  "Blue green percentage gridded" = "images/biodiversity/BlueGreenPercentage_Gridded.png",
+  "Flood risk" = "images/biodiversity/FloodRisk.png"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = biodiversity_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'intro')
+)
+```
 
 
 ### Map Dashboard
