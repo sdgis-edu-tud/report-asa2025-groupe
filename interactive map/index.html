@@ -436,29 +436,29 @@
                 
                 <div class="individual-scales" style="margin-top: 15px;">
                     <div class="scale-item" style="margin-bottom: 12px;">
-                        <div class="scale-title" style="font-size: 11px; font-weight: bold; color: #2d5016; margin-bottom: 4px; text-align: center;">Biodiversity</div>
+                        <div class="scale-title" style="font-size: 11px; margin-bottom: 4px; text-align: center;">Biodiversity Index</div>
                         <div class="scale-bar" id="biodiversityScale" style="display: flex; height: 12px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
                         <div class="scale-labels" style="display: flex; justify-content: space-between; margin-top: 3px; font-size: 9px; color: #666;">
-                            <span>Low</span>
-                            <span>High</span>
+                            <span>Very poor</span>
+                            <span>Very good</span>
                         </div>
                     </div>
                     
                     <div class="scale-item" style="margin-bottom: 12px;">
-                        <div class="scale-title" style="font-size: 11px; font-weight: bold; color: #4a2c54; margin-bottom: 4px; text-align: center;">Quality of Life</div>
+                        <div class="scale-title" style="font-size: 11px; margin-bottom: 4px; text-align: center;">Quality of Life Index</div>
                         <div class="scale-bar" id="qualityScale" style="display: flex; height: 12px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
                         <div class="scale-labels" style="display: flex; justify-content: space-between; margin-top: 3px; font-size: 9px; color: #666;">
-                            <span>Low</span>
-                            <span>High</span>
+                            <span>Very poor</span>
+                            <span>Very good</span>
                         </div>
                     </div>
                     
                     <div class="scale-item">
-                        <div class="scale-title" style="font-size: 11px; font-weight: bold; color: #b8940a; margin-bottom: 4px; text-align: center;">Climate Adaptation</div>
+                        <div class="scale-title" style="font-size: 11px; margin-bottom: 4px; text-align: center;">Climate Adaptation Index</div>
                         <div class="scale-bar" id="climateScale" style="display: flex; height: 12px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
                         <div class="scale-labels" style="display: flex; justify-content: space-between; margin-top: 3px; font-size: 9px; color: #666;">
-                            <span>Low</span>
-                            <span>High</span>
+                            <span>Very poor</span>
+                            <span>Very good</span>
                         </div>
                     </div>
                 </div>
@@ -1003,27 +1003,6 @@
             `;
         }
 
-        const legendThemeColors = {
-            biodiversity: {
-                colors: ['#E8F0E1', '#BFD5AD', '#8FB07A', '#659152', '#3A5230'],
-                rgb: [
-                    [232, 240, 225], [191, 213, 173], [143, 176, 122], [101, 145, 82], [58, 82, 48]
-                ]
-            },
-            quality: {
-                colors: ['#EDE4EF', '#D4C7D9', '#BA9FC3', '#A075AD', '#79428C'],
-                rgb: [
-                    [237, 228, 239], [212, 199, 217], [186, 159, 195], [160, 117, 173], [121, 66, 140]
-                ]
-            },
-            climate: {
-                colors: ['#FEF9D6', '#FCF1B2', '#FCE88E', '#FDDF6A', '#FBD234'],
-                rgb: [
-                    [254, 249, 214], [252, 241, 178], [252, 232, 142], [253, 223, 106], [251, 210, 52]
-                ]
-            }
-        };
-
         function mixColorsForLegend(bioValue, qualValue, climValue) {
             // Use continuous values to interpolate between color stops
             function interpolateColor(value, colorArray) {
@@ -1043,9 +1022,9 @@
                 ];
             }
             
-            const bioRGB = interpolateColor(bioValue, legendThemeColors.biodiversity.rgb);
-            const qualRGB = interpolateColor(qualValue, legendThemeColors.quality.rgb);
-            const climRGB = interpolateColor(climValue, legendThemeColors.climate.rgb);
+            const bioRGB = interpolateColor(bioValue, themeColors.biodiversity.rgb);
+            const qualRGB = interpolateColor(qualValue, themeColors.quality.rgb);
+            const climRGB = interpolateColor(climValue, themeColors.climate.rgb);
             
             const total = bioValue + qualValue + climValue + 0.1;
             const bioWeight = bioValue / total;
@@ -1075,7 +1054,7 @@
             const containerWidth = 160;
             const containerHeight = 138;
             const offsetX = (containerWidth - triangleWidth) / 2 + 15; // Add 15px to move right
-            const offsetY = (containerHeight - triangleHeight) / 2 + 15;
+            const offsetY = (containerHeight - triangleHeight) / 2 + 15; // Add 15px to move down
             
             for (let row = 0; row < gridSize; row++) {
                 for (let col = 0; col <= row; col++) {
@@ -1147,7 +1126,7 @@
             ['biodiversity', 'quality', 'climate'].forEach(theme => {
                 const scale = document.getElementById(theme + 'Scale');
                 if (scale) {
-                    legendThemeColors[theme].colors.forEach(color => {
+                    themeColors[theme].colors.forEach(color => {
                         const segment = document.createElement('div');
                         segment.className = 'scale-segment';
                         segment.style.backgroundColor = color;
