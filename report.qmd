@@ -76,8 +76,8 @@ This project will focus on the city of Dresden. In order to provide an answer to
 ![Green Cover: Urban trees](images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg)
 ![Infiltration: Seepage Properties](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg)
 ![Infiltration: Seepage Properties](images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg)
-![Infiltration: Sealing Class](images/climate_adaptation/6.1 Sealin_ Analysis.jpg)
-![Infiltration: Sealing Class](images/climate_adaptation/6.2 Sealin_ MCDA Grid.jpg)
+![Infiltration: Sealing Class](images/climate_adaptation/6.1 Sealing_ Analysis.jpg)
+![Infiltration: Sealing Class](images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg)
 ![MCDA Weightage](images/climate_adaptation/Climate Adaptation_ Saaty Matrix.jpg)
 
 ### Map Dashboard
