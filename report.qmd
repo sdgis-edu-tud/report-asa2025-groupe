@@ -175,10 +175,6 @@ htmltools::div(
 )
 ```
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 55662fa802fa892a0422c9e549856166fe33ba1d
 
 ### Map Dashboard
 Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to the directory with the index.html in it, it works. Just need to figure out how to get it directly into our qmd file, haven't looked into that yet.
