@@ -79,6 +79,8 @@ Apart from natural aspects such as biodiversity and climate adaptation, urban st
 
 #### Vicinity to Urban Green Space
 
+x
+
 ```{r}
 #| echo: false
 library(slickR)
