@@ -71,7 +71,7 @@ htmltools::div(
 
 ### Quality of Life
 
-Quality of life is important because...
+Apart from natural aspects such as biodiversity and climate adaptation, urban streams also exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it is able to improve their mental health (Vert et al., 2020). 
 
 #### Vicinity to Urban Green Space
 
@@ -99,6 +99,9 @@ htmltools::div(
 ```
 
 #### Vicinity to Streams
+
+Vert et al., (2020) proved the positive effect of blue space on mental health. Through conducting an experiment in which subjects were assigned to spend 20 minutes at a selected environment. They either walked through blue or urban space or rested at a control site. General improvements in well-being and mood were found after walking through blue space.
+In order to adapt this to the city of Dresden, a dataset was used containing all addresses of Dresden. An additional layer was made which provided a point every 50 meters along a stream. With the PST, an calculation was made on the amount of points along the stream which could be reached from every address within 500 meters. 
 
 ```{r}
 #| echo: false
@@ -197,6 +200,10 @@ htmltools::div(
   }), slideId = 'Appearance')
 )
 ```
+
+#### Saaty Matrix
+
+![Saaty Matrix Placeholder](images/quality_of_life/placeholder.jpg)
 
 #### Recreational Suitability
 
@@ -394,16 +401,7 @@ library(htmltools)
 
 biodiversity_imgs <- list(
   "PM10" = "images/biodiversity/PM10.png",
-  "PM10 gridded" = "images/biodiversity/PM10_Gridded.png",
-  "NO2" = "images/biodiversity/NO2.png",
-  "NO2 gridded" = "images/biodiversity/NO2_Gridded.png",
-  "NDVI" = "images/biodiversity/NDVI.png",
-  "NDVI gridded" = "images/biodiversity/NDVI_Gridded.png",
-  "Landscape quality" = "images/biodiversity/LandscapeQuality.png",
-  "Landscape quality gridded" = "images/biodiversity/LandscapeQuality_Gridded.png",
-  "Blue green percentage" = "images/biodiversity/BlueGreenPercentage.png",
-  "Blue green percentage gridded" = "images/biodiversity/BlueGreenPercentage_Gridded.png",
-  "Flood risk" = "images/biodiversity/FloodRisk.png"
+  "PM10 gridded" = "images/biodiversity/PM10_Gridded.png"
 )
 htmltools::div(
   style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
@@ -519,9 +517,15 @@ htmltools::div(
 )
 ```
 
+#### Saaty Matrix
+
+![Saaty Matrix Placeholder](images/biodiversity/placeholder.jpg)
+
 ### Map Dashboard
 Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to the directory with the index.html in it, it works. Just need to figure out how to get it directly into our qmd file, haven't looked into that yet.
 
 ## Discussion
 
 ## Conclusion
+
+## Bibliography
