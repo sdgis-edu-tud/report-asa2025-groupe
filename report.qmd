@@ -23,7 +23,7 @@ editor: visual
 ---
 
 | Name                   | Affiliation   | Role                               |
-|----------------------|------------------|---------------------------------|
+|----------------------|-----------------|---------------------------------|
 | Daan Schlosser         | MSc Geomatics | Project coordinator & data-analyst |
 | Joost Bastiaansen      | MSc Urbanism  | Mapping specialist                 |
 | Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                      |
@@ -71,7 +71,7 @@ htmltools::div(
 
 ### Quality of Life
 
-Apart from natural aspects such as biodiversity and climate adaptation, urban streams also exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it is able to improve their mental health (Vert et al., 2020). 
+Apart from natural aspects such as biodiversity and climate adaptation, urban streams also exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it is able to improve their mental health (Vert et al., 2020).
 
 #### Vicinity to Urban Green Space
 
@@ -100,8 +100,7 @@ htmltools::div(
 
 #### Vicinity to Streams
 
-Vert et al., (2020) proved the positive effect of blue space on mental health. Through conducting an experiment in which subjects were assigned to spend 20 minutes at a selected environment. They either walked through blue or urban space or rested at a control site. General improvements in well-being and mood were found after walking through blue space.
-In order to adapt this to the city of Dresden, a dataset was used containing all addresses of Dresden. An additional layer was made which provided a point every 50 meters along a stream. With the PST, an calculation was made on the amount of points along the stream which could be reached from every address within 500 meters. 
+Vert et al., (2020) proved the positive effect of blue space on mental health. Through conducting an experiment in which subjects were assigned to spend 20 minutes at a selected environment. They either walked through blue or urban space or rested at a control site. General improvements in well-being and mood were found after walking through blue space. In order to adapt this to the city of Dresden, a dataset was used containing all addresses of Dresden. An additional layer was made which provided a point every 50 meters along a stream. With the PST, an calculation was made on the amount of points along the stream which could be reached from every address within 500 meters.
 
 ```{r}
 #| echo: false
@@ -386,7 +385,7 @@ htmltools::div(
 
 #### Saaty Matrix
 
-![Saaty Matrix](images/climate_adaptation/Climate Adaptation_ Saaty Matrix.jpg)
+![Saaty Matrix](images/climate_adaptation/Climate%20Adaptation_%20Saaty%20Matrix.jpg)
 
 ### Biodiversity
 
@@ -522,7 +521,251 @@ htmltools::div(
 ![Saaty Matrix Placeholder](images/biodiversity/placeholder.jpg)
 
 ### Map Dashboard
+
 Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to the directory with the index.html in it, it works. Just need to figure out how to get it directly into our qmd file, haven't looked into that yet.
+
+### Overview of the normal distribution of our layers
+To display the distribution of the normalised values for all our layers used in the saaty matrices, we've made a plot which displays these.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#install.packages("sf")
+#install.packages("ggplot2")
+#install.packages("tidyr")
+#install.packages("dplyr")
+
+library(sf)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+# Read the geopackage
+grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg")
+
+# Drop geometry and gather all columns in your specified order
+features <- grids |>
+  st_drop_geometry() |>
+  select(
+    # Individual BIO columns
+    BIO_PM10, BIO_NO2, BIO_GreenBluePercentage, BIO_LandscapeQuality, BIO_NDVI,
+    # Individual QOL columns
+    QOL_VicinityToUrbanGreenSpaces, QOL_VicinityToStreams,
+    QOL_Facilities, QOL_LocalIntegration, QOL_CoveredStreamDistance,
+    # Individual CLI columns
+    CLI_Infiltration, CLI_SealingClass, CLI_SoilStorage, CLI_UrbanHeatIsland, CLI_UrbanTrees
+  ) |>
+  pivot_longer(cols = everything(), names_to = "Feature", values_to = "Value")
+
+# Create a category column and maintain order
+features <- features |>
+  mutate(
+    Category = case_when(
+      grepl("^BIO_", Feature) ~ "Biodiversity",
+      grepl("^QOL_", Feature) ~ "Quality of Life",
+      grepl("^CLI_", Feature) ~ "Climate"
+    ),
+    # Create a cleaner feature name for display
+    Feature_Display = gsub("^(BIO_|QOL_|CLI_)", "", Feature),
+    # Set factor levels to maintain your specified order
+    Feature_Display = factor(Feature_Display, levels = c(
+      "PM10", "NO2", "GreenBluePercentage", "LandscapeQuality", "NDVI",
+      "VicinityToUrbanGreenSpaces", "VicinityToStreams", "Facilities", "LocalIntegration", "CoveredStreamDistance",
+      "Infiltration", "SealingClass", "SoilStorage", "UrbanHeatIsland", "UrbanTrees"
+    ))
+  )
+
+# Separate weighted values for individual plots
+weighted_features <- grids |>
+  st_drop_geometry() |>
+  select(BIO_Weighted, QOL_Weighted, CLI_Weighted) |>
+  pivot_longer(cols = everything(), names_to = "Feature", values_to = "Value") |>
+  mutate(
+    Category = case_when(
+      Feature == "BIO_Weighted" ~ "Biodiversity",
+      Feature == "QOL_Weighted" ~ "Quality of Life",
+      Feature == "CLI_Weighted" ~ "Climate"
+    ),
+    Feature_Display = gsub("_Weighted", " (Weighted)", Feature),
+    Feature_Display = gsub("^(BIO|QOL|CLI)", "\\1", Feature_Display)
+  )
+
+# All features together (individual + weighted)
+all_features <- bind_rows(
+  features |> select(Feature, Value, Category, Feature_Display),
+  weighted_features |> select(Feature, Value, Category, Feature_Display)
+) |>
+  mutate(
+    # Reorder to have weighted at the end of each category row (3 rows x 6 columns)
+    Feature_Display = factor(Feature_Display, levels = c(
+      # Row 1: BIO features + BIO weighted
+      "PM10", "NO2", "GreenBluePercentage", "LandscapeQuality", "NDVI", "BIO (Weighted)",
+      # Row 2: QOL features + QOL weighted
+      "VicinityToUrbanGreenSpaces", "VicinityToStreams", "Facilities", "LocalIntegration", "CoveredStreamDistance", "QOL (Weighted)",
+      # Row 3: CLI features + CLI weighted
+      "Infiltration", "SealingClass", "SoilStorage", "UrbanHeatIsland", "UrbanTrees", "CLI (Weighted)"
+    ))
+  )
+
+ggplot(all_features, aes(x = Value, fill = Category)) +
+  geom_histogram(aes(y = ..density..), bins = 30, color = "black", alpha = 0.7) +
+  geom_density(color = "red", size = 1, fill = NA) +
+  facet_wrap(~Feature_Display, scales = "free", ncol = 6) +
+  scale_fill_manual(values = c("Biodiversity" = "#415240", "Quality of Life" = "#765586", "Climate" = "#fbc010")) +
+  labs(
+    title = "All Features: Individual + Weighted",
+    x = "Normalized Value",
+    y = "Density"
+  ) +
+  theme_minimal() +
+  theme(
+    strip.text = element_text(size = 8),
+    axis.text = element_text(size = 7),
+    legend.position = "bottom"
+  )
+```
+
+### K-means clustering and topology definition
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#install.packages("sf")
+#install.packages("dplyr")
+#install.packages("cluster")
+#install.packages("plotly")
+
+library(sf) # for processing vector data
+library(dplyr) # for selecting and transforming data
+library(cluster) # for the silhouette method
+library(plotly) # for 3D plot of the variables
+
+# getwd()
+
+grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg")
+head(grids)
+
+features <- grids |> select(BIO_Weighted, QOL_Weighted, CLI_Weighted) |> st_drop_geometry()
+X_scaled <- scale(features) # Standardize (mean=0, sd=1)
+
+# ------------------------------------------------------------------------------
+# Defining the parameters and running the elbow and silhouette algorithms
+
+# Define the range of clusters to test
+k_values <- 2:9
+
+# Initialize vectors to store inertia and silhouette scores
+inertia <- numeric(length(k_values))
+silhouette_scores <- numeric(length(k_values))
+
+# Loop through each k value to compute k-means, inertia and silhouette
+for (i in seq_along(k_values)) {
+  k <- k_values[i]
+
+  # Run k-means clustering with 'k' centers and 200 random starts
+  km <- kmeans(X_scaled, centers = k, nstart = 200)
+
+  # Store total within-cluster sum of squares (inertia) for elbow method
+  inertia[i] <- km$tot.withinss
+
+  # Calculate silhouette widths and store average silhouette score
+  ss <- silhouette(km$cluster, dist(X_scaled))
+  silhouette_scores[i] <- mean(ss[, 3])
+}
+
+# Create a data frame of results (optional, for inspection)
+elbow_df <- data.frame(k = k_values, inertia = inertia)
+print(elbow_df)
+
+# ------------------------------------------------------------------------------
+# Plotting the elbow and silhouette algorithm results in the same graph
+
+# Plot inertia on left y-axis
+plot(k_values, inertia,
+     type = "b",
+     col = "darkblue",
+     pch = 16,
+     ylab = "Inertia (Total Within-Cluster Sum of Squares)",
+     xlab = "Number of Clusters (k)",
+     main = "Elbow Method and Silhouette Scores")
+
+grid()
+
+# Overlay silhouette scores on right y-axis
+par(new = TRUE)
+plot(k_values, silhouette_scores,
+     type = "b",
+     col = "darkgreen",
+     pch = 17,
+     axes = FALSE,
+     xlab = "",
+     ylab = "",
+     ylim = c(min(silhouette_scores) * 0.9, max(silhouette_scores) * 1.1))
+
+# Draw right y-axis with color
+axis(side = 4, col = "darkgreen", col.axis = "darkgreen")
+
+# Add right y-axis label with line and color
+mtext("Average Silhouette Width", side = 4, line = 3, col = "darkgreen", cex=0.8)
+
+# Add legend
+legend("topright", legend = c("Inertia", "Silhouette Score"),
+       col = c("darkblue", "darkgreen"), pch = c(16, 17))
+
+# ------------------------------------------------------------------------------
+# Running the k-means clustering
+
+# `set.seed()` sets the random number generator to a fixed state
+# Set the seed so the clustering result is always the same when re-run
+set.seed(0)
+k <- 4 # Number of clusters, chosen based on the elbow plot/silhouette
+kmeans_result <- kmeans(X_scaled, centers = k, nstart = 200) # Run k-means
+grids$cluster <- as.factor(kmeans_result$cluster) # Add the cluster labels to the spatial data
+
+# ------------------------------------------------------------------------------
+# Plotting the k-means clustering results
+
+# Show how many grids fall into each cluster
+head(grids)
+print(table(grids$cluster))
+
+#st_write(grids, "grids_cluster.gpkg")
+
+# Plot clusters with base R
+plot(grids["cluster"], main = "Spatial Pattern of Urban Stream Clusters", border = NA)
+
+# Get the cluster centers (in standardized form)
+scaled_centers <- kmeans_result$centers
+print("Cluster centers (standardized):") # Print them
+print(scaled_centers)
+
+# Convert the centers back to original scale: x * SD + mean
+original_centers <- t(apply(
+  scaled_centers, 1,
+  function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
+))
+print("Cluster centers (original):")
+print(original_centers)
+
+# ------------------------------------------------------------------------------
+# Extra 3D plot using plotly to visualise the 3-dimensional space
+
+# 3D plot using BIO, QOL, CLI weighted values
+plot_ly(
+  x = ~features$BIO_Weighted,
+  y = ~features$QOL_Weighted,
+  z = ~features$CLI_Weighted,
+  color = ~grids$cluster,
+  colors = "Set1",
+  type = "scatter3d",
+  mode = "markers"
+) %>%
+  layout(
+    title = "3D Cluster Plot",
+    scene = list(
+      xaxis = list(title = "BIO_Weighted"),
+      yaxis = list(title = "QOL_Weighted"),
+      zaxis = list(title = "CLI_Weighted")
+    )
+  )
+
+```
+
 
 ## Discussion
 
