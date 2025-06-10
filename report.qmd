@@ -372,8 +372,8 @@ library(slickR)
 library(htmltools)
 
 climate_imgs <- list(
-  "Infiltration: Sealing Class" = "images/climate_adaptation/6.1 Sealin_ Analysis.jpg",
-  "Infiltration: Sealing Class (MCDA Grid)" = "images/climate_adaptation/6.2 Sealin_ MCDA Grid.jpg"
+  "Infiltration: Sealing Class" = "images/climate_adaptation/6.1 Sealing_ Analysis.jpg",
+  "Infiltration: Sealing Class (MCDA Grid)" = "images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg"
 )
 htmltools::div(
   style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
@@ -534,7 +534,8 @@ Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to th
 
 To display the distribution of the normalised values for all our layers used in the saaty matrices, we've made a plot which displays these.
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
+<div style="width:100%; text-align:center;">
+```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=900}
 #install.packages("sf")
 #install.packages("ggplot2")
 #install.packages("tidyr")
@@ -546,7 +547,8 @@ library(tidyr)
 library(dplyr)
 
 # Read the geopackage
-grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg")
+grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg", quiet = TRUE)
+
 
 # Drop geometry and gather all columns in your specified order
 features <- grids |>
@@ -613,25 +615,35 @@ all_features <- bind_rows(
   )
 
 ggplot(all_features, aes(x = Value, fill = Category)) +
-  geom_histogram(aes(y = ..density..), bins = 30, color = "black", alpha = 0.7) +
-  geom_density(color = "red", size = 1, fill = NA) +
-  facet_wrap(~Feature_Display, scales = "free", ncol = 6) +
+  geom_histogram(aes(y = ..density..), bins = 100, color = NA, size = 0.1, alpha = 1) +
+# geom_density(color = "red", size = 0.4, fill = NA) +
+  facet_wrap(~Feature_Display, scales = "free_y", ncol = 6, strip.position = "top") +
+  scale_x_continuous(limits = c(-0.05, 1.05), breaks = c(0, 0.5, 1)) + 
   scale_fill_manual(values = c("Biodiversity" = "#415240", "Quality of Life" = "#765586", "Climate" = "#fbc010")) +
   labs(
-    title = "All Features: Individual + Weighted",
-    x = "Normalized Value",
-    y = "Density"
+    title = "The distribution of all our map layers: individual + weighted per theme",
+    x = "Normalised Value",
+    y = "Density",
+    fill = NULL # No legend title
   ) +
   theme_minimal() +
   theme(
-    strip.text = element_text(size = 8),
-    axis.text = element_text(size = 7),
-    legend.position = "bottom"
-  )
+  strip.text = element_text(size = 7),
+  axis.text = element_text(size = 7),
+  axis.title = element_text(size = 8),        # smaller axis titles
+  legend.text = element_text(size = 7),       # smaller legend text
+  legend.title = element_text(size = 7),      # smaller legend title (if any)
+  plot.title = element_text(size = 9),        # smaller plot title
+  legend.position = "bottom",
+  axis.ticks.x = element_line(size = 0.2)
+)
+
 ```
+</div>
 
 ### K-means clustering and topology definition
 
+<div style="width:100%; text-align:center;">
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 #install.packages("sf")
 #install.packages("dplyr")
@@ -645,8 +657,8 @@ library(plotly) # for 3D plot of the variables
 
 # getwd()
 
-grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg")
-head(grids)
+grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg", quiet = TRUE)
+# head(grids)
 
 features <- grids |> select(BIO_Weighted, QOL_Weighted, CLI_Weighted) |> st_drop_geometry()
 X_scaled <- scale(features) # Standardize (mean=0, sd=1)
@@ -678,7 +690,7 @@ for (i in seq_along(k_values)) {
 
 # Create a data frame of results (optional, for inspection)
 elbow_df <- data.frame(k = k_values, inertia = inertia)
-print(elbow_df)
+# print(elbow_df)
 
 # ------------------------------------------------------------------------------
 # Plotting the elbow and silhouette algorithm results in the same graph
@@ -718,48 +730,52 @@ legend("topright", legend = c("Inertia", "Silhouette Score"),
 # ------------------------------------------------------------------------------
 # Running the k-means clustering
 
-# `set.seed()` sets the random number generator to a fixed state
-# Set the seed so the clustering result is always the same when re-run
 set.seed(0)
 k <- 4 # Number of clusters, chosen based on the elbow plot/silhouette
 kmeans_result <- kmeans(X_scaled, centers = k, nstart = 200) # Run k-means
 grids$cluster <- as.factor(kmeans_result$cluster) # Add the cluster labels to the spatial data
 
 # ------------------------------------------------------------------------------
-# Plotting the k-means clustering results
+# Create consistent color mapping for both plots (no external packages)
 
-# Show how many grids fall into each cluster
-head(grids)
-print(table(grids$cluster))
+# Define Set1 colors manually (same as RColorBrewer Set1)
+set1_colors <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", 
+                 "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999")
 
-#st_write(grids, "grids_cluster.gpkg")
-
-# Plot clusters with base R
-plot(grids["cluster"], main = "Spatial Pattern of Urban Stream Clusters", border = NA)
-
-# Get the cluster centers (in standardized form)
-scaled_centers <- kmeans_result$centers
-print("Cluster centers (standardized):") # Print them
-print(scaled_centers)
-
-# Convert the centers back to original scale: x * SD + mean
-original_centers <- t(apply(
-  scaled_centers, 1,
-  function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
-))
-print("Cluster centers (original):")
-print(original_centers)
+# Select colors based on number of clusters
+cluster_colors <- set1_colors[1:k]
+names(cluster_colors) <- as.character(1:k)
 
 # ------------------------------------------------------------------------------
-# Extra 3D plot using plotly to visualise the 3-dimensional space
+# Plotting the k-means clustering results with consistent colors and legend
 
-# 3D plot using BIO, QOL, CLI weighted values
+# Create color vector matching the order of clusters in the data
+plot_colors <- cluster_colors[as.character(as.numeric(grids$cluster))]
+
+# Plot using base R plotting
+plot(st_geometry(grids), 
+     col = plot_colors,
+     main = "Spatial Pattern of Urban Stream Clusters", 
+     border = NA)
+
+# Add legend showing cluster colors and IDs
+legend("topright", 
+       legend = paste("Cluster", names(cluster_colors)), 
+       fill = cluster_colors, 
+       title = "Clusters",
+       bty = "n",  # No box around legend
+       cex = 0.8)  # Smaller text size
+
+# ------------------------------------------------------------------------------
+# Extra 3D plot using plotly with matching colors
+
+# Create the 3D plot with the same color mapping
 plot_ly(
   x = ~features$BIO_Weighted,
   y = ~features$QOL_Weighted,
   z = ~features$CLI_Weighted,
   color = ~grids$cluster,
-  colors = "Set1",
+  colors = cluster_colors,  # Use the same colors as the spatial plot
   type = "scatter3d",
   mode = "markers"
 ) %>%
@@ -771,8 +787,8 @@ plot_ly(
       zaxis = list(title = "CLI_Weighted")
     )
   )
-
 ```
+</div>
 
 ## Discussion
 
