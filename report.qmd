@@ -536,6 +536,7 @@ To display the distribution of the normalised values for all our layers used in 
 
 To display the distribution of the normalised values for all our layers used in the saaty matrices, we've made a plot which displays these.
 
+<div style="width:100%; text-align:center;">
 ```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=900}
 #install.packages("sf")
 #install.packages("ggplot2")
@@ -640,9 +641,11 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 )
 
 ```
+</div>
 
 ### K-means clustering and topology definition
 
+<div style="width:100%; text-align:center;">
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 #install.packages("sf")
 #install.packages("dplyr")
@@ -656,8 +659,8 @@ library(plotly) # for 3D plot of the variables
 
 # getwd()
 
-grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg")
-head(grids)
+grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg", quiet = TRUE)
+# head(grids)
 
 features <- grids |> select(BIO_Weighted, QOL_Weighted, CLI_Weighted) |> st_drop_geometry()
 X_scaled <- scale(features) # Standardize (mean=0, sd=1)
@@ -689,7 +692,7 @@ for (i in seq_along(k_values)) {
 
 # Create a data frame of results (optional, for inspection)
 elbow_df <- data.frame(k = k_values, inertia = inertia)
-print(elbow_df)
+# print(elbow_df)
 
 # ------------------------------------------------------------------------------
 # Plotting the elbow and silhouette algorithm results in the same graph
@@ -729,8 +732,6 @@ legend("topright", legend = c("Inertia", "Silhouette Score"),
 # ------------------------------------------------------------------------------
 # Running the k-means clustering
 
-# `set.seed()` sets the random number generator to a fixed state
-# Set the seed so the clustering result is always the same when re-run
 set.seed(0)
 k <- 4 # Number of clusters, chosen based on the elbow plot/silhouette
 kmeans_result <- kmeans(X_scaled, centers = k, nstart = 200) # Run k-means
@@ -739,9 +740,8 @@ grids$cluster <- as.factor(kmeans_result$cluster) # Add the cluster labels to th
 # ------------------------------------------------------------------------------
 # Plotting the k-means clustering results
 
-# Show how many grids fall into each cluster
-head(grids)
-print(table(grids$cluster))
+# head(grids)
+# print(table(grids$cluster))
 
 #st_write(grids, "grids_cluster.gpkg")
 
@@ -750,16 +750,16 @@ plot(grids["cluster"], main = "Spatial Pattern of Urban Stream Clusters", border
 
 # Get the cluster centers (in standardized form)
 scaled_centers <- kmeans_result$centers
-print("Cluster centers (standardized):") # Print them
-print(scaled_centers)
+# print("Cluster centers (standardized):") # Print them
+# print(scaled_centers)
 
 # Convert the centers back to original scale: x * SD + mean
 original_centers <- t(apply(
   scaled_centers, 1,
   function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
 ))
-print("Cluster centers (original):")
-print(original_centers)
+# print("Cluster centers (original):")
+# print(original_centers)
 
 # ------------------------------------------------------------------------------
 # Extra 3D plot using plotly to visualise the 3-dimensional space
@@ -782,8 +782,8 @@ plot_ly(
       zaxis = list(title = "CLI_Weighted")
     )
   )
-
 ```
+</div>
 
 ## Discussion
 
