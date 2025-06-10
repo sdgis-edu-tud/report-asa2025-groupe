@@ -71,6 +71,10 @@ htmltools::div(
 
 ### Quality of Life
 
+Quality of life is important because...
+
+#### Vicinity to Urban Green Space
+
 ```{r}
 #| echo: false
 library(slickR)
@@ -78,15 +82,130 @@ library(htmltools)
 
 qol_imgs <- list(
   "Physical Health: Vicinity to Urban Green Space" = "images/quality_of_life/VicinityToUrbanGreenSpace.jpeg",
-  "Physical Health: Vicinity to Urban Green Space (Gridded)" = "images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg",
+  "Physical Health: Vicinity to Urban Green Space (Gridded)" = "images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(qol_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = qol_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Vicinity_to_Urban_Green_Space')
+)
+```
+
+#### Vicinity to Streams
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+qol_imgs <- list(
   "Mental Health: Vicinity to Stream" = "images/quality_of_life/VicinityToStream.jpeg",
-  "Mental Health: Vicinity to Stream (Gridded)" = "images/quality_of_life/VicinityToStream_Grid.jpeg",
+  "Mental Health: Vicinity to Stream (Gridded)" = "images/quality_of_life/VicinityToStream_Grid.jpeg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(qol_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = qol_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Vicinity_to_Streams')
+)
+```
+
+#### Facilities
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+qol_imgs <- list(
   "General Health: Facilities" = "images/quality_of_life/Facilities.jpeg",
-  "General Health: Facilities (Gridded)" = "images/quality_of_life/Facilities_Grid.jpeg",
+  "General Health: Facilities (Gridded)" = "images/quality_of_life/Facilities_Grid.jpeg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(qol_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = qol_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Facilities')
+)
+```
+
+#### Local Integration
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+qol_imgs <- list(
   "Accessibility: Local Integration" = "images/quality_of_life/LocalIntegration.jpeg",
-  "Accessibility: Local Integration (Gridded)" = "images/quality_of_life/LocalIntegration_Grid.jpeg",
+  "Accessibility: Local Integration (Gridded)" = "images/quality_of_life/LocalIntegration_Grid.jpeg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(qol_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = qol_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Local_Integration')
+)
+```
+
+#### Appearance
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+qol_imgs <- list(
   "Accessibility: Appearance" = "images/quality_of_life/Covered.jpeg",
-  "Accessibility: Appearance (Gridded)" = "images/quality_of_life/Covered_Grid.jpeg",
+  "Accessibility: Appearance (Gridded)" = "images/quality_of_life/Covered_Grid.jpeg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(qol_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = qol_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Appearance')
+)
+```
+
+#### Recreational Suitability
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+qol_imgs <- list(
   "Recreational suitability" = "images/quality_of_life/RecreationalSuitability.png",
   "Recreational suitability (Gridded)" = "images/quality_of_life/RecreationalSuitability_Gridded.png"
 )
@@ -100,12 +219,15 @@ htmltools::div(
       ),
       tags$figcaption(name)
     )
-  }), slideId = 'intro')
+  }), slideId = 'Recreational_Suitability')
 )
 ```
 
-
 ### Climate Adaptation
+
+Climate adaptation is important because ...
+
+#### Flood Risk
 
 ```{r}
 #| echo: false
@@ -114,18 +236,7 @@ library(htmltools)
 
 climate_imgs <- list(
   "Flood Risk: Soil storage" = "images/climate_adaptation/1.1 Flood risk_ Analysis.jpg",
-  "Flood Risk: MCDA Grid" = "images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg",
-  "Urban Heat Island Effect" = "images/climate_adaptation/2.1 UHI_ Analysis.jpg",
-  "Urban Heat Island Effect (MCDA Grid)" = "images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg",
-  "Green Cover: Green spaces" = "images/climate_adaptation/3.1 Green cover_ Analysis.jpg",
-  "Green Cover: Green spaces (MCDA Grid)" = "images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg",
-  "Green Cover: Urban trees" = "images/climate_adaptation/4.1 Urban trees_ Analysis.jpg",
-  "Green Cover: Urban trees (MCDA Grid)" = "images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg",
-  "Infiltration: Seepage Properties" = "images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg",
-  "Infiltration: Seepage Properties (MCDA Grid)" = "images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg",
-  "Infiltration: Sealing Class" = "images/climate_adaptation/6.1 Sealin_ Analysis.jpg",
-  "Infiltration: Sealing Class (MCDA Grid)" = "images/climate_adaptation/6.2 Sealin_ MCDA Grid.jpg",
-  "MCDA Weightage" = "images/climate_adaptation/Climate Adaptation_ Saaty Matrix.jpg"
+  "Flood Risk: MCDA Grid" = "images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg"
 )
 htmltools::div(
   style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
@@ -137,11 +248,144 @@ htmltools::div(
       ),
       tags$figcaption(name)
     )
-  }), slideId = 'intro')
+  }), slideId = 'Flood_Risk')
 )
 ```
 
+#### Urban Heat Island Effect
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+climate_imgs <- list(
+  "Urban Heat Island Effect" = "images/climate_adaptation/2.1 UHI_ Analysis.jpg",
+  "Urban Heat Island Effect (MCDA Grid)" = "images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(climate_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = climate_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'UHI')
+)
+```
+
+#### Green Cover: Green Spaces
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+climate_imgs <- list(
+  "Green Cover: Green spaces" = "images/climate_adaptation/3.1 Green cover_ Analysis.jpg",
+  "Green Cover: Green spaces (MCDA Grid)" = "images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(climate_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = climate_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Green_Spaces')
+)
+```
+
+#### Green Cover: Urban Trees
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+climate_imgs <- list(
+  "Green Cover: Urban trees" = "images/climate_adaptation/4.1 Urban trees_ Analysis.jpg",
+  "Green Cover: Urban trees (MCDA Grid)" = "images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(climate_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = climate_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Urban_Trees')
+)
+```
+
+#### Infiltration Properties: Seepage
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+climate_imgs <- list(
+  "Infiltration: Seepage Properties" = "images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg",
+  "Infiltration: Seepage Properties (MCDA Grid)" = "images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(climate_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = climate_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Seepage')
+)
+```
+
+#### Infiltration Properties: Sealing Class
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+climate_imgs <- list(
+  "Infiltration: Sealing Class" = "images/climate_adaptation/6.1 Sealin_ Analysis.jpg",
+  "Infiltration: Sealing Class (MCDA Grid)" = "images/climate_adaptation/6.2 Sealin_ MCDA Grid.jpg"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(climate_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = climate_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'Sealing_Class')
+)
+```
+
+#### Saaty Matrix
+
+![Saaty Matrix](images/climate_adaptation/Climate Adaptation_ Saaty Matrix.jpg)
+
 ### Biodiversity
+
+Biodiversity is important because...
+
+#### PM10
 
 ```{r}
 #| echo: false
@@ -175,6 +419,105 @@ htmltools::div(
 )
 ```
 
+#### NO2
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+biodiversity_imgs <- list(
+  "NO2" = "images/biodiversity/NO2.png",
+  "NO2 gridded" = "images/biodiversity/NO2_Gridded.png"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = biodiversity_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'intro')
+)
+```
+
+#### NDVI
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+biodiversity_imgs <- list(
+  "NDVI" = "images/biodiversity/NDVI.png",
+  "NDVI gridded" = "images/biodiversity/NDVI_Gridded.png"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = biodiversity_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'intro')
+)
+```
+
+#### Landscape Quality
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+biodiversity_imgs <- list(
+  "Landscape quality" = "images/biodiversity/LandscapeQuality.png",
+  "Landscape quality gridded" = "images/biodiversity/LandscapeQuality_Gridded.png"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = biodiversity_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'intro')
+)
+```
+
+#### Blue Green Percentage
+
+```{r}
+#| echo: false
+library(slickR)
+library(htmltools)
+
+biodiversity_imgs <- list(
+  "Blue green percentage" = "images/biodiversity/BlueGreenPercentage.png",
+  "Blue green percentage gridded" = "images/biodiversity/BlueGreenPercentage_Gridded.png"
+)
+htmltools::div(
+  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
+  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
+    tags$figure(
+      tags$img(
+        src = biodiversity_imgs[[name]],
+        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
+      ),
+      tags$figcaption(name)
+    )
+  }), slideId = 'intro')
+)
+```
 
 ### Map Dashboard
 Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to the directory with the index.html in it, it works. Just need to figure out how to get it directly into our qmd file, haven't looked into that yet.
