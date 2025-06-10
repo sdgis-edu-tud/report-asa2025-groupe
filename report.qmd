@@ -23,7 +23,7 @@ editor: visual
 ---
 
 | Name                   | Affiliation   | Role                               |
-|----------------------|-----------------|---------------------------------|
+|----------------------|------------------|--------------------------------|
 | Daan Schlosser         | MSc Geomatics | Project coordinator & data-analyst |
 | Joost Bastiaansen      | MSc Urbanism  | Mapping specialist                 |
 | Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                      |
@@ -34,8 +34,8 @@ editor: visual
 ## Introduction
 
 ### Context
-The European Union has started a project in 2024 focusing on the funding of Urban Stream Restoration, aiming to promote Biodiversity, Climate adaptation and to improve quality of life in cities (Interreg Central Europe, 2025). This program derives from the concept of Urban Stream Syndrome, which describes the consistently observed ecological degradation of watercourses that drain urban areas, where peak discharge rates during flood events are significantly higher, while baseflow is reduced due to decreased infiltration (Walsh et al., 2005). The cause for this Urban Stream Syndrome is the increase in impermeable surfaces, such as roads, rooftops, and parking lots, combined with the more efficient drainage of stormwater through pipelines. The combination of increased hard surfaces and efficient drainage results in a "flashier" hydrograph, which leads to more frequent and larger flow events, with faster rising and falling water flows. This causes certain symptoms of the Urban Stream Syndrome, starting with increased bank erosion and more channel incisions. Other effects are elevated concentrations and loads of chemical pollutants and nutrients in urban stream waters. Both symptoms negatively impact biodiversity (Walsh et al., 2005). 
-With climate change, the urgency to address the limitations of urban drainage systems is constantly increasing (Arnbjerg-Nielsen et al., 2013). Impact analyses of urban runoff consistently show that, in regions impacted by climate change, a systematic adaptation effort is necessary to minimise the effects on the poor performance of current drainage systems, particularly in high-risk areas such as cities located along rivers (Arnbjerg-Nielsen et al., 2013). Some studies suggest that, despite the significance of climate change, systematically adapting urban streams can mitigate the impacts of urban stream syndrome to an acceptable level, which is one of the main goals of the Urban Stream Restoration project.
+
+The European Union has started a project in 2024 focusing on the funding of Urban Stream Restoration, aiming to promote Biodiversity, Climate adaptation and to improve quality of life in cities (Interreg Central Europe, 2025). This program derives from the concept of Urban Stream Syndrome, which describes the consistently observed ecological degradation of watercourses that drain urban areas, where peak discharge rates during flood events are significantly higher, while baseflow is reduced due to decreased infiltration (Walsh et al., 2005). The cause for this Urban Stream Syndrome is the increase in impermeable surfaces, such as roads, rooftops, and parking lots, combined with the more efficient drainage of stormwater through pipelines. The combination of increased hard surfaces and efficient drainage results in a "flashier" hydrograph, which leads to more frequent and larger flow events, with faster rising and falling water flows. This causes certain symptoms of the Urban Stream Syndrome, starting with increased bank erosion and more channel incisions. Other effects are elevated concentrations and loads of chemical pollutants and nutrients in urban stream waters. Both symptoms negatively impact biodiversity (Walsh et al., 2005). With climate change, the urgency to address the limitations of urban drainage systems is constantly increasing (Arnbjerg-Nielsen et al., 2013). Impact analyses of urban runoff consistently show that, in regions impacted by climate change, a systematic adaptation effort is necessary to minimise the effects on the poor performance of current drainage systems, particularly in high-risk areas such as cities located along rivers (Arnbjerg-Nielsen et al., 2013). Some studies suggest that, despite the significance of climate change, systematically adapting urban streams can mitigate the impacts of urban stream syndrome to an acceptable level, which is one of the main goals of the Urban Stream Restoration project.
 
 ## Methods
 
@@ -529,6 +529,7 @@ htmltools::div(
 Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to the directory with the index.html in it, it works. Just need to figure out how to get it directly into our qmd file, haven't looked into that yet.
 
 ### Overview of the normal distribution of our layers
+
 To display the distribution of the normalised values for all our layers used in the saaty matrices, we've made a plot which displays these.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -628,6 +629,7 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 ```
 
 ### K-means clustering and topology definition
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 #install.packages("sf")
 #install.packages("dplyr")
@@ -769,7 +771,6 @@ plot_ly(
   )
 
 ```
-
 
 ## Discussion
 
