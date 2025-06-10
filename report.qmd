@@ -663,7 +663,8 @@ grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg", quiet = TRUE)
 # head(grids)
 
 features <- grids |> select(BIO_Weighted, QOL_Weighted, CLI_Weighted) |> st_drop_geometry()
-X_scaled <- scale(features) # Standardize (mean=0, sd=1)
+# X_scaled <- scale(features) # Standardize (mean=0, sd=1)
+X_scaled <- features # Don't scale
 
 # ------------------------------------------------------------------------------
 # Defining the parameters and running the elbow and silhouette algorithms
