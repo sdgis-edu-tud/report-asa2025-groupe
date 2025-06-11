@@ -790,6 +790,14 @@ plot_ly(
 ```
 </div>
 
+### Weighted maps per theme, and overall map
+
+Note: legend is accidently wrong, colours are correct.
+![Biodiversity index, weighted](images/weighted/BIO_Weighted.png)
+![Quality of Life index, weighted](images/weighted/QOL_Weighted.png)
+![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png)
+![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
+
 ## Discussion
 
 ## Conclusion
