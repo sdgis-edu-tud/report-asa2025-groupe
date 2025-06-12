@@ -496,19 +496,19 @@
             'BIO_PM10': { name: 'PM10', theme: 'biodiversity', weight: 0.088/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
             'BIO_NO2': { name: 'NO2', theme: 'biodiversity', weight: 0.088/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
             
-            // Quality of Life layers (you can add weights here too if needed)
-            'QOL_VicinityToUrbanGreenSpaces': { name: 'Vicinity to Urban Green', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'QOL_VicinityToStreams': { name: 'Vicinity to Streams', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'QOL_Facilities': { name: 'Facilities', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'QOL_LocalIntegration': { name: 'Local Integration', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'QOL_CoveredStreamDistance': { name: 'Covered Stream Distance', theme: 'quality', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            // Quality of Life layers
+            'QOL_VicinityToUrbanGreenSpaces': { name: 'Vicinity to Urban Green', theme: 'quality', weight: 0.342/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_VicinityToStreams': { name: 'Vicinity to Streams', theme: 'quality', weight: 0.32/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_Facilities': { name: 'Facilities', theme: 'quality', weight: 0.172/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_LocalIntegration': { name: 'Local Integration', theme: 'quality', weight: 0.125/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'QOL_CoveredStreamDistance': { name: 'Covered Stream Distance', theme: 'quality', weight: 0.04/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
             
-            // Climate Adaptation layers (you can add weights here too if needed)
-            'CLI_Infiltration': { name: 'Infiltration', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'CLI_SoilStorage': { name: 'Soil Storage', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'CLI_UrbanTrees': { name: 'Urban Trees', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'CLI_SealingClass': { name: 'Sealing Class', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
-            'CLI_UrbanHeatIsland': { name: 'Urban Heat Island', theme: 'climate', weight: 0.2/3, normalize: value => Math.max(0, Math.min(1, value || 0)) }
+            // Climate Adaptation layers
+            'CLI_Infiltration': { name: 'Infiltration', theme: 'climate', weight: 0.39/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_SoilStorage': { name: 'Soil Storage', theme: 'climate', weight: 0.132/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_UrbanTrees': { name: 'Urban Trees', theme: 'climate', weight: 0.132/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_SealingClass': { name: 'Sealing Class', theme: 'climate', weight: 0.283/3, normalize: value => Math.max(0, Math.min(1, value || 0)) },
+            'CLI_UrbanHeatIsland': { name: 'Urban Heat Island', theme: 'climate', weight: 0.063/3, normalize: value => Math.max(0, Math.min(1, value || 0)) }
         };
 
         // Theme color scales
