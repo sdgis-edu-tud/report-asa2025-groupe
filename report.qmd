@@ -237,7 +237,7 @@ htmltools::div(
 
 ### Climate Adaptation
 
-Climate adaptation is important because ...
+According to Ranta et al. (2021), if urban streams are reverted (almost) to their original state, they can serve as a nature-based solution by providing various services such as better aesthetics, air quality, leisure areas, and mitigation of climatic changes- this integration of blue-green spaces within cities. To achieve this, this project analyses the various ecological aspects and ecosystem services that need to be addressed.
 
 #### Flood Risk
 
