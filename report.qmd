@@ -1,29 +1,29 @@
 ---
-title: "Urban Stream Restoration in the City of Dresden"
+title: "Urban Stream Restoration in Dresden"
 subtitle: "Researching the optimal locations to restore the urban streams in order to improve the biodiversity, climate adaptivity and quality of life in the city of Dresden"
 author:
   - name: "Daan Schlosser"
     affiliation: "MSc Geomatics"
-    role: "Project coordinator & data-analyst"
   - name: "Joost Bastiaansen"
-    role: "Mapping specialist"
     affiliation: "MSc Urbanism"
   - name: "Aparnaa Chandrasekaran"
-    role: "Research lead"
     affiliation: "MSc Urbanism"
   - name: "Teun van Dijk"
     affiliation: "MSc Urbanism"
-    role: "Presentation & design lead"
 
 format:
   html:
-    includes:
-      in-header: header.html
-editor: visual
+    number-sections: true
+    fig-cap-location: bottom
+    toc: true
+    toc-location: left
+    lightbox: true
+    css: styles.css
+    theme: Yeti
 ---
 
 | Name                   | Affiliation   | Role                               |
-|----------------------|------------------|--------------------------------|
+|----------------------|-------------------|-------------------------------|
 | Daan Schlosser         | MSc Geomatics | Project coordinator & data-analyst |
 | Joost Bastiaansen      | MSc Urbanism  | Mapping specialist                 |
 | Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                      |
@@ -43,44 +43,17 @@ The European Union has started a project in 2024 focusing on the funding of Urba
 
 This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
 
-```{r}
-#| echo: false
-library(htmltools)
-
-zoom_level <- 1.2
-
-intro_imgs <- list(
-  'Grid Generation: 500×500m cells covering Dresden study area' = "images/introduction/STEP1.png",
-  'Stream Network Integration: Overlay of hydrological features' = "images/introduction/STEP2.png",
-  'Data Refinement: Removal of extraneous information' = "images/introduction/STEP3.png"
-)
-
-htmltools::div(
-  # APA-style figure number and caption
-  tags$p(
-    tags$b("Figure 1."),
-    " Spatial data processing workflow.",
-    style = "text-align: center; margin-bottom: 20px; font-size: 14px;"
-  ),
-  # Image container
-  htmltools::div(
-    style = "display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; max-width: 100%;",
-    lapply(names(intro_imgs), function(name) {
-      tags$figure(
-        style = "flex: 1; margin: 0; text-align: center; overflow: hidden; padding-bottom: 50px;",
-        tags$img(
-          src = intro_imgs[[name]],
-          style = paste0("width: 100%; height: 300px; display: block; border: none; object-fit: cover; object-position: center; transform: scale(", zoom_level, ");")
-        ),
-        tags$figcaption(
-          name,
-          style = "margin-top: 15px; font-size: 14px; position: relative; z-index: 1;"
-        )
-      )
-    })
-  )
-)
-```
+:::::: {layout-ncol="3"}
+::: column
+![500x500m grid](images/introduction/STEP1.png)
+:::
+::: column
+![Overlaying the stream network](images/introduction/STEP2.png)
+:::
+::: column
+![Keep only the tiles overlapping with the network](images/introduction/STEP3.png)
+:::
+::::::
 
 ### MCDA
 
@@ -96,133 +69,60 @@ Apart from natural aspects such as biodiversity and climate adaptation, urban st
 
 x
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure 2. Physical Health: Vicinity to Urban Green Space."
-
-img_paths <- list(
-  "images/quality_of_life/VicinityToUrbanGreenSpace.jpeg",
-  "images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg"
-)
-
-htmltools::div(
-  # Caption
-  tags$p(
-    tags$b(fig_caption),
-    style = "text-align: center; margin-bottom: 15px; font-size: 14px;"
-  ),
-  # Image row
-  htmltools::div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(
-        src = path,
-        style = "width: 50%; height: auto; border: none;"
-      )
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: column
+![Physical Health: Vicinity to Urban Green Space](images/quality_of_life/VicinityToUrbanGreenSpace.jpeg)
+:::
+::: column
+![Physical Health: Vicinity to Urban Green Space (Gridded)](images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg)
+:::
+:::::
 
 #### Vicinity to Streams
 
 Vert et al., (2020) proved the positive effect of blue space on mental health. Through conducting an experiment in which subjects were assigned to spend 20 minutes at a selected environment. They either walked through blue or urban space or rested at a control site. General improvements in well-being and mood were found after walking through blue space. In order to adapt this to the city of Dresden, a dataset was used containing all addresses of Dresden. An additional layer was made which provided a point every 50 meters along a stream. With the PST, an calculation was made on the amount of points along the stream which could be reached from every address within 500 meters.
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Mental Health: Vicinity to Stream."
-
-img_paths <- list(
-  "images/quality_of_life/VicinityToStream.jpeg",
-  "images/quality_of_life/VicinityToStream_Grid.jpeg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  htmltools::div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Mental Health: Vicinity to Stream](images/quality_of_life/VicinityToStream.jpeg){fig-cap="Mental Health: Vicinity to Stream"}
+:::
+::: {.column}
+![Mental Health: Vicinity to Stream (Gridded)](images/quality_of_life/VicinityToStream_Grid.jpeg){fig-cap="Mental Health: Vicinity to Stream (Gridded)"}
+:::
+:::::
 
 #### Facilities
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. General Health: Facilities."
-
-img_paths <- list(
-  "images/quality_of_life/Facilities.jpeg",
-  "images/quality_of_life/Facilities_Grid.jpeg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  htmltools::div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![General Health: Facilities](images/quality_of_life/Facilities.jpeg){fig-cap="General Health: Facilities"}
+:::
+::: {.column}
+![General Health: Facilities (Gridded)](images/quality_of_life/Facilities_Grid.jpeg){fig-cap="General Health: Facilities (Gridded)"}
+:::
+:::::
 
 #### Local Integration
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Accessibility: Local Integration."
-
-img_paths <- list(
-  "images/quality_of_life/LocalIntegration.jpeg",
-  "images/quality_of_life/LocalIntegration_Grid.jpeg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  htmltools::div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Accessibility: Local Integration](images/quality_of_life/LocalIntegration.jpeg){fig-cap="Accessibility: Local Integration"}
+:::
+::: {.column}
+![Accessibility: Local Integration (Gridded)](images/quality_of_life/LocalIntegration_Grid.jpeg){fig-cap="Accessibility: Local Integration (Gridded)"}
+:::
+:::::
 
 #### Appearance
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Accessibility: Appearance."
-
-img_paths <- list(
-  "images/quality_of_life/Covered.jpeg",
-  "images/quality_of_life/Covered_Grid.jpeg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  htmltools::div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Accessibility: Appearance](images/quality_of_life/Covered.jpeg){fig-cap="Accessibility: Appearance"}
+:::
+::: {.column}
+![Accessibility: Appearance (Gridded)](images/quality_of_life/Covered_Grid.jpeg){fig-cap="Accessibility: Appearance (Gridded)"}
+:::
+:::::
 
 #### Saaty Matrix
 
@@ -230,27 +130,14 @@ htmltools::div(
 
 #### Recreational Suitability
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Recreational Suitability."
-
-img_paths <- list(
-  "images/quality_of_life/RecreationalSuitability.png",
-  "images/quality_of_life/RecreationalSuitability_Gridded.png"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  htmltools::div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Recreational Suitability](images/quality_of_life/RecreationalSuitability.png){fig-cap="Recreational Suitability"}
+:::
+::: {.column}
+![Recreational Suitability (Gridded)](images/quality_of_life/RecreationalSuitability_Gridded.png){fig-cap="Recreational Suitability (Gridded)"}
+:::
+:::::
 
 ### Climate Adaptation
 
@@ -258,147 +145,69 @@ According to Ranta et al. (2021), if urban streams are reverted (almost) to thei
 
 #### Flood Risk
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Flood Risk: Soil Storage and MCDA Grid."
-
-img_paths <- list(
-  "images/climate_adaptation/1.1 Flood risk_ Analysis.jpg",
-  "images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Flood Risk: Soil Storage](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg){fig-cap="Flood Risk: Soil Storage"}
+:::
+::: {.column}
+![Flood Risk: MCDA Grid](images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg){fig-cap="Flood Risk: MCDA Grid"}
+:::
+:::::
 
 #### Urban Heat Island Effect
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Urban Heat Island Effect: Analysis and MCDA Grid."
-
-img_paths <- list(
-  "images/climate_adaptation/2.1 UHI_ Analysis.jpg",
-  "images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Urban Heat Island: Analysis](images/climate_adaptation/2.1 UHI_ Analysis.jpg){fig-cap="Urban Heat Island: Analysis"}
+:::
+::: {.column}
+![Urban Heat Island: MCDA Grid](images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg){fig-cap="Urban Heat Island: MCDA Grid"}
+:::
+:::::
 
 #### Green Cover: Green Spaces
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Green Cover: Green Spaces and MCDA Grid."
-
-img_paths <- list(
-  "images/climate_adaptation/3.1 Green cover_ Analysis.jpg",
-  "images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Green Cover: Green Spaces](images/climate_adaptation/3.1 Green cover_ Analysis.jpg){fig-cap="Green Cover: Green Spaces"}
+:::
+::: {.column}
+![Green Cover: MCDA Grid](images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg){fig-cap="Green Cover: MCDA Grid"}
+:::
+:::::
 
 #### Green Cover: Urban Trees
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Green Cover: Urban Trees and MCDA Grid."
-
-img_paths <- list(
-  "images/climate_adaptation/4.1 Urban trees_ Analysis.jpg",
-  "images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Urban Trees: Analysis](images/climate_adaptation/4.1 Urban trees_ Analysis.jpg){fig-cap="Urban Trees: Analysis"}
+:::
+::: {.column}
+![Urban Trees: MCDA Grid](images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg){fig-cap="Urban Trees: MCDA Grid"}
+:::
+:::::
 
 #### Infiltration Properties: Seepage
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Infiltration: Seepage Properties and MCDA Grid."
-
-img_paths <- list(
-  "images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg",
-  "images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Infiltration: Seepage Properties](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg){fig-cap="Infiltration: Seepage Properties"}
+:::
+::: {.column}
+![Infiltration: MCDA Grid](images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg){fig-cap="Infiltration: MCDA Grid"}
+:::
+:::::
 
 #### Infiltration Properties: Sealing Class
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Infiltration: Sealing Class and MCDA Grid."
-
-img_paths <- list(
-  "images/climate_adaptation/6.1 Sealing_ Analysis.jpg",
-  "images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![Sealing Class: Analysis](images/climate_adaptation/6.1 Sealing_ Analysis.jpg){fig-cap="Sealing Class: Analysis"}
+:::
+::: {.column}
+![Sealing Class: MCDA Grid](images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg){fig-cap="Sealing Class: MCDA Grid"}
+:::
+:::::
 
 #### Saaty Matrix
 
@@ -409,124 +218,56 @@ htmltools::div(
 Biodiversity is important because...
 
 #### PM10
+::::: {layout-ncol="2"}
+::: {.column}
+![PM10 concentration](images/biodiversity/PM10.png){fig-cap="Figure X. PM10 concentration."}
+:::
+::: {.column}
+![PM10 MCDA grid](images/biodiversity/PM10_Gridded.png){fig-cap="Figure X. PM10 MCDA grid."}
+:::
+:::::
 
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. PM10 concentration and MCDA grid."
-
-img_paths <- list(
-  "images/biodiversity/PM10.png",
-  "images/biodiversity/PM10_Gridded.png"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
-
-#### NO2
-
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. NO2 concentration and MCDA grid."
-
-img_paths <- list(
-  "images/biodiversity/NO2.png",
-  "images/biodiversity/NO2_Gridded.png"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+#### NO₂
+::::: {layout-ncol="2"}
+::: {.column}
+![NO2 concentration](images/biodiversity/NO2.png){fig-cap="Figure X. NO2 concentration."}
+:::
+::: {.column}
+![NO2 MCDA grid](images/biodiversity/NO2_Gridded.png){fig-cap="Figure X. NO2 MCDA grid."}
+:::
+:::::
 
 #### NDVI
-
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. NDVI index and MCDA grid."
-
-img_paths <- list(
-  "images/biodiversity/NDVI.png",
-  "images/biodiversity/NDVI_Gridded.png"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
+::::: {layout-ncol="2"}
+::: {.column}
+![NDVI index](images/biodiversity/NDVI.png){fig-cap="Figure X. NDVI index."}
+:::
+::: {.column}
+![NDVI MCDA grid](images/biodiversity/NDVI_Gridded.png){fig-cap="Figure X. NDVI MCDA grid."}
+:::
+:::::
 
 #### Landscape Quality
+::::: {layout-ncol="2"}
+::: {.column}
+![Landscape quality](images/biodiversity/LandscapeQuality.png){fig-cap="Figure X. Landscape quality."}
+:::
+::: {.column}
+![Landscape quality MCDA grid](images/biodiversity/LandscapeQuality_Gridded.png){fig-cap="Figure X. Landscape quality MCDA grid."}
+:::
+:::::
 
-```{r}
-#| echo: false
-library(htmltools)
+#### Blue-Green Infrastructure Percentage
+::::: {layout-ncol="2"}
+::: {.column}
+![Blue-green infrastructure percentage](images/biodiversity/BlueGreenPercentage.png){fig-cap="Figure X. Blue-green infrastructure percentage."}
+:::
+::: {.column}
+![Blue-green MCDA grid](images/biodiversity/BlueGreenPercentage_Gridded.png){fig-cap="Figure X. Blue-green infrastructure MCDA grid."}
+:::
+:::::
 
-fig_caption <- "Figure X. Landscape quality and MCDA grid."
 
-img_paths <- list(
-  "images/biodiversity/LandscapeQuality.png",
-  "images/biodiversity/LandscapeQuality_Gridded.png"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
-
-#### Blue Green Percentage
-
-```{r}
-#| echo: false
-library(htmltools)
-
-fig_caption <- "Figure X. Blue-green infrastructure percentage and MCDA grid."
-
-img_paths <- list(
-  "images/biodiversity/BlueGreenPercentage.png",
-  "images/biodiversity/BlueGreenPercentage_Gridded.png"
-)
-
-htmltools::div(
-  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
-  div(
-    style = "display: flex; justify-content: center; gap: 0px;",
-    lapply(img_paths, function(path) {
-      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
-    })
-  )
-)
-```
 
 #### Saaty Matrix
 
@@ -540,7 +281,7 @@ Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to th
 
 To display the distribution of the normalised values for all our layers used in the saaty matrices, we've made a plot which displays these.
 
-<div style="width:100%; text-align:center;">
+::: {style="width:100%; text-align:center;"}
 ```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=900}
 #install.packages("sf")
 #install.packages("ggplot2")
@@ -645,18 +386,15 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 )
 
 ```
-</div>
+:::
 
 ### Weighted maps per theme, and overall map
 
-![Biodiversity index, weighted](images/weighted/BIO_Weighted.png)
-![Quality of Life index, weighted](images/weighted/QOL_Weighted.png)
-![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png)
-![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
+![Biodiversity index, weighted](images/weighted/BIO_Weighted.png) ![Quality of Life index, weighted](images/weighted/QOL_Weighted.png) ![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png) ![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
 
 ### K-means clustering and topology definition
 
-<div style="width:100%; text-align:center;">
+::: {style="width:100%; text-align:center;"}
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 #install.packages("sf")
 #install.packages("dplyr")
@@ -801,8 +539,7 @@ plot_ly(
     )
   )
 ```
-</div>
-
+:::
 
 ## Discussion
 
