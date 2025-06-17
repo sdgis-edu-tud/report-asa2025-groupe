@@ -641,6 +641,14 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 ```
 </div>
 
+### Weighted maps per theme, and overall map
+
+Note: legend is accidently wrong, colours are correct.
+![Biodiversity index, weighted](images/weighted/BIO_Weighted.png)
+![Quality of Life index, weighted](images/weighted/QOL_Weighted.png)
+![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png)
+![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
+
 ### K-means clustering and topology definition
 
 <div style="width:100%; text-align:center;">
@@ -731,7 +739,7 @@ legend("topright", legend = c("Inertia", "Silhouette Score"),
 # Running the k-means clustering
 
 set.seed(0)
-k <- 4 # Number of clusters, chosen based on the elbow plot/silhouette
+k <- 3 # Number of clusters, chosen based on the elbow plot/silhouette
 kmeans_result <- kmeans(X_scaled, centers = k, nstart = 200) # Run k-means
 grids$cluster <- as.factor(kmeans_result$cluster) # Add the cluster labels to the spatial data
 
@@ -790,13 +798,6 @@ plot_ly(
 ```
 </div>
 
-### Weighted maps per theme, and overall map
-
-Note: legend is accidently wrong, colours are correct.
-![Biodiversity index, weighted](images/weighted/BIO_Weighted.png)
-![Quality of Life index, weighted](images/weighted/QOL_Weighted.png)
-![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png)
-![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
 
 ## Discussion
 
