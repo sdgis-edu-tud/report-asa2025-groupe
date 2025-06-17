@@ -45,25 +45,40 @@ This project will focus on the city of Dresden. In order to provide an answer to
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
+zoom_level <- 1.2
+
 intro_imgs <- list(
-  'Step 1: A 500 by 500 metres grid covering Dresden' = "images/introduction/STEP1.png",
-  'Step 2: Overlay with streams' = "images/introduction/STEP2.png",
-  'Step 3: Remove any unnecessary information' = "images/introduction/STEP3.png"
+  'Grid Generation: 500×500m cells covering Dresden study area' = "images/introduction/STEP1.png",
+  'Stream Network Integration: Overlay of hydrological features' = "images/introduction/STEP2.png",
+  'Data Refinement: Removal of extraneous information' = "images/introduction/STEP3.png"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(intro_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = intro_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'intro')
+  # APA-style figure number and caption
+  tags$p(
+    tags$b("Figure 1."),
+    " Spatial data processing workflow.",
+    style = "text-align: center; margin-bottom: 20px; font-size: 14px;"
+  ),
+  # Image container
+  htmltools::div(
+    style = "display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; max-width: 100%;",
+    lapply(names(intro_imgs), function(name) {
+      tags$figure(
+        style = "flex: 1; margin: 0; text-align: center; overflow: hidden; padding-bottom: 50px;",
+        tags$img(
+          src = intro_imgs[[name]],
+          style = paste0("width: 100%; height: 300px; display: block; border: none; object-fit: cover; object-position: center; transform: scale(", zoom_level, ");")
+        ),
+        tags$figcaption(
+          name,
+          style = "margin-top: 15px; font-size: 14px; position: relative; z-index: 1;"
+        )
+      )
+    })
+  )
 )
 ```
 
@@ -83,24 +98,31 @@ x
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-qol_imgs <- list(
-  "Physical Health: Vicinity to Urban Green Space" = "images/quality_of_life/VicinityToUrbanGreenSpace.jpeg",
-  "Physical Health: Vicinity to Urban Green Space (Gridded)" = "images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg"
+fig_caption <- "Figure 2. Physical Health: Vicinity to Urban Green Space."
+
+img_paths <- list(
+  "images/quality_of_life/VicinityToUrbanGreenSpace.jpeg",
+  "images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(qol_imgs), function(name) {
-    tags$figure(
+  # Caption
+  tags$p(
+    tags$b(fig_caption),
+    style = "text-align: center; margin-bottom: 15px; font-size: 14px;"
+  ),
+  # Image row
+  htmltools::div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
       tags$img(
-        src = qol_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Vicinity_to_Urban_Green_Space')
+        src = path,
+        style = "width: 50%; height: auto; border: none;"
+      )
+    })
+  )
 )
 ```
 
@@ -110,24 +132,23 @@ Vert et al., (2020) proved the positive effect of blue space on mental health. T
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-qol_imgs <- list(
-  "Mental Health: Vicinity to Stream" = "images/quality_of_life/VicinityToStream.jpeg",
-  "Mental Health: Vicinity to Stream (Gridded)" = "images/quality_of_life/VicinityToStream_Grid.jpeg"
+fig_caption <- "Figure X. Mental Health: Vicinity to Stream."
+
+img_paths <- list(
+  "images/quality_of_life/VicinityToStream.jpeg",
+  "images/quality_of_life/VicinityToStream_Grid.jpeg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(qol_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = qol_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Vicinity_to_Streams')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  htmltools::div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -135,24 +156,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-qol_imgs <- list(
-  "General Health: Facilities" = "images/quality_of_life/Facilities.jpeg",
-  "General Health: Facilities (Gridded)" = "images/quality_of_life/Facilities_Grid.jpeg"
+fig_caption <- "Figure X. General Health: Facilities."
+
+img_paths <- list(
+  "images/quality_of_life/Facilities.jpeg",
+  "images/quality_of_life/Facilities_Grid.jpeg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(qol_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = qol_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Facilities')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  htmltools::div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -160,24 +180,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-qol_imgs <- list(
-  "Accessibility: Local Integration" = "images/quality_of_life/LocalIntegration.jpeg",
-  "Accessibility: Local Integration (Gridded)" = "images/quality_of_life/LocalIntegration_Grid.jpeg"
+fig_caption <- "Figure X. Accessibility: Local Integration."
+
+img_paths <- list(
+  "images/quality_of_life/LocalIntegration.jpeg",
+  "images/quality_of_life/LocalIntegration_Grid.jpeg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(qol_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = qol_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Local_Integration')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  htmltools::div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -185,24 +204,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-qol_imgs <- list(
-  "Accessibility: Appearance" = "images/quality_of_life/Covered.jpeg",
-  "Accessibility: Appearance (Gridded)" = "images/quality_of_life/Covered_Grid.jpeg"
+fig_caption <- "Figure X. Accessibility: Appearance."
+
+img_paths <- list(
+  "images/quality_of_life/Covered.jpeg",
+  "images/quality_of_life/Covered_Grid.jpeg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(qol_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = qol_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Appearance')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  htmltools::div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -214,24 +232,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-qol_imgs <- list(
-  "Recreational suitability" = "images/quality_of_life/RecreationalSuitability.png",
-  "Recreational suitability (Gridded)" = "images/quality_of_life/RecreationalSuitability_Gridded.png"
+fig_caption <- "Figure X. Recreational Suitability."
+
+img_paths <- list(
+  "images/quality_of_life/RecreationalSuitability.png",
+  "images/quality_of_life/RecreationalSuitability_Gridded.png"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(qol_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = qol_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Recreational_Suitability')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  htmltools::div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -243,24 +260,23 @@ According to Ranta et al. (2021), if urban streams are reverted (almost) to thei
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-climate_imgs <- list(
-  "Flood Risk: Soil storage" = "images/climate_adaptation/1.1 Flood risk_ Analysis.jpg",
-  "Flood Risk: MCDA Grid" = "images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg"
+fig_caption <- "Figure X. Flood Risk: Soil Storage and MCDA Grid."
+
+img_paths <- list(
+  "images/climate_adaptation/1.1 Flood risk_ Analysis.jpg",
+  "images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(climate_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = climate_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Flood_Risk')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -268,24 +284,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-climate_imgs <- list(
-  "Urban Heat Island Effect" = "images/climate_adaptation/2.1 UHI_ Analysis.jpg",
-  "Urban Heat Island Effect (MCDA Grid)" = "images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg"
+fig_caption <- "Figure X. Urban Heat Island Effect: Analysis and MCDA Grid."
+
+img_paths <- list(
+  "images/climate_adaptation/2.1 UHI_ Analysis.jpg",
+  "images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(climate_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = climate_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'UHI')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -293,24 +308,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-climate_imgs <- list(
-  "Green Cover: Green spaces" = "images/climate_adaptation/3.1 Green cover_ Analysis.jpg",
-  "Green Cover: Green spaces (MCDA Grid)" = "images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg"
+fig_caption <- "Figure X. Green Cover: Green Spaces and MCDA Grid."
+
+img_paths <- list(
+  "images/climate_adaptation/3.1 Green cover_ Analysis.jpg",
+  "images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(climate_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = climate_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Green_Spaces')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -318,24 +332,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-climate_imgs <- list(
-  "Green Cover: Urban trees" = "images/climate_adaptation/4.1 Urban trees_ Analysis.jpg",
-  "Green Cover: Urban trees (MCDA Grid)" = "images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg"
+fig_caption <- "Figure X. Green Cover: Urban Trees and MCDA Grid."
+
+img_paths <- list(
+  "images/climate_adaptation/4.1 Urban trees_ Analysis.jpg",
+  "images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(climate_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = climate_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Urban_Trees')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -343,24 +356,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-climate_imgs <- list(
-  "Infiltration: Seepage Properties" = "images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg",
-  "Infiltration: Seepage Properties (MCDA Grid)" = "images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg"
+fig_caption <- "Figure X. Infiltration: Seepage Properties and MCDA Grid."
+
+img_paths <- list(
+  "images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg",
+  "images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(climate_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = climate_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Seepage')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -368,24 +380,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-climate_imgs <- list(
-  "Infiltration: Sealing Class" = "images/climate_adaptation/6.1 Sealing_ Analysis.jpg",
-  "Infiltration: Sealing Class (MCDA Grid)" = "images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg"
+fig_caption <- "Figure X. Infiltration: Sealing Class and MCDA Grid."
+
+img_paths <- list(
+  "images/climate_adaptation/6.1 Sealing_ Analysis.jpg",
+  "images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(climate_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = climate_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'Sealing_Class')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -401,24 +412,23 @@ Biodiversity is important because...
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-biodiversity_imgs <- list(
-  "PM10" = "images/biodiversity/PM10.png",
-  "PM10 gridded" = "images/biodiversity/PM10_Gridded.png"
+fig_caption <- "Figure X. PM10 concentration and MCDA grid."
+
+img_paths <- list(
+  "images/biodiversity/PM10.png",
+  "images/biodiversity/PM10_Gridded.png"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = biodiversity_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'intro')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -426,24 +436,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-biodiversity_imgs <- list(
-  "NO2" = "images/biodiversity/NO2.png",
-  "NO2 gridded" = "images/biodiversity/NO2_Gridded.png"
+fig_caption <- "Figure X. NO2 concentration and MCDA grid."
+
+img_paths <- list(
+  "images/biodiversity/NO2.png",
+  "images/biodiversity/NO2_Gridded.png"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = biodiversity_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'intro')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -451,24 +460,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-biodiversity_imgs <- list(
-  "NDVI" = "images/biodiversity/NDVI.png",
-  "NDVI gridded" = "images/biodiversity/NDVI_Gridded.png"
+fig_caption <- "Figure X. NDVI index and MCDA grid."
+
+img_paths <- list(
+  "images/biodiversity/NDVI.png",
+  "images/biodiversity/NDVI_Gridded.png"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = biodiversity_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'intro')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -476,24 +484,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-biodiversity_imgs <- list(
-  "Landscape quality" = "images/biodiversity/LandscapeQuality.png",
-  "Landscape quality gridded" = "images/biodiversity/LandscapeQuality_Gridded.png"
+fig_caption <- "Figure X. Landscape quality and MCDA grid."
+
+img_paths <- list(
+  "images/biodiversity/LandscapeQuality.png",
+  "images/biodiversity/LandscapeQuality_Gridded.png"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = biodiversity_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'intro')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -501,24 +508,23 @@ htmltools::div(
 
 ```{r}
 #| echo: false
-library(slickR)
 library(htmltools)
 
-biodiversity_imgs <- list(
-  "Blue green percentage" = "images/biodiversity/BlueGreenPercentage.png",
-  "Blue green percentage gridded" = "images/biodiversity/BlueGreenPercentage_Gridded.png"
+fig_caption <- "Figure X. Blue-green infrastructure percentage and MCDA grid."
+
+img_paths <- list(
+  "images/biodiversity/BlueGreenPercentage.png",
+  "images/biodiversity/BlueGreenPercentage_Gridded.png"
 )
+
 htmltools::div(
-  style = "max-width:100%; max-height:550px; overflow:hidden; margin:auto; position:relative;",
-  slickR(obj = lapply(names(biodiversity_imgs), function(name) {
-    tags$figure(
-      tags$img(
-        src = biodiversity_imgs[[name]],
-        style = "max-width:100%; max-height:500px; height:auto; display:block; margin:auto;"
-      ),
-      tags$figcaption(name)
-    )
-  }), slideId = 'intro')
+  tags$p(tags$b(fig_caption), style = "text-align: center; margin-bottom: 15px; font-size: 14px;"),
+  div(
+    style = "display: flex; justify-content: center; gap: 0px;",
+    lapply(img_paths, function(path) {
+      tags$img(src = path, style = "width: 50%; height: auto; border: none;")
+    })
+  )
 )
 ```
 
@@ -643,7 +649,6 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 
 ### Weighted maps per theme, and overall map
 
-Note: legend is accidently wrong, colours are correct.
 ![Biodiversity index, weighted](images/weighted/BIO_Weighted.png)
 ![Quality of Life index, weighted](images/weighted/QOL_Weighted.png)
 ![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png)
