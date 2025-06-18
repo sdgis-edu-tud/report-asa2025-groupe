@@ -1,0 +1,549 @@
+---
+title: "Urban Stream Restoration in Dresden"
+subtitle: "Researching the optimal locations to restore the urban streams in order to improve the biodiversity, climate adaptivity and quality of life in the city of Dresden"
+author:
+  - name: "Daan Schlosser"
+    affiliation: "MSc Geomatics"
+  - name: "Joost Bastiaansen"
+    affiliation: "MSc Urbanism"
+  - name: "Aparnaa Chandrasekaran"
+    affiliation: "MSc Urbanism"
+  - name: "Teun van Dijk"
+    affiliation: "MSc Urbanism"
+
+format:
+  html:
+    number-sections: true
+    fig-cap-location: bottom
+    toc: true
+    toc-location: left
+    lightbox: true
+    css: styles.css
+    theme: Yeti
+---
+
+| Name                   | Affiliation   | Role                               |
+|----------------------|-------------------|-------------------------------|
+| Daan Schlosser         | MSc Geomatics | Project coordinator & data-analyst |
+| Joost Bastiaansen      | MSc Urbanism  | Mapping specialist                 |
+| Aparnaa Chandrasekaran | MSc Urbanism  | Research lead                      |
+| Teun van Dijk          | MSc Urbanism  | Presentation & design lead         |
+
+<br>
+
+## Introduction
+
+### Context
+
+The European Union has started a project in 2024 focusing on the funding of Urban Stream Restoration, aiming to promote Biodiversity, Climate adaptation and to improve quality of life in cities (Interreg Central Europe, 2025). This program derives from the concept of Urban Stream Syndrome, which describes the consistently observed ecological degradation of watercourses that drain urban areas, where peak discharge rates during flood events are significantly higher, while baseflow is reduced due to decreased infiltration (Walsh et al., 2005). The cause for this Urban Stream Syndrome is the increase in impermeable surfaces, such as roads, rooftops, and parking lots, combined with the more efficient drainage of stormwater through pipelines. The combination of increased hard surfaces and efficient drainage results in a "flashier" hydrograph, which leads to more frequent and larger flow events, with faster rising and falling water flows. This causes certain symptoms of the Urban Stream Syndrome, starting with increased bank erosion and more channel incisions. Other effects are elevated concentrations and loads of chemical pollutants and nutrients in urban stream waters. Both symptoms negatively impact biodiversity (Walsh et al., 2005). With climate change, the urgency to address the limitations of urban drainage systems is constantly increasing (Arnbjerg-Nielsen et al., 2013). Impact analyses of urban runoff consistently show that, in regions impacted by climate change, a systematic adaptation effort is necessary to minimise the effects on the poor performance of current drainage systems, particularly in high-risk areas such as cities located along rivers (Arnbjerg-Nielsen et al., 2013). Some studies suggest that, despite the significance of climate change, systematically adapting urban streams can mitigate the impacts of urban stream syndrome to an acceptable level, which is one of the main goals of the Urban Stream Restoration project.
+
+## Methods
+
+### Site Selection
+
+This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
+
+:::::: {layout-ncol="3"}
+::: column
+![500x500m grid](images/introduction/STEP1.png)
+:::
+::: column
+![Overlaying the stream network](images/introduction/STEP2.png)
+:::
+::: column
+![Keep only the tiles overlapping with the network](images/introduction/STEP3.png)
+:::
+::::::
+
+### MCDA
+
+### Typology construction
+
+## Results
+
+### Quality of Life
+
+Apart from natural aspects such as biodiversity and climate adaptation, urban streams also exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it is able to improve their mental health (Vert et al., 2020).
+
+#### Vicinity to Urban Green Space
+
+x
+
+::::: {layout-ncol="2"}
+::: column
+![Physical Health: Vicinity to Urban Green Space](images/quality_of_life/VicinityToUrbanGreenSpace.jpeg)
+:::
+::: column
+![Physical Health: Vicinity to Urban Green Space (Gridded)](images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg)
+:::
+:::::
+
+#### Vicinity to Streams
+
+Vert et al., (2020) proved the positive effect of blue space on mental health. Through conducting an experiment in which subjects were assigned to spend 20 minutes at a selected environment. They either walked through blue or urban space or rested at a control site. General improvements in well-being and mood were found after walking through blue space. In order to adapt this to the city of Dresden, a dataset was used containing all addresses of Dresden. An additional layer was made which provided a point every 50 meters along a stream. With the PST, an calculation was made on the amount of points along the stream which could be reached from every address within 500 meters.
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Mental Health: Vicinity to Stream](images/quality_of_life/VicinityToStream.jpeg){fig-cap="Mental Health: Vicinity to Stream"}
+:::
+::: {.column}
+![Mental Health: Vicinity to Stream (Gridded)](images/quality_of_life/VicinityToStream_Grid.jpeg){fig-cap="Mental Health: Vicinity to Stream (Gridded)"}
+:::
+:::::
+
+#### Facilities
+
+::::: {layout-ncol="2"}
+::: {.column}
+![General Health: Facilities](images/quality_of_life/Facilities.jpeg){fig-cap="General Health: Facilities"}
+:::
+::: {.column}
+![General Health: Facilities (Gridded)](images/quality_of_life/Facilities_Grid.jpeg){fig-cap="General Health: Facilities (Gridded)"}
+:::
+:::::
+
+#### Local Integration
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Accessibility: Local Integration](images/quality_of_life/LocalIntegration.jpeg){fig-cap="Accessibility: Local Integration"}
+:::
+::: {.column}
+![Accessibility: Local Integration (Gridded)](images/quality_of_life/LocalIntegration_Grid.jpeg){fig-cap="Accessibility: Local Integration (Gridded)"}
+:::
+:::::
+
+#### Appearance
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Accessibility: Appearance](images/quality_of_life/Covered.jpeg){fig-cap="Accessibility: Appearance"}
+:::
+::: {.column}
+![Accessibility: Appearance (Gridded)](images/quality_of_life/Covered_Grid.jpeg){fig-cap="Accessibility: Appearance (Gridded)"}
+:::
+:::::
+
+#### Saaty Matrix
+
+![Saaty Matrix Placeholder](images/quality_of_life/placeholder.jpg)
+
+#### Recreational Suitability
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Recreational Suitability](images/quality_of_life/RecreationalSuitability.png){fig-cap="Recreational Suitability"}
+:::
+::: {.column}
+![Recreational Suitability (Gridded)](images/quality_of_life/RecreationalSuitability_Gridded.png){fig-cap="Recreational Suitability (Gridded)"}
+:::
+:::::
+
+### Climate Adaptation
+
+According to Ranta et al. (2021), if urban streams are reverted (almost) to their original state, they can serve as a nature-based solution by providing various services such as better aesthetics, air quality, leisure areas, and mitigation of climatic changes- this integration of blue-green spaces within cities. To achieve this, this project analyses the various ecological aspects and ecosystem services that need to be addressed.
+
+#### Flood Risk
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Flood Risk: Soil Storage](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg){fig-cap="Flood Risk: Soil Storage"}
+:::
+::: {.column}
+![Flood Risk: MCDA Grid](images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg){fig-cap="Flood Risk: MCDA Grid"}
+:::
+:::::
+
+#### Urban Heat Island Effect
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Urban Heat Island: Analysis](images/climate_adaptation/2.1 UHI_ Analysis.jpg){fig-cap="Urban Heat Island: Analysis"}
+:::
+::: {.column}
+![Urban Heat Island: MCDA Grid](images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg){fig-cap="Urban Heat Island: MCDA Grid"}
+:::
+:::::
+
+#### Green Cover: Green Spaces
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Green Cover: Green Spaces](images/climate_adaptation/3.1 Green cover_ Analysis.jpg){fig-cap="Green Cover: Green Spaces"}
+:::
+::: {.column}
+![Green Cover: MCDA Grid](images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg){fig-cap="Green Cover: MCDA Grid"}
+:::
+:::::
+
+#### Green Cover: Urban Trees
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Urban Trees: Analysis](images/climate_adaptation/4.1 Urban trees_ Analysis.jpg){fig-cap="Urban Trees: Analysis"}
+:::
+::: {.column}
+![Urban Trees: MCDA Grid](images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg){fig-cap="Urban Trees: MCDA Grid"}
+:::
+:::::
+
+#### Infiltration Properties: Seepage
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Infiltration: Seepage Properties](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg){fig-cap="Infiltration: Seepage Properties"}
+:::
+::: {.column}
+![Infiltration: MCDA Grid](images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg){fig-cap="Infiltration: MCDA Grid"}
+:::
+:::::
+
+#### Infiltration Properties: Sealing Class
+
+::::: {layout-ncol="2"}
+::: {.column}
+![Sealing Class: Analysis](images/climate_adaptation/6.1 Sealing_ Analysis.jpg){fig-cap="Sealing Class: Analysis"}
+:::
+::: {.column}
+![Sealing Class: MCDA Grid](images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg){fig-cap="Sealing Class: MCDA Grid"}
+:::
+:::::
+
+#### Saaty Matrix
+
+![Saaty Matrix](images/climate_adaptation/Climate%20Adaptation_%20Saaty%20Matrix.jpg)
+
+### Biodiversity
+
+Biodiversity is important because...
+
+#### PM10
+::::: {layout-ncol="2"}
+::: {.column}
+![PM10 concentration](images/biodiversity/PM10.png){fig-cap="Figure X. PM10 concentration."}
+:::
+::: {.column}
+![PM10 MCDA grid](images/biodiversity/PM10_Gridded.png){fig-cap="Figure X. PM10 MCDA grid."}
+:::
+:::::
+
+#### NO₂
+::::: {layout-ncol="2"}
+::: {.column}
+![NO2 concentration](images/biodiversity/NO2.png){fig-cap="Figure X. NO2 concentration."}
+:::
+::: {.column}
+![NO2 MCDA grid](images/biodiversity/NO2_Gridded.png){fig-cap="Figure X. NO2 MCDA grid."}
+:::
+:::::
+
+#### NDVI
+::::: {layout-ncol="2"}
+::: {.column}
+![NDVI index](images/biodiversity/NDVI.png){fig-cap="Figure X. NDVI index."}
+:::
+::: {.column}
+![NDVI MCDA grid](images/biodiversity/NDVI_Gridded.png){fig-cap="Figure X. NDVI MCDA grid."}
+:::
+:::::
+
+#### Landscape Quality
+::::: {layout-ncol="2"}
+::: {.column}
+![Landscape quality](images/biodiversity/LandscapeQuality.png){fig-cap="Figure X. Landscape quality."}
+:::
+::: {.column}
+![Landscape quality MCDA grid](images/biodiversity/LandscapeQuality_Gridded.png){fig-cap="Figure X. Landscape quality MCDA grid."}
+:::
+:::::
+
+#### Blue-Green Infrastructure Percentage
+::::: {layout-ncol="2"}
+::: {.column}
+![Blue-green infrastructure percentage](images/biodiversity/BlueGreenPercentage.png){fig-cap="Figure X. Blue-green infrastructure percentage."}
+:::
+::: {.column}
+![Blue-green MCDA grid](images/biodiversity/BlueGreenPercentage_Gridded.png){fig-cap="Figure X. Blue-green infrastructure MCDA grid."}
+:::
+:::::
+
+
+
+#### Saaty Matrix
+
+![Saaty Matrix Placeholder](images/biodiversity/placeholder.jpg)
+
+### Map Dashboard
+
+Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to the directory with the index.html in it, it works. Just need to figure out how to get it directly into our qmd file, haven't looked into that yet.
+
+### Overview of the normal distribution of our layers
+
+To display the distribution of the normalised values for all our layers used in the saaty matrices, we've made a plot which displays these.
+
+::: {style="width:100%; text-align:center;"}
+```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=900}
+#install.packages("sf")
+#install.packages("ggplot2")
+#install.packages("tidyr")
+#install.packages("dplyr")
+
+library(sf)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+# Read the geopackage
+grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg", quiet = TRUE)
+
+
+# Drop geometry and gather all columns in your specified order
+features <- grids |>
+  st_drop_geometry() |>
+  select(
+    # Individual BIO columns
+    BIO_PM10, BIO_NO2, BIO_GreenBluePercentage, BIO_LandscapeQuality, BIO_NDVI,
+    # Individual QOL columns
+    QOL_VicinityToUrbanGreenSpaces, QOL_VicinityToStreams,
+    QOL_Facilities, QOL_LocalIntegration, QOL_CoveredStreamDistance,
+    # Individual CLI columns
+    CLI_Infiltration, CLI_SealingClass, CLI_SoilStorage, CLI_UrbanHeatIsland, CLI_UrbanTrees
+  ) |>
+  pivot_longer(cols = everything(), names_to = "Feature", values_to = "Value")
+
+# Create a category column and maintain order
+features <- features |>
+  mutate(
+    Category = case_when(
+      grepl("^BIO_", Feature) ~ "Biodiversity",
+      grepl("^QOL_", Feature) ~ "Quality of Life",
+      grepl("^CLI_", Feature) ~ "Climate"
+    ),
+    # Create a cleaner feature name for display
+    Feature_Display = gsub("^(BIO_|QOL_|CLI_)", "", Feature),
+    # Set factor levels to maintain your specified order
+    Feature_Display = factor(Feature_Display, levels = c(
+      "PM10", "NO2", "GreenBluePercentage", "LandscapeQuality", "NDVI",
+      "VicinityToUrbanGreenSpaces", "VicinityToStreams", "Facilities", "LocalIntegration", "CoveredStreamDistance",
+      "Infiltration", "SealingClass", "SoilStorage", "UrbanHeatIsland", "UrbanTrees"
+    ))
+  )
+
+# Separate weighted values for individual plots
+weighted_features <- grids |>
+  st_drop_geometry() |>
+  select(BIO_Weighted, QOL_Weighted, CLI_Weighted) |>
+  pivot_longer(cols = everything(), names_to = "Feature", values_to = "Value") |>
+  mutate(
+    Category = case_when(
+      Feature == "BIO_Weighted" ~ "Biodiversity",
+      Feature == "QOL_Weighted" ~ "Quality of Life",
+      Feature == "CLI_Weighted" ~ "Climate"
+    ),
+    Feature_Display = gsub("_Weighted", " (Weighted)", Feature),
+    Feature_Display = gsub("^(BIO|QOL|CLI)", "\\1", Feature_Display)
+  )
+
+# All features together (individual + weighted)
+all_features <- bind_rows(
+  features |> select(Feature, Value, Category, Feature_Display),
+  weighted_features |> select(Feature, Value, Category, Feature_Display)
+) |>
+  mutate(
+    # Reorder to have weighted at the end of each category row (3 rows x 6 columns)
+    Feature_Display = factor(Feature_Display, levels = c(
+      # Row 1: BIO features + BIO weighted
+      "PM10", "NO2", "GreenBluePercentage", "LandscapeQuality", "NDVI", "BIO (Weighted)",
+      # Row 2: QOL features + QOL weighted
+      "VicinityToUrbanGreenSpaces", "VicinityToStreams", "Facilities", "LocalIntegration", "CoveredStreamDistance", "QOL (Weighted)",
+      # Row 3: CLI features + CLI weighted
+      "Infiltration", "SealingClass", "SoilStorage", "UrbanHeatIsland", "UrbanTrees", "CLI (Weighted)"
+    ))
+  )
+
+ggplot(all_features, aes(x = Value, fill = Category)) +
+  geom_histogram(aes(y = ..density..), bins = 100, color = NA, size = 0.1, alpha = 1) +
+# geom_density(color = "red", size = 0.4, fill = NA) +
+  facet_wrap(~Feature_Display, scales = "free_y", ncol = 6, strip.position = "top") +
+  scale_x_continuous(limits = c(-0.05, 1.05), breaks = c(0, 0.5, 1)) + 
+  scale_fill_manual(values = c("Biodiversity" = "#415240", "Quality of Life" = "#765586", "Climate" = "#fbc010")) +
+  labs(
+    title = "The distribution of all our map layers: individual + weighted per theme",
+    x = "Normalised Value",
+    y = "Density",
+    fill = NULL # No legend title
+  ) +
+  theme_minimal() +
+  theme(
+  strip.text = element_text(size = 7),
+  axis.text = element_text(size = 7),
+  axis.title = element_text(size = 8),        # smaller axis titles
+  legend.text = element_text(size = 7),       # smaller legend text
+  legend.title = element_text(size = 7),      # smaller legend title (if any)
+  plot.title = element_text(size = 9),        # smaller plot title
+  legend.position = "bottom",
+  axis.ticks.x = element_line(size = 0.2)
+)
+
+```
+:::
+
+### Weighted maps per theme, and overall map
+
+![Biodiversity index, weighted](images/weighted/BIO_Weighted.png) ![Quality of Life index, weighted](images/weighted/QOL_Weighted.png) ![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png) ![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
+
+### K-means clustering and topology definition
+
+::: {style="width:100%; text-align:center;"}
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#install.packages("sf")
+#install.packages("dplyr")
+#install.packages("cluster")
+#install.packages("plotly")
+
+library(sf) # for processing vector data
+library(dplyr) # for selecting and transforming data
+library(cluster) # for the silhouette method
+library(plotly) # for 3D plot of the variables
+
+# getwd()
+
+grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg", quiet = TRUE)
+# head(grids)
+
+features <- grids |> select(BIO_Weighted, QOL_Weighted, CLI_Weighted) |> st_drop_geometry()
+X_scaled <- scale(features) # Standardize (mean=0, sd=1)
+
+# ------------------------------------------------------------------------------
+# Defining the parameters and running the elbow and silhouette algorithms
+
+# Define the range of clusters to test
+k_values <- 2:9
+
+# Initialize vectors to store inertia and silhouette scores
+inertia <- numeric(length(k_values))
+silhouette_scores <- numeric(length(k_values))
+
+# Loop through each k value to compute k-means, inertia and silhouette
+for (i in seq_along(k_values)) {
+  k <- k_values[i]
+
+  # Run k-means clustering with 'k' centers and 200 random starts
+  km <- kmeans(X_scaled, centers = k, nstart = 200)
+
+  # Store total within-cluster sum of squares (inertia) for elbow method
+  inertia[i] <- km$tot.withinss
+
+  # Calculate silhouette widths and store average silhouette score
+  ss <- silhouette(km$cluster, dist(X_scaled))
+  silhouette_scores[i] <- mean(ss[, 3])
+}
+
+# Create a data frame of results (optional, for inspection)
+elbow_df <- data.frame(k = k_values, inertia = inertia)
+# print(elbow_df)
+
+# ------------------------------------------------------------------------------
+# Plotting the elbow and silhouette algorithm results in the same graph
+
+# Plot inertia on left y-axis
+plot(k_values, inertia,
+     type = "b",
+     col = "darkblue",
+     pch = 16,
+     ylab = "Inertia (Total Within-Cluster Sum of Squares)",
+     xlab = "Number of Clusters (k)",
+     main = "Elbow Method and Silhouette Scores")
+
+grid()
+
+# Overlay silhouette scores on right y-axis
+par(new = TRUE)
+plot(k_values, silhouette_scores,
+     type = "b",
+     col = "darkgreen",
+     pch = 17,
+     axes = FALSE,
+     xlab = "",
+     ylab = "",
+     ylim = c(min(silhouette_scores) * 0.9, max(silhouette_scores) * 1.1))
+
+# Draw right y-axis with color
+axis(side = 4, col = "darkgreen", col.axis = "darkgreen")
+
+# Add right y-axis label with line and color
+mtext("Average Silhouette Width", side = 4, line = 3, col = "darkgreen", cex=0.8)
+
+# Add legend
+legend("topright", legend = c("Inertia", "Silhouette Score"),
+       col = c("darkblue", "darkgreen"), pch = c(16, 17))
+
+# ------------------------------------------------------------------------------
+# Running the k-means clustering
+
+set.seed(0)
+k <- 3 # Number of clusters, chosen based on the elbow plot/silhouette
+kmeans_result <- kmeans(X_scaled, centers = k, nstart = 200) # Run k-means
+grids$cluster <- as.factor(kmeans_result$cluster) # Add the cluster labels to the spatial data
+
+# ------------------------------------------------------------------------------
+# Create consistent color mapping for both plots (no external packages)
+
+# Define Set1 colors manually (same as RColorBrewer Set1)
+set1_colors <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", 
+                 "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999")
+
+# Select colors based on number of clusters
+cluster_colors <- set1_colors[1:k]
+names(cluster_colors) <- as.character(1:k)
+
+# ------------------------------------------------------------------------------
+# Plotting the k-means clustering results with consistent colors and legend
+
+# Create color vector matching the order of clusters in the data
+plot_colors <- cluster_colors[as.character(as.numeric(grids$cluster))]
+
+# Plot using base R plotting
+plot(st_geometry(grids), 
+     col = plot_colors,
+     main = "Spatial Pattern of Urban Stream Clusters", 
+     border = NA)
+
+# Add legend showing cluster colors and IDs
+legend("topright", 
+       legend = paste("Cluster", names(cluster_colors)), 
+       fill = cluster_colors, 
+       title = "Clusters",
+       bty = "n",  # No box around legend
+       cex = 0.8)  # Smaller text size
+
+# ------------------------------------------------------------------------------
+# Extra 3D plot using plotly with matching colors
+
+# Create the 3D plot with the same color mapping
+plot_ly(
+  x = ~features$BIO_Weighted,
+  y = ~features$QOL_Weighted,
+  z = ~features$CLI_Weighted,
+  color = ~grids$cluster,
+  colors = cluster_colors,  # Use the same colors as the spatial plot
+  type = "scatter3d",
+  mode = "markers"
+) %>%
+  layout(
+    title = "3D Cluster Plot",
+    scene = list(
+      xaxis = list(title = "BIO_Weighted"),
+      yaxis = list(title = "QOL_Weighted"),
+      zaxis = list(title = "CLI_Weighted")
+    )
+  )
+```
+:::
+
+## Discussion
+
+## Conclusion
+
+## Bibliography
+
