@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivariate Choropleth Legend</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .legend-container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            max-width: 700px;
+            width: 100%;
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+        }
+        
+        .triangle-container {
+            position: relative;
+            width: 500px;
+            height: 433px;
+            margin: 0 auto 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .triangle-grid {
+            position: relative;
+            width: 400px;
+            height: 346px;
+        }
+        
+        .triangle-cell {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border: 1px solid rgba(255,255,255,0.4);
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .triangle-cell:hover {
+            transform: scale(1.1);
+            border: 2px solid rgba(0,0,0,0.3);
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .corner-label {
+            position: absolute;
+            font-weight: 700;
+            font-size: 15px;
+            text-align: center;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .biodiversity-label {
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #2d5016;
+            background: linear-gradient(135deg, rgba(82, 113, 65, 0.1), rgba(207, 222, 199, 0.3));
+        }
+        
+        .quality-label {
+            bottom: -10px;
+            left: -15px;
+            color: #4a2c54;
+            background: linear-gradient(135deg, rgba(138, 102, 154, 0.1), rgba(217, 194, 223, 0.3));
+        }
+        
+        .climate-label {
+            bottom: -10px;
+            right: -15px;
+            color: #b8940a;
+            background: linear-gradient(135deg, rgba(252, 213, 0, 0.1), rgba(252, 246, 188, 0.3));
+        }
+        
+        .color-meaning {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .meaning-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        
+        .meaning-text {
+            color: #5a6c7d;
+            line-height: 1.5;
+        }
+        
+        .individual-scales {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+        }
+        
+        .scale-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        
+        .scale-bar {
+            display: flex;
+            height: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .scale-segment {
+            flex: 1;
+            transition: transform 0.2s ease;
+        }
+        
+        .scale-segment:hover {
+            transform: scaleY(1.1);
+        }
+        
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="legend-container">
+        <div class="title">Trivariate Choropleth Legend</div>
+        
+        <div class="triangle-container">
+            <div class="triangle-grid" id="triangleGrid"></div>
+            <div class="corner-label biodiversity-label">
+                <strong>Biodiversity</strong>
+            </div>
+            <div class="corner-label quality-label">
+                <strong>Quality of Life</strong>
+            </div>
+            <div class="corner-label climate-label">
+                <strong>Climate Adaptation</strong>
+            </div>
+        </div>
+        
+        <div class="color-meaning">
+            <div class="meaning-title">How to Read This Legend</div>
+            <div class="meaning-text">Each corner represents the highest value (darkest color) for that variable. Colors blend toward the center, where all values are lower. The closer to a corner, the higher that variable's value.</div>
+        </div>
+        
+        <div class="individual-scales">
+            <div class="scale-item">
+                <div class="scale-title" style="color: #2d5016;">Biodiversity Index</div>
+                <div class="scale-bar" id="biodiversityScale"></div>
+                <div class="scale-labels">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+            </div>
+            
+            <div class="scale-item">
+                <div class="scale-title" style="color: #4a2c54;">Quality of Life Index</div>
+                <div class="scale-bar" id="qualityScale"></div>
+                <div class="scale-labels">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+            </div>
+            
+            <div class="scale-item">
+                <div class="scale-title" style="color: #b8940a;">Climate Adaptation Index</div>
+                <div class="scale-bar" id="climateScale"></div>
+                <div class="scale-labels">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tooltip" id="tooltip"></div>
+
+    <script>
+        // Simplified theme color scales with 5 entries
+        const themeColors = {
+            biodiversity: {
+                colors: ['#E8F0E1', '#BFD5AD', '#8FB07A', '#659152', '#3A5230'],
+                rgb: [
+                    [232, 240, 225], [191, 213, 173], [143, 176, 122], [101, 145, 82], [58, 82, 48]
+                ]
+            },
+            quality: {
+                colors: ['#EDE4EF', '#D4C7D9', '#BA9FC3', '#A075AD', '#79428C'],
+                rgb: [
+                    [237, 228, 239], [212, 199, 217], [186, 159, 195], [160, 117, 173], [121, 66, 140]
+                ]
+            },
+            climate: {
+                colors: ['#FEF9D6', '#FCF1B2', '#FCE88E', '#FDDF6A', '#FBD234'],
+                rgb: [
+                    [254, 249, 214], [252, 241, 178], [252, 232, 142], [253, 223, 106], [251, 210, 52]
+                ]
+            }
+        };
+
+        function mixColors(bioValue, qualValue, climValue) {
+            // Use continuous values to interpolate between color stops
+            function interpolateColor(value, colorArray) {
+                // Clamp value between 0 and 1
+                value = Math.max(0, Math.min(1, value));
+                
+                // Scale to color array range
+                const scaledValue = value * (colorArray.length - 1);
+                const lowerIndex = Math.floor(scaledValue);
+                const upperIndex = Math.min(lowerIndex + 1, colorArray.length - 1);
+                const factor = scaledValue - lowerIndex;
+                
+                const lowerColor = colorArray[lowerIndex];
+                const upperColor = colorArray[upperIndex];
+                
+                // Interpolate between the two colors
+                return [
+                    Math.round(lowerColor[0] + (upperColor[0] - lowerColor[0]) * factor),
+                    Math.round(lowerColor[1] + (upperColor[1] - lowerColor[1]) * factor),
+                    Math.round(lowerColor[2] + (upperColor[2] - lowerColor[2]) * factor)
+                ];
+            }
+            
+            // Get interpolated RGB values for each theme
+            const bioRGB = interpolateColor(bioValue, themeColors.biodiversity.rgb);
+            const qualRGB = interpolateColor(qualValue, themeColors.quality.rgb);
+            const climRGB = interpolateColor(climValue, themeColors.climate.rgb);
+            
+            // Normalize the values to get blending weights
+            const total = bioValue + qualValue + climValue + 0.1; // Add small value to avoid division by zero
+            const bioWeight = bioValue / total;
+            const qualWeight = qualValue / total;
+            const climWeight = climValue / total;
+            
+            // Blend colors based on their relative strengths
+            const r = Math.min(255, Math.round(bioRGB[0] * bioWeight + qualRGB[0] * qualWeight + climRGB[0] * climWeight));
+            const g = Math.min(255, Math.round(bioRGB[1] * bioWeight + qualRGB[1] * qualWeight + climRGB[1] * climWeight));
+            const b = Math.min(255, Math.round(bioRGB[2] * bioWeight + qualRGB[2] * qualWeight + climRGB[2] * climWeight));
+            
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function createTriangleGrid() {
+            const grid = document.getElementById('triangleGrid');
+            const gridSize = 10; // 10x10 grid
+            const cellSize = 28;
+            const spacing = 32; // Increased from 30 to 32 for better vertical spacing
+            
+            // Calculate the total width and height of the triangle
+            const triangleWidth = (gridSize - 1) * spacing;
+            const triangleHeight = (gridSize - 1) * (spacing * 0.95); // Updated to match new vertical multiplier
+            
+            // Center the triangle more precisely
+            const offsetX = (400 - triangleWidth) / 2 - 14; // Shifted left by 14px
+            const offsetY = (346 - triangleHeight) / 2;
+            
+            for (let row = 0; row < gridSize; row++) {
+                for (let col = 0; col <= row; col++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'triangle-cell';
+                    
+                    // Better centering calculation
+                    const x = offsetX + (col * spacing) + ((gridSize - 1 - row) * spacing / 2);
+                    const y = offsetY + (row * spacing * 0.95); // Increased vertical multiplier for taller triangle
+                    
+                    cell.style.left = x + 'px';
+                    cell.style.top = y + 'px';
+                    
+                    // Calculate logical values based on position in triangle
+                    const totalRows = gridSize - 1;
+                    
+                    // Biodiversity: highest at top (row 0), lowest at bottom
+                    const bioValue = 1 - (row / totalRows);
+                    
+                    // Quality: highest at bottom left, decreases as we move right and up
+                    // For each row, leftmost position (col=0) has highest quality
+                    const qualValue = row === 0 ? 0 : (1 - (col / row)) * (row / totalRows);
+                    
+                    // Climate: highest at bottom right, decreases as we move left and up
+                    // For each row, rightmost position (col=row) has highest climate
+                    const climValue = row === 0 ? 0 : (col / row) * (row / totalRows);
+                    
+                    cell.style.backgroundColor = mixColors(bioValue, qualValue, climValue);
+                    
+                    // Enhanced hover functionality with logical values
+                    cell.addEventListener('mouseenter', (e) => showTooltip(e, bioValue, qualValue, climValue));
+                    cell.addEventListener('mouseleave', hideTooltip);
+                    cell.addEventListener('mousemove', moveTooltip);
+                    
+                    grid.appendChild(cell);
+                }
+            }
+        }
+
+        function showTooltip(e, bio, qual, clim) {
+            const tooltip = document.getElementById('tooltip');
+            const bioPercent = Math.round(bio * 100);
+            const qualPercent = Math.round(qual * 100);
+            const climPercent = Math.round(clim * 100);
+            
+            tooltip.innerHTML = `
+                <strong>Values:</strong><br>
+                Biodiversity: ${bioPercent}%<br>
+                Quality: ${qualPercent}%<br>
+                Climate: ${climPercent}%
+            `;
+            tooltip.style.opacity = '1';
+            moveTooltip(e);
+        }
+
+        function hideTooltip() {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.style.opacity = '0';
+        }
+
+        function moveTooltip(e) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.style.left = (e.pageX + 10) + 'px';
+            tooltip.style.top = (e.pageY - 10) + 'px';
+        }
+
+        function createIndividualScales() {
+            // Create scales with more segments
+            ['biodiversity', 'quality', 'climate'].forEach(theme => {
+                const scale = document.getElementById(theme + 'Scale');
+                themeColors[theme].colors.forEach(color => {
+                    const segment = document.createElement('div');
+                    segment.className = 'scale-segment';
+                    segment.style.backgroundColor = color;
+                    scale.appendChild(segment);
+                });
+            });
+        }
+
+        // Initialize the enhanced legend
+        document.addEventListener('DOMContentLoaded', () => {
+            createTriangleGrid();
+            createIndividualScales();
+        });
+    </script>
+</body>
+</html>
