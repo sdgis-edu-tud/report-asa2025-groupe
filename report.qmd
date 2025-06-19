@@ -516,7 +516,7 @@ for (cluster_id in 1:k) {
 }
 
 # ------------------------------------------------------------------------------
-# Create consistent color mapping for both plots (no external packages)
+# Create consistent color mapping for both plots (without external packages, since they didn't work for me)
 
 # Define Set1 colors manually (same as RColorBrewer Set1)
 set1_colors <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", 
