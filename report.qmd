@@ -282,7 +282,7 @@ Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to th
 To display the distribution of the normalised values for all our layers used in the saaty matrices, we've made a plot which displays these.
 
 ::: {style="width:100%; text-align:center;"}
-```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=900}
+```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=600}
 #install.packages("sf")
 #install.packages("ggplot2")
 #install.packages("tidyr")
@@ -487,6 +487,35 @@ kmeans_result <- kmeans(X_scaled, centers = k, nstart = 200) # Run k-means
 grids$cluster <- as.factor(kmeans_result$cluster) # Add the cluster labels to the spatial data
 
 # ------------------------------------------------------------------------------
+# Find tiles nearest to cluster centers
+
+# Number of nearest tiles to highlight per cluster
+n_nearest <- 3
+
+# Calculate distances from each point to its cluster center
+grids$dist_to_center <- NA
+grids$is_nearest <- FALSE
+
+for (cluster_id in 1:k) {
+  # Get indices of points in this cluster
+  cluster_indices <- which(as.numeric(grids$cluster) == cluster_id)
+  
+  # Get the cluster center (in scaled space)
+  cluster_center <- kmeans_result$centers[cluster_id, ]
+  
+  # Calculate distances from each point in this cluster to the center
+  cluster_data <- X_scaled[cluster_indices, ]
+  distances <- sqrt(rowSums((cluster_data - matrix(cluster_center, nrow = nrow(cluster_data), ncol = length(cluster_center), byrow = TRUE))^2))
+  
+  # Store distances
+  grids$dist_to_center[cluster_indices] <- distances
+  
+  # Find n_nearest closest points
+  nearest_indices <- cluster_indices[order(distances)[1:min(n_nearest, length(distances))]]
+  grids$is_nearest[nearest_indices] <- TRUE
+}
+
+# ------------------------------------------------------------------------------
 # Create consistent color mapping for both plots (no external packages)
 
 # Define Set1 colors manually (same as RColorBrewer Set1)
@@ -498,46 +527,94 @@ cluster_colors <- set1_colors[1:k]
 names(cluster_colors) <- as.character(1:k)
 
 # ------------------------------------------------------------------------------
-# Plotting the k-means clustering results with consistent colors and legend
+# Plotting the k-means clustering results with consistent colors and red borders for nearest tiles
 
 # Create color vector matching the order of clusters in the data
 plot_colors <- cluster_colors[as.character(as.numeric(grids$cluster))]
 
-# Plot using base R plotting
+# Create border colors: black for nearest tiles, NA for others
+border_colors <- ifelse(grids$is_nearest, "black", NA)
+border_widths <- ifelse(grids$is_nearest, 2, 0.5)
+
+# Set up plotting with reduced margins and proper aspect ratio
+par(mar = c(2, 1, 3, 1))  # Reduce margins: bottom, left, top, right
+
+# Plot using base R plotting with asp=1 to maintain proper aspect ratio
 plot(st_geometry(grids), 
      col = plot_colors,
-     main = "Spatial Pattern of Urban Stream Clusters", 
-     border = NA)
+     border = border_colors,
+     lwd = border_widths,
+     main = paste("Spatial Pattern of Urban Stream Clusters\n(Black borders show", n_nearest, "tiles nearest to each cluster center)"), 
+     cex.main = 0.9,
+     asp = 1)  # Maintain aspect ratio
 
-# Add legend showing cluster colors and IDs
-legend("topright", 
-       legend = paste("Cluster", names(cluster_colors)), 
-       fill = cluster_colors, 
-       title = "Clusters",
+# Add legend on the top left side, allowing overlap
+legend("topleft", 
+       legend = c(paste("Cluster", names(cluster_colors)), 
+                  paste("Nearest", n_nearest, "to center")), 
+       fill = c(cluster_colors, "white"),
+       border = c(rep("black", length(cluster_colors)), "black"),
+       title = "Legend",
        bty = "n",  # No box around legend
        cex = 0.8)  # Smaller text size
 
 # ------------------------------------------------------------------------------
-# Extra 3D plot using plotly with matching colors
+# Extra 3D plot using plotly with matching colors and highlighting nearest points
 
-# Create the 3D plot with the same color mapping
-plot_ly(
-  x = ~features$BIO_Weighted,
-  y = ~features$QOL_Weighted,
-  z = ~features$CLI_Weighted,
-  color = ~grids$cluster,
-  colors = cluster_colors,  # Use the same colors as the spatial plot
-  type = "scatter3d",
-  mode = "markers"
-) %>%
-  layout(
-    title = "3D Cluster Plot",
-    scene = list(
-      xaxis = list(title = "BIO_Weighted"),
-      yaxis = list(title = "QOL_Weighted"),
-      zaxis = list(title = "CLI_Weighted")
-    )
+# Create a marker symbol vector: circle for regular points, diamond for nearest
+marker_symbols <- ifelse(grids$is_nearest, "diamond", "circle")
+
+# Create custom legend labels for the plotly plot
+cluster_labels <- paste("Cluster", 1:k)
+names(cluster_labels) <- as.character(1:k)
+
+# Create the 3D plot with the same color mapping and different symbols
+p <- plot_ly()
+
+for (cluster_id in 1:k) {
+  cluster_mask <- as.numeric(grids$cluster) == cluster_id
+
+  # Regular points
+  regular_mask <- cluster_mask & !grids$is_nearest
+  p <- add_trace(p,
+    x = features$BIO_Weighted[regular_mask],
+    y = features$QOL_Weighted[regular_mask],
+    z = features$CLI_Weighted[regular_mask],
+    type = "scatter3d",
+    mode = "markers",
+    marker = list(size = 5, color = cluster_colors[as.character(cluster_id)], symbol = "circle"),
+    name = paste("Cluster", cluster_id),
+    showlegend = TRUE
   )
+
+  # Nearest points
+  nearest_mask <- cluster_mask & grids$is_nearest
+  p <- add_trace(p,
+    x = features$BIO_Weighted[nearest_mask],
+    y = features$QOL_Weighted[nearest_mask],
+    z = features$CLI_Weighted[nearest_mask],
+    type = "scatter3d",
+    mode = "markers",
+    marker = list(size = 6, color = cluster_colors[as.character(cluster_id)], symbol = "diamond"),
+    name = paste("Cluster", cluster_id, "(nearest)"),
+    showlegend = TRUE
+  )
+}
+
+# Put legend on the top left
+p <- p %>% layout(
+  legend = list(
+    x = -0.1,  # move left
+    y = 1,
+    xanchor = "left",
+    yanchor = "top"
+  )
+)
+
+p
+
+# Reset margins to default
+par(mar = c(5.1, 4.1, 4.1, 2.1))
 ```
 :::
 
