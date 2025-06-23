@@ -66,7 +66,7 @@ All these efforts aim to develop socially integrated solutions that balance ecol
 
 ## Methods
 
-In order to provide an answer to the main research question, it is important to choose appropriate methods that take into account environmental, social, and economic factors (Convertino et al., 2012). To do this, clear metrics are needed to measure the impact of restoration activities at different stages of the project. These metrics are based on three main topics, in tandem with the goals of the ReBioClim project: climate resilience, quality of life, and biodiversity. A literature study is used as the basis for identifying which data is relevant to answer the sub-questions and the main research question. It also explains the importance of each topic and how they relate to each other in the datasets. 
+In order to provide an answer to the main research question, it is important to choose appropriate methods that take into account environmental, social, and economic factors (Convertino et al., 2012). To do this, clear metrics are needed to measure the impact of restoration activities at different stages of the project. These metrics are based on three main topics, in tandem with the goals of the ReBioClim project: **climate resilience, quality of life, and biodiversity**. A literature study is used as the basis for identifying which data is relevant to answer the sub-questions and the main research question. It also explains the importance of each topic and how they relate to each other in the datasets. 
 
 ### Site Selection
 To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden, as this is considered a walkable distance. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
@@ -204,6 +204,8 @@ According to Ranta et al. (2021), if urban streams are reverted (almost) to thei
 
 #### Flood Risk
 
+Soil storage capacity plays a crucial role in reducing flood risk and supporting urban stream restoration. Soils with high storage capacity absorb and hold rainfall, reducing surface runoff and peak flood flows (Dietz, 2007). This buffering effect decreases the likelihood of flash flooding in urban areas where impervious surfaces dominate. Moreover, enhanced soil storage promotes groundwater recharge, sustaining stream baseflows during dry periods and improving aquatic habitat stability (Booth et al., 2002). In urban stream restoration, improving soil structure and organic content increases storage capacity, helping to restore natural hydrologic functions and resilience against climate extremes (Palmer et al., 2014).
+
 ::::: {layout-ncol="2"}
 ::: {.column}
 ![Flood Risk: Soil Storage](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg){fig-cap="Flood Risk: Soil Storage"}
@@ -214,6 +216,10 @@ According to Ranta et al. (2021), if urban streams are reverted (almost) to thei
 :::::
 
 #### Urban Heat Island Effect
+
+Higher Urban Heat Island (UHI) effects in Dresden elevate stream temperatures, reduce dissolved oxygen, and stress aquatic ecosystems. Impervious surfaces exacerbate runoff and thermal pollution, degrading urban water quality and biodiversity. Mitigating UHI is essential for urban stream resilience and climate adaptation.
+
+Mitigating the Urban Heat Island (UHI) effect around urban streams enhances cooling, biodiversity, and public health. Vegetated riparian zones reduce temperatures through shading and evapotranspiration. Integrating blue-green infrastructure is vital for climate resilience in Dresden, especially around these streams (Bowler et al., 2010).
 
 ::::: {layout-ncol="2"}
 ::: {.column}
@@ -237,6 +243,10 @@ According to Ranta et al. (2021), if urban streams are reverted (almost) to thei
 
 #### Green Cover: Urban Trees
 
+Urban trees in Dresden can offer substantial benefits, including mitigating the urban heat island effect, enhancing air quality, and supporting biodiversity. While there are many trees in the city in general, many urban streams are not surrounded by trees. Challenges such as climate-induced drought stress, increased susceptibility to pests, and limited space in densely built areas thus arise and necessitate careful species selection and strategic planning to ensure the resilience and effectiveness of urban forestry initiatives (Adamska, 2013). 
+
+The article by Adamska (2013) suggests that the first zone of the riparian zone around urban streams and rivers should be covered with trees, and this zone should be at least 10 m wide, because it allows roots to hold soil and reduce erosion. Overhanging trees reduce water temperature and support aquatic life. Hence, a buffer of 10 m was created around the urban streams. The trees within this buffer were given a value of 1, and the count was categorised based on the stream grid overlaid. The ones with a value of 2 and above require planting native shrubs and deep-rooted trees to reduce erosion and enhance biodiversity.
+
 ::::: {layout-ncol="2"}
 ::: {.column}
 ![Urban Trees: Analysis](images/climate_adaptation/4.1 Urban trees_ Analysis.jpg){fig-cap="Urban Trees: Analysis"}
@@ -248,6 +258,10 @@ According to Ranta et al. (2021), if urban streams are reverted (almost) to thei
 
 #### Infiltration Properties: Seepage
 
+Located along the Elbe River, Dresden has experienced severe flooding in recent decades, most notably during the 2002 flood disaster. With climate projections indicating more intense and frequent storm events in the region (Reporter, 2002), improving infiltration around urban streams is essential. Enhanced infiltration reduces surface runoff, delays peak discharge, and alleviates the burden on stormwater infrastructure, thereby mitigating flood risks in densely built-up areas.
+
+The areas with “infiltration favourable” were given a value of 1, as they function well in their infiltration capacity. The rest of the areas with the infiltration range from less favourable to highly unfavourable were given the value 5. Further, the grid with urban streams was overlapped, and the mean count was ascribed to each grid as each included a range of values. These areas (grid) with values closer to 5 are thus to be considered for improving infiltration capacity and suitability immediately to help flood mitigation, reduce surface runoff (Fletcher et al., 2014), and improve water quality and ecosystem health.
+
 ::::: {layout-ncol="2"}
 ::: {.column}
 ![Infiltration: Seepage Properties](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg){fig-cap="Infiltration: Seepage Properties"}
@@ -258,6 +272,10 @@ According to Ranta et al. (2021), if urban streams are reverted (almost) to thei
 :::::
 
 #### Infiltration Properties: Sealing Class
+
+Sealing of urban surfaces generally becomes detrimental to urban stream health and requires alteration for restoration, even if the Versiegelungsgrad (VSG) exceeds 10% (Paul & Meyer, 2001). Studies indicate that impervious surface cover beyond this threshold leads to significant hydrological disruption, including increased runoff, reduced infiltration, and degraded water quality. The European Environment Agency (Kazmierczak et al., 2020) similarly highlights that urban areas with sealing rates above 20% often exhibit impaired stream function and require integrated green infrastructure interventions to restore hydrological and ecological balance. Thus, restoration efforts should prioritise reducing VSG in catchments exceeding this range.
+
+Thus, the sealing classes were normalised from 1-5, and the unsealed areas were given a value of 1. The grid was overlaid, and the mean values were calculated to see which areas require immediate sealing alteration to restore urban streams.
 
 ::::: {layout-ncol="2"}
 ::: {.column}
