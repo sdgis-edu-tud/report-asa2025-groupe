@@ -225,7 +225,7 @@ round(
 
 #### Saaty Matrix
 
-![Saaty Matrix Placeholder](images/quality_of_life/placeholder.jpg)
+![](images/quality_of_life/Quality of Life_Saaty Matrix.png)
 
 #### Recreational Suitability
 
@@ -328,7 +328,7 @@ Thus, the sealing classes were normalised from 1-5, and the unsealed areas were 
 
 #### Saaty Matrix
 
-![Saaty Matrix](images/climate_adaptation/Climate%20Adaptation_%20Saaty%20Matrix.jpg)
+![](images/climate_adaptation/Climate Adaptation_Saaty Matrix.png)
 
 ### Biodiversity
 
@@ -388,7 +388,7 @@ Biodiversity is important because...
 
 #### Saaty Matrix
 
-![Saaty Matrix Placeholder](images/biodiversity/placeholder.jpg)
+![](images/biodiversity/Biodiversity_Saaty Matrix.png)
 
 ### Map Dashboard
 
