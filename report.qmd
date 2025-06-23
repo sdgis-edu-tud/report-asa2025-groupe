@@ -667,14 +667,45 @@ p <- p %>% layout(
     y = 1,
     xanchor = "left",
     yanchor = "top"
+  ),
+  scene = list(
+    xaxis = list(title = "Biodiversity"),
+    yaxis = list(title = "Quality of Life"),
+    zaxis = list(title = "Climate Adaptation")
   )
 )
 
 p
 
+scaled_centers <- kmeans_result$centers
+
+# Convert the centers back to original scale: x * SD + mean
+original_centers <- t(apply(
+  scaled_centers, 1, 
+  function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
+))
+
+# Print the real-world values
+# print(round(original_centers,3))
+
 # Reset margins to default
 par(mar = c(5.1, 4.1, 4.1, 2.1))
+
 ```
+
+:::
+
+#### Typology Description
+::::: {layout-ncol="2"}
+::: {.column}
+
+
+| Cluster | Biodiversity | Quality of Life | Climate Adaptation | Description |
+|---------------|---------------|---------------|---------------|---------------|
+| 1 | 0.619 | 0.424 | 0.460 | Urban, residential areas with low scores on biodiversity, quality of life and climate adaptation relative to other clusters |
+| 2 | 0.790 | 0.441 | 0.674 | Forested areas with a great biodiversity, high levels of climate adaptation and an average quality of life |
+| 3 | 0.726 | 0.540 | 0.558 | Transition zones between urban and nature with average levels of biodiversity, and climate adaptation and a high level on quality of life |
+
 :::
 
 ## Discussion
