@@ -189,10 +189,10 @@ This analysis was conducted using the Local Integration module of the Place Synt
 
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Accessibility: Local Integration](images/quality_of_life/LocalIntegration.jpeg){fig-cap="Accessibility: Local Integration"}
+![Local Integration: Analysis](images/quality_of_life/LocalIntegration.jpeg){fig-cap="Accessibility: Local Integration"}
 :::
 ::: {.column}
-![Accessibility: Local Integration (Gridded)](images/quality_of_life/LocalIntegration_Grid.jpeg){fig-cap="Accessibility: Local Integration (Gridded)"}
+![Local Integration: MCDA Grid](images/quality_of_life/LocalIntegration_Grid.jpeg){fig-cap="Accessibility: Local Integration (Gridded)"}
 :::
 :::::
 
@@ -216,10 +216,10 @@ round(
 
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Accessibility: Appearance](images/quality_of_life/Covered.jpeg){fig-cap="Accessibility: Appearance"}
+![Appearance: Analysis](images/quality_of_life/Covered.jpeg){fig-cap="Accessibility: Appearance"}
 :::
 ::: {.column}
-![Accessibility: Appearance (Gridded)](images/quality_of_life/Covered_Grid.jpeg){fig-cap="Accessibility: Appearance (Gridded)"}
+![Appearance: MCDA Grid](images/quality_of_life/Covered_Grid.jpeg){fig-cap="Accessibility: Appearance (Gridded)"}
 :::
 :::::
 
@@ -231,10 +231,10 @@ round(
 
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Recreational Suitability](images/quality_of_life/RecreationalSuitability.png){fig-cap="Recreational Suitability"}
+![Recreational Suitability: Analysis](images/quality_of_life/RecreationalSuitability.png){fig-cap="Recreational Suitability"}
 :::
 ::: {.column}
-![Recreational Suitability (Gridded)](images/quality_of_life/RecreationalSuitability_Gridded.png){fig-cap="Recreational Suitability (Gridded)"}
+![Recreational Suitability: MCDA Grid](images/quality_of_life/RecreationalSuitability_Gridded.png){fig-cap="Recreational Suitability (Gridded)"}
 :::
 :::::
 
@@ -248,7 +248,7 @@ Soil storage capacity plays a crucial role in reducing flood risk and supporting
 
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Flood Risk: Soil Storage](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg){fig-cap="Flood Risk: Soil Storage"}
+![Flood Risk: Analysis](images/climate_adaptation/1.1 Flood risk_ Analysis.jpg){fig-cap="Flood Risk: Soil Storage"}
 :::
 ::: {.column}
 ![Flood Risk: MCDA Grid](images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg){fig-cap="Flood Risk: MCDA Grid"}
@@ -274,7 +274,7 @@ Mitigating the Urban Heat Island (UHI) effect around urban streams enhances cool
 
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Green Cover: Green Spaces](images/climate_adaptation/3.1 Green cover_ Analysis.jpg){fig-cap="Green Cover: Green Spaces"}
+![Green Cover: Analysis](images/climate_adaptation/3.1 Green cover_ Analysis.jpg){fig-cap="Green Cover: Green Spaces"}
 :::
 ::: {.column}
 ![Green Cover: MCDA Grid](images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg){fig-cap="Green Cover: MCDA Grid"}
@@ -304,7 +304,7 @@ The areas with “infiltration favourable” were given a value of 1, as they fu
 
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Infiltration: Seepage Properties](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg){fig-cap="Infiltration: Seepage Properties"}
+![Infiltration: Analysis](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg){fig-cap="Infiltration: Seepage Properties"}
 :::
 ::: {.column}
 ![Infiltration: MCDA Grid](images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg){fig-cap="Infiltration: MCDA Grid"}
@@ -337,50 +337,50 @@ Biodiversity is important because...
 #### PM10
 ::::: {layout-ncol="2"}
 ::: {.column}
-![PM10 concentration](images/biodiversity/PM10.png){fig-cap="Figure X. PM10 concentration."}
+![PM10: Analysis](images/biodiversity/PM10.png){fig-cap="Figure X. PM10 concentration."}
 :::
 ::: {.column}
-![PM10 MCDA grid](images/biodiversity/PM10_Gridded.png){fig-cap="Figure X. PM10 MCDA grid."}
+![PM10: MCDA Grid](images/biodiversity/PM10_Gridded.png){fig-cap="Figure X. PM10 MCDA grid."}
 :::
 :::::
 
 #### NO₂
 ::::: {layout-ncol="2"}
 ::: {.column}
-![NO2 concentration](images/biodiversity/NO2.png){fig-cap="Figure X. NO2 concentration."}
+![NO₂: Analysis](images/biodiversity/NO2.png){fig-cap="Figure X. NO2 concentration."}
 :::
 ::: {.column}
-![NO2 MCDA grid](images/biodiversity/NO2_Gridded.png){fig-cap="Figure X. NO2 MCDA grid."}
+![NO₂: MCDA Grid](images/biodiversity/NO2_Gridded.png){fig-cap="Figure X. NO2 MCDA grid."}
 :::
 :::::
 
 #### NDVI
 ::::: {layout-ncol="2"}
 ::: {.column}
-![NDVI index](images/biodiversity/NDVI.png){fig-cap="Figure X. NDVI index."}
+![NDVI: Analysis](images/biodiversity/NDVI.png){fig-cap="Figure X. NDVI index."}
 :::
 ::: {.column}
-![NDVI MCDA grid](images/biodiversity/NDVI_Gridded.png){fig-cap="Figure X. NDVI MCDA grid."}
+![NDVI: MCDA Grid](images/biodiversity/NDVI_Gridded.png){fig-cap="Figure X. NDVI MCDA grid."}
 :::
 :::::
 
 #### Landscape Quality
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Landscape quality](images/biodiversity/LandscapeQuality.png){fig-cap="Figure X. Landscape quality."}
+![Landscape Quality: Analysis](images/biodiversity/LandscapeQuality.png){fig-cap="Figure X. Landscape quality."}
 :::
 ::: {.column}
-![Landscape quality MCDA grid](images/biodiversity/LandscapeQuality_Gridded.png){fig-cap="Figure X. Landscape quality MCDA grid."}
+![Landscape Quality: MCDA Grid](images/biodiversity/LandscapeQuality_Gridded.png){fig-cap="Figure X. Landscape quality MCDA grid."}
 :::
 :::::
 
 #### Blue-Green Infrastructure Percentage
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Blue-green infrastructure percentage](images/biodiversity/BlueGreenPercentage.png){fig-cap="Figure X. Blue-green infrastructure percentage."}
+![Blue-Green: Analysis](images/biodiversity/BlueGreenPercentage.png){fig-cap="Figure X. Blue-green infrastructure percentage."}
 :::
 ::: {.column}
-![Blue-green MCDA grid](images/biodiversity/BlueGreenPercentage_Gridded.png){fig-cap="Figure X. Blue-green infrastructure MCDA grid."}
+![Blue-Green: MCDA Grid](images/biodiversity/BlueGreenPercentage_Gridded.png){fig-cap="Figure X. Blue-green infrastructure MCDA grid."}
 :::
 :::::
 
