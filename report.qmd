@@ -122,46 +122,70 @@ Addressing the specific characteristics of the prototypical examples as a starti
 
 ### Quality of Life
 
-Apart from natural aspects such as biodiversity and climate adaptation, urban streams also exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it is able to improve their mental health (Vert et al., 2020).
+Apart from natural aspects such as biodiversity and climate adaptation, urban streams also exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it can improve their general health.  
+
+In order to assess the quality of life, this research focuses on the improvements the urban stream restoration project can provide on a day-to-day basis. 
+
 
 #### Vicinity to Urban Green Space
 
-x
+Many studies have shown urban green space to contribute to improved physical and mental health (Hartig et al., 2014; Dadvand & Nieuwenhuijsen, 2018; Gascon et al., 2015) by enhancing air quality, encouraging physical activity, reducing stress, and strengthening social cohesion, to name a few examples. However, to carry out the necessary analysis for the city of Dresden, a scientific basis is required in order to determine what variables to consider.
+A study conducted in the Turkish city of Aydın examined the relationship between the availability of urban green space and the physical and mental health of citizens in urbanised areas (Akpinar, 2016). A higher frequency of physical activity was reported by those citizens who live closer to urban green spaces. This increased activity is associated with better mental health and reduced stress levels. Furthermore, the study showed that larger and more open green spaces further encourage physical activity, indicating that not only the presence but also the size of green areas should be taken into account.
+
+This analysis was conducted by using the Attraction Reach module of the Place Syntax Tool with a radius of 500 metres. The distance of 500 metres was chosen as this is indicative of the walkability of a neighbourhood (Van Nes, 2021). The origins consist of all addresses in the city of Dresden (OpenDataPortal Dresden, 2025A), while destinations include all green spaces within the city boundaries, as provided by OpenStreetMap. The results of the Attraction Reach analysis were adjusted for the area of urban green space, as calculated with the QGIS Field Calculator using $area. This returned a value depicting the total area of urban green space which can be reached from any given address. 
+
+These values were then aggregated within grid cells. The decision to analyse by address, rather than by building, was made to better account for grid cells with higher address densities, which may not have been accurately represented by building-level data alone. To normalise the grid values, the summed accessible area per address was divided by the highest value, resulting in a scale from 0 to 1. Since the distribution of these values was skewed, with most values falling below 0.1, a logarithmic transformation was applied to achieve a more balanced distribution.
+
 
 ::::: {layout-ncol="2"}
 ::: column
-![Physical Health: Vicinity to Urban Green Space](images/quality_of_life/VicinityToUrbanGreenSpace.jpeg)
+![Vicinity to Urban Green Space: Analysis](images/quality_of_life/VicinityToUrbanGreenSpace.jpeg)
 :::
 ::: column
-![Physical Health: Vicinity to Urban Green Space (Gridded)](images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg)
+![Vicinity to Urban Green Space: MCDA Grid](images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg)
 :::
 :::::
 
 #### Vicinity to Streams
 
-Vert et al., (2020) proved the positive effect of blue space on mental health. Through conducting an experiment in which subjects were assigned to spend 20 minutes at a selected environment. They either walked through blue or urban space or rested at a control site. General improvements in well-being and mood were found after walking through blue space. In order to adapt this to the city of Dresden, a dataset was used containing all addresses of Dresden. An additional layer was made which provided a point every 50 meters along a stream. With the PST, an calculation was made on the amount of points along the stream which could be reached from every address within 500 meters.
+Besides the availability of urban green space, the presence of urban blue space also provides a positive impact on general health. When individuals perceive that urban blue space is reachable within walking distance from their home, they report better mental and physical well-being (Völker, 2018). While this study focuses on the home environment and thus residential neighbourhoods, another study investigated the effect of blue space in work environments. Vert et al. (2020) demonstrated the positive effect of blue space on mental health through conducting an experiment in which subjects were assigned to spend 20 minutes at a selected environment. They either walked through blue or urban space or rested at a control site. In this study, general improvements in well-being and mood were found after walking through blue space.
+
+This analysis was conducted by using the Attraction Reach module of the Place Syntax Tool with a radius of 500 metres. The distance of 500 metres was chosen as this is indicative of the walkability of a neighbourhood (Van Nes, 2021). The origins consist of all addresses in the city of Dresden (OpenDataPortal Dresden, 2025A) while destinations were determined through placing a point for every 50 meters along the stream. 
+
+These values were then aggregated within grid cells. The decision to analyse by address, rather than by building, was made to better account for grid cells with higher address densities, which may not have been accurately represented by building-level data alone. To normalise the grid values, the summed accessible area per address was divided by the highest value, resulting in a scale from 0 to 1. Since the distribution of these values was skewed, with most values falling below 0.1, a logarithmic transformation was applied to achieve a more balanced distribution.
+
 
 ::::: {layout-ncol="2"}
 ::: {.column}
-![Mental Health: Vicinity to Stream](images/quality_of_life/VicinityToStream.jpeg){fig-cap="Mental Health: Vicinity to Stream"}
+![Vicinity to Stream: Analysis](images/quality_of_life/VicinityToStream.jpeg){fig-cap="Mental Health: Vicinity to Stream"}
 :::
 ::: {.column}
-![Mental Health: Vicinity to Stream (Gridded)](images/quality_of_life/VicinityToStream_Grid.jpeg){fig-cap="Mental Health: Vicinity to Stream (Gridded)"}
+![Vicinity to Stream: MCDA Grid](images/quality_of_life/VicinityToStream_Grid.jpeg){fig-cap="Mental Health: Vicinity to Stream (Gridded)"}
 :::
 :::::
 
 #### Facilities
 
+The availability of different facilities is closely related to the use and attractiveness of public space (Roberts et al., 2019; Sugiyama et al., 2010). While the availability of seating arrangements does not directly correspond to an uptake in physical activity and thus an improvement in physical health (Giles-Corti et al., 2005), it does lead to an increase in the general use of public space and encourages more social interactions (Han et al., 2022). 
+In this research, the focus on quality of life and the environmental impact on physical and mental health has primarily focused on the adult population. However, the impact of the younger generation should also be considered. A study conducted in the United States found that each additional play element attracts 50% more users and leads to 50% more physical activity in children (Cohen et al., 2019). Besides the positive impact on their physical health, playgrounds are also a catalyst for socialisation among children (Nordbø et al., 2019), and the availability of a playground can lower social anxiety in children (Bao et al., 2022).
+
+In order to assess the current state of facilities around urban streams, a buffer of 50 metres was created. All seating arrangements and playgrounds, retrieved from OpenStreetMap and OpenDataPortal Dresden (2025B) within this buffer, were clipped and aggregated within the grid cells. The summed facilities were divided by the highest value, resulting in a scale from 0 to 1. Since the distribution of these values was skewed, with most values falling below 0.1, a logarithmic transformation was applied to achieve a more balanced distribution.
+
 ::::: {layout-ncol="2"}
 ::: {.column}
-![General Health: Facilities](images/quality_of_life/Facilities.jpeg){fig-cap="General Health: Facilities"}
+![Facilities: Analysis](images/quality_of_life/Facilities.jpeg){fig-cap="General Health: Facilities"}
 :::
 ::: {.column}
-![General Health: Facilities (Gridded)](images/quality_of_life/Facilities_Grid.jpeg){fig-cap="General Health: Facilities (Gridded)"}
+![Facilities: MCDA Grid](images/quality_of_life/Facilities_Grid.jpeg){fig-cap="General Health: Facilities (Gridded)"}
 :::
 :::::
 
 #### Local Integration
+
+The local integration analysis can be used to define centres within a city based on the street pattern (Van Nes & Yamu, 2021). A radius of 500 meters is chosen to define the local centres. When locations with a high local integration intersect with urban green spaces, social interactions are more likely to happen (Sheng et al., 2021). 
+
+Besides the benefits of a higher local integration for the social quality of life, this variable can also be indicative of the number of people who will benefit from urban stream restoration in a given area. Local centres attract a high number of people; investments in these areas will thus positively impact a larger group than those with a lower local integration.
+This analysis was conducted using the Local Integration module of the Place Syntax Tool with a radius of 500 metres. Each segment receives an integration value by conducting this analysis. Through the aggregation of these values within the grid cells, followed by dividing by the number of line segments, it was possible to calculate the average value per segment within each cell. To normalise the grid values, the average local integration value per grid cell was divided by the highest value, resulting in a scale from 0 to 1.
 
 ::::: {layout-ncol="2"}
 ::: {.column}
@@ -173,6 +197,22 @@ Vert et al., (2020) proved the positive effect of blue space on mental health. T
 :::::
 
 #### Appearance
+
+In recent decades, urban development in Dresden has resulted in many urban streams being covered, primarily to accommodate infrastructure and housing projects (Wantzen et al., 2022). However, as urban streams come with many benefits, which are summarized in this research, an effort can be made to reopen or daylight, the culverted streams. 
+
+The daylighting of urban streams would be part of a larger redevelopment project. As can be read in Wantzen et al. (2022, table 3), different project goals can be attained depending on the length of the stream being daylighted. Projects of up to 140 meters are typically aimed at improving recreational value, and thus quality of life, while projects exceeding 140 metres primarily focus on enhancing biodiversity. To reflect this distinction, stream lengths were normalised using a calculation that assigns a value of 0 to any length between 0 and 140 metres. After 140 meters, the value slowly increases to 1. While daylighting would also benefit larger portions of culverted urban streams, these were given a lower value, as it is less feasible to implement such large projects.
+
+In order to calculate the normalized value, the following calculation was used:
+<pre> 
+round( 
+  CASE 
+    WHEN "length" <= 140 THEN 0 
+    WHEN "length" > 140 AND "length" <= 2500 THEN ( "length" - 140 ) / (2500 - 140) 
+    ELSE 1 
+  END,
+  3 
+)
+</pre>
 
 ::::: {layout-ncol="2"}
 ::: {.column}
