@@ -66,9 +66,10 @@ All these efforts aim to develop socially integrated solutions that balance ecol
 
 ## Methods
 
-### Site Selection
+In order to provide an answer to the main research question, it is important to choose appropriate methods that take into account environmental, social, and economic factors (Convertino et al., 2012). To do this, clear metrics are needed to measure the impact of restoration activities at different stages of the project. These metrics are based on three main topics, in tandem with the goals of the ReBioClim project: climate resilience, quality of life, and biodiversity. A literature study is used as the basis for identifying which data is relevant to answer the sub-questions and the main research question. It also explains the importance of each topic and how they relate to each other in the datasets. 
 
-This project will focus on the city of Dresden. In order to provide an answer to the main research question “what areas of Dresden would stand to gain the most from the urban stream restoration project?” a division of areas has to be provided. To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
+### Site Selection
+To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden, as this is considered a walkable distance. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
 
 :::::: {layout-ncol="3"}
 ::: column
@@ -84,7 +85,38 @@ This project will focus on the city of Dresden. In order to provide an answer to
 
 ### MCDA
 
-### Typology construction
+To combine the data and answer the main research question, a Multi-Criteria Decision Analysis (MCDA) is used as it can help quantify non-economic objectives, communicate trade-offs, facilitate consistent and explicit valuation, and focus negotiation on ultimate objectives (Corsair et al., 2009). This method includes several steps, which are described below.
+
+**Step 1: Data Collection and Grid Representation**  
+Open-source datasets are collected and displayed on a fixed grid of 500-by-500-meter squares. Since the research focuses on finding which streams are most suitable for restoration, only the grid tiles that overlap with streams are shown in the results, as identified during the site selection process.
+
+**Step 2: Data Normalisation**  
+Next, the data is normalised so that it can be compared. This starts by checking whether a dataset represents good or bad conditions for stream restoration. This is indicated with a plus (+) for good conditions to improve, or a minus (–) when improvement is less needed. For example, streams with lots of greenery already have lower restoration potential, so a dataset showing green areas is marked with a minus (–), and vice versa.
+
+The main part of normalisation is converting different data value ranges into a 0 to 1 scale, so that each dataset becomes a comparable layer. The normalisation process is explained in the table below.
+
+**Step 3: Weighting the Layers**  
+In this step, the different data layers are given weights based on their importance. Since this step involves some subjectivity, the literature study helps to support the choices made. The Analytic Hierarchy Process (AHP) is used to compare each dataset in a matrix, assigning weights based on their relevance to each other. To keep the process clear, data layers are only compared within their topic area: climate resilience, quality of life, or ecology. These three main topics are given equal weight, since they are all important to urban stream restoration. The matrices are shown in Figure X.
+
+**Step 4: Combining the Results**  
+Finally, the three weighted layers are combined into a single result map. The structure of the full MCDA process, including the topics, weights, and plus/minus signs, is shown in Figure X. 
+
+
+### Typology Construction
+
+Further, the project uses the Typology Construction method to systematically cluster urban streams based on similar characteristics in terms of their normalised scores obtained during the data collection in the MCDA. This cluster definition helps in creating a toolkit for urban stream restoration, which can include combinations of design and policy measures that can be applied within each cluster. It can help reduce the complexity of urban stream networks by clustering them into manageable groups, which helps optimise budgeting, planning, and monitoring. This method includes several steps, which are described below.
+
+**Step 1. Categories for creating clusters**  
+The streams are categorised into typologies based on the 15 sub-categories outlined and normalised in the S-MCDA method. For instance, streams with high sealing class, moderate infiltration, and medium biodiversity may form a distinct class. 
+
+**Step 2. Choosing the clustering method**  
+The K-means clustering method is used to identify coherent groups. Within this, the elbow method and silhouette scores are utilised to identify the optimum number of clusters with which the project should proceed. The elbow method is considered as it focuses on minimising within-cluster variance (WCSS), which aligns well to form internally coherent groups of streams that share similar physical or anthropogenic characteristics (Kail & Wolter, 2011). Following this process, the resultant ideal number of clusters is 3.
+
+**Step 3. Priority selection**  
+The cluster that corresponds with the worst-performing tiles in the overall weighted MCDA map is the urban streams in need of immediate restoration measures. The streams nearest to each cluster centroid are the most typical or "prototypical" examples of that stream type. These can serve as reference sites for understanding restoration needs or developing management templates.
+
+**Step 4. Propose design measures**  
+Addressing the specific characteristics of the prototypical examples as a starting point in the case of the worst-performing tiles with design measures that can facilitate the urban stream restoration project at that site, also serving as a pilot case for the other similar stretches of the urban streams in the same cluster.
 
 ## Results
 
