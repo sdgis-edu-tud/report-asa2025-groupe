@@ -69,15 +69,17 @@ This goes hand in hand with the Urban Stream restoration project. In Dresden, pi
 
 All these efforts aim to develop socially integrated solutions that balance ecological requirements with urban planning needs. However, these projects take a lot of time to develop and are very costly to do so. That is why not every stream can be restored simultaneously, and it becomes important to prioritise which locations are most suitable to start with. This leads to the following research question and sub-research questions:
 
-**Which urban streams in Dresden have the greatest potential to contribute to the city’s integrated climate resilience?**
+**Which urban stream sections in Dresden have the greatest potential to contribute to the city’s integrated climate resilience?**
 
-* Which urban streams and surrounding areas are most vulnerable to flooding due to climate change?
+* Which areas around urban streams are most vulnerable to flooding due to climate change?
 * Which areas along urban streams are most urgent to enhance residents’ day-to-day quality of life?
 * Which stream corridors have the highest potential to support and enhance urban biodiversity?
 
 ## Methods
 
-In order to provide an answer to the main research question, it is important to choose appropriate methods that take into account environmental, social, and economic factors (Convertino et al., 2012). To do this, clear metrics are needed to measure the impact of restoration activities at different stages of the project. These metrics are based on three main topics, in tandem with the goals of the ReBioClim project: **climate resilience, quality of life, and biodiversity**. A literature study is used as the basis for identifying which data is relevant to answer the sub-questions and the main research question. It also explains the importance of each topic and how they relate to each other in the datasets. 
+In order to provide an answer to the main research question, it is important to choose appropriate methods that take into account environmental, social, and economic factors (Convertino et al., 2012). To do this, clear metrics are needed to measure the impact of restoration activities at different stages of the project. These metrics are based on three main topics, in tandem with the goals of the ReBioClim project: **climate resilience, quality of life, and biodiversity**. A literature study is used as the basis for identifying which data is relevant to answer the sub-questions and the main research question. It also explains the importance of each topic and how they relate to each other in the datasets. The Structure of the researched is schematized below.
+
+![MCDA structure](images/introduction/Dresden MCDA.png) 
 
 ### Site Selection
 To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden, as this is considered a walkable distance. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
@@ -107,11 +109,16 @@ Next, the data is normalised so that it can be compared. This starts by checking
 The main part of normalisation is converting different data value ranges into a 0 to 1 scale, so that each dataset becomes a comparable layer. The normalisation process is explained in the table below.
 
 **Step 3: Weighting the Layers**  
-In this step, the different data layers are given weights based on their importance. Since this step involves some subjectivity, the literature study helps to support the choices made. The Analytic Hierarchy Process (AHP) is used to compare each dataset in a matrix, assigning weights based on their relevance to each other. To keep the process clear, data layers are only compared within their topic area: climate resilience, quality of life, or ecology. These three main topics are given equal weight, since they are all important to urban stream restoration. The matrices are shown in Figure X.
+In this step, the different data layers are given weights based on their importance. Since this step involves some subjectivity, the literature study helps to support the choices made. The Analytic Hierarchy Process (AHP) is used to compare each dataset in a matrix, assigning weights based on their relevance to each other. To keep the process clear, data layers are only compared within their topic area: climate resilience, quality of life, or ecology. These three main topics are given equal weight, since they are all important to urban stream restoration. The matrices are shown in Figure x.
+
+![MCDA structure](images/climate_adaptation/Climate Adaptation_Saaty Matrix.png)
+![MCDA structure](images/quality_of_life/Quality of Life_Saaty Matrix.png)
+![MCDA structure](images/biodiversity/Biodiversity_Saaty Matrix.png)
 
 **Step 4: Combining the Results**  
-Finally, the three weighted layers are combined into a single result map. The structure of the full MCDA process, including the topics, weights, and plus/minus signs, is shown in Figure X. 
+Finally, the three weighted layers are combined into a single result map. The structure of the full MCDA process, including the topics, weights, and plus/minus signs, is shown in the figures below. 
 
+![MCDA structure](images/introduction/Dresden MCDA weight.png)
 
 ### Typology Construction
 
