@@ -108,6 +108,8 @@ Next, the data is normalised so that it can be compared. This starts by checking
 
 The main part of normalisation is converting different data value ranges into a 0 to 1 scale, so that each dataset becomes a comparable layer. The normalisation process is explained in the table below.
 
+![Layer information table placeholder](images/introduction/Placeholder for excel sheet.png)
+
 **Step 3: Weighting the Layers**  
 In this step, the different data layers are given weights based on their importance. Since this step involves some subjectivity, the literature study helps to support the choices made. The Analytic Hierarchy Process (AHP) is used to compare each dataset in a matrix, assigning weights based on their relevance to each other. To keep the process clear, data layers are only compared within their topic area: climate resilience, quality of life, or ecology. These three main topics are given equal weight, since they are all important to urban stream restoration. The matrices are shown in Figure x.
 
