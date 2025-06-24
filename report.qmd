@@ -770,4 +770,9 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 ## Conclusion
 
+###MCDA
+
+![Results projection](images/weighted/MCDA results.jpg)
+
+
 ## Bibliography
