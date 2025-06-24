@@ -35,7 +35,7 @@ format:
 
 ### Context
 
-The ‘Interreg CENTRAL Europe’, a funding program of the European Union for regional development in tandem with climate change and digital transition, started a project, ReBioClim in 2024, focusing on the funding of urban stream restoration, aiming to promote biodiversity, climate adaptation, and improve quality of life in cities (Interreg Central Europe, 2025). This program derives from the concept of Urban Stream Syndrome, which describes the consistently observed ecological degradation of watercourses that drain urban areas, where peak discharge rates during flood events are significantly higher. At the same time, baseflow is reduced due to decreased infiltration (Walsh et al., 2005). This is caused by increased impermeable surfaces, such as roads, rooftops, and parking lots, combined with the more efficient drainage of stormwater through pipelines. The combination of increased hard surfaces and efficient drainage results in a "flashier" hydrograph, which leads to more frequent and larger flow events, with faster rising and falling water flows. This causes certain symptoms of the Urban Stream Syndrome, starting with increased bank erosion and more channel incisions. Other effects are elevated concentrations and loads of chemical pollutants and nutrients in urban stream waters. Both symptoms negatively impact biodiversity (Walsh et al., 2005).
+The ‘Interreg central Europe’, a funding program of the European Union for regional development in tandem with climate change and digital transition, started a project, ReBioClim in 2024, focusing on the funding of urban stream restoration, aiming to promote biodiversity, climate adaptation, and improve quality of life in cities (Interreg Central Europe, 2025). This program derives from the concept of Urban Stream Syndrome, which describes the consistently observed ecological degradation of watercourses that drain urban areas, where peak discharge rates during flood events are significantly higher. At the same time, baseflow is reduced due to decreased infiltration (Walsh et al., 2005). This is caused by increased impermeable surfaces, such as roads, rooftops, and parking lots, combined with the more efficient drainage of stormwater through pipelines. The combination of increased hard surfaces and efficient drainage results in a "flashier" hydrograph, which leads to more frequent and larger flow events, with faster rising and falling water flows. This causes certain symptoms of the Urban Stream Syndrome, starting with increased bank erosion and more channel incisions. Other effects are elevated concentrations and loads of chemical pollutants and nutrients in urban stream waters. Both symptoms negatively impact biodiversity (Walsh et al., 2005).
 
 With climate change, the urgency to address the limitations of urban drainage systems is constantly increasing (Arnbjerg-Nielsen et al., 2013). Impact analyses of urban runoff consistently show that, in regions impacted by climate change, a systematic adaptation effort is necessary to minimise the effects on the poor performance of current drainage systems, particularly in high-risk areas such as cities located along rivers (Arnbjerg-Nielsen et al., 2013). Some studies suggest that, despite the significance of climate change, systematically adapting urban streams can mitigate the impacts of urban stream syndrome to an acceptable level, which is one of the main goals of the Urban Stream Restoration project.
 
@@ -120,7 +120,7 @@ In this step, the different data layers are given weights based on their importa
 **Step 4: Combining the Results**  
 Finally, the three weighted layers are combined into a single result map. The structure of the full MCDA process, including the topics, weights, and plus/minus signs, is shown in the figures below. 
 
-![MCDA structure](images/introduction/Dresden MCDA weight.png)
+![MCDA structure with visualised weighing](images/introduction/Dresden MCDA weight.png)
 
 ### Typology Construction
 
@@ -796,4 +796,18 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 
 ## Bibliography
+
+###introduction sources
+Artmann, M., Bastian, O., & Grunewald, K. (2017). Using the Concepts of Green Infrastructure and Ecosystem Services to Specify Leitbilder for Compact and Green Cities—The Example of the Landscape Plan of Dresden (Germany). Sustainability, 9(2), 198. https://doi.org/10.3390/su9020198
+
+Dresden. (2024, 12 december). Projektbeschreibung und Ziele | Blaues Band Geberbach | Landeshauptstadt Dresden. www.dresden.de. https://www.dresden.de/de/stadtraum/umwelt/umwelt/oberflaechenwasser/blaues-band/Projektbeschreibung.php
+
+Interreg Central Europe. (2025, 11 juni). Home - Interreg Central Europe. https://www.interreg-central.eu/
+
+KNMI - Central European flooding 2013. (z.d.). https://www.knmi.nl/kennis-en-datacentrum/achtergrond/central-european-flooding-2013
+
+Sächsisches Landesamt für Umwelt und Geologie. (2002). August 2002 flood in the watercourses of the Osterzgebirge mountains: Event Analysis. In Management-Report.
+
+Walsh, C. J., Roy, A. H., Feminella, J. W., Cottingham, P. D., Groffman, P. M., & Morgan, R. P. (2005). The urban stream syndrome: current knowledge and the search for a cure. Journal Of The North American Benthological Society, 24(3), 706–723. https://doi.org/10.1899/04-028.1
+
 
