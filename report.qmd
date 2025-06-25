@@ -148,6 +148,9 @@ The cluster that corresponds with the worst-performing tiles in the overall weig
 **Step 4. Propose design measures**  
 Addressing the specific characteristics of the prototypical examples as a starting point in the case of the worst-performing tiles with design measures that can facilitate the urban stream restoration project at that site, also serving as a pilot case for the other similar stretches of the urban streams in the same cluster.
 
+### Reproducibility self-assessment
+To be written.
+
 ## Results
 
 ### Quality of Life
