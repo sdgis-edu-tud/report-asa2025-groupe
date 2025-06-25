@@ -426,7 +426,7 @@ Still W.I.P. but if you open cmd, use 'python -m http.server' and navigate to th
 
 ### Overview of the normal distribution of our layers
 
-To display the distribution of the normalised values for all our layers used in the saaty matrices, we've made a plot which displays these.
+The following plot displays the distribution of the normalised values for all the layers used in the saaty matrices.
 
 ::: {style="width:100%; text-align:center;"}
 ```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=600}
@@ -535,9 +535,12 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 ```
 :::
 
-### Weighted maps per theme, and overall map
+### Weighted maps per theme
 
-![Biodiversity index, weighted](images/weighted/BIO_Weighted.png) ![Quality of Life index, weighted](images/weighted/QOL_Weighted.png) ![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png) ![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
+![Biodiversity index, weighted](images/weighted/BIO_Weighted.png) ![Quality of Life index, weighted](images/weighted/QOL_Weighted.png) ![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png) 
+
+### Weighted overall map 
+![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
 
 ### K-means clustering and topology definition
 
@@ -798,6 +801,12 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 ## Discussion
 
 ## Conclusion
+
+Based on the MCDA conducted, the following map highlights the twelve streams that have the greatest potential to contribute to the city’s integrated climate resilience through immediate urban restoration measures for enhancing biodiversity, mitigating flood risks, and improving quality of life. 
+
+![12 urban streams fit for restoration](images/weighted/Conclusion_ 1.png)
+
+
 
 ### MCDA
 
