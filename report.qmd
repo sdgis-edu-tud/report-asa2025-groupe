@@ -59,9 +59,19 @@ The result of this was more than a billion euros in damages as well as multiple 
 In order to mitigate the impact of similar future events, the Sachsen region and the city of Dresden had a high incentive to develop an integrated sustainable drainage system. To accomplish this, certain goals were set (Sächsisches Landesamt für Umwelt und Geologie, 2002). Starting by giving more space to streams, making them wider and preventing real estate development in flood-prone areas. Furthermore, the hydraulic drainage systems needed a larger discharge profile and higher attention to erosion. Lastly, there was a focus on the decentralised retention of runoff volumes, specifically by influencing the land use around the urban stream reservoirs. This would mean an ecological or recreational program instead of industrial or residential functions, to increase overflow capabilities of streams. These principles could not only be used to improve climate adaptation and increase biodiversity, but also to integrate them by improving the quality of life for surrounding residents. 
 
 ![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach 1.jpg)
+
+:::::: {layout-ncol="3"}
+::: column
 ![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach 2a.jpg)
+:::
+::: column
 ![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach 2b.jpg)
+:::
+::: column
 ![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach 3b.jpg)
+:::
+::::::
+
 
 Dresden’s commitment to sustainable urban development is exemplified by its landscape plan, which envisions a "compact city within an ecological network" (Artmann et al., 2017). This approach emphasises the integration of green and blue infrastructures to improve air and water quality, reduce urban heat island effects, and bolster biodiversity. Enhancing infiltration and evapotranspiration aims to mitigate flood risks and adapt to climate change impacts. 
 
