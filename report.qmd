@@ -542,6 +542,16 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 ### Weighted overall map 
 ![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
 
+### Recommendations based on MCDA
+
+There are in total five types of areas, ranging from best to worst performing urban streams. It is evident that the best-performing tiles consist of unaltered or near-natural areas. The areas faring well, like Zschonerbach and Lotzebach, may require interventions only in some areas. In forest-adjacent areas, restoration should aim at enhancing hydrological connectivity, preserving riparian vegetation, and rewilding streambanks using soft engineering. Design must prioritise minimal intervention, enabling natural processes while integrating ecological trails for education.
+
+The average-performing areas, such as Kaitzbach, comprise a mix of natural and urbanised areas. Here, the design interventions should integrate riparian green corridors, permeable surfaces, multifunctional public spaces to restore ecological continuity and manage runoff, and prioritise nature-based solutions and habitat connectivity across urban–natural edges.
+
+The worst-performing areas, like Weidigtbach and Gorbitzbach, are the urbanised, residential areas where the urban streams have been almost completely altered. In highly urbanised areas, restoration should focus on daylighting buried streams, implementing green-blue infrastructure, and retrofitting impermeable zones with bioswales and rain gardens. These areas should also incorporate multifunctional public spaces that enhance ecological function and social value, supporting resilience in densely built environments.
+
+![Results projection](images/weighted/MCDA results.jpg)
+
 ### K-means clustering and topology definition
 
 ::: {style="width:100%; text-align:center;"}
@@ -804,13 +814,7 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 Based on the MCDA conducted, the following map highlights the twelve streams that have the greatest potential to contribute to the city’s integrated climate resilience through immediate urban restoration measures for enhancing biodiversity, mitigating flood risks, and improving quality of life. 
 
-![12 urban streams fit for restoration](images/weighted/Conclusion_ 1.png)
-
-
-
-### MCDA
-
-![Results projection](images/weighted/MCDA results.jpg)
+![Twelve urban streams fit for restoration](images/weighted/Conclusion_ 1.png)
 
 
 ## Bibliography
