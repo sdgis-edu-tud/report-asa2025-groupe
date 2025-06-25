@@ -149,7 +149,9 @@ The cluster that corresponds with the worst-performing tiles in the overall weig
 Addressing the specific characteristics of the prototypical examples as a starting point in the case of the worst-performing tiles with design measures that can facilitate the urban stream restoration project at that site, also serving as a pilot case for the other similar stretches of the urban streams in the same cluster.
 
 ### Reproducibility self-assessment
-To be written.
+We have tried to design our project and workflow with a strong emphasis on reproducible research. For example, we’ve documented to the best of our abilities our processing steps and full data workflow/pipeline, as documented in this report. With some steps, like the NDVI-analysis and the Topology maps obtained via (open-source) code. Reproducibility is also made easier by our exclusive use of open-source tools, e.g. R, RStudio, Python, QGIS, in combination with our exclusive use of publicly (and free) available datasets, like those from the municipality of Dresden, OSM and Copernicus. Additionally, we’ve included a readme for our project, and a separate readme specifically for our datasets, which we also included in our data publication on 4TU.
+
+However, keeping the above in mind, specifically our emphasis on data processing documentation; We’ve mainly relied on QGIS for our spatial analysis. Which also means that our exact steps, (spatial) operations, etc. are not mapped (including history/version control) and are not explicitly scripted/fully documented, which may pose challenges for exactly reproducing what we did.
 
 ## Results
 
