@@ -784,20 +784,18 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 | 2 | 0.790 | 0.441 | 0.674 | Forested areas with a great biodiversity, high levels of climate adaptation and an average quality of life |
 | 3 | 0.726 | 0.540 | 0.558 | Transition zones between urban and nature with average levels of biodiversity, and climate adaptation and a high level on quality of life |
 
-:::
 
 ## Discussion
 
 ## Conclusion
 
-###MCDA
+### MCDA
 
 ![Results projection](images/weighted/MCDA results.jpg)
 
 
 ## Bibliography
 
-###introduction sources
 Artmann, M., Bastian, O., & Grunewald, K. (2017). Using the Concepts of Green Infrastructure and Ecosystem Services to Specify Leitbilder for Compact and Green Cities—The Example of the Landscape Plan of Dresden (Germany). Sustainability, 9(2), 198. https://doi.org/10.3390/su9020198
 
 Dresden. (2024, 12 december). Projektbeschreibung und Ziele | Blaues Band Geberbach | Landeshauptstadt Dresden. www.dresden.de. https://www.dresden.de/de/stadtraum/umwelt/umwelt/oberflaechenwasser/blaues-band/Projektbeschreibung.php
