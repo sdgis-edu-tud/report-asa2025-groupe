@@ -899,11 +899,14 @@ The use of space syntax, especially within the Attraction Reach module, has its 
 #### Proposals based on the analysis
 Utilising Multi-Criteria Decision Analysis (MCDA), fifteen attributes were normalised and assigned weighted values to form three overarching objectives: biodiversity, climate adaptation, and quality of life, each given equal significance in the typological framework. While establishing a shared baseline for all urban streams enables consistent comparative analysis, it is critical to account for the specific weight distribution of the fifteen attributes when addressing underperforming cases. For the twelve lowest-ranked streams, differentiated design strategies must reflect the relative influence of each attribute, allowing context-sensitive interventions that align with site-specific ecological and social needs.
 
-### Further research
+## Further research
 
 In this project, all the urban streams within the Dresden boundary were considered. Considering the scale of the analysis, it was difficult to account for more zoomed-in understandings, such as the width of the stream and the riparian zone around, which are important while analysing and recommending context-specific solutions. For the twelve cases, a detailed analysis with a grid of 100-by-100 metres can be further considered to include stream widths, riparian zone width, vegetation cover, surface permeability, and proximity to water bodies, which are essential for stream restoration. However, such fine resolution may lead to data redundancy and increase complexity in citywide applications. A 50–100 m grid balances detail and feasibility for assessing ecosystem service distribution and hydrological patterns across urban subcatchments (Roest et al., 2023).
 
 Additionally, other variables (if publicly available), other methodologies and 'translations' into the calculated normalised values may be considered with other, perhaps more specific (political, urban, etc.) goals in mind.
+
+### Workflow reproducibility
+In addition, future work could focus specifically on the project’s adherence to FAIR principles and improving our analysis reproducibility from A-Z. Regarding workflow reproducibility, an important improvement could be in addressing and reducing/ removing the current reliance on QGIS for spatial analysis, since this is inherently a way of working which consists of unscripted operations and without version control. Potentially, the QGIS operations could be scripted either using PyQGIS or plain programming languages like Python or R. However, if full scripting is not feasible, numbered instructions with screenshots and explanations about parameter values used would already significantly improve reproducibility, a sort of ‘Reproduction Guide’.
 
 ## Conclusion
 
