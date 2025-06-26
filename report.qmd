@@ -42,7 +42,7 @@ With climate change, the urgency to address the limitations of urban drainage sy
 ### Dresden
 One of the participating cities in the ReBioClim project is Dresden, located in Germany. In addition to its rich historical significance, Dresden is an important centre of trade due to its position along the River Elbe, which provides a direct connection to Hamburg. The city is also geographically linked to the Sächsische Schweiz, a mountain range renowned for its distinctive sandstone rock formations. The combination of the city’s location along the Elbe and its proximity to the elevated mountain region has resulted in an extensive network of streams, amounting to a total of 347 kilometres. This makes the city susceptible to the Urban Stream Syndrome, as well as the increased impact of climate change (Arnbjerg-Nielsen et al., 2013). 
 
-![Dresen landscape](images/introduction/Dresden abstract.png) 
+![Dresden landscape](images/introduction/Dresden abstract.png) 
 
 This became apparent in 2002, when Dresden was struck by an enormous flood (Sächsisches Landesamt für Umwelt und Geologie, 2002). Over two meters of rain fell in just three days across large parts of the Osterzgebirge mountain range. This was between two and three times the average amount of rainfall for the entire month of August. Due to previous moisture and geological conditions, the ground could hardly absorb any more water and quickly became saturated. Because of the saturated soil, 60 to 90 percent of the rainfall rapidly ran off in many areas. The runoff infrastructure back then was far from sufficient to cope with this amount of runoff, resulting in substantial damage and destruction in the affected region. 
 
@@ -807,6 +807,7 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 | 2 | 0.790 | 0.441 | 0.674 | Forested areas with a great biodiversity, high levels of climate adaptation and an average quality of life |
 | 3 | 0.726 | 0.540 | 0.558 | Transition zones between urban and nature with average levels of biodiversity, and climate adaptation and a high level on quality of life |
 
+### Recommendations based on Typology Construction
 
 ## Discussion
 
