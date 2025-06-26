@@ -84,7 +84,7 @@ To answer the main research question, it is important to select appropriate meth
 
 ![MCDA structure](images/introduction/Dresden%20MCDA.png)
 
-### Site Selection
+### Site Selection and Unit of Analysis
 
 To establish a systematic analysis framework, we created a standardised spatial grid covering the entire city of Dresden. We chose a 500 by 500 meter grid cell size for three key reasons: (1) it represents a comfortable walkable distance for urban residents, (2) it provides sufficient granularity to capture local variations in stream conditions, and (3) it maintains computational efficiency for city-wide analysis. The site selection process followed these specific steps:
 
@@ -309,13 +309,15 @@ Mitigating the Urban Heat Island (UHI) effect around urban streams enhances cool
 
 #### Green Cover: Green Spaces
 
+According to Grunewald et al. (2019), urban green spaces should be within 300 to 500 meters of residential areas to maximise accessibility and benefits. To ensure that green-blue infrastructure is within 500 meters’ reach of residents, the streams which have green urban spaces within 500 meters are highlighted. They further overlap with the grid, highlighting spaces where residents can access green urban spaces. The ones indicated in a darker colour indicate that better green-blue integration techniques are needed.
+
 ::::: {layout-ncol="2"}
 ::: column
-![Green Cover: Analysis](images/climate_adaptation/3.1%20Green%20cover_%20Analysis.jpg){fig-cap="Green Cover: Green Spaces"}
+![Green Cover: Analysis](images/climate_adaptation/3.1 Green cover_ Analysis.jpg){fig-cap="Green Cover: Green Spaces"}
 :::
 
 ::: column
-![Green Cover: MCDA Grid](images/climate_adaptation/3.2%20Green%20cover_%20MCDA%20Grid.jpg){fig-cap="Green Cover: MCDA Grid"}
+![Green Cover: MCDA Grid](images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg){fig-cap="Green Cover: MCDA Grid"}
 :::
 :::::
 
@@ -926,11 +928,11 @@ Subjects such as quality of life, climate adaptation, and biodiversity are broad
 
 The use of space syntax, especially within the Attraction Reach module, has its limitations that may lead to inconsistencies in the analysis. Since all addresses were used as origins, areas without addresses, such as the Dresdner Heide, will be outliers within this analysis. This results in skewed data and may account for the moderate scores in the weighted quality of life map.
 
-#### Proposals based on the analysis
+### Proposals based on the analysis
 
 Utilising Multi-Criteria Decision Analysis (MCDA), fifteen attributes were normalised and assigned weighted values to form three overarching objectives: biodiversity, climate adaptation, and quality of life, each given equal significance in the typological framework. While establishing a shared baseline for all urban streams enables consistent comparative analysis, it is critical to account for the specific weight distribution of the fifteen attributes when addressing underperforming cases. For the twelve lowest-ranked streams, differentiated design strategies must reflect the relative influence of each attribute, allowing context-sensitive interventions that align with site-specific ecological and social needs.
 
-## Further research
+### Further research
 
 In this project, all the urban streams within the Dresden boundary were considered. Considering the scale of the analysis, it was difficult to account for more zoomed-in understandings, such as the width of the stream and the riparian zone around, which are important while analysing and recommending context-specific solutions. For the twelve cases, a detailed analysis with a grid of 100-by-100 metres can be further considered to include stream widths, riparian zone width, vegetation cover, surface permeability, and proximity to water bodies, which are essential for stream restoration. However, such fine resolution may lead to data redundancy and increase complexity in citywide applications. A 50–100 m grid balances detail and feasibility for assessing ecosystem service distribution and hydrological patterns across urban subcatchments (Roest et al., 2023).
 
@@ -944,7 +946,7 @@ In addition, future work could focus specifically on the project’s adherence t
 
 By conducting MCDA and comparing it to the k-means clustering to mitigate flood risks, improving quality of life and enhancing biodiversity, the main research question can be answered: **Which urban stream sections in Dresden have the greatest potential to contribute to the city’s integrated climate resilience? **
 
-As a result of the MCDA, the following map highlights twelve streams that have the greatest potential to contribute to the city’s integrated climate resilience through immediate urban restoration measures. It also highlights that the good stream conditions are predominantly in the Northern part of Dresden, which is largely covered by natural ecosystems. Whereas the rest of the streams not faring well are in the built environment South of the Elbe River. 
+As a result of the MCDA, the following map highlights twelve grid cells consisting of stretches of urban streams that have the greatest potential to contribute to the city’s integrated climate resilience through immediate urban restoration measures. It also highlights that the good stream conditions are predominantly in the Northern part of Dresden, which is largely covered by natural ecosystems. Whereas the rest of the streams not faring well are in the built environment South of the Elbe River.  
 
 ![Twelve urban streams fit for restoration](images/weighted/Conclusion_ 1.png)
 While the MCDA and Typology Construction are two different methodologies, there is also merit in overlaying them and objectively cross-checking data. The conclusion map shown below visualises the MCDA overlayed with the K-means clustering typologies. It ascertains the intuitive understanding and provides evidence that the urban, residential clusters overlap with the worst-performing streams. Furthermore, it is evident that the worst-performing tiles derived from MCDA are significantly further in values as compared to the ones nearest to the cluster centres. This advocates the need for considering the MCDA results as pilot cases and utilising the typology construction methodology to propose a toolkit for urban stream restoration efforts in varying contexts.
