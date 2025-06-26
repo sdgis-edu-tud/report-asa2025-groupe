@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Daan Schlosser">
+<meta name="author" content="Joost Bastiaansen">
+<meta name="author" content="Aparnaa Chandrasekaran">
+<meta name="author" content="Teun van Dijk">
+
+<title>Urban Stream Restoration in Dresden</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6bbb2ee3340c67b6da55fdc5589aeeb3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="floating">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context"><span class="header-section-number">1.1</span> Context</a></li>
+  <li><a href="#dresden" id="toc-dresden" class="nav-link" data-scroll-target="#dresden"><span class="header-section-number">1.2</span> Dresden</a></li>
+  <li><a href="#urban-stream-restoration" id="toc-urban-stream-restoration" class="nav-link" data-scroll-target="#urban-stream-restoration"><span class="header-section-number">1.3</span> Urban Stream Restoration</a></li>
+  </ul></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">2</span> Methods</a>
+  <ul class="collapse">
+  <li><a href="#site-selection" id="toc-site-selection" class="nav-link" data-scroll-target="#site-selection"><span class="header-section-number">2.1</span> Site Selection</a></li>
+  <li><a href="#mcda" id="toc-mcda" class="nav-link" data-scroll-target="#mcda"><span class="header-section-number">2.2</span> MCDA</a></li>
+  <li><a href="#typology-construction" id="toc-typology-construction" class="nav-link" data-scroll-target="#typology-construction"><span class="header-section-number">2.3</span> Typology Construction</a></li>
+  <li><a href="#reproducibility-self-assessment" id="toc-reproducibility-self-assessment" class="nav-link" data-scroll-target="#reproducibility-self-assessment"><span class="header-section-number">2.4</span> Reproducibility self-assessment</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">3</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#quality-of-life" id="toc-quality-of-life" class="nav-link" data-scroll-target="#quality-of-life"><span class="header-section-number">3.1</span> Quality of Life</a></li>
+  <li><a href="#climate-adaptation" id="toc-climate-adaptation" class="nav-link" data-scroll-target="#climate-adaptation"><span class="header-section-number">3.2</span> Climate Adaptation</a></li>
+  <li><a href="#biodiversity" id="toc-biodiversity" class="nav-link" data-scroll-target="#biodiversity"><span class="header-section-number">3.3</span> Biodiversity</a></li>
+  <li><a href="#interactive-map-dashboard" id="toc-interactive-map-dashboard" class="nav-link" data-scroll-target="#interactive-map-dashboard"><span class="header-section-number">3.4</span> Interactive Map Dashboard</a></li>
+  <li><a href="#overview-of-the-normal-distribution-of-our-layers" id="toc-overview-of-the-normal-distribution-of-our-layers" class="nav-link" data-scroll-target="#overview-of-the-normal-distribution-of-our-layers"><span class="header-section-number">3.5</span> Overview of the normal distribution of our layers</a></li>
+  <li><a href="#weighted-maps-per-theme" id="toc-weighted-maps-per-theme" class="nav-link" data-scroll-target="#weighted-maps-per-theme"><span class="header-section-number">3.6</span> Weighted maps per theme</a></li>
+  <li><a href="#weighted-overall-map" id="toc-weighted-overall-map" class="nav-link" data-scroll-target="#weighted-overall-map"><span class="header-section-number">3.7</span> Weighted overall map</a></li>
+  <li><a href="#k-means-clustering-and-topology-definition" id="toc-k-means-clustering-and-topology-definition" class="nav-link" data-scroll-target="#k-means-clustering-and-topology-definition"><span class="header-section-number">3.8</span> K-means clustering and topology definition</a></li>
+  </ul></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations"><span class="header-section-number">4</span> Recommendations</a>
+  <ul class="collapse">
+  <li><a href="#recommendations-based-on-mcda" id="toc-recommendations-based-on-mcda" class="nav-link" data-scroll-target="#recommendations-based-on-mcda"><span class="header-section-number">4.1</span> Recommendations based on MCDA</a></li>
+  <li><a href="#recommendations-based-on-typology-construction" id="toc-recommendations-based-on-typology-construction" class="nav-link" data-scroll-target="#recommendations-based-on-typology-construction"><span class="header-section-number">4.2</span> Recommendations based on Typology Construction</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">5</span> Discussion</a>
+  <ul class="collapse">
+  <li><a href="#site-selection-1" id="toc-site-selection-1" class="nav-link" data-scroll-target="#site-selection-1"><span class="header-section-number">5.1</span> Site selection</a></li>
+  <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1"><span class="header-section-number">5.2</span> Methods</a></li>
+  <li><a href="#methods-2" id="toc-methods-2" class="nav-link" data-scroll-target="#methods-2"><span class="header-section-number">5.3</span> Methods</a></li>
+  <li><a href="#further-research" id="toc-further-research" class="nav-link" data-scroll-target="#further-research"><span class="header-section-number">5.4</span> Further research</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">6</span> Conclusion</a></li>
+  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography"><span class="header-section-number">7</span> Bibliography</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Urban Stream Restoration in Dresden</h1>
+<p class="subtitle lead">Researching the optimal locations to restore the urban streams in order to improve the biodiversity, climate adaptivity and quality of life in the city of Dresden</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Daan Schlosser </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            MSc Geomatics
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Joost Bastiaansen </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            MSc Urbanism
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Aparnaa Chandrasekaran </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            MSc Urbanism
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Teun van Dijk </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            MSc Urbanism
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 26%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Affiliation</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Daan Schlosser</td>
+<td>MSc Geomatics</td>
+<td>Project coordinator &amp; data-analyst</td>
+</tr>
+<tr class="even">
+<td>Joost Bastiaansen</td>
+<td>MSc Urbanism</td>
+<td>Mapping specialist</td>
+</tr>
+<tr class="odd">
+<td>Aparnaa Chandrasekaran</td>
+<td>MSc Urbanism</td>
+<td>Research lead</td>
+</tr>
+<tr class="even">
+<td>Teun van Dijk</td>
+<td>MSc Urbanism</td>
+<td>Presentation &amp; design lead</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<section id="context" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="context"><span class="header-section-number">1.1</span> Context</h3>
+<p>The ‘Interreg central Europe’, a funding program of the European Union for regional development in tandem with climate change and digital transition, started a project, ReBioClim in 2024, focusing on the funding of urban stream restoration, aiming to promote biodiversity, climate adaptation, and improve quality of life in cities (Interreg Central Europe, 2025). This program derives from the concept of Urban Stream Syndrome, which describes the consistently observed ecological degradation of watercourses that drain urban areas, where peak discharge rates during flood events are significantly higher. At the same time, baseflow is reduced due to decreased infiltration (Walsh et al., 2005). This is caused by increased impermeable surfaces, such as roads, rooftops, and parking lots, combined with the more efficient drainage of stormwater through pipelines. The combination of increased hard surfaces and efficient drainage results in a “flashier” hydrograph, which leads to more frequent and larger flow events, with faster rising and falling water flows. This causes certain symptoms of the Urban Stream Syndrome, starting with increased bank erosion and more channel incisions. Other effects are elevated concentrations and loads of chemical pollutants and nutrients in urban stream waters. Both symptoms negatively impact biodiversity (Walsh et al., 2005).</p>
+<p>With climate change, the urgency to address the limitations of urban drainage systems is constantly increasing (Arnbjerg-Nielsen et al., 2013). Impact analyses of urban runoff consistently show that, in regions impacted by climate change, a systematic adaptation effort is necessary to minimise the effects on the poor performance of current drainage systems, particularly in high-risk areas such as cities located along rivers (Arnbjerg-Nielsen et al., 2013). Some studies suggest that, despite the significance of climate change, systematically adapting urban streams can mitigate the impacts of urban stream syndrome to an acceptable level, which is one of the main goals of the Urban Stream Restoration project.</p>
+</section>
+<section id="dresden" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="dresden"><span class="header-section-number">1.2</span> Dresden</h3>
+<p>One of the participating cities in the ReBioClim project is Dresden, located in Germany. In addition to its rich historical significance, Dresden is an important centre of trade due to its position along the River Elbe, which provides a direct connection to Hamburg. The city is also geographically linked to the Sächsische Schweiz, a mountain range renowned for its distinctive sandstone rock formations. The combination of the city’s location along the Elbe and its proximity to the elevated mountain region has resulted in an extensive network of streams, amounting to a total of 347 kilometres. This makes the city susceptible to the Urban Stream Syndrome, as well as the increased impact of climate change (Arnbjerg-Nielsen et al., 2013).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Dresden abstract.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Dresden landscape"><img src="images/introduction/Dresden abstract.png" class="img-fluid figure-img" alt="Dresden landscape"></a></p>
+<figcaption>Dresden landscape</figcaption>
+</figure>
+</div>
+<p>This became apparent in 2002, when Dresden was struck by an enormous flood (Sächsisches Landesamt für Umwelt und Geologie, 2002). Over two meters of rain fell in just three days across large parts of the Osterzgebirge mountain range. This was between two and three times the average amount of rainfall for the entire month of August. Due to previous moisture and geological conditions, the ground could hardly absorb any more water and quickly became saturated. Because of the saturated soil, 60 to 90 percent of the rainfall rapidly ran off in many areas. The runoff infrastructure back then was far from sufficient to cope with this amount of runoff, resulting in substantial damage and destruction in the affected region.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Flood 1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="2002 flooding. theguardian.com (2002)"><img src="images/introduction/Flood 1.png" class="img-fluid figure-img" alt="2002 flooding. theguardian.com (2002)"></a></p>
+<figcaption>2002 flooding. theguardian.com (2002)</figcaption>
+</figure>
+</div>
+<p>The watercourses in the urban areas were almost completely canalised, and the banks were consolidated, even beyond urban areas (Sächsisches Landesamt für Umwelt und Geologie, 2002). Dams, bridges, and other structures along the channels significantly reduced local discharge capacity. In all affected regions, these bottlenecks were identified, where the available discharge profile was completely insufficient.</p>
+<p>The result of this was more than a billion euros in damages as well as multiple casualties. Although the August 2002 flood had a statistical return period of 100 to 500 years, a more extensive analysis reveals that similar events could be expected at any time across all the streams studied. The analysis of the flood (Sächsisches Landesamt für Umwelt und Geologie, 2002) also indicates that the August flood was not the physically possible maximum event, meaning that future flooding events more severe than the 2002 flooding cannot be ruled out. In 2013, a similar event already occurred, where a combination of late snow melts and several wet months in spring resulted in saturated soils and filled reservoirs (KNMI - Central European Flooding 2013, z.d.). Although the magnitude of the flooding of the Elbe was less severe than in 2002, the damages and casualties were comparable.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Flood 2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="2002 flooding. eu.dispatch.com(2013)"><img src="images/introduction/Flood 2.png" class="img-fluid figure-img" alt="2002 flooding. eu.dispatch.com(2013)"></a></p>
+<figcaption>2002 flooding. eu.dispatch.com(2013)</figcaption>
+</figure>
+</div>
+</section>
+<section id="urban-stream-restoration" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="urban-stream-restoration"><span class="header-section-number">1.3</span> Urban Stream Restoration</h3>
+<p>In order to mitigate the impact of similar future events, the Sachsen region and the city of Dresden had a high incentive to develop an integrated sustainable drainage system. To accomplish this, certain goals were set (Sächsisches Landesamt für Umwelt und Geologie, 2002). Starting by giving more space to streams, making them wider and preventing real estate development in flood-prone areas. Furthermore, the hydraulic drainage systems needed a larger discharge profile and higher attention to erosion. Lastly, there was a focus on the decentralised retention of runoff volumes, specifically by influencing the land use around the urban stream reservoirs. This would mean an ecological or recreational program instead of industrial or residential functions, to increase overflow capabilities of streams. These principles could not only be used to improve climate adaptation and increase biodiversity, but also to integrate them by improving the quality of life for surrounding residents.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Geberbach 1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Blaues band Geberbach restoration project (Dresden.de)"><img src="images/introduction/Geberbach 1.jpg" class="img-fluid figure-img" alt="Blaues band Geberbach restoration project (Dresden.de)"></a></p>
+<figcaption>Blaues band Geberbach restoration project (Dresden.de)</figcaption>
+</figure>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Geberbach 2a.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Blaues band Geberbach restoration project (Dresden.de)"><img src="images/introduction/Geberbach 2a.jpg" class="img-fluid figure-img" alt="Blaues band Geberbach restoration project (Dresden.de)"></a></p>
+<figcaption>Blaues band Geberbach restoration project (Dresden.de)</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Geberbach 2b.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Blaues band Geberbach restoration project (Dresden.de)"><img src="images/introduction/Geberbach 2b.jpg" class="img-fluid figure-img" alt="Blaues band Geberbach restoration project (Dresden.de)"></a></p>
+<figcaption>Blaues band Geberbach restoration project (Dresden.de)</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Geberbach 3b.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Blaues band Geberbach restoration project (Dresden.de)"><img src="images/introduction/Geberbach 3b.jpg" class="img-fluid figure-img" alt="Blaues band Geberbach restoration project (Dresden.de)"></a></p>
+<figcaption>Blaues band Geberbach restoration project (Dresden.de)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Dresden’s commitment to sustainable urban development is exemplified by its landscape plan, which envisions a “compact city within an ecological network” (Artmann et al., 2017). This approach emphasises the integration of green and blue infrastructures to improve air and water quality, reduce urban heat island effects, and bolster biodiversity. Enhancing infiltration and evapotranspiration aims to mitigate flood risks and adapt to climate change impacts.</p>
+<p>This goes hand in hand with the Urban Stream restoration project. In Dresden, pilot actions under this project involve stakeholder co-design workshops, restoration plans, and initial restoration activities. An example of one of these projects is Blaues Band Geberbach, where, in collaboration with the community, space is freed up to restore the stream and its surroundings (Dresden, 2025). For this project, a lot of different aspects need to be combined, including land-use, infrastructure and biodiversity. For example, the land of a horse racing track is exchanged to make way for a new cycle path. Furthermore, the construction activities are used to simultaneously install a district heating system.</p>
+<p>All these efforts aim to develop socially integrated solutions that balance ecological requirements with urban planning needs. However, these projects take a lot of time to develop and are very costly to do so. That is why not every stream can be restored simultaneously, and it becomes important to prioritise which locations are most suitable to start with. This leads to the following research question and sub-research questions:</p>
+<p><strong>Which urban stream sections in Dresden have the greatest potential to contribute to the city’s integrated climate resilience?</strong></p>
+<ul>
+<li>Which areas around urban streams are most vulnerable to flooding due to climate change?</li>
+<li>Which areas along urban streams are most urgent to enhance residents’ day-to-day quality of life?</li>
+<li>Which stream corridors have the highest potential to support and enhance urban biodiversity?</li>
+</ul>
+</section>
+</section>
+<section id="methods" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="methods"><span class="header-section-number">2</span> Methods</h2>
+<p>In order to provide an answer to the main research question, it is important to choose appropriate methods that take into account environmental, social, and economic factors (Convertino et al., 2012). To do this, clear metrics are needed to measure the impact of restoration activities at different stages of the project. These metrics are based on three main topics, in tandem with the goals of the ReBioClim project: <strong>climate resilience, quality of life, and biodiversity</strong>. A literature study is used as the basis for identifying which data is relevant to answer the sub-questions and the main research question. It also explains the importance of each topic and how they relate to each other in the datasets. The Structure of the researched is schematized below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Dresden MCDA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="MCDA structure"><img src="images/introduction/Dresden MCDA.png" class="img-fluid figure-img" alt="MCDA structure"></a></p>
+<figcaption>MCDA structure</figcaption>
+</figure>
+</div>
+<section id="site-selection" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="site-selection"><span class="header-section-number">2.1</span> Site Selection</h3>
+<p>To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden, as this is considered a walkable distance. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/STEP1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="500x500m grid"><img src="images/introduction/STEP1.png" class="img-fluid figure-img" alt="500x500m grid"></a></p>
+<figcaption>500x500m grid</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/STEP2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Overlaying the stream network"><img src="images/introduction/STEP2.png" class="img-fluid figure-img" alt="Overlaying the stream network"></a></p>
+<figcaption>Overlaying the stream network</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/STEP3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Keep only the tiles overlapping with the network"><img src="images/introduction/STEP3.png" class="img-fluid figure-img" alt="Keep only the tiles overlapping with the network"></a></p>
+<figcaption>Keep only the tiles overlapping with the network</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="mcda" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="mcda"><span class="header-section-number">2.2</span> MCDA</h3>
+<p>To combine the data and answer the main research question, a Multi-Criteria Decision Analysis (MCDA) is used as it can help quantify non-economic objectives, communicate trade-offs, facilitate consistent and explicit valuation, and focus negotiation on ultimate objectives (Corsair et al., 2009). This method includes several steps, which are described below.</p>
+<p><strong>Step 1: Data Collection and Grid Representation</strong><br>
+Open-source datasets are collected and displayed on a fixed grid of 500-by-500-meter squares. Since the research focuses on finding which streams are most suitable for restoration, only the grid tiles that overlap with streams are shown in the results, as identified during the site selection process.</p>
+<p><strong>Step 2: Data Normalisation</strong><br>
+Next, the data is normalised so that it can be compared. This starts by checking whether a dataset represents good or bad conditions for stream restoration. This is indicated with a plus (+) for good conditions to improve, or a minus (–) when improvement is less needed. For example, streams with lots of greenery already have lower restoration potential, so a dataset showing green areas is marked with a minus (–), and vice versa.</p>
+<p>The main part of normalisation is converting different data value ranges into a 0 to 1 scale, so that each dataset becomes a comparable layer. The normalisation process is explained in the table below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Placeholder for excel sheet.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Layer information table placeholder"><img src="images/introduction/Placeholder for excel sheet.png" class="img-fluid figure-img" alt="Layer information table placeholder"></a></p>
+<figcaption>Layer information table placeholder</figcaption>
+</figure>
+</div>
+<p><strong>Step 3: Weighting the Layers</strong><br>
+In this step, the different data layers are given weights based on their importance. Since this step involves some subjectivity, the literature study helps to support the choices made. The Analytic Hierarchy Process (AHP) is used to compare each dataset in a matrix, assigning weights based on their relevance to each other. To keep the process clear, data layers are only compared within their topic area: climate resilience, quality of life, or ecology. These three main topics are given equal weight, since they are all important to urban stream restoration. The matrices are shown in Figure x.</p>
+<p><img src="images/climate_adaptation/Climate Adaptation_Saaty Matrix.png" class="img-fluid" alt="MCDA structure"> <img src="images/quality_of_life/Quality of Life_Saaty Matrix.png" class="img-fluid" alt="MCDA structure"> <img src="images/biodiversity/Biodiversity_Saaty Matrix.png" class="img-fluid" alt="MCDA structure"></p>
+<p><strong>Step 4: Combining the Results</strong><br>
+Finally, the three weighted layers are combined into a single result map. The structure of the full MCDA process, including the topics, weights, and plus/minus signs, is shown in the figures below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/introduction/Dresden MCDA weight.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="MCDA structure with visualised weighing"><img src="images/introduction/Dresden MCDA weight.png" class="img-fluid figure-img" alt="MCDA structure with visualised weighing"></a></p>
+<figcaption>MCDA structure with visualised weighing</figcaption>
+</figure>
+</div>
+</section>
+<section id="typology-construction" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="typology-construction"><span class="header-section-number">2.3</span> Typology Construction</h3>
+<p>Further, the project uses the Typology Construction method to systematically cluster urban streams based on similar characteristics in terms of their normalised scores obtained during the data collection in the MCDA. This cluster definition helps in creating a toolkit for urban stream restoration, which can include combinations of design and policy measures that can be applied within each cluster. It can help reduce the complexity of urban stream networks by clustering them into manageable groups, which helps optimise budgeting, planning, and monitoring. This method includes several steps, which are described below.</p>
+<p><strong>Step 1. Categories for creating clusters</strong><br>
+The streams are categorised into typologies based on the 15 sub-categories outlined and normalised in the S-MCDA method. For instance, streams with high sealing class, moderate infiltration, and medium biodiversity may form a distinct class.</p>
+<p><strong>Step 2. Choosing the clustering method</strong><br>
+The K-means clustering method is used to identify coherent groups. Within this, a comparison between the elbow method and silhouette scores is utilised to identify the optimum number of clusters with which the project should proceed. The silhouette-based clustering is considered as it ensures that each resulting stream type is distinct enough to justify a specific restoration strategy. This is important for compliance with the EU Water Framework Directive, which emphasises tailored, type-specific measures (Deutsch et al., 2014). Following this process, the resultant ideal number of clusters is 3.</p>
+<p><strong>Step 3. Priority selection</strong><br>
+The cluster that corresponds with the worst-performing tiles in the overall weighted MCDA map is the urban streams in need of immediate restoration measures. The streams nearest to each cluster centroid are the most typical or “prototypical” examples of that stream type. These can serve as reference sites for understanding restoration needs or developing management templates.</p>
+<p><strong>Step 4. Propose design measures</strong><br>
+Addressing the specific characteristics of the prototypical examples as a starting point in the case of the worst-performing tiles with design measures that can facilitate the urban stream restoration project at that site, also serving as a pilot case for the other similar stretches of the urban streams in the same cluster.</p>
+</section>
+<section id="reproducibility-self-assessment" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="reproducibility-self-assessment"><span class="header-section-number">2.4</span> Reproducibility self-assessment</h3>
+<p>We have tried to design our project and workflow with a strong emphasis on reproducible research. For example, we’ve documented to the best of our abilities our processing steps and full data workflow/pipeline, as documented in this report. With some steps, like the NDVI-analysis and the Topology maps obtained via (open-source) code. Reproducibility is also made easier by our exclusive use of open-source tools, e.g.&nbsp;R, RStudio, Python, QGIS, in combination with our exclusive use of publicly (and free) available datasets, like those from the municipality of Dresden, OSM and Copernicus. Additionally, we’ve included a readme for our project, and a separate readme specifically for our datasets, which we also included in our data publication on 4TU.</p>
+<p>However, keeping the above in mind, specifically our emphasis on data processing documentation; We’ve mainly relied on QGIS for our spatial analysis. Which also means that our exact steps, (spatial) operations, etc. are not mapped (including history/version control) and are not explicitly scripted/fully documented, which may pose challenges for exactly reproducing what we did.</p>
+</section>
+</section>
+<section id="results" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="results"><span class="header-section-number">3</span> Results</h2>
+<section id="quality-of-life" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="quality-of-life"><span class="header-section-number">3.1</span> Quality of Life</h3>
+<p>Apart from natural aspects such as biodiversity and climate adaptation, urban streams also exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it can improve their general health.</p>
+<p>In order to assess the quality of life, this research focuses on the improvements the urban stream restoration project can provide on a day-to-day basis.</p>
+<section id="vicinity-to-urban-green-space" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="vicinity-to-urban-green-space"><span class="header-section-number">3.1.1</span> Vicinity to Urban Green Space</h4>
+<p>Many studies have shown urban green space to contribute to improved physical and mental health (Hartig et al., 2014; Dadvand &amp; Nieuwenhuijsen, 2018; Gascon et al., 2015) by enhancing air quality, encouraging physical activity, reducing stress, and strengthening social cohesion, to name a few examples. However, to carry out the necessary analysis for the city of Dresden, a scientific basis is required in order to determine what variables to consider. A study conducted in the Turkish city of Aydın examined the relationship between the availability of urban green space and the physical and mental health of citizens in urbanised areas (Akpinar, 2016). A higher frequency of physical activity was reported by those citizens who live closer to urban green spaces. This increased activity is associated with better mental health and reduced stress levels. Furthermore, the study showed that larger and more open green spaces further encourage physical activity, indicating that not only the presence but also the size of green areas should be taken into account.</p>
+<p>This analysis was conducted by using the Attraction Reach module of the Place Syntax Tool with a radius of 500 metres. The distance of 500 metres was chosen as this is indicative of the walkability of a neighbourhood (Van Nes, 2021). The origins consist of all addresses in the city of Dresden (OpenDataPortal Dresden, 2025A), while destinations include all green spaces within the city boundaries, as provided by OpenStreetMap. The results of the Attraction Reach analysis were adjusted for the area of urban green space, as calculated with the QGIS Field Calculator using $area. This returned a value depicting the total area of urban green space which can be reached from any given address.</p>
+<p>These values were then aggregated within grid cells. The decision to analyse by address, rather than by building, was made to better account for grid cells with higher address densities, which may not have been accurately represented by building-level data alone. To normalise the grid values, the summed accessible area per address was divided by the highest value, resulting in a scale from 0 to 1. Since the distribution of these values was skewed, with most values falling below 0.1, a logarithmic transformation was applied to achieve a more balanced distribution.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/VicinityToUrbanGreenSpace.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Vicinity to Urban Green Space: Analysis"><img src="images/quality_of_life/VicinityToUrbanGreenSpace.jpeg" class="img-fluid figure-img" alt="Vicinity to Urban Green Space: Analysis"></a></p>
+<figcaption>Vicinity to Urban Green Space: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Vicinity to Urban Green Space: MCDA Grid"><img src="images/quality_of_life/VicinityToUrbanGreenSpace_Grid.jpeg" class="img-fluid figure-img" alt="Vicinity to Urban Green Space: MCDA Grid"></a></p>
+<figcaption>Vicinity to Urban Green Space: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="vicinity-to-streams" class="level4" data-number="3.1.2">
+<h4 data-number="3.1.2" class="anchored" data-anchor-id="vicinity-to-streams"><span class="header-section-number">3.1.2</span> Vicinity to Streams</h4>
+<p>Besides the availability of urban green space, the presence of urban blue space also provides a positive impact on general health. When individuals perceive that urban blue space is reachable within walking distance from their home, they report better mental and physical well-being (Völker, 2018). While this study focuses on the home environment and thus residential neighbourhoods, another study investigated the effect of blue space in work environments. Vert et al.&nbsp;(2020) demonstrated the positive effect of blue space on mental health through conducting an experiment in which subjects were assigned to spend 20 minutes at a selected environment. They either walked through blue or urban space or rested at a control site. In this study, general improvements in well-being and mood were found after walking through blue space.</p>
+<p>This analysis was conducted by using the Attraction Reach module of the Place Syntax Tool with a radius of 500 metres. The distance of 500 metres was chosen as this is indicative of the walkability of a neighbourhood (Van Nes, 2021). The origins consist of all addresses in the city of Dresden (OpenDataPortal Dresden, 2025A) while destinations were determined through placing a point for every 50 meters along the stream.</p>
+<p>These values were then aggregated within grid cells. The decision to analyse by address, rather than by building, was made to better account for grid cells with higher address densities, which may not have been accurately represented by building-level data alone. To normalise the grid values, the summed accessible area per address was divided by the highest value, resulting in a scale from 0 to 1. Since the distribution of these values was skewed, with most values falling below 0.1, a logarithmic transformation was applied to achieve a more balanced distribution.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/VicinityToStream.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Vicinity to Stream: Analysis"><img src="images/quality_of_life/VicinityToStream.jpeg" class="img-fluid figure-img" data-fig-cap="Mental Health: Vicinity to Stream" alt="Vicinity to Stream: Analysis"></a></p>
+<figcaption>Vicinity to Stream: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/VicinityToStream_Grid.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Vicinity to Stream: MCDA Grid"><img src="images/quality_of_life/VicinityToStream_Grid.jpeg" class="img-fluid figure-img" data-fig-cap="Mental Health: Vicinity to Stream (Gridded)" alt="Vicinity to Stream: MCDA Grid"></a></p>
+<figcaption>Vicinity to Stream: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="facilities" class="level4" data-number="3.1.3">
+<h4 data-number="3.1.3" class="anchored" data-anchor-id="facilities"><span class="header-section-number">3.1.3</span> Facilities</h4>
+<p>The availability of different facilities is closely related to the use and attractiveness of public space (Roberts et al., 2019; Sugiyama et al., 2010). While the availability of seating arrangements does not directly correspond to an uptake in physical activity and thus an improvement in physical health (Giles-Corti et al., 2005), it does lead to an increase in the general use of public space and encourages more social interactions (Han et al., 2022). In this research, the focus on quality of life and the environmental impact on physical and mental health has primarily focused on the adult population. However, the impact of the younger generation should also be considered. A study conducted in the United States found that each additional play element attracts 50% more users and leads to 50% more physical activity in children (Cohen et al., 2019). Besides the positive impact on their physical health, playgrounds are also a catalyst for socialisation among children (Nordbø et al., 2019), and the availability of a playground can lower social anxiety in children (Bao et al., 2022).</p>
+<p>In order to assess the current state of facilities around urban streams, a buffer of 50 metres was created. All seating arrangements and playgrounds, retrieved from OpenStreetMap and OpenDataPortal Dresden (2025B) within this buffer, were clipped and aggregated within the grid cells. The summed facilities were divided by the highest value, resulting in a scale from 0 to 1. Since the distribution of these values was skewed, with most values falling below 0.1, a logarithmic transformation was applied to achieve a more balanced distribution.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/Facilities.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Facilities: Analysis"><img src="images/quality_of_life/Facilities.jpeg" class="img-fluid figure-img" data-fig-cap="General Health: Facilities" alt="Facilities: Analysis"></a></p>
+<figcaption>Facilities: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/Facilities_Grid.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Facilities: MCDA Grid"><img src="images/quality_of_life/Facilities_Grid.jpeg" class="img-fluid figure-img" data-fig-cap="General Health: Facilities (Gridded)" alt="Facilities: MCDA Grid"></a></p>
+<figcaption>Facilities: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="local-integration" class="level4" data-number="3.1.4">
+<h4 data-number="3.1.4" class="anchored" data-anchor-id="local-integration"><span class="header-section-number">3.1.4</span> Local Integration</h4>
+<p>The local integration analysis can be used to define centres within a city based on the street pattern (Van Nes &amp; Yamu, 2021). A radius of 500 meters is chosen to define the local centres. When locations with a high local integration intersect with urban green spaces, social interactions are more likely to happen (Sheng et al., 2021).</p>
+<p>Besides the benefits of a higher local integration for the social quality of life, this variable can also be indicative of the number of people who will benefit from urban stream restoration in a given area. Local centres attract a high number of people; investments in these areas will thus positively impact a larger group than those with a lower local integration. This analysis was conducted using the Local Integration module of the Place Syntax Tool with a radius of 500 metres. Each segment receives an integration value by conducting this analysis. Through the aggregation of these values within the grid cells, followed by dividing by the number of line segments, it was possible to calculate the average value per segment within each cell. To normalise the grid values, the average local integration value per grid cell was divided by the highest value, resulting in a scale from 0 to 1.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/LocalIntegration.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Local Integration: Analysis"><img src="images/quality_of_life/LocalIntegration.jpeg" class="img-fluid figure-img" data-fig-cap="Accessibility: Local Integration" alt="Local Integration: Analysis"></a></p>
+<figcaption>Local Integration: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/LocalIntegration_Grid.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Local Integration: MCDA Grid"><img src="images/quality_of_life/LocalIntegration_Grid.jpeg" class="img-fluid figure-img" data-fig-cap="Accessibility: Local Integration (Gridded)" alt="Local Integration: MCDA Grid"></a></p>
+<figcaption>Local Integration: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="appearance" class="level4" data-number="3.1.5">
+<h4 data-number="3.1.5" class="anchored" data-anchor-id="appearance"><span class="header-section-number">3.1.5</span> Appearance</h4>
+<p>In recent decades, urban development in Dresden has resulted in many urban streams being covered, primarily to accommodate infrastructure and housing projects (Wantzen et al., 2022). However, as urban streams come with many benefits, which are summarized in this research, an effort can be made to reopen or daylight, the culverted streams.</p>
+<p>The daylighting of urban streams would be part of a larger redevelopment project. As can be read in Wantzen et al.&nbsp;(2022, table 3), different project goals can be attained depending on the length of the stream being daylighted. Projects of up to 140 meters are typically aimed at improving recreational value, and thus quality of life, while projects exceeding 140 metres primarily focus on enhancing biodiversity. To reflect this distinction, stream lengths were normalised using a calculation that assigns a value of 0 to any length between 0 and 140 metres. After 140 meters, the value slowly increases to 1. While daylighting would also benefit larger portions of culverted urban streams, these were given a lower value, as it is less feasible to implement such large projects.</p>
+In order to calculate the normalized value, the following calculation was used:
+<pre> 
+round( 
+  CASE 
+    WHEN "length" &lt;= 140 THEN 0 
+    WHEN "length" &gt; 140 AND "length" &lt;= 2500 THEN ( "length" - 140 ) / (2500 - 140) 
+    ELSE 1 
+  END,
+  3 
+)
+</pre>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/Covered.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Appearance: Analysis"><img src="images/quality_of_life/Covered.jpeg" class="img-fluid figure-img" data-fig-cap="Accessibility: Appearance" alt="Appearance: Analysis"></a></p>
+<figcaption>Appearance: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/Covered_Grid.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Appearance: MCDA Grid"><img src="images/quality_of_life/Covered_Grid.jpeg" class="img-fluid figure-img" data-fig-cap="Accessibility: Appearance (Gridded)" alt="Appearance: MCDA Grid"></a></p>
+<figcaption>Appearance: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="saaty-matrix" class="level4" data-number="3.1.6">
+<h4 data-number="3.1.6" class="anchored" data-anchor-id="saaty-matrix"><span class="header-section-number">3.1.6</span> Saaty Matrix</h4>
+<p><a href="images/quality_of_life/Quality of Life_Saaty Matrix.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="images/quality_of_life/Quality of Life_Saaty Matrix.png" class="img-fluid"></a></p>
+</section>
+<section id="recreational-suitability" class="level4" data-number="3.1.7">
+<h4 data-number="3.1.7" class="anchored" data-anchor-id="recreational-suitability"><span class="header-section-number">3.1.7</span> Recreational Suitability</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/RecreationalSuitability.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Recreational Suitability: Analysis"><img src="images/quality_of_life/RecreationalSuitability.png" class="img-fluid figure-img" data-fig-cap="Recreational Suitability" alt="Recreational Suitability: Analysis"></a></p>
+<figcaption>Recreational Suitability: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quality_of_life/RecreationalSuitability_Gridded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Recreational Suitability: MCDA Grid"><img src="images/quality_of_life/RecreationalSuitability_Gridded.png" class="img-fluid figure-img" data-fig-cap="Recreational Suitability (Gridded)" alt="Recreational Suitability: MCDA Grid"></a></p>
+<figcaption>Recreational Suitability: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="climate-adaptation" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="climate-adaptation"><span class="header-section-number">3.2</span> Climate Adaptation</h3>
+<p>According to Ranta et al.&nbsp;(2021), if urban streams are reverted (almost) to their original state, they can serve as a nature-based solution by providing various services such as better aesthetics, air quality, leisure areas, and mitigation of climatic changes- this integration of blue-green spaces within cities. To achieve this, this project analyses the various ecological aspects and ecosystem services that need to be addressed.</p>
+<section id="flood-risk" class="level4" data-number="3.2.1">
+<h4 data-number="3.2.1" class="anchored" data-anchor-id="flood-risk"><span class="header-section-number">3.2.1</span> Flood Risk</h4>
+<p>Soil storage capacity plays a crucial role in reducing flood risk and supporting urban stream restoration. Soils with high storage capacity absorb and hold rainfall, reducing surface runoff and peak flood flows (Dietz, 2007). This buffering effect decreases the likelihood of flash flooding in urban areas where impervious surfaces dominate. Moreover, enhanced soil storage promotes groundwater recharge, sustaining stream baseflows during dry periods and improving aquatic habitat stability (Booth et al., 2002). In urban stream restoration, improving soil structure and organic content increases storage capacity, helping to restore natural hydrologic functions and resilience against climate extremes (Palmer et al., 2014).</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/1.1 Flood risk_ Analysis.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Flood Risk: Analysis"><img src="images/climate_adaptation/1.1 Flood risk_ Analysis.jpg" class="img-fluid figure-img" data-fig-cap="Flood Risk: Soil Storage" alt="Flood Risk: Analysis"></a></p>
+<figcaption>Flood Risk: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Flood Risk: MCDA Grid"><img src="images/climate_adaptation/1.2 Flood risk_ MCDA Grid.jpg" class="img-fluid figure-img" data-fig-cap="Flood Risk: MCDA Grid" alt="Flood Risk: MCDA Grid"></a></p>
+<figcaption>Flood Risk: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="urban-heat-island-effect" class="level4" data-number="3.2.2">
+<h4 data-number="3.2.2" class="anchored" data-anchor-id="urban-heat-island-effect"><span class="header-section-number">3.2.2</span> Urban Heat Island Effect</h4>
+<p>Higher Urban Heat Island (UHI) effects in Dresden elevate stream temperatures, reduce dissolved oxygen, and stress aquatic ecosystems. Impervious surfaces exacerbate runoff and thermal pollution, degrading urban water quality and biodiversity. Mitigating UHI is essential for urban stream resilience and climate adaptation.</p>
+<p>Mitigating the Urban Heat Island (UHI) effect around urban streams enhances cooling, biodiversity, and public health. Vegetated riparian zones reduce temperatures through shading and evapotranspiration. Integrating blue-green infrastructure is vital for climate resilience in Dresden, especially around these streams (Bowler et al., 2010).</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/2.1 UHI_ Analysis.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="Urban Heat Island: Analysis"><img src="images/climate_adaptation/2.1 UHI_ Analysis.jpg" class="img-fluid figure-img" data-fig-cap="Urban Heat Island: Analysis" alt="Urban Heat Island: Analysis"></a></p>
+<figcaption>Urban Heat Island: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="Urban Heat Island: MCDA Grid"><img src="images/climate_adaptation/2.2 UHI_ MCDA Grid.jpg" class="img-fluid figure-img" data-fig-cap="Urban Heat Island: MCDA Grid" alt="Urban Heat Island: MCDA Grid"></a></p>
+<figcaption>Urban Heat Island: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="green-cover-green-spaces" class="level4" data-number="3.2.3">
+<h4 data-number="3.2.3" class="anchored" data-anchor-id="green-cover-green-spaces"><span class="header-section-number">3.2.3</span> Green Cover: Green Spaces</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/3.1 Green cover_ Analysis.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-31" title="Green Cover: Analysis"><img src="images/climate_adaptation/3.1 Green cover_ Analysis.jpg" class="img-fluid figure-img" data-fig-cap="Green Cover: Green Spaces" alt="Green Cover: Analysis"></a></p>
+<figcaption>Green Cover: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-32" title="Green Cover: MCDA Grid"><img src="images/climate_adaptation/3.2 Green cover_ MCDA Grid.jpg" class="img-fluid figure-img" data-fig-cap="Green Cover: MCDA Grid" alt="Green Cover: MCDA Grid"></a></p>
+<figcaption>Green Cover: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="green-cover-urban-trees" class="level4" data-number="3.2.4">
+<h4 data-number="3.2.4" class="anchored" data-anchor-id="green-cover-urban-trees"><span class="header-section-number">3.2.4</span> Green Cover: Urban Trees</h4>
+<p>Urban trees in Dresden can offer substantial benefits, including mitigating the urban heat island effect, enhancing air quality, and supporting biodiversity. While there are many trees in the city in general, many urban streams are not surrounded by trees. Challenges such as climate-induced drought stress, increased susceptibility to pests, and limited space in densely built areas thus arise and necessitate careful species selection and strategic planning to ensure the resilience and effectiveness of urban forestry initiatives (Adamska, 2013).</p>
+<p>The article by Adamska (2013) suggests that the first zone of the riparian zone around urban streams and rivers should be covered with trees, and this zone should be at least 10 m wide, because it allows roots to hold soil and reduce erosion. Overhanging trees reduce water temperature and support aquatic life. Hence, a buffer of 10 m was created around the urban streams. The trees within this buffer were given a value of 1, and the count was categorised based on the stream grid overlaid. The ones with a value of 2 and above require planting native shrubs and deep-rooted trees to reduce erosion and enhance biodiversity.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/4.1 Urban trees_ Analysis.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-33" title="Urban Trees: Analysis"><img src="images/climate_adaptation/4.1 Urban trees_ Analysis.jpg" class="img-fluid figure-img" data-fig-cap="Urban Trees: Analysis" alt="Urban Trees: Analysis"></a></p>
+<figcaption>Urban Trees: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-34" title="Urban Trees: MCDA Grid"><img src="images/climate_adaptation/4.2 Urban trees_ MCDA Grid.jpg" class="img-fluid figure-img" data-fig-cap="Urban Trees: MCDA Grid" alt="Urban Trees: MCDA Grid"></a></p>
+<figcaption>Urban Trees: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="infiltration-properties-seepage" class="level4" data-number="3.2.5">
+<h4 data-number="3.2.5" class="anchored" data-anchor-id="infiltration-properties-seepage"><span class="header-section-number">3.2.5</span> Infiltration Properties: Seepage</h4>
+<p>Located along the Elbe River, Dresden has experienced severe flooding in recent decades, most notably during the 2002 flood disaster. With climate projections indicating more intense and frequent storm events in the region (Reporter, 2002), improving infiltration around urban streams is essential. Enhanced infiltration reduces surface runoff, delays peak discharge, and alleviates the burden on stormwater infrastructure, thereby mitigating flood risks in densely built-up areas.</p>
+<p>The areas with “infiltration favourable” were given a value of 1, as they function well in their infiltration capacity. The rest of the areas with the infiltration range from less favourable to highly unfavourable were given the value 5. Further, the grid with urban streams was overlapped, and the mean count was ascribed to each grid as each included a range of values. These areas (grid) with values closer to 5 are thus to be considered for improving infiltration capacity and suitability immediately to help flood mitigation, reduce surface runoff (Fletcher et al., 2014), and improve water quality and ecosystem health.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-35" title="Infiltration: Analysis"><img src="images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg" class="img-fluid figure-img" data-fig-cap="Infiltration: Seepage Properties" alt="Infiltration: Analysis"></a></p>
+<figcaption>Infiltration: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-36" title="Infiltration: MCDA Grid"><img src="images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg" class="img-fluid figure-img" data-fig-cap="Infiltration: MCDA Grid" alt="Infiltration: MCDA Grid"></a></p>
+<figcaption>Infiltration: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="infiltration-properties-sealing-class" class="level4" data-number="3.2.6">
+<h4 data-number="3.2.6" class="anchored" data-anchor-id="infiltration-properties-sealing-class"><span class="header-section-number">3.2.6</span> Infiltration Properties: Sealing Class</h4>
+<p>Sealing of urban surfaces generally becomes detrimental to urban stream health and requires alteration for restoration, even if the Versiegelungsgrad (VSG) exceeds 10% (Paul &amp; Meyer, 2001). Studies indicate that impervious surface cover beyond this threshold leads to significant hydrological disruption, including increased runoff, reduced infiltration, and degraded water quality. The European Environment Agency (Kazmierczak et al., 2020) similarly highlights that urban areas with sealing rates above 20% often exhibit impaired stream function and require integrated green infrastructure interventions to restore hydrological and ecological balance. Thus, restoration efforts should prioritise reducing VSG in catchments exceeding this range.</p>
+<p>Thus, the sealing classes were normalised from 1-5, and the unsealed areas were given a value of 1. The grid was overlaid, and the mean values were calculated to see which areas require immediate sealing alteration to restore urban streams.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/6.1 Sealing_ Analysis.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-37" title="Sealing Class: Analysis"><img src="images/climate_adaptation/6.1 Sealing_ Analysis.jpg" class="img-fluid figure-img" data-fig-cap="Sealing Class: Analysis" alt="Sealing Class: Analysis"></a></p>
+<figcaption>Sealing Class: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-38" title="Sealing Class: MCDA Grid"><img src="images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg" class="img-fluid figure-img" data-fig-cap="Sealing Class: MCDA Grid" alt="Sealing Class: MCDA Grid"></a></p>
+<figcaption>Sealing Class: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="saaty-matrix-1" class="level4" data-number="3.2.7">
+<h4 data-number="3.2.7" class="anchored" data-anchor-id="saaty-matrix-1"><span class="header-section-number">3.2.7</span> Saaty Matrix</h4>
+<p><a href="images/climate_adaptation/Climate Adaptation_Saaty Matrix.png" class="lightbox" data-gallery="quarto-lightbox-gallery-39"><img src="images/climate_adaptation/Climate Adaptation_Saaty Matrix.png" class="img-fluid"></a></p>
+</section>
+</section>
+<section id="biodiversity" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="biodiversity"><span class="header-section-number">3.3</span> Biodiversity</h3>
+<p>Biodiversity is important because…</p>
+<section id="pm10" class="level4" data-number="3.3.1">
+<h4 data-number="3.3.1" class="anchored" data-anchor-id="pm10"><span class="header-section-number">3.3.1</span> PM10</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/PM10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-40" title="PM10: Analysis"><img src="images/biodiversity/PM10.png" class="img-fluid figure-img" data-fig-cap="Figure X. PM10 concentration." alt="PM10: Analysis"></a></p>
+<figcaption>PM10: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/PM10_Gridded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-41" title="PM10: MCDA Grid"><img src="images/biodiversity/PM10_Gridded.png" class="img-fluid figure-img" data-fig-cap="Figure X. PM10 MCDA grid." alt="PM10: MCDA Grid"></a></p>
+<figcaption>PM10: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="no₂" class="level4" data-number="3.3.2">
+<h4 data-number="3.3.2" class="anchored" data-anchor-id="no₂"><span class="header-section-number">3.3.2</span> NO₂</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/NO2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-42" title="NO₂: Analysis"><img src="images/biodiversity/NO2.png" class="img-fluid figure-img" data-fig-cap="Figure X. NO2 concentration." alt="NO₂: Analysis"></a></p>
+<figcaption>NO₂: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/NO2_Gridded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43" title="NO₂: MCDA Grid"><img src="images/biodiversity/NO2_Gridded.png" class="img-fluid figure-img" data-fig-cap="Figure X. NO2 MCDA grid." alt="NO₂: MCDA Grid"></a></p>
+<figcaption>NO₂: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ndvi" class="level4" data-number="3.3.3">
+<h4 data-number="3.3.3" class="anchored" data-anchor-id="ndvi"><span class="header-section-number">3.3.3</span> NDVI</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/NDVI.png" class="lightbox" data-gallery="quarto-lightbox-gallery-44" title="NDVI: Analysis"><img src="images/biodiversity/NDVI.png" class="img-fluid figure-img" data-fig-cap="Figure X. NDVI index." alt="NDVI: Analysis"></a></p>
+<figcaption>NDVI: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/NDVI_Gridded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-45" title="NDVI: MCDA Grid"><img src="images/biodiversity/NDVI_Gridded.png" class="img-fluid figure-img" data-fig-cap="Figure X. NDVI MCDA grid." alt="NDVI: MCDA Grid"></a></p>
+<figcaption>NDVI: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="landscape-quality" class="level4" data-number="3.3.4">
+<h4 data-number="3.3.4" class="anchored" data-anchor-id="landscape-quality"><span class="header-section-number">3.3.4</span> Landscape Quality</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/LandscapeQuality.png" class="lightbox" data-gallery="quarto-lightbox-gallery-46" title="Landscape Quality: Analysis"><img src="images/biodiversity/LandscapeQuality.png" class="img-fluid figure-img" data-fig-cap="Figure X. Landscape quality." alt="Landscape Quality: Analysis"></a></p>
+<figcaption>Landscape Quality: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/LandscapeQuality_Gridded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-47" title="Landscape Quality: MCDA Grid"><img src="images/biodiversity/LandscapeQuality_Gridded.png" class="img-fluid figure-img" data-fig-cap="Figure X. Landscape quality MCDA grid." alt="Landscape Quality: MCDA Grid"></a></p>
+<figcaption>Landscape Quality: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="blue-green-infrastructure-percentage" class="level4" data-number="3.3.5">
+<h4 data-number="3.3.5" class="anchored" data-anchor-id="blue-green-infrastructure-percentage"><span class="header-section-number">3.3.5</span> Blue-Green Infrastructure Percentage</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/BlueGreenPercentage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-48" title="Blue-Green: Analysis"><img src="images/biodiversity/BlueGreenPercentage.png" class="img-fluid figure-img" data-fig-cap="Figure X. Blue-green infrastructure percentage." alt="Blue-Green: Analysis"></a></p>
+<figcaption>Blue-Green: Analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/biodiversity/BlueGreenPercentage_Gridded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-49" title="Blue-Green: MCDA Grid"><img src="images/biodiversity/BlueGreenPercentage_Gridded.png" class="img-fluid figure-img" data-fig-cap="Figure X. Blue-green infrastructure MCDA grid." alt="Blue-Green: MCDA Grid"></a></p>
+<figcaption>Blue-Green: MCDA Grid</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="saaty-matrix-2" class="level4" data-number="3.3.6">
+<h4 data-number="3.3.6" class="anchored" data-anchor-id="saaty-matrix-2"><span class="header-section-number">3.3.6</span> Saaty Matrix</h4>
+<p><a href="images/biodiversity/Biodiversity_Saaty Matrix.png" class="lightbox" data-gallery="quarto-lightbox-gallery-50"><img src="images/biodiversity/Biodiversity_Saaty Matrix.png" class="img-fluid"></a></p>
+</section>
+</section>
+<section id="interactive-map-dashboard" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="interactive-map-dashboard"><span class="header-section-number">3.4</span> Interactive Map Dashboard</h3>
+<p>We’ve also developed an interactive dashboard that lets you explore our urban stream restoration analysis in detail. Within the dashboard, you can view any individual map layer, or you can overlay any combination of layers with their importance/weights in mind, as provided in our S-MCDA analysis. For example, 2 BIO layers and 1 QOL layer, to find relationships and patterns. To support this flexibility the dashboard features a trivariate choropleth legend, so any combination of layers can be visualised.</p>
+<p>Additionally, you can click on any 500x500m grid tile to display a bar chart showing all attribute values (ranging from 0 to 1) for that specific location. This tool is especially valuable for deeper analysis and informed decision-making, helping prioritize which stream sections should be restored first and identifying the specific improvements needed for each tile.</p>
+<section id="how-to-use-the-dashboard" class="level4" data-number="3.4.1">
+<h4 data-number="3.4.1" class="anchored" data-anchor-id="how-to-use-the-dashboard"><span class="header-section-number">3.4.1</span> How to use the dashboard</h4>
+<p>Unfortunately, due to CORS restrictions, you cannot open the dashboard by simply opening the HTML file. Fortunately, setting up a temporary local server is quite straightforward:</p>
+<ol type="1">
+<li>Prerequisite: Python must be installed on your computer.</li>
+<li>Open your command prompt/terminal and navigate to the project directory, e.g.: cd C:-asa2025-groupe</li>
+<li>Run python -m http.server or python3 -m http.server in the same terminal window, depending on your Python installation. This starts a temporary local server hosted by the terminal.</li>
+<li>Open your web browser and navigate to localhost:8000/interactive%20map/</li>
+</ol>
+</section>
+</section>
+<section id="overview-of-the-normal-distribution-of-our-layers" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="overview-of-the-normal-distribution-of-our-layers"><span class="header-section-number">3.5</span> Overview of the normal distribution of our layers</h3>
+<p>The following plot displays the distribution of the normalised values for all the layers used in the saaty matrices.</p>
+<div style="width:100%; text-align:center;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="report_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-51"><img src="report_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="4200"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="weighted-maps-per-theme" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="weighted-maps-per-theme"><span class="header-section-number">3.6</span> Weighted maps per theme</h3>
+<p><img src="images/weighted/BIO_Weighted.png" class="img-fluid" alt="Biodiversity index, weighted"> <img src="images/weighted/QOL_Weighted.png" class="img-fluid" alt="Quality of Life index, weighted"> <img src="images/weighted/CLI_Weighted.png" class="img-fluid" alt="Climate Adaptation index, weighted"></p>
+</section>
+<section id="weighted-overall-map" class="level3" data-number="3.7">
+<h3 data-number="3.7" class="anchored" data-anchor-id="weighted-overall-map"><span class="header-section-number">3.7</span> Weighted overall map</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/weighted/Overall_Weighted.png" class="lightbox" data-gallery="quarto-lightbox-gallery-52" title="Overall suitability index, weighted"><img src="images/weighted/Overall_Weighted.png" class="img-fluid figure-img" alt="Overall suitability index, weighted"></a></p>
+<figcaption>Overall suitability index, weighted</figcaption>
+</figure>
+</div>
+</section>
+<section id="k-means-clustering-and-topology-definition" class="level3" data-number="3.8">
+<h3 data-number="3.8" class="anchored" data-anchor-id="k-means-clustering-and-topology-definition"><span class="header-section-number">3.8</span> K-means clustering and topology definition</h3>
+<div style="width:100%; text-align:center;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="report_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-53"><img src="report_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="report_files/figure-html/unnamed-chunk-2-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-54"><img src="report_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-b09b0bdd3c3722f19982" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b09b0bdd3c3722f19982">{"x":{"visdat":{"8781360b8000":["function () ","plotlyVisDat"]},"cur_data":"8781360b8000","attrs":{"8781360b8000":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.73299999999999998,0.56799999999999995,0.69399999999999995,0.67500000000000004,0.67800000000000005,0.60199999999999998,0.55200000000000005,0.64100000000000001,0.58399999999999996,0.54000000000000004,0.63200000000000001,0.58999999999999997,0.57599999999999996,0.67700000000000005,0.54500000000000004,0.63300000000000001,0.69299999999999995,0.57799999999999996,0.53900000000000003,0.497,0.63900000000000001,0.53100000000000003,0.55700000000000005,0.67400000000000004,0.64200000000000002,0.56000000000000005,0.65200000000000002,0.55200000000000005,0.58999999999999997,0.55700000000000005,0.55600000000000005,0.64200000000000002,0.59399999999999997,0.61499999999999999,0.50700000000000001,0.628,0.59699999999999998,0.57699999999999996,0.72999999999999998,0.501,0.51100000000000001,0.64500000000000002,0.69699999999999995,0.56599999999999995,0.59599999999999997,0.65700000000000003,0.68100000000000005,0.57399999999999995,0.58099999999999996,0.60699999999999998,0.71299999999999997,0.70099999999999996,0.61599999999999999,0.60199999999999998,0.53300000000000003,0.60899999999999999,0.58899999999999997,0.64700000000000002,0.67600000000000005,0.64700000000000002,0.57399999999999995,0.66300000000000003,0.57699999999999996,0.59399999999999997,0.70499999999999996,0.65000000000000002,0.625,0.59799999999999998,0.48899999999999999,0.47199999999999998,0.58799999999999997,0.50600000000000001,0.64700000000000002,0.72799999999999998,0.68799999999999994,0.69099999999999995,0.73499999999999999,0.65800000000000003,0.56100000000000005,0.61199999999999999,0.58999999999999997,0.59299999999999997,0.66200000000000003,0.74099999999999999,0.50600000000000001,0.58399999999999996,0.60799999999999998,0.60699999999999998,0.60999999999999999,0.63300000000000001,0.60999999999999999,0.61099999999999999,0.60899999999999999,0.55100000000000005,0.52300000000000002,0.58499999999999996,0.46999999999999997,0.502,0.53900000000000003,0.58899999999999997,0.55200000000000005,0.624,0.44700000000000001,0.55500000000000005,0.59299999999999997,0.61399999999999999,0.627,0.48299999999999998,0.63500000000000001,0.56499999999999995,0.58799999999999997,0.71299999999999997,0.64100000000000001,0.497,0.44900000000000001,0.46899999999999997,0.54600000000000004,0.51800000000000002,0.66000000000000003,0.63300000000000001,0.56299999999999994,0.45100000000000001,0.66900000000000004,0.70999999999999996,0.58599999999999997,0.61799999999999999,0.59699999999999998,0.48599999999999999,0.59399999999999997,0.66300000000000003,0.625,0.70499999999999996,0.64000000000000001,0.65200000000000002,0.5,0.63,0.47799999999999998,0.59999999999999998,0.50800000000000001,0.66500000000000004,0.65900000000000003,0.71499999999999997,0.66800000000000004,0.69299999999999995,0.70199999999999996,0.70599999999999996,0.72499999999999998,0.71099999999999997,0.67600000000000005,0.69099999999999995,0.68600000000000005,0.67400000000000004,0.64500000000000002,0.74199999999999999,0.65600000000000003,0.69199999999999995,0.61499999999999999,0.49199999999999999,0.64700000000000002,0.69099999999999995,0.65700000000000003,0.64300000000000002,0.73699999999999999,0.64600000000000002,0.58499999999999996,0.64400000000000002,0.60699999999999998,0.746,0.71199999999999997,0.67100000000000004,0.64500000000000002,0.68000000000000005,0.61799999999999999,0.73799999999999999,0.67200000000000004,0.73399999999999999,0.70499999999999996,0.69199999999999995,0.73699999999999999,0.71099999999999997,0.70799999999999996,0.78500000000000003,0.72399999999999998],"y":[0.42299999999999999,0.44700000000000001,0.40899999999999997,0.433,0.371,0.42399999999999999,0.45400000000000001,0.40500000000000003,0.40999999999999998,0.42799999999999999,0.44800000000000001,0.40699999999999997,0.443,0.42599999999999999,0.44700000000000001,0.49399999999999999,0.44,0.41799999999999998,0.48399999999999999,0.39300000000000002,0.379,0.443,0.46000000000000002,0.42299999999999999,0.436,0.48599999999999999,0.439,0.39100000000000001,0.40999999999999998,0.42099999999999999,0.39700000000000002,0.39700000000000002,0.40899999999999997,0.40899999999999997,0.40200000000000002,0.374,0.39100000000000001,0.42599999999999999,0.39800000000000002,0.41699999999999998,0.42099999999999999,0.38500000000000001,0.46500000000000002,0.49099999999999999,0.46500000000000002,0.42599999999999999,0.44600000000000001,0.40000000000000002,0.42099999999999999,0.45400000000000001,0.41999999999999998,0.46899999999999997,0.41299999999999998,0.44600000000000001,0.45500000000000002,0.40100000000000002,0.441,0.42499999999999999,0.46600000000000003,0.47299999999999998,0.40699999999999997,0.44,0.439,0.45400000000000001,0.43099999999999999,0.39400000000000002,0.45900000000000002,0.442,0.45400000000000001,0.43099999999999999,0.48999999999999999,0.47199999999999998,0.40999999999999998,0.42199999999999999,0.41599999999999998,0.379,0.433,0.47899999999999998,0.51300000000000001,0.45400000000000001,0.443,0.38900000000000001,0.45200000000000001,0.41999999999999998,0.435,0.42199999999999999,0.39200000000000002,0.40799999999999997,0.374,0.35499999999999998,0.439,0.39500000000000002,0.40100000000000002,0.44500000000000001,0.49199999999999999,0.38900000000000001,0.45400000000000001,0.46800000000000003,0.47099999999999997,0.47599999999999998,0.48399999999999999,0.48099999999999998,0.434,0.442,0.48399999999999999,0.38800000000000001,0.42099999999999999,0.51500000000000001,0.41499999999999998,0.39200000000000002,0.379,0.41199999999999998,0.46000000000000002,0.308,0.40600000000000003,0.46400000000000002,0.42299999999999999,0.41599999999999998,0.434,0.36099999999999999,0.38400000000000001,0.316,0.47099999999999997,0.39600000000000002,0.40200000000000002,0.374,0.42199999999999999,0.36199999999999999,0.40699999999999997,0.379,0.46400000000000002,0.40000000000000002,0.45400000000000001,0.44700000000000001,0.46300000000000002,0.47499999999999998,0.36499999999999999,0.47999999999999998,0.38200000000000001,0.47399999999999998,0.441,0.443,0.48399999999999999,0.40699999999999997,0.34799999999999998,0.42199999999999999,0.41899999999999998,0.47099999999999997,0.40799999999999997,0.39600000000000002,0.41399999999999998,0.44500000000000001,0.43099999999999999,0.44,0.44500000000000001,0.42999999999999999,0.434,0.42999999999999999,0.39800000000000002,0.372,0.317,0.44500000000000001,0.38400000000000001,0.39000000000000001,0.38800000000000001,0.40500000000000003,0.35599999999999998,0.38100000000000001,0.45600000000000002,0.45200000000000001,0.40000000000000002,0.442,0.439,0.40799999999999997,0.432,0.42199999999999999,0.35199999999999998,0.35699999999999998,0.35999999999999999,0.41999999999999998,0.40699999999999997,0.45500000000000002,0.45000000000000001],"z":[0.42899999999999999,0.68400000000000005,0.59799999999999998,0.60699999999999998,0.58799999999999997,0.64700000000000002,0.38300000000000001,0.68100000000000005,0.49199999999999999,0.59099999999999997,0.68100000000000005,0.60699999999999998,0.66200000000000003,0.49199999999999999,0.68500000000000005,0.42299999999999999,0.57299999999999995,0.69699999999999995,0.66700000000000004,0.45000000000000001,0.40999999999999998,0.17100000000000001,0.35299999999999998,0.34699999999999998,0.47299999999999998,0.27600000000000002,0.37,0.248,0.48699999999999999,0.56999999999999995,0.33300000000000002,0.44800000000000001,0.42399999999999999,0.46400000000000002,0.184,0.38600000000000001,0.373,0.54500000000000004,0.42799999999999999,0.17199999999999999,0.153,0.33800000000000002,0.46500000000000002,0.33700000000000002,0.22,0.185,0.36799999999999999,0.26600000000000001,0.36399999999999999,0.191,0.40999999999999998,0.40200000000000002,0.54500000000000004,0.70699999999999996,0.56499999999999995,0.53000000000000003,0.65700000000000003,0.60199999999999998,0.57799999999999996,0.56699999999999995,0.59299999999999997,0.53400000000000003,0.63500000000000001,0.68100000000000005,0.53200000000000003,0.40600000000000003,0.56100000000000005,0.73499999999999999,0.65100000000000002,0.61799999999999999,0.28100000000000003,0.20999999999999999,0.27100000000000002,0.23699999999999999,0.38100000000000001,0.40600000000000003,0.26600000000000001,0.503,0.35999999999999999,0.30399999999999999,0.24399999999999999,0.23300000000000001,0.245,0.23200000000000001,0.61099999999999999,0.45100000000000001,0.55700000000000005,0.253,0.20699999999999999,0.373,0.629,0.59399999999999997,0.625,0.433,0.379,0.54900000000000004,0.442,0.44600000000000001,0.45600000000000002,0.69899999999999995,0.61899999999999999,0.628,0.42199999999999999,0.39400000000000002,0.31900000000000001,0.54500000000000004,0.61599999999999999,0.30199999999999999,0.33900000000000002,0.38200000000000001,0.40500000000000003,0.54800000000000004,0.51000000000000001,0.22600000000000001,0.34599999999999997,0.46300000000000002,0.47799999999999998,0.26000000000000001,0.58499999999999996,0.56499999999999995,0.41299999999999998,0.32000000000000001,0.34200000000000003,0.54000000000000004,0.61699999999999999,0.497,0.41999999999999998,0.39700000000000002,0.39700000000000002,0.505,0.27400000000000002,0.55200000000000005,0.38200000000000001,0.40699999999999997,0.46200000000000002,0.59799999999999998,0.32500000000000001,0.314,0.503,0.498,0.58699999999999997,0.504,0.46100000000000002,0.47399999999999998,0.56799999999999995,0.54300000000000004,0.48899999999999999,0.437,0.42399999999999999,0.52500000000000002,0.46100000000000002,0.58199999999999996,0.38,0.45400000000000001,0.434,0.57199999999999995,0.52200000000000002,0.41399999999999998,0.437,0.56200000000000006,0.42499999999999999,0.59499999999999997,0.497,0.52600000000000002,0.35399999999999998,0.42799999999999999,0.52900000000000003,0.34999999999999998,0.52500000000000002,0.52700000000000002,0.44800000000000001,0.52500000000000002,0.60799999999999998,0.51400000000000001,0.54700000000000004,0.45500000000000002,0.54400000000000004,0.60499999999999998,0.51100000000000001,0.41599999999999998,0.57499999999999996,0.35699999999999998,0.42899999999999999],"type":"scatter3d","mode":"markers","marker":{"size":5,"color":"#E41A1C","symbol":"circle"},"name":"Cluster 1","showlegend":true,"inherit":true},"8781360b8000.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.627,0.626,0.64500000000000002],"y":[0.42199999999999999,0.42499999999999999,0.42999999999999999],"z":[0.41399999999999998,0.48799999999999999,0.46100000000000002],"type":"scatter3d","mode":"markers","marker":{"size":6,"color":"#E41A1C","symbol":"diamond"},"name":"Cluster 1 (nearest)","showlegend":true,"inherit":true},"8781360b8000.2":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.79600000000000004,0.65500000000000003,0.84899999999999998,0.70199999999999996,0.68899999999999995,0.76900000000000002,0.72399999999999998,0.89100000000000001,0.877,0.88200000000000001,0.90000000000000002,0.879,0.77500000000000002,0.74399999999999999,0.66400000000000003,0.748,0.78500000000000003,0.81699999999999995,0.72499999999999998,0.72999999999999998,0.755,0.81100000000000005,0.82499999999999996,0.80000000000000004,0.84699999999999998,0.86099999999999999,0.78800000000000003,0.75600000000000001,0.76000000000000001,0.81499999999999995,0.79900000000000004,0.64700000000000002,0.65900000000000003,0.74199999999999999,0.80000000000000004,0.76600000000000001,0.81999999999999995,0.72399999999999998,0.86699999999999999,0.85599999999999998,0.80500000000000005,0.80200000000000005,0.83499999999999996,0.79200000000000004,0.84899999999999998,0.86199999999999999,0.69999999999999996,0.82799999999999996,0.75800000000000001,0.745,0.72099999999999997,0.83499999999999996,0.76900000000000002,0.63400000000000001,0.80800000000000005,0.83599999999999997,0.748,0.83099999999999996,0.84199999999999997,0.72699999999999998,0.81499999999999995,0.755,0.70999999999999996,0.71699999999999997,0.71499999999999997,0.81399999999999995,0.81499999999999995,0.75700000000000001,0.63200000000000001,0.78600000000000003,0.753,0.82699999999999996,0.89000000000000001,0.89000000000000001,0.89300000000000002,0.72799999999999998,0.85099999999999998,0.82299999999999995,0.84999999999999998,0.877,0.85299999999999998,0.86299999999999999,0.83499999999999996,0.81999999999999995,0.86099999999999999,0.71099999999999997,0.70399999999999996,0.69499999999999995,0.752,0.76700000000000002,0.71699999999999997,0.71099999999999997,0.68500000000000005,0.69799999999999995,0.74099999999999999,0.86799999999999999,0.80000000000000004,0.76600000000000001,0.68100000000000005,0.77700000000000002,0.83199999999999996,0.82199999999999995,0.81799999999999995,0.78200000000000003,0.86199999999999999,0.79400000000000004,0.70499999999999996,0.70899999999999996,0.75700000000000001,0.745,0.81799999999999995,0.78200000000000003,0.749,0.80000000000000004,0.79800000000000004,0.76700000000000002,0.82199999999999995,0.78000000000000003,0.71699999999999997,0.69899999999999995,0.745,0.77000000000000002,0.76300000000000001,0.81200000000000006,0.77800000000000002,0.78700000000000003,0.79200000000000004,0.78400000000000003,0.74199999999999999,0.76900000000000002,0.80500000000000005,0.82699999999999996,0.748,0.80800000000000005,0.83699999999999997,0.78900000000000003,0.74099999999999999,0.79800000000000004,0.81899999999999995,0.84699999999999998,0.79700000000000004,0.80400000000000005,0.76400000000000001,0.74299999999999999,0.80300000000000005,0.77800000000000002,0.77200000000000002,0.76900000000000002,0.89500000000000002,0.73299999999999998,0.754,0.77700000000000002,0.77400000000000002,0.80800000000000005,0.76800000000000002,0.86799999999999999,0.80800000000000005,0.78300000000000003,0.73399999999999999,0.76700000000000002,0.79200000000000004,0.79800000000000004,0.76800000000000002,0.81599999999999995,0.82499999999999996,0.88200000000000001,0.77800000000000002,0.82199999999999995,0.77000000000000002,0.79900000000000004,0.76600000000000001,0.73699999999999999,0.84099999999999997,0.79700000000000004,0.73499999999999999,0.80700000000000005,0.80400000000000005,0.79400000000000004,0.77000000000000002,0.80500000000000005,0.89000000000000001,0.80100000000000005,0.83699999999999997,0.876,0.82599999999999996,0.75600000000000001,0.82799999999999996,0.75600000000000001,0.78000000000000003,0.75700000000000001,0.76500000000000001,0.76400000000000001,0.77000000000000002,0.78300000000000003,0.79200000000000004,0.82099999999999995,0.81599999999999995,0.753,0.83399999999999996,0.83499999999999996,0.84399999999999997,0.89400000000000002,0.82599999999999996,0.73799999999999999,0.76600000000000001,0.77000000000000002,0.79200000000000004,0.78200000000000003,0.78600000000000003,0.77500000000000002,0.78100000000000003,0.74199999999999999,0.72999999999999998,0.74099999999999999,0.749,0.81299999999999994,0.73699999999999999,0.77300000000000002,0.79700000000000004,0.73599999999999999,0.75800000000000001,0.81399999999999995,0.82999999999999996,0.76700000000000002,0.71999999999999997,0.84999999999999998,0.88900000000000001,0.76200000000000001,0.80400000000000005,0.75,0.69499999999999995,0.77200000000000002,0.75700000000000001,0.751,0.73399999999999999,0.71399999999999997,0.748,0.71799999999999997,0.82499999999999996,0.85499999999999998,0.86199999999999999,0.84699999999999998,0.88800000000000001,0.76900000000000002,0.76600000000000001,0.78800000000000003,0.79700000000000004,0.69999999999999996,0.72499999999999998,0.753,0.73099999999999998,0.73999999999999999,0.74399999999999999,0.74399999999999999,0.73999999999999999,0.76500000000000001,0.84499999999999997,0.84899999999999998,0.82599999999999996,0.76700000000000002,0.85399999999999998,0.82299999999999995,0.83099999999999996,0.754,0.78900000000000003,0.76400000000000001,0.77800000000000002,0.78000000000000003,0.76400000000000001,0.69699999999999995,0.70899999999999996,0.71799999999999997,0.76100000000000001,0.754,0.73999999999999999,0.74299999999999999,0.72999999999999998,0.83199999999999996,0.71899999999999997,0.81699999999999995,0.88700000000000001,0.86899999999999999,0.79600000000000004,0.80700000000000005,0.80500000000000005,0.71699999999999997,0.751,0.74199999999999999,0.72099999999999997,0.76400000000000001,0.75600000000000001,0.753,0.78200000000000003,0.748,0.78800000000000003,0.85799999999999998,0.81799999999999995,0.84099999999999997,0.80300000000000005,0.81799999999999995,0.83699999999999997,0.84099999999999997,0.83599999999999997,0.77700000000000002,0.75,0.80800000000000005,0.69599999999999995,0.745,0.75600000000000001,0.75900000000000001,0.747,0.71199999999999997,0.79500000000000004,0.77800000000000002,0.80600000000000005,0.72999999999999998,0.78700000000000003,0.84199999999999997,0.77400000000000002,0.83999999999999997,0.79600000000000004,0.86499999999999999,0.86599999999999999,0.89000000000000001,0.89100000000000001,0.88400000000000001,0.84799999999999998,0.71599999999999997,0.72399999999999998,0.75800000000000001,0.76600000000000001,0.75900000000000001,0.80000000000000004,0.74299999999999999,0.76800000000000002,0.71799999999999997,0.84799999999999998,0.876,0.84699999999999998,0.83399999999999996,0.83299999999999996,0.88200000000000001,0.71099999999999997,0.75800000000000001,0.74399999999999999,0.80200000000000005,0.754,0.749,0.70099999999999996,0.753,0.874,0.84299999999999997,0.85399999999999998,0.82599999999999996,0.81399999999999995,0.81899999999999995,0.752,0.68899999999999995,0.76600000000000001,0.77100000000000002,0.85799999999999998,0.875,0.81200000000000006,0.80200000000000005,0.81899999999999995,0.81200000000000006,0.90300000000000002,0.871,0.90100000000000002,0.80700000000000005,0.80800000000000005,0.69599999999999995,0.86199999999999999,0.753,0.88400000000000001,0.85099999999999998,0.82799999999999996,0.76900000000000002,0.78300000000000003,0.64200000000000002,0.73899999999999999,0.77500000000000002,0.84599999999999997,0.871,0.68200000000000005,0.80500000000000005,0.81799999999999995,0.83299999999999996,0.89300000000000002,0.89800000000000002,0.88400000000000001,0.75900000000000001,0.68500000000000005,0.75,0.90300000000000002,0.86899999999999999,0.84499999999999997,0.88500000000000001,0.89500000000000002,0.80300000000000005,0.79800000000000004,0.78600000000000003,0.77300000000000002,0.77500000000000002,0.77000000000000002,0.86899999999999999,0.80900000000000005,0.85299999999999998,0.90600000000000003,0.90600000000000003,0.80900000000000005,0.79500000000000004,0.89200000000000002,0.82499999999999996,0.79900000000000004,0.69799999999999995,0.78100000000000003,0.83399999999999996,0.82399999999999995,0.90600000000000003,0.90100000000000002,0.74299999999999999,0.747,0.82299999999999995,0.90300000000000002,0.83499999999999996,0.72599999999999998,0.83399999999999996,0.80100000000000005],"y":[0.45300000000000001,0.43099999999999999,0.48399999999999999,0.44400000000000001,0.45000000000000001,0.40699999999999997,0.41899999999999998,0.44,0.434,0.40100000000000002,0.44600000000000001,0.47299999999999998,0.42399999999999999,0.42899999999999999,0.42999999999999999,0.41899999999999998,0.42399999999999999,0.47799999999999998,0.42799999999999999,0.42199999999999999,0.434,0.41899999999999998,0.40799999999999997,0.45500000000000002,0.41499999999999998,0.39500000000000002,0.41099999999999998,0.47299999999999998,0.435,0.38600000000000001,0.40699999999999997,0.45400000000000001,0.434,0.47699999999999998,0.433,0.39200000000000002,0.46600000000000003,0.46800000000000003,0.44,0.48299999999999998,0.433,0.438,0.47899999999999998,0.39400000000000002,0.40000000000000002,0.442,0.46100000000000002,0.47299999999999998,0.40899999999999997,0.40699999999999997,0.43099999999999999,0.441,0.435,0.41899999999999998,0.44,0.45100000000000001,0.41499999999999998,0.42299999999999999,0.433,0.44800000000000001,0.44900000000000001,0.42299999999999999,0.44500000000000001,0.45100000000000001,0.46200000000000002,0.45100000000000001,0.46800000000000003,0.42299999999999999,0.42999999999999999,0.41599999999999998,0.432,0.45200000000000001,0.46100000000000002,0.46000000000000002,0.45000000000000001,0.39100000000000001,0.46100000000000002,0.433,0.45800000000000002,0.44,0.438,0.45300000000000001,0.46300000000000002,0.42399999999999999,0.46000000000000002,0.373,0.438,0.45400000000000001,0.44800000000000001,0.42699999999999999,0.432,0.436,0.48099999999999998,0.435,0.43099999999999999,0.42899999999999999,0.441,0.37,0.47399999999999998,0.42799999999999999,0.33500000000000002,0.46200000000000002,0.45200000000000001,0.435,0.433,0.47699999999999998,0.42899999999999999,0.42299999999999999,0.45400000000000001,0.45200000000000001,0.42199999999999999,0.44,0.44400000000000001,0.45800000000000002,0.44900000000000001,0.439,0.46100000000000002,0.42799999999999999,0.41099999999999998,0.45700000000000002,0.45100000000000001,0.44700000000000001,0.42599999999999999,0.41399999999999998,0.437,0.45500000000000002,0.45500000000000002,0.45500000000000002,0.438,0.436,0.44400000000000001,0.43099999999999999,0.48699999999999999,0.44,0.45400000000000001,0.45500000000000002,0.45200000000000001,0.45000000000000001,0.42399999999999999,0.42999999999999999,0.47799999999999998,0.45400000000000001,0.45700000000000002,0.45500000000000002,0.45300000000000001,0.45100000000000001,0.44400000000000001,0.46000000000000002,0.45400000000000001,0.46700000000000003,0.45700000000000002,0.45600000000000002,0.45200000000000001,0.43099999999999999,0.44,0.441,0.44800000000000001,0.45500000000000002,0.45800000000000002,0.45600000000000002,0.45000000000000001,0.41699999999999998,0.442,0.42199999999999999,0.39300000000000002,0.46500000000000002,0.45500000000000002,0.45000000000000001,0.46000000000000002,0.42299999999999999,0.42099999999999999,0.45200000000000001,0.436,0.44900000000000001,0.45700000000000002,0.45000000000000001,0.45300000000000001,0.45000000000000001,0.41399999999999998,0.442,0.502,0.38500000000000001,0.47199999999999998,0.47399999999999998,0.44700000000000001,0.40000000000000002,0.38800000000000001,0.42599999999999999,0.46200000000000002,0.45000000000000001,0.44500000000000001,0.48099999999999998,0.45000000000000001,0.45500000000000002,0.36099999999999999,0.45100000000000001,0.44600000000000001,0.376,0.45100000000000001,0.46999999999999997,0.43099999999999999,0.434,0.434,0.40200000000000002,0.38300000000000001,0.42099999999999999,0.45900000000000002,0.45700000000000002,0.45000000000000001,0.45700000000000002,0.44500000000000001,0.48699999999999999,0.44500000000000001,0.46000000000000002,0.45600000000000002,0.45600000000000002,0.375,0.45500000000000002,0.41099999999999998,0.40899999999999997,0.38300000000000001,0.41599999999999998,0.43099999999999999,0.41999999999999998,0.41399999999999998,0.441,0.43099999999999999,0.44700000000000001,0.45600000000000002,0.45200000000000001,0.45100000000000001,0.44700000000000001,0.45100000000000001,0.45500000000000002,0.46300000000000002,0.46000000000000002,0.45000000000000001,0.46800000000000003,0.36599999999999999,0.373,0.40300000000000002,0.45500000000000002,0.42999999999999999,0.41699999999999998,0.44900000000000001,0.45600000000000002,0.45000000000000001,0.44600000000000001,0.44700000000000001,0.44700000000000001,0.45700000000000002,0.45700000000000002,0.46100000000000002,0.45900000000000002,0.47799999999999998,0.42499999999999999,0.40799999999999997,0.47599999999999998,0.48399999999999999,0.439,0.42799999999999999,0.47799999999999998,0.41499999999999998,0.441,0.45000000000000001,0.45500000000000002,0.46200000000000002,0.45800000000000002,0.45200000000000001,0.45200000000000001,0.44800000000000001,0.45300000000000001,0.44800000000000001,0.504,0.45000000000000001,0.46300000000000002,0.45500000000000002,0.42999999999999999,0.47899999999999998,0.47199999999999998,0.39000000000000001,0.42999999999999999,0.439,0.39000000000000001,0.48199999999999998,0.45900000000000002,0.46100000000000002,0.46000000000000002,0.45900000000000002,0.44900000000000001,0.44800000000000001,0.45900000000000002,0.35999999999999999,0.41199999999999998,0.41899999999999998,0.433,0.49399999999999999,0.41199999999999998,0.48599999999999999,0.42899999999999999,0.40400000000000003,0.42999999999999999,0.43099999999999999,0.47499999999999998,0.44700000000000001,0.46600000000000003,0.45200000000000001,0.45300000000000001,0.45600000000000002,0.46000000000000002,0.46100000000000002,0.45700000000000002,0.45200000000000001,0.44700000000000001,0.443,0.41099999999999998,0.41499999999999998,0.47599999999999998,0.46000000000000002,0.40200000000000002,0.49299999999999999,0.36899999999999999,0.42499999999999999,0.44700000000000001,0.47699999999999998,0.42499999999999999,0.44,0.442,0.45300000000000001,0.45400000000000001,0.45600000000000002,0.48499999999999999,0.44400000000000001,0.443,0.435,0.45700000000000002,0.36399999999999999,0.45600000000000002,0.44,0.45600000000000002,0.44700000000000001,0.439,0.42599999999999999,0.49199999999999999,0.45400000000000001,0.44800000000000001,0.436,0.42499999999999999,0.42399999999999999,0.46200000000000002,0.46999999999999997,0.45000000000000001,0.41299999999999998,0.47499999999999998,0.46500000000000002,0.44700000000000001,0.433,0.44,0.437,0.435,0.42599999999999999,0.434,0.43099999999999999,0.45600000000000002,0.41099999999999998,0.45500000000000002,0.438,0.46400000000000002,0.41899999999999998,0.499,0.439,0.45800000000000002,0.44400000000000001,0.39700000000000002,0.46300000000000002,0.41799999999999998,0.443,0.40899999999999997,0.45800000000000002,0.45800000000000002,0.39700000000000002,0.38,0.45500000000000002,0.44900000000000001,0.442,0.36799999999999999,0.47299999999999998,0.45600000000000002,0.45200000000000001,0.41599999999999998,0.42699999999999999,0.46800000000000003,0.42199999999999999,0.41199999999999998,0.46400000000000002,0.45700000000000002,0.45100000000000001,0.40999999999999998,0.44600000000000001,0.45200000000000001,0.442,0.436,0.51000000000000001,0.433,0.377,0.42399999999999999,0.46000000000000002,0.46000000000000002,0.42699999999999999,0.41799999999999998,0.45000000000000001,0.48799999999999999,0.44600000000000001,0.432,0.41399999999999998,0.44900000000000001,0.45900000000000002,0.45600000000000002,0.435,0.443,0.45100000000000001,0.435,0.38600000000000001,0.45800000000000002,0.435,0.45100000000000001,0.45800000000000002,0.40400000000000003,0.46200000000000002],"z":[0.51700000000000002,0.70399999999999996,0.56699999999999995,0.56699999999999995,0.67300000000000004,0.55300000000000005,0.59099999999999997,0.60699999999999998,0.70999999999999996,0.63400000000000001,0.55900000000000005,0.66900000000000004,0.56399999999999995,0.60199999999999998,0.68700000000000006,0.624,0.46600000000000003,0.53100000000000003,0.64700000000000002,0.53400000000000003,0.61099999999999999,0.64700000000000002,0.51100000000000001,0.69199999999999995,0.64200000000000002,0.66500000000000004,0.64900000000000002,0.48199999999999998,0.54000000000000004,0.65300000000000002,0.64800000000000002,0.68999999999999995,0.69699999999999995,0.63300000000000001,0.65700000000000003,0.54000000000000004,0.58999999999999997,0.64800000000000002,0.70799999999999996,0.70899999999999996,0.70899999999999996,0.55800000000000005,0.65400000000000003,0.56699999999999995,0.68400000000000005,0.64000000000000001,0.57699999999999996,0.625,0.63,0.64800000000000002,0.57899999999999996,0.748,0.80900000000000005,0.71399999999999997,0.77500000000000002,0.80300000000000005,0.65000000000000002,0.66200000000000003,0.73499999999999999,0.69599999999999995,0.75700000000000001,0.75,0.628,0.65000000000000002,0.57099999999999995,0.61299999999999999,0.65400000000000003,0.61099999999999999,0.71699999999999997,0.625,0.59099999999999997,0.624,0.627,0.70099999999999996,0.61299999999999999,0.70399999999999996,0.63500000000000001,0.55600000000000005,0.53500000000000003,0.56499999999999995,0.55900000000000005,0.67300000000000004,0.68899999999999995,0.52600000000000002,0.60499999999999998,0.628,0.68500000000000005,0.67100000000000004,0.55300000000000005,0.67100000000000004,0.58099999999999996,0.67600000000000005,0.66500000000000004,0.63200000000000001,0.64300000000000002,0.70499999999999996,0.83499999999999996,0.61599999999999999,0.66600000000000004,0.71699999999999997,0.77300000000000002,0.79700000000000004,0.75700000000000001,0.76200000000000001,0.77400000000000002,0.76400000000000001,0.58399999999999996,0.69899999999999995,0.66300000000000003,0.81899999999999995,0.76200000000000001,0.77000000000000002,0.754,0.81100000000000005,0.81000000000000005,0.78200000000000003,0.77700000000000002,0.63100000000000001,0.68100000000000005,0.56699999999999995,0.65100000000000002,0.75600000000000001,0.76400000000000001,0.752,0.753,0.78600000000000003,0.79900000000000004,0.81200000000000006,0.82599999999999996,0.82799999999999996,0.78600000000000003,0.78900000000000003,0.61499999999999999,0.47599999999999998,0.75900000000000001,0.67300000000000004,0.81899999999999995,0.80300000000000005,0.71299999999999997,0.70099999999999996,0.76500000000000001,0.79200000000000004,0.85499999999999998,0.83899999999999997,0.84399999999999997,0.84399999999999997,0.81899999999999995,0.52100000000000002,0.77100000000000002,0.71399999999999997,0.78600000000000003,0.71199999999999997,0.82199999999999995,0.71799999999999997,0.72899999999999998,0.78600000000000003,0.80300000000000005,0.876,0.80300000000000005,0.81899999999999995,0.80300000000000005,0.57699999999999996,0.58999999999999997,0.628,0.46200000000000002,0.78000000000000003,0.60899999999999999,0.59899999999999998,0.67300000000000004,0.65500000000000003,0.63100000000000001,0.80000000000000004,0.73199999999999998,0.71999999999999997,0.85199999999999998,0.84299999999999997,0.85199999999999998,0.80300000000000005,0.56399999999999995,0.57999999999999996,0.73399999999999999,0.61899999999999999,0.58399999999999996,0.71299999999999997,0.69299999999999995,0.61499999999999999,0.57699999999999996,0.59499999999999997,0.65100000000000002,0.71399999999999997,0.70899999999999996,0.67800000000000005,0.73299999999999998,0.80600000000000005,0.79500000000000004,0.88800000000000001,0.83299999999999996,0.624,0.67800000000000005,0.61599999999999999,0.622,0.67200000000000004,0.71799999999999997,0.63300000000000001,0.56899999999999995,0.51800000000000002,0.67300000000000004,0.755,0.71799999999999997,0.71399999999999997,0.749,0.67200000000000004,0.71999999999999997,0.81899999999999995,0.83199999999999996,0.88500000000000001,0.622,0.51100000000000001,0.59099999999999997,0.61699999999999999,0.622,0.63700000000000001,0.55800000000000005,0.54500000000000004,0.60999999999999999,0.71499999999999997,0.68899999999999995,0.71499999999999997,0.68600000000000005,0.70499999999999996,0.80800000000000005,0.69699999999999995,0.70099999999999996,0.82499999999999996,0.80900000000000005,0.83199999999999996,0.81299999999999994,0.63900000000000001,0.67400000000000004,0.70799999999999996,0.58399999999999996,0.47199999999999998,0.56499999999999995,0.65100000000000002,0.66300000000000003,0.70599999999999996,0.73799999999999999,0.79300000000000004,0.69399999999999995,0.70699999999999996,0.82599999999999996,0.79000000000000004,0.873,0.88700000000000001,0.61399999999999999,0.64200000000000002,0.621,0.54700000000000004,0.58299999999999996,0.61899999999999999,0.60299999999999998,0.57999999999999996,0.47599999999999998,0.61499999999999999,0.70899999999999996,0.62,0.70599999999999996,0.85199999999999998,0.68899999999999995,0.77700000000000002,0.77500000000000002,0.80600000000000005,0.751,0.76600000000000001,0.746,0.748,0.88,0.69399999999999995,0.65000000000000002,0.57699999999999996,0.53900000000000003,0.46999999999999997,0.627,0.61499999999999999,0.82699999999999996,0.751,0.79500000000000004,0.83599999999999997,0.80300000000000005,0.75700000000000001,0.77700000000000002,0.79700000000000004,0.56200000000000006,0.66200000000000003,0.64200000000000002,0.624,0.59099999999999997,0.60099999999999998,0.56699999999999995,0.53600000000000003,0.495,0.53600000000000003,0.42699999999999999,0.61499999999999999,0.56200000000000006,0.83499999999999996,0.751,0.746,0.83599999999999997,0.80300000000000005,0.80300000000000005,0.81399999999999995,0.748,0.746,0.53300000000000003,0.57899999999999996,0.52600000000000002,0.52900000000000003,0.47999999999999998,0.79700000000000004,0.81799999999999995,0.60899999999999999,0.64000000000000001,0.45700000000000002,0.59099999999999997,0.55300000000000005,0.60799999999999998,0.77400000000000002,0.81399999999999995,0.80300000000000005,0.81899999999999995,0.73799999999999999,0.73399999999999999,0.67200000000000004,0.55100000000000005,0.56399999999999995,0.622,0.65000000000000002,0.57799999999999996,0.65100000000000002,0.59299999999999997,0.66000000000000003,0.85999999999999999,0.79600000000000004,0.82999999999999996,0.78600000000000003,0.57499999999999996,0.54100000000000004,0.59399999999999997,0.61199999999999999,0.66700000000000004,0.64800000000000002,0.59199999999999997,0.57499999999999996,0.68500000000000005,0.67500000000000004,0.83499999999999996,0.77100000000000002,0.50900000000000001,0.57099999999999995,0.73999999999999999,0.70599999999999996,0.627,0.69899999999999995,0.63,0.67600000000000005,0.61499999999999999,0.59599999999999997,0.68100000000000005,0.72999999999999998,0.70799999999999996,0.59099999999999997,0.75900000000000001,0.59799999999999998,0.629,0.60499999999999998,0.69399999999999995,0.58299999999999996,0.55900000000000005,0.69899999999999995,0.54000000000000004,0.50900000000000001,0.61399999999999999,0.53000000000000003,0.71699999999999997,0.74299999999999999,0.80700000000000005,0.58299999999999996,0.63300000000000001,0.57999999999999996,0.57199999999999995,0.78000000000000003,0.68700000000000006,0.56699999999999995,0.59399999999999997,0.60199999999999998,0.66000000000000003,0.54300000000000004,0.80300000000000005,0.51100000000000001,0.70499999999999996,0.82399999999999995,0.80200000000000005,0.66300000000000003,0.57199999999999995,0.65200000000000002,0.60599999999999998,0.66200000000000003,0.65700000000000003,0.64600000000000002,0.65100000000000002,0.61599999999999999,0.55100000000000005,0.60299999999999998,0.67300000000000004,0.58499999999999996,0.50600000000000001,0.52800000000000002,0.78400000000000003,0.66200000000000003,0.66600000000000004,0.73299999999999998,0.55600000000000005,0.439,0.68000000000000005,0.69299999999999995,0.79000000000000004,0.44700000000000001,0.44500000000000001],"type":"scatter3d","mode":"markers","marker":{"size":5,"color":"#377EB8","symbol":"circle"},"name":"Cluster 2","showlegend":true,"inherit":true},"8781360b8000.3":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.77400000000000002,0.80100000000000005,0.80500000000000005],"y":[0.437,0.44400000000000001,0.441],"z":[0.68899999999999995,0.69599999999999995,0.65300000000000002],"type":"scatter3d","mode":"markers","marker":{"size":6,"color":"#377EB8","symbol":"diamond"},"name":"Cluster 2 (nearest)","showlegend":true,"inherit":true},"8781360b8000.4":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.76700000000000002,0.69699999999999995,0.79100000000000004,0.76600000000000001,0.85999999999999999,0.79300000000000004,0.61299999999999999,0.70799999999999996,0.70999999999999996,0.69399999999999995,0.66500000000000004,0.63800000000000001,0.56899999999999995,0.77500000000000002,0.72699999999999998,0.64200000000000002,0.66000000000000003,0.68000000000000005,0.52600000000000002,0.56499999999999995,0.57399999999999995,0.70499999999999996,0.70699999999999996,0.72899999999999998,0.70499999999999996,0.69099999999999995,0.88500000000000001,0.59099999999999997,0.61799999999999999,0.79900000000000004,0.72399999999999998,0.83399999999999996,0.68000000000000005,0.76700000000000002,0.66800000000000004,0.64600000000000002,0.48699999999999999,0.70299999999999996,0.79500000000000004,0.84099999999999997,0.63300000000000001,0.80900000000000005,0.75600000000000001,0.86099999999999999,0.54600000000000004,0.66700000000000004,0.79800000000000004,0.751,0.80000000000000004,0.747,0.77100000000000002,0.86599999999999999,0.878,0.66300000000000003,0.81200000000000006,0.84699999999999998,0.84899999999999998,0.82499999999999996,0.66700000000000004,0.85599999999999998,0.82199999999999995,0.67700000000000005,0.628,0.76700000000000002,0.69899999999999995,0.73499999999999999,0.77600000000000002,0.624,0.81299999999999994,0.77300000000000002,0.83299999999999996,0.70199999999999996,0.67400000000000004,0.80100000000000005,0.755,0.63500000000000001,0.78900000000000003],"y":[0.48999999999999999,0.51300000000000001,0.51300000000000001,0.51500000000000001,0.59199999999999997,0.57199999999999995,0.51900000000000002,0.55700000000000005,0.52700000000000002,0.50800000000000001,0.497,0.52500000000000002,0.61399999999999999,0.56399999999999995,0.65400000000000003,0.56999999999999995,0.58099999999999996,0.497,0.503,0.51900000000000002,0.55600000000000005,0.55800000000000005,0.57699999999999996,0.51300000000000001,0.496,0.51500000000000001,0.498,0.56499999999999995,0.51300000000000001,0.53100000000000003,0.497,0.54700000000000004,0.49399999999999999,0.49399999999999999,0.58599999999999997,0.48299999999999998,0.51300000000000001,0.54300000000000004,0.51900000000000002,0.56100000000000005,0.55600000000000005,0.53500000000000003,0.51600000000000001,0.54300000000000004,0.61299999999999999,0.48399999999999999,0.52600000000000002,0.503,0.56499999999999995,0.72499999999999998,0.55000000000000004,0.58299999999999996,0.55200000000000005,0.67900000000000005,0.56999999999999995,0.54500000000000004,0.58299999999999996,0.51000000000000001,0.51000000000000001,0.54900000000000004,0.66200000000000003,0.50600000000000001,0.56399999999999995,0.502,0.51000000000000001,0.51000000000000001,0.53600000000000003,0.5,0.51900000000000002,0.504,0.63800000000000001,0.52200000000000002,0.54700000000000004,0.54300000000000004,0.48599999999999999,0.501,0.496],"z":[0.47899999999999998,0.69499999999999995,0.66700000000000004,0.60399999999999998,0.67500000000000004,0.57099999999999995,0.247,0.51000000000000001,0.46200000000000002,0.621,0.56399999999999995,0.441,0.55000000000000004,0.77900000000000003,0.58999999999999997,0.158,0.505,0.49299999999999999,0.64400000000000002,0.66300000000000003,0.27200000000000002,0.30199999999999999,0.372,0.32600000000000001,0.61199999999999999,0.41299999999999998,0.32200000000000001,0.253,0.32700000000000001,0.58899999999999997,0.56499999999999995,0.41599999999999998,0.55000000000000004,0.495,0.56799999999999995,0.59999999999999998,0.66600000000000004,0.73399999999999999,0.71199999999999997,0.71199999999999997,0.69899999999999995,0.72199999999999998,0.74399999999999999,0.68899999999999995,0.65800000000000003,0.66800000000000004,0.73999999999999999,0.63700000000000001,0.748,0.51500000000000001,0.68000000000000005,0.57599999999999996,0.58899999999999997,0.40000000000000002,0.68200000000000005,0.70899999999999996,0.68600000000000005,0.69199999999999995,0.51000000000000001,0.63100000000000001,0.31,0.57699999999999996,0.55800000000000005,0.56999999999999995,0.61899999999999999,0.58799999999999997,0.72199999999999998,0.52300000000000002,0.69399999999999995,0.55600000000000005,0.495,0.40300000000000002,0.52600000000000002,0.48399999999999999,0.56100000000000005,0.51300000000000001,0.54900000000000004],"type":"scatter3d","mode":"markers","marker":{"size":5,"color":"#4DAF4A","symbol":"circle"},"name":"Cluster 3","showlegend":true,"inherit":true},"8781360b8000.5":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.746,0.70999999999999996,0.73199999999999998],"y":[0.52600000000000002,0.53000000000000003,0.53000000000000003],"z":[0.53100000000000003,0.59099999999999997,0.56000000000000005],"type":"scatter3d","mode":"markers","marker":{"size":6,"color":"#4DAF4A","symbol":"diamond"},"name":"Cluster 3 (nearest)","showlegend":true,"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"legend":{"x":-0.10000000000000001,"y":1,"xanchor":"left","yanchor":"top"},"scene":{"xaxis":{"title":"Biodiversity"},"yaxis":{"title":"Quality of Life"},"zaxis":{"title":"Climate Adaptation"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[0.73299999999999998,0.56799999999999995,0.69399999999999995,0.67500000000000004,0.67800000000000005,0.60199999999999998,0.55200000000000005,0.64100000000000001,0.58399999999999996,0.54000000000000004,0.63200000000000001,0.58999999999999997,0.57599999999999996,0.67700000000000005,0.54500000000000004,0.63300000000000001,0.69299999999999995,0.57799999999999996,0.53900000000000003,0.497,0.63900000000000001,0.53100000000000003,0.55700000000000005,0.67400000000000004,0.64200000000000002,0.56000000000000005,0.65200000000000002,0.55200000000000005,0.58999999999999997,0.55700000000000005,0.55600000000000005,0.64200000000000002,0.59399999999999997,0.61499999999999999,0.50700000000000001,0.628,0.59699999999999998,0.57699999999999996,0.72999999999999998,0.501,0.51100000000000001,0.64500000000000002,0.69699999999999995,0.56599999999999995,0.59599999999999997,0.65700000000000003,0.68100000000000005,0.57399999999999995,0.58099999999999996,0.60699999999999998,0.71299999999999997,0.70099999999999996,0.61599999999999999,0.60199999999999998,0.53300000000000003,0.60899999999999999,0.58899999999999997,0.64700000000000002,0.67600000000000005,0.64700000000000002,0.57399999999999995,0.66300000000000003,0.57699999999999996,0.59399999999999997,0.70499999999999996,0.65000000000000002,0.625,0.59799999999999998,0.48899999999999999,0.47199999999999998,0.58799999999999997,0.50600000000000001,0.64700000000000002,0.72799999999999998,0.68799999999999994,0.69099999999999995,0.73499999999999999,0.65800000000000003,0.56100000000000005,0.61199999999999999,0.58999999999999997,0.59299999999999997,0.66200000000000003,0.74099999999999999,0.50600000000000001,0.58399999999999996,0.60799999999999998,0.60699999999999998,0.60999999999999999,0.63300000000000001,0.60999999999999999,0.61099999999999999,0.60899999999999999,0.55100000000000005,0.52300000000000002,0.58499999999999996,0.46999999999999997,0.502,0.53900000000000003,0.58899999999999997,0.55200000000000005,0.624,0.44700000000000001,0.55500000000000005,0.59299999999999997,0.61399999999999999,0.627,0.48299999999999998,0.63500000000000001,0.56499999999999995,0.58799999999999997,0.71299999999999997,0.64100000000000001,0.497,0.44900000000000001,0.46899999999999997,0.54600000000000004,0.51800000000000002,0.66000000000000003,0.63300000000000001,0.56299999999999994,0.45100000000000001,0.66900000000000004,0.70999999999999996,0.58599999999999997,0.61799999999999999,0.59699999999999998,0.48599999999999999,0.59399999999999997,0.66300000000000003,0.625,0.70499999999999996,0.64000000000000001,0.65200000000000002,0.5,0.63,0.47799999999999998,0.59999999999999998,0.50800000000000001,0.66500000000000004,0.65900000000000003,0.71499999999999997,0.66800000000000004,0.69299999999999995,0.70199999999999996,0.70599999999999996,0.72499999999999998,0.71099999999999997,0.67600000000000005,0.69099999999999995,0.68600000000000005,0.67400000000000004,0.64500000000000002,0.74199999999999999,0.65600000000000003,0.69199999999999995,0.61499999999999999,0.49199999999999999,0.64700000000000002,0.69099999999999995,0.65700000000000003,0.64300000000000002,0.73699999999999999,0.64600000000000002,0.58499999999999996,0.64400000000000002,0.60699999999999998,0.746,0.71199999999999997,0.67100000000000004,0.64500000000000002,0.68000000000000005,0.61799999999999999,0.73799999999999999,0.67200000000000004,0.73399999999999999,0.70499999999999996,0.69199999999999995,0.73699999999999999,0.71099999999999997,0.70799999999999996,0.78500000000000003,0.72399999999999998],"y":[0.42299999999999999,0.44700000000000001,0.40899999999999997,0.433,0.371,0.42399999999999999,0.45400000000000001,0.40500000000000003,0.40999999999999998,0.42799999999999999,0.44800000000000001,0.40699999999999997,0.443,0.42599999999999999,0.44700000000000001,0.49399999999999999,0.44,0.41799999999999998,0.48399999999999999,0.39300000000000002,0.379,0.443,0.46000000000000002,0.42299999999999999,0.436,0.48599999999999999,0.439,0.39100000000000001,0.40999999999999998,0.42099999999999999,0.39700000000000002,0.39700000000000002,0.40899999999999997,0.40899999999999997,0.40200000000000002,0.374,0.39100000000000001,0.42599999999999999,0.39800000000000002,0.41699999999999998,0.42099999999999999,0.38500000000000001,0.46500000000000002,0.49099999999999999,0.46500000000000002,0.42599999999999999,0.44600000000000001,0.40000000000000002,0.42099999999999999,0.45400000000000001,0.41999999999999998,0.46899999999999997,0.41299999999999998,0.44600000000000001,0.45500000000000002,0.40100000000000002,0.441,0.42499999999999999,0.46600000000000003,0.47299999999999998,0.40699999999999997,0.44,0.439,0.45400000000000001,0.43099999999999999,0.39400000000000002,0.45900000000000002,0.442,0.45400000000000001,0.43099999999999999,0.48999999999999999,0.47199999999999998,0.40999999999999998,0.42199999999999999,0.41599999999999998,0.379,0.433,0.47899999999999998,0.51300000000000001,0.45400000000000001,0.443,0.38900000000000001,0.45200000000000001,0.41999999999999998,0.435,0.42199999999999999,0.39200000000000002,0.40799999999999997,0.374,0.35499999999999998,0.439,0.39500000000000002,0.40100000000000002,0.44500000000000001,0.49199999999999999,0.38900000000000001,0.45400000000000001,0.46800000000000003,0.47099999999999997,0.47599999999999998,0.48399999999999999,0.48099999999999998,0.434,0.442,0.48399999999999999,0.38800000000000001,0.42099999999999999,0.51500000000000001,0.41499999999999998,0.39200000000000002,0.379,0.41199999999999998,0.46000000000000002,0.308,0.40600000000000003,0.46400000000000002,0.42299999999999999,0.41599999999999998,0.434,0.36099999999999999,0.38400000000000001,0.316,0.47099999999999997,0.39600000000000002,0.40200000000000002,0.374,0.42199999999999999,0.36199999999999999,0.40699999999999997,0.379,0.46400000000000002,0.40000000000000002,0.45400000000000001,0.44700000000000001,0.46300000000000002,0.47499999999999998,0.36499999999999999,0.47999999999999998,0.38200000000000001,0.47399999999999998,0.441,0.443,0.48399999999999999,0.40699999999999997,0.34799999999999998,0.42199999999999999,0.41899999999999998,0.47099999999999997,0.40799999999999997,0.39600000000000002,0.41399999999999998,0.44500000000000001,0.43099999999999999,0.44,0.44500000000000001,0.42999999999999999,0.434,0.42999999999999999,0.39800000000000002,0.372,0.317,0.44500000000000001,0.38400000000000001,0.39000000000000001,0.38800000000000001,0.40500000000000003,0.35599999999999998,0.38100000000000001,0.45600000000000002,0.45200000000000001,0.40000000000000002,0.442,0.439,0.40799999999999997,0.432,0.42199999999999999,0.35199999999999998,0.35699999999999998,0.35999999999999999,0.41999999999999998,0.40699999999999997,0.45500000000000002,0.45000000000000001],"z":[0.42899999999999999,0.68400000000000005,0.59799999999999998,0.60699999999999998,0.58799999999999997,0.64700000000000002,0.38300000000000001,0.68100000000000005,0.49199999999999999,0.59099999999999997,0.68100000000000005,0.60699999999999998,0.66200000000000003,0.49199999999999999,0.68500000000000005,0.42299999999999999,0.57299999999999995,0.69699999999999995,0.66700000000000004,0.45000000000000001,0.40999999999999998,0.17100000000000001,0.35299999999999998,0.34699999999999998,0.47299999999999998,0.27600000000000002,0.37,0.248,0.48699999999999999,0.56999999999999995,0.33300000000000002,0.44800000000000001,0.42399999999999999,0.46400000000000002,0.184,0.38600000000000001,0.373,0.54500000000000004,0.42799999999999999,0.17199999999999999,0.153,0.33800000000000002,0.46500000000000002,0.33700000000000002,0.22,0.185,0.36799999999999999,0.26600000000000001,0.36399999999999999,0.191,0.40999999999999998,0.40200000000000002,0.54500000000000004,0.70699999999999996,0.56499999999999995,0.53000000000000003,0.65700000000000003,0.60199999999999998,0.57799999999999996,0.56699999999999995,0.59299999999999997,0.53400000000000003,0.63500000000000001,0.68100000000000005,0.53200000000000003,0.40600000000000003,0.56100000000000005,0.73499999999999999,0.65100000000000002,0.61799999999999999,0.28100000000000003,0.20999999999999999,0.27100000000000002,0.23699999999999999,0.38100000000000001,0.40600000000000003,0.26600000000000001,0.503,0.35999999999999999,0.30399999999999999,0.24399999999999999,0.23300000000000001,0.245,0.23200000000000001,0.61099999999999999,0.45100000000000001,0.55700000000000005,0.253,0.20699999999999999,0.373,0.629,0.59399999999999997,0.625,0.433,0.379,0.54900000000000004,0.442,0.44600000000000001,0.45600000000000002,0.69899999999999995,0.61899999999999999,0.628,0.42199999999999999,0.39400000000000002,0.31900000000000001,0.54500000000000004,0.61599999999999999,0.30199999999999999,0.33900000000000002,0.38200000000000001,0.40500000000000003,0.54800000000000004,0.51000000000000001,0.22600000000000001,0.34599999999999997,0.46300000000000002,0.47799999999999998,0.26000000000000001,0.58499999999999996,0.56499999999999995,0.41299999999999998,0.32000000000000001,0.34200000000000003,0.54000000000000004,0.61699999999999999,0.497,0.41999999999999998,0.39700000000000002,0.39700000000000002,0.505,0.27400000000000002,0.55200000000000005,0.38200000000000001,0.40699999999999997,0.46200000000000002,0.59799999999999998,0.32500000000000001,0.314,0.503,0.498,0.58699999999999997,0.504,0.46100000000000002,0.47399999999999998,0.56799999999999995,0.54300000000000004,0.48899999999999999,0.437,0.42399999999999999,0.52500000000000002,0.46100000000000002,0.58199999999999996,0.38,0.45400000000000001,0.434,0.57199999999999995,0.52200000000000002,0.41399999999999998,0.437,0.56200000000000006,0.42499999999999999,0.59499999999999997,0.497,0.52600000000000002,0.35399999999999998,0.42799999999999999,0.52900000000000003,0.34999999999999998,0.52500000000000002,0.52700000000000002,0.44800000000000001,0.52500000000000002,0.60799999999999998,0.51400000000000001,0.54700000000000004,0.45500000000000002,0.54400000000000004,0.60499999999999998,0.51100000000000001,0.41599999999999998,0.57499999999999996,0.35699999999999998,0.42899999999999999],"type":"scatter3d","mode":"markers","marker":{"color":"#E41A1C","size":5,"symbol":"circle","line":{"color":"rgba(31,119,180,1)"}},"name":"Cluster 1","showlegend":true,"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null},{"x":[0.627,0.626,0.64500000000000002],"y":[0.42199999999999999,0.42499999999999999,0.42999999999999999],"z":[0.41399999999999998,0.48799999999999999,0.46100000000000002],"type":"scatter3d","mode":"markers","marker":{"color":"#E41A1C","size":6,"symbol":"diamond","line":{"color":"rgba(255,127,14,1)"}},"name":"Cluster 1 (nearest)","showlegend":true,"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"frame":null},{"x":[0.79600000000000004,0.65500000000000003,0.84899999999999998,0.70199999999999996,0.68899999999999995,0.76900000000000002,0.72399999999999998,0.89100000000000001,0.877,0.88200000000000001,0.90000000000000002,0.879,0.77500000000000002,0.74399999999999999,0.66400000000000003,0.748,0.78500000000000003,0.81699999999999995,0.72499999999999998,0.72999999999999998,0.755,0.81100000000000005,0.82499999999999996,0.80000000000000004,0.84699999999999998,0.86099999999999999,0.78800000000000003,0.75600000000000001,0.76000000000000001,0.81499999999999995,0.79900000000000004,0.64700000000000002,0.65900000000000003,0.74199999999999999,0.80000000000000004,0.76600000000000001,0.81999999999999995,0.72399999999999998,0.86699999999999999,0.85599999999999998,0.80500000000000005,0.80200000000000005,0.83499999999999996,0.79200000000000004,0.84899999999999998,0.86199999999999999,0.69999999999999996,0.82799999999999996,0.75800000000000001,0.745,0.72099999999999997,0.83499999999999996,0.76900000000000002,0.63400000000000001,0.80800000000000005,0.83599999999999997,0.748,0.83099999999999996,0.84199999999999997,0.72699999999999998,0.81499999999999995,0.755,0.70999999999999996,0.71699999999999997,0.71499999999999997,0.81399999999999995,0.81499999999999995,0.75700000000000001,0.63200000000000001,0.78600000000000003,0.753,0.82699999999999996,0.89000000000000001,0.89000000000000001,0.89300000000000002,0.72799999999999998,0.85099999999999998,0.82299999999999995,0.84999999999999998,0.877,0.85299999999999998,0.86299999999999999,0.83499999999999996,0.81999999999999995,0.86099999999999999,0.71099999999999997,0.70399999999999996,0.69499999999999995,0.752,0.76700000000000002,0.71699999999999997,0.71099999999999997,0.68500000000000005,0.69799999999999995,0.74099999999999999,0.86799999999999999,0.80000000000000004,0.76600000000000001,0.68100000000000005,0.77700000000000002,0.83199999999999996,0.82199999999999995,0.81799999999999995,0.78200000000000003,0.86199999999999999,0.79400000000000004,0.70499999999999996,0.70899999999999996,0.75700000000000001,0.745,0.81799999999999995,0.78200000000000003,0.749,0.80000000000000004,0.79800000000000004,0.76700000000000002,0.82199999999999995,0.78000000000000003,0.71699999999999997,0.69899999999999995,0.745,0.77000000000000002,0.76300000000000001,0.81200000000000006,0.77800000000000002,0.78700000000000003,0.79200000000000004,0.78400000000000003,0.74199999999999999,0.76900000000000002,0.80500000000000005,0.82699999999999996,0.748,0.80800000000000005,0.83699999999999997,0.78900000000000003,0.74099999999999999,0.79800000000000004,0.81899999999999995,0.84699999999999998,0.79700000000000004,0.80400000000000005,0.76400000000000001,0.74299999999999999,0.80300000000000005,0.77800000000000002,0.77200000000000002,0.76900000000000002,0.89500000000000002,0.73299999999999998,0.754,0.77700000000000002,0.77400000000000002,0.80800000000000005,0.76800000000000002,0.86799999999999999,0.80800000000000005,0.78300000000000003,0.73399999999999999,0.76700000000000002,0.79200000000000004,0.79800000000000004,0.76800000000000002,0.81599999999999995,0.82499999999999996,0.88200000000000001,0.77800000000000002,0.82199999999999995,0.77000000000000002,0.79900000000000004,0.76600000000000001,0.73699999999999999,0.84099999999999997,0.79700000000000004,0.73499999999999999,0.80700000000000005,0.80400000000000005,0.79400000000000004,0.77000000000000002,0.80500000000000005,0.89000000000000001,0.80100000000000005,0.83699999999999997,0.876,0.82599999999999996,0.75600000000000001,0.82799999999999996,0.75600000000000001,0.78000000000000003,0.75700000000000001,0.76500000000000001,0.76400000000000001,0.77000000000000002,0.78300000000000003,0.79200000000000004,0.82099999999999995,0.81599999999999995,0.753,0.83399999999999996,0.83499999999999996,0.84399999999999997,0.89400000000000002,0.82599999999999996,0.73799999999999999,0.76600000000000001,0.77000000000000002,0.79200000000000004,0.78200000000000003,0.78600000000000003,0.77500000000000002,0.78100000000000003,0.74199999999999999,0.72999999999999998,0.74099999999999999,0.749,0.81299999999999994,0.73699999999999999,0.77300000000000002,0.79700000000000004,0.73599999999999999,0.75800000000000001,0.81399999999999995,0.82999999999999996,0.76700000000000002,0.71999999999999997,0.84999999999999998,0.88900000000000001,0.76200000000000001,0.80400000000000005,0.75,0.69499999999999995,0.77200000000000002,0.75700000000000001,0.751,0.73399999999999999,0.71399999999999997,0.748,0.71799999999999997,0.82499999999999996,0.85499999999999998,0.86199999999999999,0.84699999999999998,0.88800000000000001,0.76900000000000002,0.76600000000000001,0.78800000000000003,0.79700000000000004,0.69999999999999996,0.72499999999999998,0.753,0.73099999999999998,0.73999999999999999,0.74399999999999999,0.74399999999999999,0.73999999999999999,0.76500000000000001,0.84499999999999997,0.84899999999999998,0.82599999999999996,0.76700000000000002,0.85399999999999998,0.82299999999999995,0.83099999999999996,0.754,0.78900000000000003,0.76400000000000001,0.77800000000000002,0.78000000000000003,0.76400000000000001,0.69699999999999995,0.70899999999999996,0.71799999999999997,0.76100000000000001,0.754,0.73999999999999999,0.74299999999999999,0.72999999999999998,0.83199999999999996,0.71899999999999997,0.81699999999999995,0.88700000000000001,0.86899999999999999,0.79600000000000004,0.80700000000000005,0.80500000000000005,0.71699999999999997,0.751,0.74199999999999999,0.72099999999999997,0.76400000000000001,0.75600000000000001,0.753,0.78200000000000003,0.748,0.78800000000000003,0.85799999999999998,0.81799999999999995,0.84099999999999997,0.80300000000000005,0.81799999999999995,0.83699999999999997,0.84099999999999997,0.83599999999999997,0.77700000000000002,0.75,0.80800000000000005,0.69599999999999995,0.745,0.75600000000000001,0.75900000000000001,0.747,0.71199999999999997,0.79500000000000004,0.77800000000000002,0.80600000000000005,0.72999999999999998,0.78700000000000003,0.84199999999999997,0.77400000000000002,0.83999999999999997,0.79600000000000004,0.86499999999999999,0.86599999999999999,0.89000000000000001,0.89100000000000001,0.88400000000000001,0.84799999999999998,0.71599999999999997,0.72399999999999998,0.75800000000000001,0.76600000000000001,0.75900000000000001,0.80000000000000004,0.74299999999999999,0.76800000000000002,0.71799999999999997,0.84799999999999998,0.876,0.84699999999999998,0.83399999999999996,0.83299999999999996,0.88200000000000001,0.71099999999999997,0.75800000000000001,0.74399999999999999,0.80200000000000005,0.754,0.749,0.70099999999999996,0.753,0.874,0.84299999999999997,0.85399999999999998,0.82599999999999996,0.81399999999999995,0.81899999999999995,0.752,0.68899999999999995,0.76600000000000001,0.77100000000000002,0.85799999999999998,0.875,0.81200000000000006,0.80200000000000005,0.81899999999999995,0.81200000000000006,0.90300000000000002,0.871,0.90100000000000002,0.80700000000000005,0.80800000000000005,0.69599999999999995,0.86199999999999999,0.753,0.88400000000000001,0.85099999999999998,0.82799999999999996,0.76900000000000002,0.78300000000000003,0.64200000000000002,0.73899999999999999,0.77500000000000002,0.84599999999999997,0.871,0.68200000000000005,0.80500000000000005,0.81799999999999995,0.83299999999999996,0.89300000000000002,0.89800000000000002,0.88400000000000001,0.75900000000000001,0.68500000000000005,0.75,0.90300000000000002,0.86899999999999999,0.84499999999999997,0.88500000000000001,0.89500000000000002,0.80300000000000005,0.79800000000000004,0.78600000000000003,0.77300000000000002,0.77500000000000002,0.77000000000000002,0.86899999999999999,0.80900000000000005,0.85299999999999998,0.90600000000000003,0.90600000000000003,0.80900000000000005,0.79500000000000004,0.89200000000000002,0.82499999999999996,0.79900000000000004,0.69799999999999995,0.78100000000000003,0.83399999999999996,0.82399999999999995,0.90600000000000003,0.90100000000000002,0.74299999999999999,0.747,0.82299999999999995,0.90300000000000002,0.83499999999999996,0.72599999999999998,0.83399999999999996,0.80100000000000005],"y":[0.45300000000000001,0.43099999999999999,0.48399999999999999,0.44400000000000001,0.45000000000000001,0.40699999999999997,0.41899999999999998,0.44,0.434,0.40100000000000002,0.44600000000000001,0.47299999999999998,0.42399999999999999,0.42899999999999999,0.42999999999999999,0.41899999999999998,0.42399999999999999,0.47799999999999998,0.42799999999999999,0.42199999999999999,0.434,0.41899999999999998,0.40799999999999997,0.45500000000000002,0.41499999999999998,0.39500000000000002,0.41099999999999998,0.47299999999999998,0.435,0.38600000000000001,0.40699999999999997,0.45400000000000001,0.434,0.47699999999999998,0.433,0.39200000000000002,0.46600000000000003,0.46800000000000003,0.44,0.48299999999999998,0.433,0.438,0.47899999999999998,0.39400000000000002,0.40000000000000002,0.442,0.46100000000000002,0.47299999999999998,0.40899999999999997,0.40699999999999997,0.43099999999999999,0.441,0.435,0.41899999999999998,0.44,0.45100000000000001,0.41499999999999998,0.42299999999999999,0.433,0.44800000000000001,0.44900000000000001,0.42299999999999999,0.44500000000000001,0.45100000000000001,0.46200000000000002,0.45100000000000001,0.46800000000000003,0.42299999999999999,0.42999999999999999,0.41599999999999998,0.432,0.45200000000000001,0.46100000000000002,0.46000000000000002,0.45000000000000001,0.39100000000000001,0.46100000000000002,0.433,0.45800000000000002,0.44,0.438,0.45300000000000001,0.46300000000000002,0.42399999999999999,0.46000000000000002,0.373,0.438,0.45400000000000001,0.44800000000000001,0.42699999999999999,0.432,0.436,0.48099999999999998,0.435,0.43099999999999999,0.42899999999999999,0.441,0.37,0.47399999999999998,0.42799999999999999,0.33500000000000002,0.46200000000000002,0.45200000000000001,0.435,0.433,0.47699999999999998,0.42899999999999999,0.42299999999999999,0.45400000000000001,0.45200000000000001,0.42199999999999999,0.44,0.44400000000000001,0.45800000000000002,0.44900000000000001,0.439,0.46100000000000002,0.42799999999999999,0.41099999999999998,0.45700000000000002,0.45100000000000001,0.44700000000000001,0.42599999999999999,0.41399999999999998,0.437,0.45500000000000002,0.45500000000000002,0.45500000000000002,0.438,0.436,0.44400000000000001,0.43099999999999999,0.48699999999999999,0.44,0.45400000000000001,0.45500000000000002,0.45200000000000001,0.45000000000000001,0.42399999999999999,0.42999999999999999,0.47799999999999998,0.45400000000000001,0.45700000000000002,0.45500000000000002,0.45300000000000001,0.45100000000000001,0.44400000000000001,0.46000000000000002,0.45400000000000001,0.46700000000000003,0.45700000000000002,0.45600000000000002,0.45200000000000001,0.43099999999999999,0.44,0.441,0.44800000000000001,0.45500000000000002,0.45800000000000002,0.45600000000000002,0.45000000000000001,0.41699999999999998,0.442,0.42199999999999999,0.39300000000000002,0.46500000000000002,0.45500000000000002,0.45000000000000001,0.46000000000000002,0.42299999999999999,0.42099999999999999,0.45200000000000001,0.436,0.44900000000000001,0.45700000000000002,0.45000000000000001,0.45300000000000001,0.45000000000000001,0.41399999999999998,0.442,0.502,0.38500000000000001,0.47199999999999998,0.47399999999999998,0.44700000000000001,0.40000000000000002,0.38800000000000001,0.42599999999999999,0.46200000000000002,0.45000000000000001,0.44500000000000001,0.48099999999999998,0.45000000000000001,0.45500000000000002,0.36099999999999999,0.45100000000000001,0.44600000000000001,0.376,0.45100000000000001,0.46999999999999997,0.43099999999999999,0.434,0.434,0.40200000000000002,0.38300000000000001,0.42099999999999999,0.45900000000000002,0.45700000000000002,0.45000000000000001,0.45700000000000002,0.44500000000000001,0.48699999999999999,0.44500000000000001,0.46000000000000002,0.45600000000000002,0.45600000000000002,0.375,0.45500000000000002,0.41099999999999998,0.40899999999999997,0.38300000000000001,0.41599999999999998,0.43099999999999999,0.41999999999999998,0.41399999999999998,0.441,0.43099999999999999,0.44700000000000001,0.45600000000000002,0.45200000000000001,0.45100000000000001,0.44700000000000001,0.45100000000000001,0.45500000000000002,0.46300000000000002,0.46000000000000002,0.45000000000000001,0.46800000000000003,0.36599999999999999,0.373,0.40300000000000002,0.45500000000000002,0.42999999999999999,0.41699999999999998,0.44900000000000001,0.45600000000000002,0.45000000000000001,0.44600000000000001,0.44700000000000001,0.44700000000000001,0.45700000000000002,0.45700000000000002,0.46100000000000002,0.45900000000000002,0.47799999999999998,0.42499999999999999,0.40799999999999997,0.47599999999999998,0.48399999999999999,0.439,0.42799999999999999,0.47799999999999998,0.41499999999999998,0.441,0.45000000000000001,0.45500000000000002,0.46200000000000002,0.45800000000000002,0.45200000000000001,0.45200000000000001,0.44800000000000001,0.45300000000000001,0.44800000000000001,0.504,0.45000000000000001,0.46300000000000002,0.45500000000000002,0.42999999999999999,0.47899999999999998,0.47199999999999998,0.39000000000000001,0.42999999999999999,0.439,0.39000000000000001,0.48199999999999998,0.45900000000000002,0.46100000000000002,0.46000000000000002,0.45900000000000002,0.44900000000000001,0.44800000000000001,0.45900000000000002,0.35999999999999999,0.41199999999999998,0.41899999999999998,0.433,0.49399999999999999,0.41199999999999998,0.48599999999999999,0.42899999999999999,0.40400000000000003,0.42999999999999999,0.43099999999999999,0.47499999999999998,0.44700000000000001,0.46600000000000003,0.45200000000000001,0.45300000000000001,0.45600000000000002,0.46000000000000002,0.46100000000000002,0.45700000000000002,0.45200000000000001,0.44700000000000001,0.443,0.41099999999999998,0.41499999999999998,0.47599999999999998,0.46000000000000002,0.40200000000000002,0.49299999999999999,0.36899999999999999,0.42499999999999999,0.44700000000000001,0.47699999999999998,0.42499999999999999,0.44,0.442,0.45300000000000001,0.45400000000000001,0.45600000000000002,0.48499999999999999,0.44400000000000001,0.443,0.435,0.45700000000000002,0.36399999999999999,0.45600000000000002,0.44,0.45600000000000002,0.44700000000000001,0.439,0.42599999999999999,0.49199999999999999,0.45400000000000001,0.44800000000000001,0.436,0.42499999999999999,0.42399999999999999,0.46200000000000002,0.46999999999999997,0.45000000000000001,0.41299999999999998,0.47499999999999998,0.46500000000000002,0.44700000000000001,0.433,0.44,0.437,0.435,0.42599999999999999,0.434,0.43099999999999999,0.45600000000000002,0.41099999999999998,0.45500000000000002,0.438,0.46400000000000002,0.41899999999999998,0.499,0.439,0.45800000000000002,0.44400000000000001,0.39700000000000002,0.46300000000000002,0.41799999999999998,0.443,0.40899999999999997,0.45800000000000002,0.45800000000000002,0.39700000000000002,0.38,0.45500000000000002,0.44900000000000001,0.442,0.36799999999999999,0.47299999999999998,0.45600000000000002,0.45200000000000001,0.41599999999999998,0.42699999999999999,0.46800000000000003,0.42199999999999999,0.41199999999999998,0.46400000000000002,0.45700000000000002,0.45100000000000001,0.40999999999999998,0.44600000000000001,0.45200000000000001,0.442,0.436,0.51000000000000001,0.433,0.377,0.42399999999999999,0.46000000000000002,0.46000000000000002,0.42699999999999999,0.41799999999999998,0.45000000000000001,0.48799999999999999,0.44600000000000001,0.432,0.41399999999999998,0.44900000000000001,0.45900000000000002,0.45600000000000002,0.435,0.443,0.45100000000000001,0.435,0.38600000000000001,0.45800000000000002,0.435,0.45100000000000001,0.45800000000000002,0.40400000000000003,0.46200000000000002],"z":[0.51700000000000002,0.70399999999999996,0.56699999999999995,0.56699999999999995,0.67300000000000004,0.55300000000000005,0.59099999999999997,0.60699999999999998,0.70999999999999996,0.63400000000000001,0.55900000000000005,0.66900000000000004,0.56399999999999995,0.60199999999999998,0.68700000000000006,0.624,0.46600000000000003,0.53100000000000003,0.64700000000000002,0.53400000000000003,0.61099999999999999,0.64700000000000002,0.51100000000000001,0.69199999999999995,0.64200000000000002,0.66500000000000004,0.64900000000000002,0.48199999999999998,0.54000000000000004,0.65300000000000002,0.64800000000000002,0.68999999999999995,0.69699999999999995,0.63300000000000001,0.65700000000000003,0.54000000000000004,0.58999999999999997,0.64800000000000002,0.70799999999999996,0.70899999999999996,0.70899999999999996,0.55800000000000005,0.65400000000000003,0.56699999999999995,0.68400000000000005,0.64000000000000001,0.57699999999999996,0.625,0.63,0.64800000000000002,0.57899999999999996,0.748,0.80900000000000005,0.71399999999999997,0.77500000000000002,0.80300000000000005,0.65000000000000002,0.66200000000000003,0.73499999999999999,0.69599999999999995,0.75700000000000001,0.75,0.628,0.65000000000000002,0.57099999999999995,0.61299999999999999,0.65400000000000003,0.61099999999999999,0.71699999999999997,0.625,0.59099999999999997,0.624,0.627,0.70099999999999996,0.61299999999999999,0.70399999999999996,0.63500000000000001,0.55600000000000005,0.53500000000000003,0.56499999999999995,0.55900000000000005,0.67300000000000004,0.68899999999999995,0.52600000000000002,0.60499999999999998,0.628,0.68500000000000005,0.67100000000000004,0.55300000000000005,0.67100000000000004,0.58099999999999996,0.67600000000000005,0.66500000000000004,0.63200000000000001,0.64300000000000002,0.70499999999999996,0.83499999999999996,0.61599999999999999,0.66600000000000004,0.71699999999999997,0.77300000000000002,0.79700000000000004,0.75700000000000001,0.76200000000000001,0.77400000000000002,0.76400000000000001,0.58399999999999996,0.69899999999999995,0.66300000000000003,0.81899999999999995,0.76200000000000001,0.77000000000000002,0.754,0.81100000000000005,0.81000000000000005,0.78200000000000003,0.77700000000000002,0.63100000000000001,0.68100000000000005,0.56699999999999995,0.65100000000000002,0.75600000000000001,0.76400000000000001,0.752,0.753,0.78600000000000003,0.79900000000000004,0.81200000000000006,0.82599999999999996,0.82799999999999996,0.78600000000000003,0.78900000000000003,0.61499999999999999,0.47599999999999998,0.75900000000000001,0.67300000000000004,0.81899999999999995,0.80300000000000005,0.71299999999999997,0.70099999999999996,0.76500000000000001,0.79200000000000004,0.85499999999999998,0.83899999999999997,0.84399999999999997,0.84399999999999997,0.81899999999999995,0.52100000000000002,0.77100000000000002,0.71399999999999997,0.78600000000000003,0.71199999999999997,0.82199999999999995,0.71799999999999997,0.72899999999999998,0.78600000000000003,0.80300000000000005,0.876,0.80300000000000005,0.81899999999999995,0.80300000000000005,0.57699999999999996,0.58999999999999997,0.628,0.46200000000000002,0.78000000000000003,0.60899999999999999,0.59899999999999998,0.67300000000000004,0.65500000000000003,0.63100000000000001,0.80000000000000004,0.73199999999999998,0.71999999999999997,0.85199999999999998,0.84299999999999997,0.85199999999999998,0.80300000000000005,0.56399999999999995,0.57999999999999996,0.73399999999999999,0.61899999999999999,0.58399999999999996,0.71299999999999997,0.69299999999999995,0.61499999999999999,0.57699999999999996,0.59499999999999997,0.65100000000000002,0.71399999999999997,0.70899999999999996,0.67800000000000005,0.73299999999999998,0.80600000000000005,0.79500000000000004,0.88800000000000001,0.83299999999999996,0.624,0.67800000000000005,0.61599999999999999,0.622,0.67200000000000004,0.71799999999999997,0.63300000000000001,0.56899999999999995,0.51800000000000002,0.67300000000000004,0.755,0.71799999999999997,0.71399999999999997,0.749,0.67200000000000004,0.71999999999999997,0.81899999999999995,0.83199999999999996,0.88500000000000001,0.622,0.51100000000000001,0.59099999999999997,0.61699999999999999,0.622,0.63700000000000001,0.55800000000000005,0.54500000000000004,0.60999999999999999,0.71499999999999997,0.68899999999999995,0.71499999999999997,0.68600000000000005,0.70499999999999996,0.80800000000000005,0.69699999999999995,0.70099999999999996,0.82499999999999996,0.80900000000000005,0.83199999999999996,0.81299999999999994,0.63900000000000001,0.67400000000000004,0.70799999999999996,0.58399999999999996,0.47199999999999998,0.56499999999999995,0.65100000000000002,0.66300000000000003,0.70599999999999996,0.73799999999999999,0.79300000000000004,0.69399999999999995,0.70699999999999996,0.82599999999999996,0.79000000000000004,0.873,0.88700000000000001,0.61399999999999999,0.64200000000000002,0.621,0.54700000000000004,0.58299999999999996,0.61899999999999999,0.60299999999999998,0.57999999999999996,0.47599999999999998,0.61499999999999999,0.70899999999999996,0.62,0.70599999999999996,0.85199999999999998,0.68899999999999995,0.77700000000000002,0.77500000000000002,0.80600000000000005,0.751,0.76600000000000001,0.746,0.748,0.88,0.69399999999999995,0.65000000000000002,0.57699999999999996,0.53900000000000003,0.46999999999999997,0.627,0.61499999999999999,0.82699999999999996,0.751,0.79500000000000004,0.83599999999999997,0.80300000000000005,0.75700000000000001,0.77700000000000002,0.79700000000000004,0.56200000000000006,0.66200000000000003,0.64200000000000002,0.624,0.59099999999999997,0.60099999999999998,0.56699999999999995,0.53600000000000003,0.495,0.53600000000000003,0.42699999999999999,0.61499999999999999,0.56200000000000006,0.83499999999999996,0.751,0.746,0.83599999999999997,0.80300000000000005,0.80300000000000005,0.81399999999999995,0.748,0.746,0.53300000000000003,0.57899999999999996,0.52600000000000002,0.52900000000000003,0.47999999999999998,0.79700000000000004,0.81799999999999995,0.60899999999999999,0.64000000000000001,0.45700000000000002,0.59099999999999997,0.55300000000000005,0.60799999999999998,0.77400000000000002,0.81399999999999995,0.80300000000000005,0.81899999999999995,0.73799999999999999,0.73399999999999999,0.67200000000000004,0.55100000000000005,0.56399999999999995,0.622,0.65000000000000002,0.57799999999999996,0.65100000000000002,0.59299999999999997,0.66000000000000003,0.85999999999999999,0.79600000000000004,0.82999999999999996,0.78600000000000003,0.57499999999999996,0.54100000000000004,0.59399999999999997,0.61199999999999999,0.66700000000000004,0.64800000000000002,0.59199999999999997,0.57499999999999996,0.68500000000000005,0.67500000000000004,0.83499999999999996,0.77100000000000002,0.50900000000000001,0.57099999999999995,0.73999999999999999,0.70599999999999996,0.627,0.69899999999999995,0.63,0.67600000000000005,0.61499999999999999,0.59599999999999997,0.68100000000000005,0.72999999999999998,0.70799999999999996,0.59099999999999997,0.75900000000000001,0.59799999999999998,0.629,0.60499999999999998,0.69399999999999995,0.58299999999999996,0.55900000000000005,0.69899999999999995,0.54000000000000004,0.50900000000000001,0.61399999999999999,0.53000000000000003,0.71699999999999997,0.74299999999999999,0.80700000000000005,0.58299999999999996,0.63300000000000001,0.57999999999999996,0.57199999999999995,0.78000000000000003,0.68700000000000006,0.56699999999999995,0.59399999999999997,0.60199999999999998,0.66000000000000003,0.54300000000000004,0.80300000000000005,0.51100000000000001,0.70499999999999996,0.82399999999999995,0.80200000000000005,0.66300000000000003,0.57199999999999995,0.65200000000000002,0.60599999999999998,0.66200000000000003,0.65700000000000003,0.64600000000000002,0.65100000000000002,0.61599999999999999,0.55100000000000005,0.60299999999999998,0.67300000000000004,0.58499999999999996,0.50600000000000001,0.52800000000000002,0.78400000000000003,0.66200000000000003,0.66600000000000004,0.73299999999999998,0.55600000000000005,0.439,0.68000000000000005,0.69299999999999995,0.79000000000000004,0.44700000000000001,0.44500000000000001],"type":"scatter3d","mode":"markers","marker":{"color":"#377EB8","size":5,"symbol":"circle","line":{"color":"rgba(44,160,44,1)"}},"name":"Cluster 2","showlegend":true,"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"line":{"color":"rgba(44,160,44,1)"},"frame":null},{"x":[0.77400000000000002,0.80100000000000005,0.80500000000000005],"y":[0.437,0.44400000000000001,0.441],"z":[0.68899999999999995,0.69599999999999995,0.65300000000000002],"type":"scatter3d","mode":"markers","marker":{"color":"#377EB8","size":6,"symbol":"diamond","line":{"color":"rgba(214,39,40,1)"}},"name":"Cluster 2 (nearest)","showlegend":true,"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"line":{"color":"rgba(214,39,40,1)"},"frame":null},{"x":[0.76700000000000002,0.69699999999999995,0.79100000000000004,0.76600000000000001,0.85999999999999999,0.79300000000000004,0.61299999999999999,0.70799999999999996,0.70999999999999996,0.69399999999999995,0.66500000000000004,0.63800000000000001,0.56899999999999995,0.77500000000000002,0.72699999999999998,0.64200000000000002,0.66000000000000003,0.68000000000000005,0.52600000000000002,0.56499999999999995,0.57399999999999995,0.70499999999999996,0.70699999999999996,0.72899999999999998,0.70499999999999996,0.69099999999999995,0.88500000000000001,0.59099999999999997,0.61799999999999999,0.79900000000000004,0.72399999999999998,0.83399999999999996,0.68000000000000005,0.76700000000000002,0.66800000000000004,0.64600000000000002,0.48699999999999999,0.70299999999999996,0.79500000000000004,0.84099999999999997,0.63300000000000001,0.80900000000000005,0.75600000000000001,0.86099999999999999,0.54600000000000004,0.66700000000000004,0.79800000000000004,0.751,0.80000000000000004,0.747,0.77100000000000002,0.86599999999999999,0.878,0.66300000000000003,0.81200000000000006,0.84699999999999998,0.84899999999999998,0.82499999999999996,0.66700000000000004,0.85599999999999998,0.82199999999999995,0.67700000000000005,0.628,0.76700000000000002,0.69899999999999995,0.73499999999999999,0.77600000000000002,0.624,0.81299999999999994,0.77300000000000002,0.83299999999999996,0.70199999999999996,0.67400000000000004,0.80100000000000005,0.755,0.63500000000000001,0.78900000000000003],"y":[0.48999999999999999,0.51300000000000001,0.51300000000000001,0.51500000000000001,0.59199999999999997,0.57199999999999995,0.51900000000000002,0.55700000000000005,0.52700000000000002,0.50800000000000001,0.497,0.52500000000000002,0.61399999999999999,0.56399999999999995,0.65400000000000003,0.56999999999999995,0.58099999999999996,0.497,0.503,0.51900000000000002,0.55600000000000005,0.55800000000000005,0.57699999999999996,0.51300000000000001,0.496,0.51500000000000001,0.498,0.56499999999999995,0.51300000000000001,0.53100000000000003,0.497,0.54700000000000004,0.49399999999999999,0.49399999999999999,0.58599999999999997,0.48299999999999998,0.51300000000000001,0.54300000000000004,0.51900000000000002,0.56100000000000005,0.55600000000000005,0.53500000000000003,0.51600000000000001,0.54300000000000004,0.61299999999999999,0.48399999999999999,0.52600000000000002,0.503,0.56499999999999995,0.72499999999999998,0.55000000000000004,0.58299999999999996,0.55200000000000005,0.67900000000000005,0.56999999999999995,0.54500000000000004,0.58299999999999996,0.51000000000000001,0.51000000000000001,0.54900000000000004,0.66200000000000003,0.50600000000000001,0.56399999999999995,0.502,0.51000000000000001,0.51000000000000001,0.53600000000000003,0.5,0.51900000000000002,0.504,0.63800000000000001,0.52200000000000002,0.54700000000000004,0.54300000000000004,0.48599999999999999,0.501,0.496],"z":[0.47899999999999998,0.69499999999999995,0.66700000000000004,0.60399999999999998,0.67500000000000004,0.57099999999999995,0.247,0.51000000000000001,0.46200000000000002,0.621,0.56399999999999995,0.441,0.55000000000000004,0.77900000000000003,0.58999999999999997,0.158,0.505,0.49299999999999999,0.64400000000000002,0.66300000000000003,0.27200000000000002,0.30199999999999999,0.372,0.32600000000000001,0.61199999999999999,0.41299999999999998,0.32200000000000001,0.253,0.32700000000000001,0.58899999999999997,0.56499999999999995,0.41599999999999998,0.55000000000000004,0.495,0.56799999999999995,0.59999999999999998,0.66600000000000004,0.73399999999999999,0.71199999999999997,0.71199999999999997,0.69899999999999995,0.72199999999999998,0.74399999999999999,0.68899999999999995,0.65800000000000003,0.66800000000000004,0.73999999999999999,0.63700000000000001,0.748,0.51500000000000001,0.68000000000000005,0.57599999999999996,0.58899999999999997,0.40000000000000002,0.68200000000000005,0.70899999999999996,0.68600000000000005,0.69199999999999995,0.51000000000000001,0.63100000000000001,0.31,0.57699999999999996,0.55800000000000005,0.56999999999999995,0.61899999999999999,0.58799999999999997,0.72199999999999998,0.52300000000000002,0.69399999999999995,0.55600000000000005,0.495,0.40300000000000002,0.52600000000000002,0.48399999999999999,0.56100000000000005,0.51300000000000001,0.54900000000000004],"type":"scatter3d","mode":"markers","marker":{"color":"#4DAF4A","size":5,"symbol":"circle","line":{"color":"rgba(148,103,189,1)"}},"name":"Cluster 3","showlegend":true,"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"line":{"color":"rgba(148,103,189,1)"},"frame":null},{"x":[0.746,0.70999999999999996,0.73199999999999998],"y":[0.52600000000000002,0.53000000000000003,0.53000000000000003],"z":[0.53100000000000003,0.59099999999999997,0.56000000000000005],"type":"scatter3d","mode":"markers","marker":{"color":"#4DAF4A","size":6,"symbol":"diamond","line":{"color":"rgba(140,86,75,1)"}},"name":"Cluster 3 (nearest)","showlegend":true,"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"line":{"color":"rgba(140,86,75,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<section id="typology-description" class="level4" data-number="3.8.1">
+<h4 data-number="3.8.1" class="anchored" data-anchor-id="typology-description"><span class="header-section-number">3.8.1</span> Typology Description</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cluster</th>
+<th style="text-align: left;">Biodiversity</th>
+<th style="text-align: left;">Quality of Life</th>
+<th style="text-align: left;">Climate Adaptation</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0.619</td>
+<td style="text-align: left;">0.424</td>
+<td style="text-align: left;">0.460</td>
+<td style="text-align: left;">Urban, residential areas with low scores on biodiversity, quality of life and climate adaptation relative to other clusters</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0.790</td>
+<td style="text-align: left;">0.441</td>
+<td style="text-align: left;">0.674</td>
+<td style="text-align: left;">Forested areas with a great biodiversity, high levels of climate adaptation and an average quality of life</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0.726</td>
+<td style="text-align: left;">0.540</td>
+<td style="text-align: left;">0.558</td>
+<td style="text-align: left;">Transition zones between urban and nature with average levels of biodiversity, and climate adaptation and a high level on quality of life</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="recommendations" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="recommendations"><span class="header-section-number">4</span> Recommendations</h2>
+<section id="recommendations-based-on-mcda" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="recommendations-based-on-mcda"><span class="header-section-number">4.1</span> Recommendations based on MCDA</h3>
+<p>There are in total five types of areas, ranging from best to worst performing urban streams. It is evident that the best-performing tiles consist of unaltered or near-natural areas. The areas faring well, like Zschonerbach and Lotzebach, may require interventions only in some areas. In forest-adjacent areas, restoration should aim at enhancing hydrological connectivity, preserving riparian vegetation, and rewilding streambanks using soft engineering. Design must prioritise minimal intervention, enabling natural processes while integrating ecological trails for education.</p>
+<p>The average-performing areas, such as Kaitzbach, comprise a mix of natural and urbanised areas. Here, the design interventions should integrate riparian green corridors, permeable surfaces, multifunctional public spaces to restore ecological continuity and manage runoff, and prioritise nature-based solutions and habitat connectivity across urban–natural edges.</p>
+<p>The worst-performing areas, like Weidigtbach and Gorbitzbach, are the urbanised, residential areas where the urban streams have been almost completely altered. In highly urbanised areas, restoration should focus on daylighting buried streams, implementing green-blue infrastructure, and retrofitting impermeable zones with bioswales and rain gardens. These areas should also incorporate multifunctional public spaces that enhance ecological function and social value, supporting resilience in densely built environments.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/weighted/MCDA results.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-55" title="Results projection"><img src="images/weighted/MCDA results.jpg" class="img-fluid figure-img" alt="Results projection"></a></p>
+<figcaption>Results projection</figcaption>
+</figure>
+</div>
+</section>
+<section id="recommendations-based-on-typology-construction" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="recommendations-based-on-typology-construction"><span class="header-section-number">4.2</span> Recommendations based on Typology Construction</h3>
+<p>For Cluster 1, which comprises highly urbanised and predominantly residential areas, incorporating channel remeandering restores hydrological dynamics, reduces flow velocity, and enhances sediment retention, thereby contributing to flood mitigation and ecological recovery (Sieweke, 2013). Blue-green infrastructure, including bioswales, rain gardens, and constructed wetlands, supports stormwater management, improves water quality, and integrates public realm functions (Ahern, 2011). Large canopy trees within 10 meters of streams offer critical microclimatic regulation, reduce urban heat island effects, and stabilise banks through root structures, while enhancing habitat and user comfort (Gill et al., 2007). Together, these measures align ecological performance with urban liveability.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/recommendations/Cluster 1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-56" title="Tiles nearest to the centre of Cluster 1"><img src="images/recommendations/Cluster 1.jpg" class="img-fluid figure-img" alt="Tiles nearest to the centre of Cluster 1"></a></p>
+<figcaption>Tiles nearest to the centre of Cluster 1</figcaption>
+</figure>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/recommendations/Cluster 1.1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-57" title="Channel remeandering (What is river restoration?, n.d.)."><img src="images/recommendations/Cluster 1.1.jpg" class="img-fluid figure-img" data-fig-cap="Channel remeandering" alt="Channel remeandering (What is river restoration?, n.d.)."></a></p>
+<figcaption>Channel remeandering <em>(What is river restoration?, n.d.)</em>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/recommendations/Cluster 1.2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-58" title="Blue-green infrastructure incoporation (Fletcher et al., 2024)."><img src="images/recommendations/Cluster 1.2.jpg" class="img-fluid figure-img" data-fig-cap="Blue-green infrastructure incoporation. _(Fletcher et al., 2024)_" alt="Blue-green infrastructure incoporation (Fletcher et al., 2024)."></a></p>
+<figcaption>Blue-green infrastructure incoporation <em>(Fletcher et al., 2024)</em>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/recommendations/Cluster 1.3.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-59" title="Large canopy in urban stream buffer (Harding et al., 2009)."><img src="images/recommendations/Cluster 1.3.jpg" class="img-fluid figure-img" data-fig-cap="Large canopy in urban stream buffer. _(Harding et al., 2009)_" alt="Large canopy in urban stream buffer (Harding et al., 2009)."></a></p>
+<figcaption>Large canopy in urban stream buffer <em>(Harding et al., 2009)</em>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="discussion"><span class="header-section-number">5</span> Discussion</h2>
+<section id="site-selection-1" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="site-selection-1"><span class="header-section-number">5.1</span> Site selection</h3>
+<p>Selecting grid cells based solely on whether they intersect with a stream does not consider the relevance of each separate cell. Some cells may minimally intersect the stream, such as a small corner, while others may contain longer, centrally located segments. This variation is not currently accounted for in the MCDA. Future research could incorporate an additional variable concerning the length of the stream within each grid cell, providing a better indication of the relative importance of each grid cell.</p>
+</section>
+<section id="methods-1" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="methods-1"><span class="header-section-number">5.2</span> Methods</h3>
+<p>Selecting grid cells based solely on whether they intersect with a stream does not consider the relevance of each separate cell. Some cells may minimally intersect the stream, such as a small corner, while others may contain longer, centrally located segments. This variation is not currently accounted for in the MCDA. Future research could incorporate an additional variable concerning the length of the stream within each grid cell, providing a better indication of the relative importance of each grid cell.</p>
+</section>
+<section id="methods-2" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="methods-2"><span class="header-section-number">5.3</span> Methods</h3>
+<p>Subjects such as quality of life, climate adaptation, and biodiversity are broad and can be assessed using many different variables. Having to select which variables to consider in the MCDA introduces the risk of motivational bias, in which the selection of variables is influenced by the desirable outcome (Montibeller &amp; Von Winterfeldt, 2015). Additionally, the weighting of these variables was based on the authors’ preferences as well as the availability of data, which further introduces potential bias into the analysis.</p>
+<p>The use of space syntax, especially within the Attraction Reach module, has its limitations that may lead to inconsistencies in the analysis. Since all addresses were used as origins, areas without addresses, such as the Dresdner Heide, will be outliers within this analysis. This results in skewed data and may account for the moderate scores in the weighted quality of life map.</p>
+<p>Proposals based on the analysis Utilising Multi-Criteria Decision Analysis (MCDA), fifteen attributes were normalised and assigned weighted values to form three overarching objectives: biodiversity, climate adaptation, and quality of life, each given equal significance in the typological framework. While establishing a shared baseline for all urban streams enables consistent comparative analysis, it is critical to account for the specific weight distribution of the fifteen attributes when addressing underperforming cases. For the twelve lowest-ranked streams, differentiated design strategies must reflect the relative influence of each attribute, allowing context-sensitive interventions that align with site-specific ecological and social needs.</p>
+</section>
+<section id="further-research" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="further-research"><span class="header-section-number">5.4</span> Further research</h3>
+<p>In this project, all the urban streams within the Dresden boundary were considered. Considering the scale of the analysis, it was difficult to account for more zoomed-in understandings, such as the width of the stream and the riparian zone around, which are important while analysing and recommending context-specific solutions. For the twelve cases, a detailed analysis with a grid of 100-by-100 metres can be further considered to include stream widths, riparian zone width, vegetation cover, surface permeability, and proximity to water bodies, which are essential for stream restoration. However, such fine resolution may lead to data redundancy and increase complexity in citywide applications. A 50–100 m grid balances detail and feasibility for assessing ecosystem service distribution and hydrological patterns across urban subcatchments (Roest et al., 2023).</p>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">6</span> Conclusion</h2>
+<p>Based on the MCDA conducted, the following map highlights the twelve streams that have the greatest potential to contribute to the city’s integrated climate resilience through immediate urban restoration measures for enhancing biodiversity, mitigating flood risks, and improving quality of life.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/weighted/Conclusion_ 1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-60" title="Twelve urban streams fit for restoration"><img src="images/weighted/Conclusion_ 1.png" class="img-fluid figure-img" alt="Twelve urban streams fit for restoration"></a></p>
+<figcaption>Twelve urban streams fit for restoration</figcaption>
+</figure>
+</div>
+</section>
+<section id="bibliography" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="bibliography"><span class="header-section-number">7</span> Bibliography</h2>
+<p>Artmann, M., Bastian, O., &amp; Grunewald, K. (2017). Using the Concepts of Green Infrastructure and Ecosystem Services to Specify Leitbilder for Compact and Green Cities—The Example of the Landscape Plan of Dresden (Germany). Sustainability, 9(2), 198. https://doi.org/10.3390/su9020198</p>
+<p>Dresden. (2024, 12 december). Projektbeschreibung und Ziele | Blaues Band Geberbach | Landeshauptstadt Dresden. www.dresden.de. https://www.dresden.de/de/stadtraum/umwelt/umwelt/oberflaechenwasser/blaues-band/Projektbeschreibung.php</p>
+<p>Interreg Central Europe. (2025, 11 juni). Home - Interreg Central Europe. https://www.interreg-central.eu/</p>
+<p>KNMI - Central European flooding 2013. (z.d.). https://www.knmi.nl/kennis-en-datacentrum/achtergrond/central-european-flooding-2013</p>
+<p>Sächsisches Landesamt für Umwelt und Geologie. (2002). August 2002 flood in the watercourses of the Osterzgebirge mountains: Event Analysis. In Management-Report.</p>
+<p>Walsh, C. J., Roy, A. H., Feminella, J. W., Cottingham, P. D., Groffman, P. M., &amp; Morgan, R. P. (2005). The urban stream syndrome: current knowledge and the search for a cure. Journal Of The North American Benthological Society, 24(3), 706–723. https://doi.org/10.1899/04-028.1</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>
