@@ -8,3 +8,5 @@ report_files
 images/.DS_Store
 
 /.quarto/
+report.rmarkdown
+/docs
