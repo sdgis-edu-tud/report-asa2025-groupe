@@ -83,17 +83,25 @@ In order to provide an answer to the main research question, it is important to 
 ![MCDA structure](images/introduction/Dresden MCDA.png) 
 
 ### Site Selection
-To start, a grid with tiles of 500 by 500 metres was defined for the city of Dresden, as this is considered a walkable distance. This is filtered to only show the tiles which contain a stream to remove any unnecessary information.
+
+To establish a systematic analysis framework, we created a standardised spatial grid covering the entire city of Dresden. We chose a 500 by 500 meter grid cell size for three key reasons: (1) it represents a comfortable walkable distance for urban residents, (2) it provides sufficient granularity to capture local variations in stream conditions, and (3) it maintains computational efficiency for city-wide analysis. The site selection process followed these specific steps:
+
+1. We generated a regular grid covering the administrative boundary of Dresden using QGIS;
+2. We obtained the urban stream network from Dresden's municipal open data portal (OpenDataPortal Dresden, 2025C);
+3. Using QGIS, we identified all grid cells that intersect at least one stream segment;
+4. Lastly, we filtered the grid dataset to only keep these cells containing streams.
+
+This approach ensured our analysis focused exclusively on relevant areas while maintaining a consistent spatial unit for all subsequent analyses and comparisons.
 
 :::::: {layout-ncol="3"}
 ::: column
-![500x500m grid](images/introduction/STEP1.png)
+![500x500m grid covering Dresden](images/introduction/STEP1.png)
 :::
 ::: column
-![Overlaying the stream network](images/introduction/STEP2.png)
+![Overlaying the stream network (blue lines)](images/introduction/STEP2.png)
 :::
 ::: column
-![Keep only the tiles overlapping with the network](images/introduction/STEP3.png)
+![Final analysis grid: only cells intersecting streams](images/introduction/STEP3.png)
 :::
 ::::::
 
