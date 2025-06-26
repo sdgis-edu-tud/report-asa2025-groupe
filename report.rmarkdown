@@ -826,11 +826,11 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 ## Discussion
 
-###Site selection
+### Site selection
 
 Selecting grid cells based solely on whether they intersect with a stream does not consider the relevance of each separate cell. Some cells may minimally intersect the stream, such as a small corner, while others may contain longer, centrally located segments. This variation is not currently accounted for in the MCDA. Future research could incorporate an additional variable concerning the length of the stream within each grid cell, providing a better indication of the relative importance of each grid cell.
 
-###Methods
+### Methods
 
 Subjects such as quality of life, climate adaptation, and biodiversity are broad and can be assessed using many different variables. Having to select which variables to consider in the MCDA introduces the risk of motivational bias, in which the selection of variables is influenced by the desirable outcome (Montibeller & Von Winterfeldt, 2015). Additionally, the weighting of these variables was based on the authors' preferences as well as the availability of data, which further introduces potential bias into the analysis.
 
@@ -839,7 +839,7 @@ The use of space syntax, especially within the Attraction Reach module, has its 
 Proposals based on the analysis
 Utilising Multi-Criteria Decision Analysis (MCDA), fifteen attributes were normalised and assigned weighted values to form three overarching objectives: biodiversity, climate adaptation, and quality of life, each given equal significance in the typological framework. While establishing a shared baseline for all urban streams enables consistent comparative analysis, it is critical to account for the specific weight distribution of the fifteen attributes when addressing underperforming cases. For the twelve lowest-ranked streams, differentiated design strategies must reflect the relative influence of each attribute, allowing context-sensitive interventions that align with site-specific ecological and social needs.
 
-###Further research
+### Further research
 
 In this project, all the urban streams within the Dresden boundary were considered. Considering the scale of the analysis, it was difficult to account for more zoomed-in understandings, such as the width of the stream and the riparian zone around, which are important while analysing and recommending context-specific solutions. For the twelve cases, a detailed analysis with a grid of 100-by-100 metres can be further considered to include stream widths, riparian zone width, vegetation cover, surface permeability, and proximity to water bodies, which are essential for stream restoration. However, such fine resolution may lead to data redundancy and increase complexity in citywide applications. A 50–100 m grid balances detail and feasibility for assessing ecosystem service distribution and hydrological patterns across urban subcatchments (Roest et al., 2023).
 
