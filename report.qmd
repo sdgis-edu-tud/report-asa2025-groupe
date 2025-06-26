@@ -942,9 +942,15 @@ In addition, future work could focus specifically on the project’s adherence t
 
 ## Conclusion
 
-Based on the MCDA conducted, the following map highlights the twelve streams that have the greatest potential to contribute to the city’s integrated climate resilience through immediate urban restoration measures for enhancing biodiversity, mitigating flood risks, and improving quality of life.
+By conducting MCDA and comparing it to the k-means clustering to mitigate flood risks, improving quality of life and enhancing biodiversity, the main research question can be answered: **Which urban stream sections in Dresden have the greatest potential to contribute to the city’s integrated climate resilience? **
 
-![Twelve urban streams fit for restoration](images/weighted/Conclusion_%201.png)
+As a result of the MCDA, the following map highlights twelve streams that have the greatest potential to contribute to the city’s integrated climate resilience through immediate urban restoration measures. It also highlights that the good stream conditions are predominantly in the Northern part of Dresden, which is largely covered by natural ecosystems. Whereas the rest of the streams not faring well are in the built environment South of the Elbe River. 
+
+![Twelve urban streams fit for restoration](images/weighted/Conclusion_ 1.png)
+While the MCDA and Typology Construction are two different methodologies, there is also merit in overlaying them and objectively cross-checking data. The conclusion map shown below visualises the MCDA overlayed with the K-means clustering typologies. It ascertains the intuitive understanding and provides evidence that the urban, residential clusters overlap with the worst-performing streams. Furthermore, it is evident that the worst-performing tiles derived from MCDA are significantly further in values as compared to the ones nearest to the cluster centres. This advocates the need for considering the MCDA results as pilot cases and utilising the typology construction methodology to propose a toolkit for urban stream restoration efforts in varying contexts.
+
+![Overlapping results from MCDA and K-means clustering](images/weighted/Conclusion_ 2.png)
+
 
 ## Bibliography
 
