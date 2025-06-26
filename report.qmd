@@ -114,21 +114,16 @@ To combine the data and answer the main research question, a Multi-Criteria Deci
 Open-source datasets are collected and displayed on a fixed grid of 500-by-500-meter squares. Since the research focuses on finding which streams are most suitable for restoration, only the grid tiles that overlap with streams are shown in the results, as identified during the site selection process.
 
 **Step 2: Data Normalisation**  
-Next, the data is normalised so that it can be compared. This starts by checking whether a dataset represents good or bad conditions for stream restoration. This is indicated with a plus (+) for good conditions to improve, or a minus (–) when improvement is less needed. For example, streams with lots of greenery already have lower restoration potential, so a dataset showing green areas is marked with a minus (–), and vice versa.
-
-The main part of normalisation is converting different data value ranges into a 0 to 1 scale, so that each dataset becomes a comparable layer. The normalisation process is explained in the table below.
-
-![Layer information table placeholder](images/introduction/Placeholder for excel sheet.png)
+Next, the data is normalised so that it can be compared. This starts by checking whether a dataset represents good or bad conditions for stream restoration. This is indicated with a plus (+) for good conditions to improve, or a minus (–) when improvement is less needed. For example, streams with lots of greenery already have lower restoration potential, so a dataset showing green areas is marked with a minus (–), and vice versa. For each layer we converted our analysis results into a scale of 0-1, with 0 being the worst performing, and thus the most suitable for urban stream restoration and 1 being the best performing. In the results section, for each individual layer, we outline how we reached this 0-1 scale.
 
 **Step 3: Weighting the Layers**  
-In this step, the different data layers are given weights based on their importance. Since this step involves some subjectivity, the literature study helps to support the choices made. The Analytic Hierarchy Process (AHP) is used to compare each dataset in a matrix, assigning weights based on their relevance to each other. To keep the process clear, data layers are only compared within their topic area: climate resilience, quality of life, or ecology. These three main topics are given equal weight, since they are all important to urban stream restoration. The matrices are shown in Figure x.
+In this step, the different data layers are given weights based on their importance. Since this step involves some subjectivity, the literature study helps to support the choices made. The Analytic Hierarchy Process (AHP) is used to compare each dataset in a matrix, assigning weights based on their relevance to each other. To keep the process clear, data layers are only compared within their topic area: climate adaptation, quality of life, or biodiversity.
 
-![MCDA structure](images/climate_adaptation/Climate Adaptation_Saaty Matrix.png)
-![MCDA structure](images/quality_of_life/Quality of Life_Saaty Matrix.png)
-![MCDA structure](images/biodiversity/Biodiversity_Saaty Matrix.png)
 
-**Step 4: Combining the Results**  
-Finally, the three weighted layers are combined into a single result map. The structure of the full MCDA process, including the topics, weights, and plus/minus signs, is shown in the figures below. 
+**Step 4: Combining the Results**
+Lastly, the three individual weighted layers are combined, resulting in a single overall weighted map. This map shows which grid tiles, overall, perform the best and worst.
+
+The structure of our full MCDA process, including our weights, our minimisation/maximisation goals, is summarised in the figure below. Further we'll discuss how we came to this overall structure and the individual elements.
 
 ![MCDA structure with visualised weighing](images/introduction/Dresden MCDA weight.png)
 
@@ -367,9 +362,12 @@ Thus, the sealing classes were normalised from 1-5, and the unsealed areas were 
 
 ### Biodiversity
 
-Biodiversity is important because...
+Biodiversity is important because it underpins ecosystem health, providing vital services such as air purification, water filtration, and climate regulation, all of which are essential for the well-being of urban environments and human populations. Promoting and enhancing biodiversity is a core goal of the Urban Stream Restoration project.
 
 #### PM10
+
+Airborne particulate matter, specifically PM10 (particulate matter with a diameter of 10 micrometers or less), is a significant air pollutant that can negatively impact environmental health and biodiversity. High concentrations of PM10 can stress ecosystems and reduce overall ecological quality. To assess this, PM10 values were measured by the municipality of Dresden. On the normalized 0-1 scale, a value of 0 indicates PM10 pollution greater than 45 µg/m², representing the worst conditions, while 1 signifies 0 µg/m² PM10 pollution, indicating the best conditions for biodiversity. These values were derived by regridding the municipality's per-tile data onto the new 500x500m grid, with overlaying tiles weighted by their area, and then rescaled from 45-0 µg/m² to 0-1 to ensure that higher values are more favorable.
+
 ::::: {layout-ncol="2"}
 ::: {.column}
 ![PM10: Analysis](images/biodiversity/PM10.png){fig-cap="Figure X. PM10 concentration."}
@@ -380,6 +378,9 @@ Biodiversity is important because...
 :::::
 
 #### NO₂
+
+Similar to PM10, Nitrogen Dioxide (NO₂) concentration is another critical indicator of air quality that directly influences biodiversity within urban landscapes. Elevated NO₂ levels contribute to air pollution, which can harm vegetation and aquatic life, thereby degrading the ecological value of an area. For this analysis, NO₂ values collected and released by the municipality of Dresden were used. On the 0-1 normalized scale, a value of 0 represents NO₂ pollution greater than 40 µg/m², signifying poor conditions for biodiversity, whereas 1 indicates 0 µg/m² NO₂ pollution, representing optimal conditions. The methodology for determining and normalizing these values was identical to that used for PM10, involving regridding and rescaling from a 40-0 µg/m² range to 0-1.
+
 ::::: {layout-ncol="2"}
 ::: {.column}
 ![NO₂: Analysis](images/biodiversity/NO2.png){fig-cap="Figure X. NO2 concentration."}
@@ -390,6 +391,9 @@ Biodiversity is important because...
 :::::
 
 #### NDVI
+
+The Normalized Difference Vegetation Index (NDVI) is a crucial metric for assessing vegetation density and health, directly reflecting the extent and quality of green spaces that support urban biodiversity. A higher NDVI indicates more robust vegetation, essential for healthy ecosystems and the numerous benefits they provide. The annual, average NDVI values were measured using data from the Copernicus satellite, spanning from May 2023 to May 2024. On the normalized 0-1 scale, a value of 0 denotes very poor NDVI, implying an absence of trees or significant vegetation, while 1 indicates very good NDVI, signifying a rich and healthy vegetative cover. The mean NDVI values, originally ranging from -1 to +1, were calculated and averaged over a year, then transformed to the 0-1 scale using the formula (x+1)/2, where x is the original NDVI value.
+
 ::::: {layout-ncol="2"}
 ::: {.column}
 ![NDVI: Analysis](images/biodiversity/NDVI.png){fig-cap="Figure X. NDVI index."}
@@ -400,6 +404,9 @@ Biodiversity is important because...
 :::::
 
 #### Landscape Quality
+
+The Landscape Quality Assessment, as classified by the municipality of Dresden, provides a direct evaluation of an area's aesthetic and ecological value, both of which are integral to supporting biodiversity and creating healthy urban environments. This assessment helps identify areas where restoration efforts could significantly enhance natural beauty and ecological function. The quality of the landscape is represented on a 0-1 scale, where 0 indicates a very low value of the landscape, and 1 signifies a very high value of the landscape. Specific quality levels were assigned corresponding numerical values: "Very low quality" received 0.0, "Low quality" 0.25, "Medium quality" 0.5, "High quality" 0.75, and "Very high quality" or areas with "Unique aspects of the landscape or cityscape" were assigned 1.0. This metric was derived using a weighted average method.
+
 ::::: {layout-ncol="2"}
 ::: {.column}
 ![Landscape Quality: Analysis](images/biodiversity/LandscapeQuality.png){fig-cap="Figure X. Landscape quality."}
@@ -410,6 +417,9 @@ Biodiversity is important because...
 :::::
 
 #### Blue-Green Infrastructure Percentage
+
+The Percentage of Green or Blue Infrastructure within a grid cell directly quantifies the presence of natural elements crucial for urban biodiversity and overall ecological resilience. Integrating such spaces aligns with Dresden's vision of a "compact city within an ecological network," enhancing air and water quality, reducing urban heat island effects, and bolstering biodiversity. This metric represents the netto percentage of a grid cell whose land type is classified as green or blue. A value of 0 means 0% of the tile is classified as green or blue, indicating minimal natural elements, while 1 means 100% of the tile's land type is green or blue, representing full natural coverage. This percentage was calculated as a weighted average value, utilizing the Bruto block land use classification from the municipality but applying it to the netto block map to specifically exclude non-green/blue areas like roads.
+
 ::::: {layout-ncol="2"}
 ::: {.column}
 ![Blue-Green: Analysis](images/biodiversity/BlueGreenPercentage.png){fig-cap="Figure X. Blue-green infrastructure percentage."}
