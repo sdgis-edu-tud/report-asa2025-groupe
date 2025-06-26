@@ -1,15 +1,6 @@
 ---
 title: "Urban Stream Restoration in Dresden"
 subtitle: "Researching the optimal locations to restore the urban streams in order to improve the biodiversity, climate adaptivity and quality of life in the city of Dresden"
-author:
-  - name: "Daan Schlosser"
-    affiliation: "MSc Geomatics"
-  - name: "Joost Bastiaansen"
-    affiliation: "MSc Urbanism"
-  - name: "Aparnaa Chandrasekaran"
-    affiliation: "MSc Urbanism"
-  - name: "Teun van Dijk"
-    affiliation: "MSc Urbanism"
 
 format:
   html:
@@ -435,24 +426,9 @@ The Percentage of Green or Blue Infrastructure within a grid cell directly quant
 
 ![](images/biodiversity/Biodiversity_Saaty Matrix.png)
 
-### Interactive Map Dashboard
-
-We’ve also developed an interactive dashboard that lets you explore our urban stream restoration analysis in detail. Within the dashboard, you can view any individual map layer,  or you can overlay any combination of layers with their importance/weights in mind, as provided in our S-MCDA analysis. For example, 2 BIO layers and 1 QOL layer, to find relationships and patterns. To support this flexibility the dashboard features a trivariate choropleth legend, so any combination of layers can be visualised.
-
-Additionally, you can click on any 500x500m grid tile to display a bar chart showing all attribute values (ranging from 0 to 1) for that specific location. This tool is especially valuable for deeper analysis and informed decision-making, helping prioritize which stream sections should be restored first and identifying the specific improvements needed for each tile.
-
-#### How to use the dashboard
-Unfortunately, due to CORS restrictions, you cannot open the dashboard by simply opening the HTML file. Fortunately, setting up a temporary local server is quite straightforward:
-
-1.	Prerequisite: Python must be installed on your computer.
-2.	Open your command prompt/terminal and navigate to the project directory, e.g.: cd C:\Users\daans\Documents\GitHub\report-asa2025-groupe
-3.	Run python -m http.server or python3 -m http.server in the same terminal window, depending on your Python installation. This starts a temporary local server hosted by the terminal.
-4.	Open your web browser and navigate to localhost:8000/interactive%20map/
-
-
 ### Overview of the normal distribution of our layers
 
-The following plot displays the distribution of the normalised values for all the layers used in the saaty matrices.
+To help visualise and get a better understanding of the distribution of our values across our datasets, we've made the following plot which displays the distribution of the normalised values for all the layers used in the saaty matrices, and the resultig distribution per theme.
 
 ::: {style="width:100%; text-align:center;"}
 ```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=600}
@@ -561,9 +537,27 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 ```
 :::
 
+### Interactive Map Dashboard
+
+We’ve also developed an interactive dashboard that lets you explore our urban stream restoration analysis in detail. Within the dashboard, you can view any individual map layer,  or you can overlay any combination of layers with their importance/weights in mind, as provided in our S-MCDA analysis. For example, 2 BIO layers and 1 QOL layer, to find relationships and patterns. To support this flexibility the dashboard features a trivariate choropleth legend, so any combination of layers can be visualised.
+
+Additionally, you can click on any 500x500m grid tile to display a bar chart showing all attribute values (ranging from 0 to 1) for that specific location. This tool is especially valuable for deeper analysis and informed decision-making, helping prioritize which stream sections should be restored first and identifying the specific improvements needed for each tile.
+
+#### How to use the dashboard
+Unfortunately, due to CORS restrictions, you cannot open the dashboard by simply opening the HTML file. Fortunately, setting up a temporary local server is quite straightforward:
+
+1.	Prerequisite: Python must be installed on your computer.
+2.	Open your command prompt/terminal and navigate to the project directory, e.g.: cd C:\Users\daans\Documents\GitHub\report-asa2025-groupe
+3.	Run python -m http.server or python3 -m http.server in the same terminal window, depending on your Python installation. This starts a temporary local server hosted by the terminal.
+4.	Open your web browser and navigate to localhost:8000/interactive%20map/
+
 ### Weighted maps per theme
 
-![Biodiversity index, weighted](images/weighted/BIO_Weighted.png) ![Quality of Life index, weighted](images/weighted/QOL_Weighted.png) ![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png) 
+![Biodiversity index, weighted](images/weighted/BIO_Weighted.png)
+
+![Quality of Life index, weighted](images/weighted/QOL_Weighted.png)
+
+![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png) 
 
 ### Weighted overall map 
 ![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
@@ -892,22 +886,24 @@ For Cluster 3, which comprises transition spaces between urban spaces and natura
 ### Site selection
 Selecting grid cells based solely on whether they intersect with a stream does not consider the relevance of each separate cell. Some cells may minimally intersect the stream, such as a small corner, while others may contain longer, centrally located segments. This variation is not currently accounted for in the MCDA. Future research could incorporate an additional variable concerning the length of the stream within each grid cell, providing a better indication of the relative importance of each grid cell.
 
-### Methods
+### Grid cell size
 
 Selecting grid cells based solely on whether they intersect with a stream does not consider the relevance of each separate cell. Some cells may minimally intersect the stream, such as a small corner, while others may contain longer, centrally located segments. This variation is not currently accounted for in the MCDA. Future research could incorporate an additional variable concerning the length of the stream within each grid cell, providing a better indication of the relative importance of each grid cell.
 
-### Methods
+### The variables used
 
 Subjects such as quality of life, climate adaptation, and biodiversity are broad and can be assessed using many different variables. Having to select which variables to consider in the MCDA introduces the risk of motivational bias, in which the selection of variables is influenced by the desirable outcome (Montibeller & Von Winterfeldt, 2015). Additionally, the weighting of these variables was based on the authors' preferences as well as the availability of data, which further introduces potential bias into the analysis.
 
 The use of space syntax, especially within the Attraction Reach module, has its limitations that may lead to inconsistencies in the analysis. Since all addresses were used as origins, areas without addresses, such as the Dresdner Heide, will be outliers within this analysis. This results in skewed data and may account for the moderate scores in the weighted quality of life map.
 
-Proposals based on the analysis
+#### Proposals based on the analysis
 Utilising Multi-Criteria Decision Analysis (MCDA), fifteen attributes were normalised and assigned weighted values to form three overarching objectives: biodiversity, climate adaptation, and quality of life, each given equal significance in the typological framework. While establishing a shared baseline for all urban streams enables consistent comparative analysis, it is critical to account for the specific weight distribution of the fifteen attributes when addressing underperforming cases. For the twelve lowest-ranked streams, differentiated design strategies must reflect the relative influence of each attribute, allowing context-sensitive interventions that align with site-specific ecological and social needs.
 
 ### Further research
 
 In this project, all the urban streams within the Dresden boundary were considered. Considering the scale of the analysis, it was difficult to account for more zoomed-in understandings, such as the width of the stream and the riparian zone around, which are important while analysing and recommending context-specific solutions. For the twelve cases, a detailed analysis with a grid of 100-by-100 metres can be further considered to include stream widths, riparian zone width, vegetation cover, surface permeability, and proximity to water bodies, which are essential for stream restoration. However, such fine resolution may lead to data redundancy and increase complexity in citywide applications. A 50–100 m grid balances detail and feasibility for assessing ecosystem service distribution and hydrological patterns across urban subcatchments (Roest et al., 2023).
+
+Additionally, other variables (if publicly available), other methodologies and 'translations' into the calculated normalised values may be considered with other, perhaps more specific (political, urban, etc.) goals in mind.
 
 ## Conclusion
 
