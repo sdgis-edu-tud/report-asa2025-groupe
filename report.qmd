@@ -13,6 +13,17 @@ format:
     theme: Yeti
 ---
 
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#setup
+#install.packages("sf")
+#install.packages("ggplot2")
+#install.packages("tidyr")
+#install.packages("dplyr")
+#install.packages("cluster")
+#install.packages("plotly")
+```
+
+
 | Name                   | Affiliation   | Role                               |
 |----------------------|-----------------|---------------------------------|
 | Daan Schlosser         | MSc Geomatics | Project coordinator & data-analyst |
@@ -154,9 +165,7 @@ However, keeping the above in mind, specifically our emphasis on data processing
 
 ### Quality of Life
 
-Apart from natural aspects such as biodiversity and climate adaptation, urban streams also exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it can improve their general health.
-
-In order to assess the quality of life, this research focuses on the improvements the urban stream restoration project can provide on a day-to-day basis.
+Urban streams exert an influence on the social level. The presence of an urban stream can directly influence the quality of life for the surrounding inhabitants of the area through creating a sense of community (Riley, 2016) or it can improve their general health. In order to assess the quality of life, this research focuses on the improvements the urban stream restoration project can provide on a day-to-day basis.
 
 #### Vicinity to Urban Green Space
 
@@ -465,11 +474,6 @@ To help visualise and get a better understanding of the distribution of our valu
 
 ::: {style="width:100%; text-align:center;"}
 ```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=600}
-#install.packages("sf")
-#install.packages("ggplot2")
-#install.packages("tidyr")
-#install.packages("dplyr")
-
 library(sf)
 library(ggplot2)
 library(tidyr)
@@ -605,11 +609,6 @@ This comprehensive map directly addresses the main research question of the proj
 
 ::: {style="width:100%; text-align:center;"}
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-#install.packages("sf")
-#install.packages("dplyr")
-#install.packages("cluster")
-#install.packages("plotly")
-
 library(sf) # for processing vector data
 library(dplyr) # for selecting and transforming data
 library(cluster) # for the silhouette method
