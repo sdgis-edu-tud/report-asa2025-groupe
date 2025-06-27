@@ -49,31 +49,31 @@ One of the participating cities in the ReBioClim project is Dresden, located in 
 
 This became apparent in 2002, when Dresden was struck by a severe flood (Sächsisches Landesamt für Umwelt und Geologie, 2002). Over two metres of rain fell in just three days across large parts of the Osterzgebirge mountain range—two to three times the average rainfall for the entire month of August. Due to preceding moisture and geological conditions, the ground was already saturated and could absorb little additional water. As a result, 60 to 90 per cent of the rainfall rapidly ran off in many areas. At the time, the runoff infrastructure was far from adequate to manage this volume of water, leading to substantial damage and destruction across the affected region.
 
-![2002 flooding. theguardian.com (2002)](images/introduction/Flood%201.png)
+![2002 flooding. (Sächsisches Landesamt für Umwelt und Geologie, 2002a)](images/introduction/Flood%201.png)
 
 The watercourses in urban areas were almost entirely canalised, and the banks were reinforced—even beyond urban boundaries (Sächsisches Landesamt für Umwelt und Geologie, 2002). Dams, bridges, and other structures along the channels significantly reduced local discharge capacity. In all affected areas, these bottlenecks were identified as points where the available discharge profile was completely inadequate.
 
 The result was more than a billion euros in damage and multiple fatalities. Although the August 2002 flood had a statistical return period of 100 to 500 years, a more extensive analysis revealed that similar events could occur at any time across the studied streams. The analysis (Sächsisches Landesamt für Umwelt und Geologie, 2002) also indicated that the August flood was not the maximum physically possible event, meaning future floods more severe than that of 2002 cannot be ruled out. In 2013, a similar event occurred, when a combination of late snowmelt and several wet spring months resulted in saturated soils and full reservoirs (KNMI - Central European Flooding 2013, n.d.). Although the magnitude of the Elbe flooding was lower than in 2002, the damage and casualties were comparable.
 
-![2002 flooding. eu.dispatch.com(2013)](images/introduction/Flood%202.png)
+![2002 flooding. (Sächsisches Landesamt für Umwelt und Geologie, 2002a)](images/introduction/Flood 2.png)
 
 ### Urban Stream Restoration
 
 To mitigate the impact of similar future events, the Sachsen region and the city of Dresden were strongly motivated to develop an integrated, sustainable drainage system. To achieve this, several goals were established (Sächsisches Landesamt für Umwelt und Geologie, 2002). These included giving streams more space by widening them and restricting real estate development in flood-prone areas. Furthermore, hydraulic drainage systems required a larger discharge profile and greater attention to erosion. Lastly, a focus was placed on the decentralised retention of runoff, particularly by influencing land use around urban stream reservoirs. This involved promoting ecological or recreational land uses instead of industrial or residential developments, in order to increase the overflow capacity of streams. These principles aimed not only to improve climate adaptation and biodiversity, but also to enhance the quality of life for nearby residents.
 
-![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach%201.jpg)
+![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach 1.jpg)
 
 :::::: {layout-ncol="3"}
 ::: column
-![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach%202a.jpg)
+![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach 2a.jpg)
 :::
 
 ::: column
-![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach%202b.jpg)
+![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach 2b.jpg)
 :::
 
 ::: column
-![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach%203b.jpg)
+![Blaues band Geberbach restoration project (Dresden.de)](images/introduction/Geberbach 3b.jpg)
 :::
 ::::::
 
@@ -1124,14 +1124,137 @@ While the MCDA and Typology Construction are two different methodologies, there 
 
 ## Bibliography
 
-Artmann, M., Bastian, O., & Grunewald, K. (2017). Using the Concepts of Green Infrastructure and Ecosystem Services to Specify Leitbilder for Compact and Green Cities—The Example of the Landscape Plan of Dresden (Germany). Sustainability, 9(2), 198. https://doi.org/10.3390/su9020198
+Adamska, M. (2013). Riparian buffer zones on selected rivers in Lower Silesia – an important conservation practice and the management strategy in urban planning. Contemporary Trends in Geoscience, 2(1), 6–17. https://doi.org/10.2478/ctg-2014-0001
 
-Dresden. (2024, 12 december). Projektbeschreibung und Ziele \| Blaues Band Geberbach \| Landeshauptstadt Dresden. www.dresden.de. https://www.dresden.de/de/stadtraum/umwelt/umwelt/oberflaechenwasser/blaues-band/Projektbeschreibung.php
+Akpinar, A. (2016). How is quality of urban green spaces associated with physical activity and health? Urban Forestry & Urban Greening, 16, 76-83. https://doi.org/10.1016/j.ufug.2016.01.011 
 
-Interreg Central Europe. (2025, 11 juni). Home - Interreg Central Europe. https://www.interreg-central.eu/
+Arnbjerg-Nielsen, K., Willems, P., Olsson, J., Beecham, S., Pathirana, A., Gregersen, I. B., Madsen, H., & Nguyen, V. (2013). Impacts of climate change on rainfall extremes and urban drainage systems: a review. Water Science & Technology, 68(1), 16–28. https://doi.org/10.2166/wst.2013.251
 
-KNMI - Central European flooding 2013. (z.d.). https://www.knmi.nl/kennis-en-datacentrum/achtergrond/central-european-flooding-2013
+Artmann, M., Bastian, O., & Grunewald, K. (2017). Using the concepts of green infrastructure and ecosystem services to specify leitbilder for compact and green Cities—The example of the Landscape Plan of Dresden (Germany). Sustainability, 9(2), 198. https://doi.org/10.3390/su9020198
 
-Sächsisches Landesamt für Umwelt und Geologie. (2002). August 2002 flood in the watercourses of the Osterzgebirge mountains: Event Analysis. In Management-Report.
+Bao, Y., Gao, M., Luo, D., & Zhou, X. (2022). The influence of outdoor play spaces in urban parks on children’s social anxiety. Frontiers in Public Health, 10. https://doi.org/10.3389/fpubh.2022.1046399 
+
+Bohus, A., Gál, B., Barta, B., Szivák, I., Karádi-Kovács, K., Boda, P., Padisák, J., & Schmera, D. (2023). Effects of urbanization-induced local alterations on the diversity and assemblage structure of macroinvertebrates in low-order streams. Hydrobiologia, 850(4), 881–899. https://doi.org/10.1007/s10750-022-05130-1 
+
+Booth, D. B., Hartley, D., & Jackson, R. (2002). FOREST COVER, IMPERVIOUS‐SURFACE AREA, AND THE MITIGATION OF STORMWATER IMPACTS1. JAWRA Journal of the American Water Resources Association, 38(3), 835–845. https://doi.org/10.1111/j.1752-1688.2002.tb01000.x
+
+Bowler, D. E., Buyung-Ali, L., Knight, T. M., & Pullin, A. S. (2010). Urban greening to cool towns and cities: A systematic review of the empirical evidence. Landscape and Urban Planning, 97(3), 147–155. https://doi.org/10.1016/j.landurbplan.2010.05.006
+
+Cohen, D. A., Han, B., Williamson, S., Nagel, C., McKenzie, T. L., Evenson, K. R., & Harnik, P. (2019). Playground features and physical activity in U.S. neighborhood parks. Preventive Medicine, 131, 105945. https://doi.org/10.1016/j.ypmed.2019.105945 
+
+Convertino, M., Baker, K., Vogel, J., Lu, C., Suedel, B., & Linkov, I. (2012). Multi-criteria decision analysis to select metrics for design and monitoring of sustainable ecosystem restorations. Ecological Indicators, 26, 76–86. https://doi.org/10.1016/j.ecolind.2012.10.005
+
+Corsair, H. J., Ruch, J. B., Zheng, P. Q., Hobbs, B. F., & Koonce, J. F. (2009). Multicriteria decision analysis of stream restoration: potential and examples. Group Decision and Negotiation, 18(4), 387–417. https://doi.org/10.1007/s10726-008-9148-4
+
+Dadvand, P. & Nieuwenhuijsen, M. (2018). Green Space and Health. In Nieuwenhuijsen, M. & Khreis, H. (Eds.), Integrating Human Health into Urban and Transport Planning. (pp. 409 – 423). Springer, Cham. https://doi-org.tudelft.idm.oclc.org/10.1007/978-3-319-74983-9_20  
+
+Deutsch, K., Leroy, D., Belpaire, C., Haan, K. D., Vrana, B., Clayton, H., Hanke, G., Ricci, M., Held, A., Gawlik, B., Babut, M., Perceval, O., Lepom, P., Heiss, C., Koschorreck, J., O’Toole, S., Valsecchi, S., Polesello, S., Carere, M., . . . Viñas, L. (2014). Common implementation strategy for the Water Framework Directive (2000/60/EC). Guidance Document No. 32 ON BIOTA MONITORING (THE IMPLEMENTATION OF EQSBIOTA) UNDER THE WATER FRAMEWORK DIRECTIVE. CTIT Technical Reports Series. https://doi.org/10.2779/833200
+
+De Vries, W., Schulte-Uebbing, L., Kros, H., Voogd, J. C., & Louwagie, G. (2021). Spatially explicit boundaries for agricultural nitrogen inputs in the European Union to meet air and water quality targets. The Science of the Total Environment, 786, 147283. https://doi.org/10.1016/j.scitotenv.2021.147283 
+
+Dietz, M. E. (2007). Low Impact Development Practices: A review of current research and recommendations for future directions. Water Air & Soil Pollution, 186(1–4), 351–363. https://doi.org/10.1007/s11270-007-9484-z
+
+Dresden. (2024, December 12). Projektbeschreibung und Ziele | Blaues Band Geberbach | Landeshauptstadt Dresden. https://www.dresden.de/de/stadtraum/umwelt/umwelt/oberflaechenwasser/blaues-band/Projektbeschreibung.php
+
+European Environment Agency (EEA). (2017). Green infrastructure and flood management – Promoting nature-based solutions. EEA Report No 14/2017. https://www.eea.europa.eu/publications/green-infrastructure-and-flood-management 
+
+Fletcher, T. D., Shuster, W., Hunt, W. F., Ashley, R., Butler, D., Arthur, S., Trowsdale, S., Barraud, S., Semadeni-Davies, A., Bertrand-Krajewski, J., Mikkelsen, P. S., Rivard, G., Uhl, M., Dagenais, D., & Viklander, M. (2014). SUDS, LID, BMPs, WSUD and more – The evolution and application of terminology surrounding urban drainage. Urban Water Journal, 12(7), 525–542. https://doi.org/10.1080/1573062x.2014.916314
+
+Gascon, M., Triguero-Mas, M., Martínez, D., Dadvand, P., Forns, J., Plasència, A. & Nieuwenhuijsen, M.J. (2015). Mental Health Benefits of Long-Term Exposure to Residential Green and Blue Spaces: A Systematic Review. International Journal of Environmental Research and Public Health 12(4), 4354-4379. https://doi.org/10.3390/ijerph120404354 
+
+Giles-Corti, B., Broomhall, M.H., Knuiman, M., Collins, C., Douglas, K., Ng, K., Lange, A. & Donovan, R.J. (2005). Increasing walking: How important is distance to, attractiveness, and size of public open space? American Journal of Preventitive Medicine 2(2), 169-176. https://doi.org/10.1016/j.amepre.2004.10.018 
+
+Gill, S., Handley, J., Ennos, A., & Pauleit, S. (2007). Adapting Cities for climate Change: The role of the green infrastructure. Built Environment, 33(1), 115–133. https://doi.org/10.2148/benv.33.1.115
+
+Grunewald, K., Richter, B., & Behnisch, M. (2019). Multi-Indicator Approach for Characterising Urban Green Space Provision at City and City-District Level in Germany. International journal of environmental research and public health, 16(13), 2300. https://doi.org/10.3390/ijerph16132300
+
+Gu, J., Lee, J., Lee, S., Park, Y., & Park, S. (2025). Enhancing stream ecosystems through riparian vegetation management. Land, 14(6), 1248. https://doi.org/10.3390/land14061248 
+
+Han, S., Ye, Y., Song, Y., Yan, S., Shi, F., Zhang, Y., Liu, X., Du, H. & Song, D. (2022). A Systematic Review of Objective Factors Influencing Behavior in Public Open Spaces. Frontiers in Public Health, 10.  https://doi.org/10.3389/fpubh.2022.898136
+
+Hartig, T., Mitchell, R., De Vries, S. & Frumkin, H. (2014). Nature and Health. Annual Review of Public Health 35, 207-228. https://doi-org.tudelft.idm.oclc.org/10.1146/annurev-publhealth-032013-182443 
+
+Havel, J. E., Kovalenko, K. E., Thomaz, S. M., Amalfitano, S., & Kats, L. B. (2015). Aquatic invasive species: challenges for the future. Hydrobiologia, 750(1), 147–170. https://doi.org/10.1007/s10750-014-2166-0
+
+Interreg Central Europe. (2025, May 8). Restoring urban streams to improve the microclimate in cities - Interreg Central Europe. https://www.interreg-central.eu/projects/rebioclim/
+
+Kabisch, N., Qureshi, S., & Haase, D. (2014). Human–environment interactions in urban green spaces — A systematic review of contemporary issues and prospects for future research. Environmental Impact Assessment Review, 50, 25–34. https://doi.org/10.1016/j.eiar.2014.08.007
+
+Kazmierczak, A., Bittner, S., Breil, M., Coninx, I., Johnson, K., Kleinenkuhnen, L., Kochova, T., Lauwaet, D., Nielsen, H. O., Smith, H., & Zandersen, M. (2020). Urban adaptation in Europe: how cities and towns respond to climate change. In European Environment Agency (EEA Report 12/2020). https://doi.org/10.2800/324620
+
+KNMI - Central European flooding 2013. (n.d.). https://www.knmi.nl/kennis-en-datacentrum/achtergrond/central-european-flooding-2013
+
+Liu, Y., & Zhang, Z. (2024). Effects of atmospheric particulate matter on microbial communities in Wetland ecosystems. Water, 17(1), 66. https://doi.org/10.3390/w17010066 
+
+Mant, J., Thorne, C., Burch, J., & Naura, M. (2020). Restoration of urban streams to create blue–green infrastructure. In Blue-Green Cities (pp. 77–97). https://doi.org/10.1680/bgc.64195.077 
+
+Marando, F., Salvatori, E., Fusaro, L., & Manes, F. (2016). Removal of PM10 by forests as a Nature-Based Solution for Air quality improvement in the metropolitan city of Rome. Forests, 7(7), 150. https://doi.org/10.3390/f7070150 
+
+Mitsch, W. J., & Gosselink, J. G. (2015). Wetlands. John Wiley & Sons. https://www.researchgate.net/publication/271643179_Wetlands_5th_edition
+
+Montibeller, G. & Von Winterfeldt, D. (2015). Biases and Debiasing in Multi-Criteria Decision Analysis. Paper presented at the 2015 48th Hawaii International Conference on System Sciences, 5-8 January 2015, Kauai, Hawaii, USA, pp. 1218–1226. https://doi-org.tudelft.idm.oclc.org/10.1109/HICSS.2015.148 
+
+Nordbø, E. C. A., Raanaas, R. K., Nordh, H., & Aamodt, G. (2019). Neighborhood green spaces, facilities and population density as predictors of activity participation among 8-year-olds: a cross-sectional GIS study based on the Norwegian mother and child cohort study. BMC Public Health, 19(1). https://doi.org/10.1186/s12889-019-7795-9 
+
+Palmer, M. A., Hondula, K. L., & Koch, B. J. (2014). Ecological restoration of streams and rivers: shifting strategies and shifting goals. Annual Review of Ecology Evolution and Systematics, 45(1), 247–269. https://doi.org/10.1146/annurev-ecolsys-120213-091935
+
+Paul, M. J., & Meyer, J. L. (2001). Streams in the urban landscape. Annual Review of Ecology and Systematics, 32(1), 333–365. https://doi.org/10.1146/annurev.ecolsys.32.081501.114040
+
+Ranta, E., Vidal-Abarca, M. R., Calapez, A. R., & Feio, M. J. (2021). Urban Stream Assessment System (USAS): An integrative tool to assess biodiversity, ecosystem functions and services. Ecological Indicators, 121. https://doi.org/10.1016/j.ecolind.2020.106980
+
+Reporter, G. S. (2002, August 16). Thousands flee Dresden floods. The Guardian. https://www.theguardian.com/world/2002/aug/16/naturaldisasters.weather
+
+Riley, A. L. (2016). Restoring Neighborhood Streams: Planning, Design and Construction. Island Press. 
+
+Roberts, H., Kellar, I., Conner, M., Gidlow, C., Kelly, B., Nieuwenhuijsen, M., & McEachan, R. (2019). Associations between park features, park satisfaction and park use in a multi-ethnic deprived urban area. Urban Forestry & Urban Greening, 46, 126485. https://doi.org/10.1016/j.ufug.2019.126485 
+
+Roest, A. H., Weitkamp, G., Van Den Brink, M., & Boogaard, F. (2023). Mapping spatial opportunities for urban climate adaptation measures in public and private spaces using a GIS-based Decision Support Model. Sustainable Cities and Society, 96, 104651. https://doi.org/10.1016/j.scs.2023.104651
+
+Sächsisches Landesamt für Umwelt und Geologie. (2002). Vorläufiger Kurzbericht über die meteorologisch-hydrologische Situation beim Hochwasser im August 2002. https://www.wasser.sachsen.de/download/kb021202.pdf
+
+Sheng, Q., Wan, D., & Yu, B. (2021). Effect of Space Configurational Attributes on Social Interactions in Urban Parks. Sustainability, 13(14), 7805. https://doi.org/10.3390/su13147805 
+
+Sugiyama, T., Francis, J., Middleton, N. J., Owen, N., & Giles-Corti, B. (2010). Associations between recreational walking and attractiveness, size, and proximity of neighborhood open spaces. American Journal of Public Health, 100(9), 1752–1757. https://doi.org/10.2105/ajph.2009.182006 
+
+Van der Plas, F., Hautier, Y., Ceulemans, T., Alard, D., Bobbink, R., Diekmann, M., Dise, N.B., Dorland, E., Dupré, C., Gowing, D. & Stevens, C. (2024). Atmospheric nitrogen deposition is related to plant biodiversity loss at multiple spatial scales. Global Change Biology 30. https://doi.org/10.1111/gcb.17445 
+
+Van Nes, A. (2021). Spatial Configurations and Walkability Potentials. Measuring Urban Compactness with Space Syntax. Sustainability, 13(11), 5785. https://doi.org/10.3390/su13115785 
+
+Van Nes, A. & Yamu, C. (2021). Introduction to Space Syntax in Urban Studies. Springer. https://doi.org/10.1007/978-3-030-59140-3 
+
+Vert, C., Gascon, M., Ranzani, O., Márquez, S., Triguero-Mas, M., Carrasco-Turigas, G., Arjona, L., Koch, S., Llopis, M., Donaire-Gonzalez, D., Elliott, L. R., & Nieuwenhuijsen, M. (2020). Physical and mental health effects of repeated short walks in a blue space environment: A randomised crossover study. Environmental Research, 188, 109812. https://doi.org/10.1016/j.envres.2020.109812 
+
+Völker, S., Heiler, A., Pollmann, T., Claßen, T., Hornberg, C. & Kistemann, T. (2018). Do perceived walking distance to and use of urban blue spaces affect self-reported physical and mental health? Urban Forestry & Urban Greening, 29, 1-9. https://doi.org/10.1016/j.ufug.2017.10.014 
 
 Walsh, C. J., Roy, A. H., Feminella, J. W., Cottingham, P. D., Groffman, P. M., & Morgan, R. P. (2005). The urban stream syndrome: current knowledge and the search for a cure. Journal Of The North American Benthological Society, 24(3), 706–723. https://doi.org/10.1899/04-028.1
+
+Wang, J., Xie, C., Liang, A., Jiang, R., Man, Z., Wu, H., & Che, S. (2021). Spatial-Temporal Variation of Air PM2.5 and PM10 within Different Types of Vegetation during Winter in an Urban Riparian Zone of Shanghai. Atmosphere, 12(11), 1428. https://doi.org/10.3390/atmos12111428 
+
+Wantzen, K. M., Piednoir, T., Cao, Y., Vazhayil, A. M., Tan, C., Kari, F. G., Lagerström, M., Gerner, N. V., & Sommerhäuser, M. M. (2022). Back to the surface – Daylighting urban streams in a Global North–South comparison. Frontiers in Ecology and Evolution, 10. https://doi.org/10.3389/fevo.2022.838794 
+
+### Image References
+
+Carrasco, M. (2024, September 12). Re-Naturalization of urban waterways: The case study of Cheonggye Stream in Seoul, South Korea. ArchDaily. https://www.archdaily.com/1020945/re-naturalization-of-urban-waterways-the-case-study-of-cheonggye-stream-in-seoul-south-korea
+
+Chung, T. (2025, June 23). Daylighting a Stream | Bentley Blog | Infrastructure Engineering Software & Solutions. Bentley Blog | Infrastructure Engineering Software & Solutions. https://blog.bentley.com/software/daylighting-a-stream/
+
+Fletcher, T. D., Burns, M. J., Russell, K. L., Hamel, P., Duchesne, S., Cherqui, F., & Roy, A. H. (2024). Concepts and evolution of urban hydrology. Nature Reviews Earth & Environment, 5(11), 789–801. https://doi.org/10.1038/s43017-024-00599-x
+
+Harding, Jon & Clapcott, Joanne & Quinn, John & Hayes, John & Joy, Mike & Storey, Richard & Greig, Hamish & Hay, Joe & James, Trevor & Beech, Mary & Ozane, Rachael & Meredith, Adrian & Boothroyd, Ian. (2009). Stream Habitat Assessment Protocols for wadeable rivers and streams of New Zealand. 
+
+Noviandi, T. U. Z., Kaswanto, R. L., & Arifin, H. S. (2017). Riparian landscape management in the midstream of Ciliwung River as supporting Water Sensitive Cities program with priority of productive landscape. IOP Conference Series Earth and Environmental Science, 91, 012033. https://doi.org/10.1088/1755-1315/91/1/012033
+
+Strategies. (n.d.). https://www.hydropower.org/sediment-management/sediment-management-strategies
+
+Qunli National Urban Wetland by Turenscape. (n.d.). Landezine. https://landezine.com/qunli-national-urban-wetland-by-turenscape/
+
+What is River Restoration? (n.d.). The River Restoration Centre. https://www.therrc.co.uk/why-restore
+
+### Data Set Bibliography
+
+OpenDataPortal Dresden. (2005). Versickerungseigenschaften des Untergrundes [WFS data]. https://opendata.dresden.de/informationsportal/?open=1&result=FA8DAE54AB6C41BAA187E5B1CC990831#app/mainpage (Accessed: May 20, 2025). Accessed via QGIS.
+
+OpenDataPortal Dresden (2025A). Adressen. [Dataset]. Retrieved May 18th from https://opendata.dresden.de/informationsportal/?open=1&result=2A1A54497DAB4B928E8FD7219860AF14#app/mainpage 
+
+OpenDataPortal Dresden (2025B). Spielplätze. [Dataset]. Retrieved May 18th from https://opendata.dresden.de/informationsportal/?open=1&result=2A1A54497DAB4B928E8FD7219860AF14#app/mainpage
+
