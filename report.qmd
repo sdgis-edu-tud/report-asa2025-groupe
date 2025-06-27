@@ -259,9 +259,13 @@ round(
 
 #### Saaty Matrix
 
-![](images/quality_of_life/Quality%20of%20Life_Saaty%20Matrix.png)
+In order to compile the five different layers into a single map representing the quality of life in the city of Dresden, weights must be assigned to each individual layer. The variables impacting physical and mental health, the vicinity to urban green and blue spaces, have been given the highest priority. Following health, social interaction is also seen as an important component within quality of life, which is why the variables concerning facilities and local integration have been assigned a similar weight. The daylighting of covered streams, while important, has been given a very minimal weight in the analysis, as daylighting might not always be feasible.
+
+![](images/quality_of_life/Quality of Life_Saaty Matrix.png)
 
 #### Recreational Suitability
+
+The municipality of Dresden has assessed the recreational suitability across the entire city. Although this data was collected, it was ultimately not included in the weighted map. Had it been used, the locations which could have used the most improvement, areas scoring low on the recreational suitability index, would have been seen as most suitable for the urban stream restoration project, as there would be much to gain from improving these locations. However, this data identifies the critical infrastructure as the least suitable location for recreation. This assessment would therefore suggest that such infrastructure is ideal for stream restoration, which is not feasible. Therefore, this data was not considered in the weighted map.
 
 ::::: {layout-ncol="2"}
 ::: column
@@ -345,11 +349,11 @@ The areas with “infiltration favourable” were given a value of 1, as they fu
 
 ::::: {layout-ncol="2"}
 ::: column
-![Infiltration: Analysis](images/climate_adaptation/5.1%20Infiltration%20properties_%20Analysis.jpg){fig-cap="Infiltration: Seepage Properties"}
+![Infiltration: Analysis](images/climate_adaptation/5.1 Infiltration properties_ Analysis.jpg){fig-cap="Infiltration: Seepage Properties"}
 :::
 
 ::: column
-![Infiltration: MCDA Grid](images/climate_adaptation/5.2%20Infiltration%20properties_%20MCDA%20Grid.jpg){fig-cap="Infiltration: MCDA Grid"}
+![Infiltration: MCDA Grid](images/climate_adaptation/5.2 Infiltration properties_ MCDA Grid.jpg){fig-cap="Infiltration: MCDA Grid"}
 :::
 :::::
 
@@ -361,17 +365,19 @@ Thus, the sealing classes were normalised from 1-5, and the unsealed areas were 
 
 ::::: {layout-ncol="2"}
 ::: column
-![Sealing Class: Analysis](images/climate_adaptation/6.1%20Sealing_%20Analysis.jpg){fig-cap="Sealing Class: Analysis"}
+![Sealing Class: Analysis](images/climate_adaptation/6.1 Sealing_ Analysis.jpg){fig-cap="Sealing Class: Analysis"}
 :::
 
 ::: column
-![Sealing Class: MCDA Grid](images/climate_adaptation/6.2%20Sealing_%20MCDA%20Grid.jpg){fig-cap="Sealing Class: MCDA Grid"}
+![Sealing Class: MCDA Grid](images/climate_adaptation/6.2 Sealing_ MCDA Grid.jpg){fig-cap="Sealing Class: MCDA Grid"}
 :::
 :::::
 
 #### Saaty Matrix
 
-![](images/climate_adaptation/Climate%20Adaptation_Saaty%20Matrix.png)
+In order to compile the five different layers into a single map representing the climate adaptation in the city of Dresden, weights must be assigned to each layer. The variables infiltration properties and seepage properties have been given the highest priority. Sealing class and urban trees contribute to the previous two attributes, which is why they have been assigned a similar weight. UHI, while important, has been given a very minimal weight in the analysis, as it does not contribute as significantly to flood mitigation as the other attributes.
+
+![](images/climate_adaptation/Climate Adaptation_Saaty Matrix.png)
 
 ### Biodiversity
 
