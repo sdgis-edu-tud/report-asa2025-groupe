@@ -14,13 +14,13 @@ format:
 ---
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-#setup
-#install.packages("sf")
-#install.packages("ggplot2")
-#install.packages("tidyr")
-#install.packages("dplyr")
-#install.packages("cluster")
-#install.packages("plotly")
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(sf)
+library(cluster)
+library(plotly)
 ```
 
 
@@ -474,10 +474,6 @@ To help visualise and get a better understanding of the distribution of our valu
 
 ::: {style="width:100%; text-align:center;"}
 ```{r echo=FALSE, warning=FALSE, message=FALSE, dpi=600}
-library(sf)
-library(ggplot2)
-library(tidyr)
-library(dplyr)
 
 # Read the geopackage
 grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg", quiet = TRUE)
@@ -609,11 +605,6 @@ This comprehensive map directly addresses the main research question of the proj
 
 ::: {style="width:100%; text-align:center;"}
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-library(sf) # for processing vector data
-library(dplyr) # for selecting and transforming data
-library(cluster) # for the silhouette method
-library(plotly) # for 3D plot of the variables
-
 # getwd()
 
 grids <- st_read("interactive map/Grid_BIO_CLI_QOL.gpkg", quiet = TRUE)
@@ -960,6 +951,7 @@ By conducting MCDA and comparing it to the k-means clustering to mitigate flood 
 As result of the S-MCDA analysis, the following map displays the grid cells, specifically the twelve grid cells/stream sections that are currently performing the worst overall, and thus have the greatest potential for improvement and contribution to the city's integrated climate resilience. The map highlights that the best performing stream sections are predominantly in the Northern part of Dresden, which is largely covered by natural ecosystems. Whereas the worse performing stream are mainly found in the built up environments South of the Elbe River.
 
 ![Twelve urban streams fit for restoration](images/weighted/Conclusion_ 1.png)
+
 While the MCDA and Typology Construction are two different methodologies, there is also merit in overlaying them and objectively cross-checking data. The conclusion map shown below visualises the MCDA overlayed with the K-means clustering typologies. It ascertains the intuitive understanding and provides evidence that the urban, residential clusters overlap with the worst-performing streams. Furthermore, it is evident that the worst-performing tiles derived from MCDA are significantly further in values as compared to the ones nearest to the cluster centres. This advocates the need for considering the MCDA results as pilot cases and utilising the typology construction methodology to propose a toolkit for urban stream restoration efforts in varying contexts.
 
 ![Overlapping results from MCDA and K-means clustering](images/weighted/Conclusion_ 2.png)
