@@ -241,9 +241,9 @@ In recent decades, urban development in Dresden has resulted in many urban strea
 
 The daylighting of urban streams would be part of a larger redevelopment project. As can be read in Wantzen et al. (2022, table 3), different project goals can be attained depending on the length of the stream being daylighted. Projects of up to 140 meters are typically aimed at improving recreational value, and thus quality of life, while projects exceeding 140 metres primarily focus on enhancing biodiversity. To reflect this distinction, stream lengths were normalised using a calculation that assigns a value of 0 to any length between 0 and 140 metres. After 140 meters, the value slowly increases to 1. While daylighting would also benefit larger portions of culverted urban streams, these were given a lower value, as it is less feasible to implement such large projects.
 
-In order to calculate the normalized value, the following calculation was used:
-
 ```{=html}
+<details>
+<summary>Click to show/hide the SQL code for the normalisation calculation</summary>
 <pre> 
 round( 
   CASE 
@@ -254,6 +254,7 @@ round(
   3 
 )
 </pre>
+</details>
 ```
 
 ::::: {layout-ncol="2"}
@@ -275,6 +276,23 @@ In order to compile the five different layers into a single map representing the
 #### Recreational Suitability
 
 The municipality of Dresden has assessed the recreational suitability across the entire city. Although this data was collected, it was ultimately not included in the weighted map. Had it been used, the locations which could have used the most improvement, areas scoring low on the recreational suitability index, would have been seen as most suitable for the urban stream restoration project, as there would be much to gain from improving these locations. However, this data identifies the critical infrastructure as the least suitable location for recreation. This assessment would therefore suggest that such infrastructure is ideal for stream restoration, which is not feasible. Therefore, this data was not considered in the weighted map.
+
+```{=html}
+<details>
+<summary>Click to show/hide the SQL code for the normalisation calculation</summary>
+<pre>
+CASE 
+  WHEN "bewertung" = 'Eignung für die örtliche und stadtweite Naherholung' THEN 1.0 
+  WHEN "bewertung" = 'Eignung für die regional bedeutsame Naherholung mit touristischem Potential' THEN 0.75 
+  WHEN "bewertung" = 'Eignung für Tourismus' THEN 0.75 
+  WHEN "bewertung" = 'Eingeschränkte Eignung für die lokale Naherholung' THEN 0.5 
+  WHEN "bewertung" = 'Geringe Wertigkeit für die freiraumbezogene Erholung' THEN 0.25 
+  WHEN "bewertung" = 'Keine Eignung für die freiraumbezogene Erholung' THEN 0.0 
+  ELSE NULL 
+END
+</pre>
+</details>
+```
 
 ::::: {layout-ncol="2"}
 ::: column
@@ -396,6 +414,16 @@ Biodiversity is important because it underpins ecosystem health, providing vital
 
 Airborne particulate matter, specifically PM10 (particulate matter with a diameter of 10 micrometers or less), is a significant air pollutant that can negatively impact environmental health and biodiversity. High concentrations of PM10 can stress ecosystems and reduce overall ecological quality. To assess this, PM10 values were measured by the municipality of Dresden. On the normalized 0-1 scale, a value of 0 indicates PM10 pollution greater than 45 µg/m², representing the worst conditions, while 1 signifies 0 µg/m² PM10 pollution, indicating the best conditions for biodiversity. These values were derived by regridding the municipality's per-tile data onto the new 500x500m grid, with overlaying tiles weighted by their area, and then rescaled from 45-0 µg/m² to 0-1 to ensure that higher values are more favourable.
 
+```{=html}
+<details>
+<summary>Click to show/hide the SQL code for the normalisation calculation</summary>
+<pre> 
+round(1 - ("Weighted_PM10_AreaPollution" / 45), 3)
+</pre>
+</details>
+```
+
+
 ::::: {layout-ncol="2"}
 ::: column
 ![PM10: Analysis](images/biodiversity/PM10.png){fig-cap="Figure X. PM10 concentration."}
@@ -409,6 +437,15 @@ Airborne particulate matter, specifically PM10 (particulate matter with a diamet
 #### NO₂
 
 Similar to PM10, Nitrogen Dioxide (NO₂) concentration is another critical indicator of air quality that directly influences biodiversity within urban landscapes. Elevated NO₂ levels contribute to air pollution, which can harm vegetation and aquatic life, thereby degrading the ecological value of an area. For this analysis, NO₂ values collected and released by the municipality of Dresden were used. On the 0-1 normalized scale, a value of 0 represents NO₂ pollution greater than 40 µg/m², signifying poor conditions for biodiversity, whereas 1 indicates 0 µg/m² NO₂ pollution, representing optimal conditions. The methodology for determining and normalizing these values was identical to that used for PM10, involving regridding and rescaling from a 40-0 µg/m² range to 0-1.
+
+```{=html}
+<details>
+<summary>Click to show/hide the SQL code for the normalisation calculation</summary>
+<pre> 
+round(1 - ("Weighted_NO2_AreaPollution" / 40), 3)
+</pre>
+</details>
+```
 
 ::::: {layout-ncol="2"}
 ::: column
@@ -424,6 +461,75 @@ Similar to PM10, Nitrogen Dioxide (NO₂) concentration is another critical indi
 
 The Normalized Difference Vegetation Index (NDVI) is a crucial metric for assessing vegetation density and health, directly reflecting the extent and quality of green spaces that support urban biodiversity. A higher NDVI indicates more robust vegetation, essential for healthy ecosystems and the numerous benefits they provide. The annual, average NDVI values were measured using data from the Copernicus satellite, spanning from May 2023 to May 2024. On the normalized 0-1 scale, a value of 0 denotes very poor NDVI, implying an absence of trees or significant vegetation, while 1 indicates very good NDVI, signifying a rich and healthy vegetative cover. The mean NDVI values, originally ranging from -1 to +1, were calculated and averaged over a year, then transformed to the 0-1 scale using the formula (x+1)/2, where x is the original NDVI value.
 
+```{=html}
+<details>
+<summary>Click to show/hide the Python code for the NDVI calculation (not normalised yet)</summary>
+<pre> 
+// Import Dresden boundary from GEE's administrative dataset
+var dresden = ee.FeatureCollection('FAO/GAUL/2015/level2')
+.filter(ee.Filter.and(
+ee.Filter.eq('ADM0_NAME', 'Germany'),
+ee.Filter.eq('ADM2_NAME', 'Dresden')
+));
+
+// Create 1 km buffer around Dresden
+var bufferDistance = 1000; // meters
+var dresdenBuffered = dresden.geometry().buffer(bufferDistance);
+
+// Define date range
+var startDate = '2023-05-01';
+var endDate = '2024-05-30';
+
+// Load Sentinel-2 Surface Reflectance data
+var s2 = ee.ImageCollection('COPERNICUS/S2_SR')
+.filterBounds(dresdenBuffered)
+.filterDate(startDate, endDate)
+.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20));
+
+// Calculate NDVI
+var addNDVI = function(image) {
+var ndvi = image.normalizedDifference(['B8', 'B4']).rename('NDVI');
+return image.addBands(ndvi);
+};
+
+var s2_ndvi = s2.map(addNDVI).select('NDVI');
+
+// Calculate mean NDVI and clip to buffered Dresden
+var meanNDVI = s2_ndvi.mean().clip(dresdenBuffered);
+
+// Define color palette from light green (-1) to dark green (+1)
+var ndviPalette = [
+'d9f0d3', // light green for -1
+'a6dba0',
+'5aae61',
+'1b7837', // dark green for +1
+];
+
+// Visualize mean NDVI with palette
+Map.centerObject(dresdenBuffered, 11);
+Map.addLayer(meanNDVI, {min: -1, max: 1, palette: ndviPalette}, 'Mean NDVI');
+
+// Export as GeoTIFF to Google Drived
+Export.image.toDrive({
+image: meanNDVI,
+description: 'Dresden_Mean_NDVI_May2023_May2024',
+scale: 10,
+region: dresdenBuffered,
+maxPixels: 1e13
+});
+</pre>
+</details>
+```
+
+```{=html}
+<details>
+<summary>Click to show/hide the SQL code for the normalisation calculation</summary>
+<pre> 
+round((("NDVI" + 1)/ 2), 3)
+</pre>
+</details>
+```
+
 ::::: {layout-ncol="2"}
 ::: column
 ![NDVI: Analysis](images/biodiversity/NDVI.png){fig-cap="Figure X. NDVI index."}
@@ -437,6 +543,23 @@ The Normalized Difference Vegetation Index (NDVI) is a crucial metric for assess
 #### Landscape Quality
 
 The Landscape Quality Assessment, as classified by the municipality of Dresden, provides a direct evaluation of an area's aesthetic and ecological value, both of which are integral to supporting biodiversity and creating healthy urban environments. This assessment helps identify areas where restoration efforts could significantly enhance natural beauty and ecological function. The quality of the landscape is represented on a 0-1 scale, where 0 indicates a very low value of the landscape, and 1 signifies a very high value of the landscape. Specific quality levels were assigned corresponding numerical values: "Very low quality" received 0.0, "Low quality" 0.25, "Medium quality" 0.5, "High quality" 0.75, and "Very high quality" or areas with "Unique aspects of the landscape or cityscape" were assigned 1.0. This metric was derived using a weighted average method.
+
+```{=html}
+<details>
+<summary>Click to show/hide the SQL code for the normalisation calculation</summary>
+<pre>
+CASE 
+  WHEN "bewertung" = 'Sehr geringe Wertigkeit' THEN 0.0 
+  WHEN "bewertung" = 'Geringe Wertigkeit' THEN 0.25 
+  WHEN "bewertung" = 'Mittlere Wertigkeit' THEN 0.5 
+  WHEN "bewertung" = 'Hohe Wertigkeit' THEN 0.75 
+  WHEN "bewertung" = 'Sehr hohe Wertigkeit' THEN 1.0 
+  WHEN "bewertung" = 'Einzigartige Aspekte des Landschafts- und Stadtbildes' THEN 1.0 
+  ELSE NULL 
+END
+</pre>
+</details>
+```
 
 ::::: {layout-ncol="2"}
 ::: column
@@ -587,6 +710,39 @@ Unfortunately, due to CORS restrictions, you cannot open the dashboard by simply
 
 ### Weighted maps per theme
 The following maps visualise the weighted results for the three core objectives of the Urban Stream Restoration project: Quality of Life, Climate Adaptation and Biodiversity. Each map is its own spatial assessment of how urban stream sections currently perform, and where improvement is most suitable per theme.
+
+```{=html}
+<details>
+<summary>Click to show/hide the SQL code for the normalisation calculations, per theme</summary>
+<pre> 
+round(
+  ("QOL_VicinityToUrbanGreenSpaces" * 0.342) +
+  ("QOL_VicinityToStreams" * 0.32) +
+  ("QOL_Facilities" * 0.172) +
+  ("QOL_LocalIntegration" * 0.125) +
+  ("QOL_CoveredStreamDistance" * 0.04), 
+3)
+
+round(
+  ("CLI_Infiltration" * 0.39) +
+  ("CLI_SealingClass" * 0.283) +
+  ("CLI_SoilStorage" * 0.132) +
+  ("CLI_UrbanHeatIsland" * 0.063) +
+  ("CLI_UrbanTrees" * 0.132), 
+3)
+
+round(
+  ("CLI_Infiltration" * 0.39) +
+  ("CLI_SealingClass" * 0.283) +
+  ("CLI_SoilStorage" * 0.132) +
+  ("CLI_UrbanHeatIsland" * 0.063) +
+  ("CLI_UrbanTrees" * 0.132), 
+3)
+
+round((BIO_Weighted + QOL_Weighted + CLI_Weighted)/3,3)
+</pre>
+</details>
+```
 
 ![Quality of Life index, weighted](images/weighted/QOL_Weighted.png)
 
