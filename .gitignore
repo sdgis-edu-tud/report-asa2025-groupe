@@ -2,3 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+data/
+report_files
+.DS_Store
+images/.DS_Store
+
+/.quarto/
