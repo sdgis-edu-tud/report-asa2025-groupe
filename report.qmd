@@ -455,6 +455,8 @@ The Percentage of Green or Blue Infrastructure within a grid cell directly quant
 
 #### Saaty Matrix
 
+To combine the five distinct layers into a single representation of biodiversity in Dresden, specific weights were assigned to each, as shown in the Saaty Matrix. The Landscape Quality Assessment and the Normalised Difference Vegetation Index (NDVI) were given the highest priority, as they directly reflect both the aesthetic and ecological value, as well as the health and extent of green spaces important for supporting urban biodiversity. The Blue-Green Infrastructure Percentage was also given significant weight, as it measures the presence of natural features essential for ecological resilience and supports Dresden’s integrated urban development goals. In contrast, PM10 and NO₂ concentrations—while recognised as important indicators of air quality that can harm biodiversity—were given less weight in this analysis, they are important, but were assessed/viewed in the sense of the result of the aforementioned layers.
+
 ![](images/biodiversity/Biodiversity_Saaty%20Matrix.png)
 
 ### Overview of the normal distribution of our layers
@@ -570,9 +572,9 @@ ggplot(all_features, aes(x = Value, fill = Category)) +
 
 ### Interactive Map Dashboard
 
-We’ve also developed an interactive dashboard that lets you explore our urban stream restoration analysis in detail. Within the dashboard, you can view any individual map layer, or you can overlay any combination of layers with their importance/weights in mind, as provided in our S-MCDA analysis. For example, 2 BIO layers and 1 QOL layer, to find relationships and patterns. To support this flexibility the dashboard features a trivariate choropleth legend, so any combination of layers can be visualised.
+We’ve also developed an interactive dashboard that allows you to explore our urban stream restoration analysis in detail. Within the dashboard, you can view individual map layers or overlay any combination of layers, taking into account their importance or weights as defined in our S-MCDA analysis. For example, you might combine two BIO layers with one QOL layer to identify relationships and patterns. To support this flexibility, the dashboard includes a trivariate choropleth legend, enabling any combination of layers to be visualised.
 
-Additionally, you can click on any 500x500m grid tile to display a bar chart showing all attribute values (ranging from 0 to 1) for that specific location. This tool is especially valuable for deeper analysis and informed decision-making, helping prioritize which stream sections should be restored first and identifying the specific improvements needed for each tile.
+Additionally, you can click on any 500 × 500 m grid tile to display a bar chart showing all attribute values (ranging from 0 to 1) for that specific location. This tool is particularly valuable for deeper analysis and informed decision-making, helping to prioritise which stream sections should be restored first and identifying the specific improvements needed for each tile.
 
 #### How to use the dashboard
 
@@ -584,14 +586,18 @@ Unfortunately, due to CORS restrictions, you cannot open the dashboard by simply
 4.  Open your web browser and navigate to localhost:8000/interactive%20map/
 
 ### Weighted maps per theme
-
-![Biodiversity index, weighted](images/weighted/BIO_Weighted.png)
+The following maps visualise the weighted results for the three core objectives of the Urban Stream Restoration project: Quality of Life, Climate Adaptation and Biodiversity. Each map is its own spatial assessment of how urban stream sections currently perform, and where improvement is most suitable per theme.
 
 ![Quality of Life index, weighted](images/weighted/QOL_Weighted.png)
 
 ![Climate Adaptation index, weighted](images/weighted/CLI_Weighted.png)
 
+![Biodiversity index, weighted](images/weighted/BIO_Weighted.png)
+
 ### Weighted overall map
+This map represents the overall weighted suitability index for urban stream restoration in Dresden, combining the three individual weighted themes, in which each is assigned equal importance within the typological framework.
+
+This comprehensive map directly addresses the main research question of the project: **"Which urban stream sections in Dresden have the greatest potential to contribute to the city’s integrated climate resilience?"** It shows that the best-performing stream sections are predominantly located in the northern part of Dresden, an area largely characterised by natural ecosystems. In contrast, the worst-performing stream sections are mostly found in the built-up areas south of the Elbe River. These urbanised and residential zones represent sections with the greatest potential for improvement and contribution to the city's climate resilience, making them priority targets for restoration.
 
 ![Overall suitability index, weighted](images/weighted/Overall_Weighted.png)
 
@@ -938,7 +944,7 @@ The use of space syntax, especially within the Attraction Reach module, has its 
 
 Utilising Multi-Criteria Decision Analysis (MCDA), fifteen attributes were normalised and assigned weighted values to form three overarching objectives: biodiversity, climate adaptation, and quality of life, each given equal significance in the typological framework. While establishing a shared baseline for all urban streams enables consistent comparative analysis, it is critical to account for the specific weight distribution of the fifteen attributes when addressing underperforming cases. For the twelve lowest-ranked streams, differentiated design strategies must reflect the relative influence of each attribute, allowing context-sensitive interventions that align with site-specific ecological and social needs.
 
-### Further research
+## Further research
 
 In this project, all the urban streams within the Dresden boundary were considered. Considering the scale of the analysis, it was difficult to account for more zoomed-in understandings, such as the width of the stream and the riparian zone around, which are important while analysing and recommending context-specific solutions. For the twelve cases, a detailed analysis with a grid of 100-by-100 metres can be further considered to include stream widths, riparian zone width, vegetation cover, surface permeability, and proximity to water bodies, which are essential for stream restoration. However, such fine resolution may lead to data redundancy and increase complexity in citywide applications. A 50–100 m grid balances detail and feasibility for assessing ecosystem service distribution and hydrological patterns across urban subcatchments (Roest et al., 2023).
 
@@ -952,7 +958,7 @@ In addition, future work could focus specifically on the project’s adherence t
 
 By conducting MCDA and comparing it to the k-means clustering to mitigate flood risks, improving quality of life and enhancing biodiversity, the main research question can be answered: **Which urban stream sections in Dresden have the greatest potential to contribute to the city’s integrated climate resilience? **
 
-As a result of the MCDA, the following map highlights twelve grid cells consisting of stretches of urban streams that have the greatest potential to contribute to the city’s integrated climate resilience through immediate urban restoration measures. It also highlights that the good stream conditions are predominantly in the Northern part of Dresden, which is largely covered by natural ecosystems. Whereas the rest of the streams not faring well are in the built environment South of the Elbe River.  
+As result of the S-MCDA analysis, the following map displays the grid cells, specifically the twelve grid cells/stream sections that are currently performing the worst overall, and thus have the greatest potential for improvement and contribution to the city's integrated climate resilience. The map highlights that the best performing stream sections are predominantly in the Northern part of Dresden, which is largely covered by natural ecosystems. Whereas the worse performing stream are mainly found in the built up environments South of the Elbe River.
 
 ![Twelve urban streams fit for restoration](images/weighted/Conclusion_ 1.png)
 While the MCDA and Typology Construction are two different methodologies, there is also merit in overlaying them and objectively cross-checking data. The conclusion map shown below visualises the MCDA overlayed with the K-means clustering typologies. It ascertains the intuitive understanding and provides evidence that the urban, residential clusters overlap with the worst-performing streams. Furthermore, it is evident that the worst-performing tiles derived from MCDA are significantly further in values as compared to the ones nearest to the cluster centres. This advocates the need for considering the MCDA results as pilot cases and utilising the typology construction methodology to propose a toolkit for urban stream restoration efforts in varying contexts.
